@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace MetroDemo.Models
+namespace TestExerciserPro.Models
 {
     public class Album : INotifyPropertyChanged
     {

@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using MahApps.Metro.Controls;
 
-namespace MetroDemo.ExampleViews
+namespace TestExerciserPro.ExampleViews
 {
     /// <summary>
     /// Interaction logic for Sliders.xaml

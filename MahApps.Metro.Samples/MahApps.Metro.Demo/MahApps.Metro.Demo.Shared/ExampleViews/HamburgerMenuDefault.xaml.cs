@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
-namespace MetroDemo.ExampleViews
+namespace TestExerciserPro.ExampleViews
 {
     public sealed partial class HamburgerMenuDefault : UserControl
     {

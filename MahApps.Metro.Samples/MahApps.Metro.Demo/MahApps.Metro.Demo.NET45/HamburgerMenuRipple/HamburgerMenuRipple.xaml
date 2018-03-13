@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MetroDemo.HamburgerMenuRipple"
+﻿<UserControl x:Class="TestExerciserPro.HamburgerMenuRipple"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
@@ -7,8 +7,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:metroDemo="clr-namespace:MetroDemo"
-             d:DataContext="{d:DesignInstance metroDemo:MainWindowViewModel}"
+             xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
+             d:DataContext="{d:DesignInstance TestExerciserPro:MainWindowViewModel}"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
@@ -249,12 +249,12 @@
                     <Controls:HamburgerMenuItemCollection>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Home}" Label="Home">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:HomeView />
+                                <TestExerciserPro:HomeView />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountCircle}" Label="Private">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:PrivateView />
+                                <TestExerciserPro:PrivateView />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Octicons Kind=Briefcase}" Label="Briefcase">
@@ -278,7 +278,7 @@
                     <Controls:HamburgerMenuItemCollection>
                         <Controls:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=Settings}" Label="Settings">
                             <Controls:HamburgerMenuIconItem.Tag>
-                                <metroDemo:SettingsView />
+                                <TestExerciserPro:SettingsView />
                             </Controls:HamburgerMenuIconItem.Tag>
                         </Controls:HamburgerMenuIconItem>
                     </Controls:HamburgerMenuItemCollection>

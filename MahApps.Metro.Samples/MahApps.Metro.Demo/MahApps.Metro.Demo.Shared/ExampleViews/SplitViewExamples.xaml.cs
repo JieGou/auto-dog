@@ -1,4 +1,4 @@
-﻿namespace MetroDemo.ExampleViews
+﻿namespace TestExerciserPro.ExampleViews
 {
     using MahApps.Metro.Controls;
 

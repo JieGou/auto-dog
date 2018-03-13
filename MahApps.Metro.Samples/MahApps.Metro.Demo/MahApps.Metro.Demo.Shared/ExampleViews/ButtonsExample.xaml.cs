@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace MetroDemo.ExampleViews
+namespace TestExerciserPro.ExampleViews
 {
     /// <summary>
     /// Interaction logic for ButtonsExample.xaml

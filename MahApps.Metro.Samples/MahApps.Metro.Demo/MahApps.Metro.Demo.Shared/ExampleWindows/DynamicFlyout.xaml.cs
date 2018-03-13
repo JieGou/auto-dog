@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MetroDemo.ExampleWindows {
+namespace TestExerciserPro.ExampleWindows {
     /// <summary>
     /// Interaction logic for DynamicFlyout.xaml
     /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MetroDemo.Models
+namespace TestExerciserPro.Models
 {
     public class SimpleCommand : ICommand
     {

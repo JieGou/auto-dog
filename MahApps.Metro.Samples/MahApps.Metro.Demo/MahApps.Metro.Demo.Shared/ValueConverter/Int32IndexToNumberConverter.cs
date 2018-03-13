@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace MetroDemo.ValueConverter
+namespace TestExerciserPro.ValueConverter
 {
     /// <summary>
     /// Converts an Int32 zero-based index to a one-based number.

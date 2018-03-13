@@ -1,4 +1,4 @@
-﻿namespace MetroDemo.Behaviors
+﻿namespace TestExerciserPro.Behaviors
 {
     using System;
     using System.Windows.Interactivity;

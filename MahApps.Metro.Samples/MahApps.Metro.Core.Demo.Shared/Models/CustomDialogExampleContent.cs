@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using JetBrains.Annotations;
 
-namespace MetroDemo.Models
+namespace TestExerciserPro.Models
 {
     public class CustomDialogExampleContent : INotifyPropertyChanged
     {

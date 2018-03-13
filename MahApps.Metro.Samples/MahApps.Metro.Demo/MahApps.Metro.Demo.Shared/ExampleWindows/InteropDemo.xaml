@@ -1,4 +1,4 @@
-﻿<controls:MetroWindow x:Class="MetroDemo.ExampleWindows.InteropDemo"
+﻿<controls:MetroWindow x:Class="TestExerciserPro.ExampleWindows.InteropDemo"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"

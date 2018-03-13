@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Markup;
 
-namespace MetroDemo.Markup
+namespace TestExerciserPro.Markup
 {
 
     /// <summary>

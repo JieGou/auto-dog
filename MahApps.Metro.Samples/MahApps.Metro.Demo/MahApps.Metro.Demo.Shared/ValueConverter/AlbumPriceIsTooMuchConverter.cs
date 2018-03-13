@@ -4,9 +4,9 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using MetroDemo.Models;
+using TestExerciserPro.Models;
 
-namespace MetroDemo.ValueConverter
+namespace TestExerciserPro.ValueConverter
 {
     public class AlbumPriceIsTooMuchConverter : IValueConverter
     {

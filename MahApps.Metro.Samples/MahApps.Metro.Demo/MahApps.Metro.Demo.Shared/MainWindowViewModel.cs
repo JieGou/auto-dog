@@ -10,15 +10,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using MahApps.Metro;
-using MetroDemo.Models;
+using TestExerciserPro.Models;
 using System.Windows.Input;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using MetroDemo.ExampleViews;
+using TestExerciserPro.ExampleViews;
 using NHotkey;
 using NHotkey.Wpf;
 
-namespace MetroDemo
+namespace TestExerciserPro
 {
     public class AccentColorMenuData
     {

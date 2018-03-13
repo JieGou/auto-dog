@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace MetroDemo
+namespace TestExerciserPro
 {
     using MahApps.Metro.Controls;
 

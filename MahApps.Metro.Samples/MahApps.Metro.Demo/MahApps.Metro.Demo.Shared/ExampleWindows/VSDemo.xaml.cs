@@ -1,4 +1,4 @@
-﻿namespace MetroDemo.ExampleWindows
+﻿namespace TestExerciserPro.ExampleWindows
 {
     public partial class VSDemo
     {
