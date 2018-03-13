@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.microsoft.com/packaging/2010/07/manifest" Target="/Caliburn.Micro.nuspec" Id="Ra3b8f149da6048f6" />
+  <Relationship Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="/package/services/metadata/core-properties/7f8ad14fe0f440a1991b24037e99fdf3.psmdcp" Id="R82fbd791d6cd448a" />
+</Relationships>

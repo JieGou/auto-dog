@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NHotkey.Wpf</id>
+    <version>1.2.1</version>
+    <title>NHotkey for WPF</title>
+    <authors>Thomas Levesque</authors>
+    <owners>Thomas Levesque</owners>
+    <licenseUrl>https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/thomaslevesque/NHotkey</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A managed library to handle global hotkeys in WPF applications.
+    This package contains the concrete HotkeyManager implementation for WPF.</description>
+    <summary>A managed library to handle global hotkeys in WPF applications.</summary>
+    <releaseNotes>Added HotkeyAlreadyRegistered event</releaseNotes>
+    <tags>hotkey wpf</tags>
+    <dependencies>
+      <dependency id="NHotkey" version="1.2.1" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
+      <frameworkAssembly assemblyName="PresentationCore" targetFramework="" />
+      <frameworkAssembly assemblyName="PresentationFramework" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xaml" targetFramework=".NETFramework4.0, .NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

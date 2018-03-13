@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>James Willock</dc:creator>
+  <dc:description>ResourceDictionary instances containing Material Design templates and styles for WPF controls.</dc:description>
+  <dc:identifier>MaterialDesignThemes</dc:identifier>
+  <version>2.3.2-ci1036</version>
+  <keywords>WPF XAML WinRT Material Design Theme Colour Color UI UX</keywords>
+  <lastModifiedBy>NuGet, Version=4.3.0.6, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 6.2.9200.0;.NET Framework 4.5</lastModifiedBy>
+</coreProperties>

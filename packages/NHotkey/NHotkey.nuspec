@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NHotkey</id>
+    <version>1.2.1</version>
+    <title>NHotkey</title>
+    <authors>Thomas Levesque</authors>
+    <owners>Thomas Levesque</owners>
+    <licenseUrl>https://github.com/thomaslevesque/NHotkey/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/thomaslevesque/NHotkey</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A managed library to handle global hotkeys in Windows Forms and WPF applications.
+      Note that this package doesn't contain a concrete HotkeyManager implementation; you should add
+      either the NHotkey.Wpf or NHotkey.WindowsForms package to get one.</description>
+    <summary>A managed library to handle global hotkeys in Windows Forms and WPF applications.</summary>
+    <releaseNotes>Added HotkeyAlreadyRegisteredException</releaseNotes>
+    <tags>hotkey</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

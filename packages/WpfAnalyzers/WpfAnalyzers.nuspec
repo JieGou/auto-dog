@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>WpfAnalyzers</id>
+    <version>2.1.2.0</version>
+    <title>WpfAnalyzers</title>
+    <authors>Johan Larsson</authors>
+    <owners>Johan Larsson</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/DotNetAnalyzers/WpfAnalyzers</projectUrl>
+    <description>Roslyn analyzers for WPF.</description>
+    <releaseNotes>BUGFIX: better check of casts
+Feature: new analyzers for direct casts.</releaseNotes>
+    <copyright>Copyright Johan Larsson 2016</copyright>
+    <tags>WPF Roslyn Diagnostic Analyzer DotnetAnalyzers</tags>
+    <developmentDependency>true</developmentDependency>
+  </metadata>
+</package>
