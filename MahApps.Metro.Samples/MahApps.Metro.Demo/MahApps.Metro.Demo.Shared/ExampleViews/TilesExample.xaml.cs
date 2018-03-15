@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TestExerciserPro.ExampleViews
+namespace MetroDemo.ExampleViews
 {
     /// <summary>
     /// Interaction logic for TilesExample.xaml

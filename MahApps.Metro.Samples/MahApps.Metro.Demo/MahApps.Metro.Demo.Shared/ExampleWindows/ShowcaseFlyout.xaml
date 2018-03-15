@@ -1,4 +1,4 @@
-﻿<controls:Flyout x:Class="TestExerciserPro.ExampleWindows.ShowcaseFlyout"
+﻿<controls:Flyout x:Class="MetroDemo.ExampleWindows.ShowcaseFlyout"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:actions="clr-namespace:MahApps.Metro.Actions;assembly=MahApps.Metro"
@@ -6,11 +6,11 @@
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                 xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
+                 xmlns:metroDemo="clr-namespace:MetroDemo"
                  xmlns:system="clr-namespace:System;assembly=mscorlib"
                  x:Name="ThisView"
                  Width="500"
-                 d:DataContext="{d:DesignInstance TestExerciserPro:MainWindowViewModel}"
+                 d:DataContext="{d:DesignInstance metroDemo:MainWindowViewModel}"
                  d:DesignHeight="300"
                  d:DesignWidth="400"
                  CloseCommand="{Binding CloseCmd}"
@@ -32,7 +32,7 @@
     </controls:Flyout.Resources>
 
     <controls:Flyout.HeaderTemplate>
-        <DataTemplate DataType="{x:Type TestExerciserPro:MainWindowViewModel}">
+        <DataTemplate DataType="{x:Type metroDemo:MainWindowViewModel}">
             <DockPanel x:Name="dpHeader"
                        VerticalAlignment="Center"
                        LastChildFill="True">

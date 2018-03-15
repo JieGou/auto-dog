@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace TestExerciserPro.ExampleWindows
+namespace MetroDemo.ExampleWindows
 {
     /// <summary>
     /// Interaction logic for SizeToContentDemo.xaml

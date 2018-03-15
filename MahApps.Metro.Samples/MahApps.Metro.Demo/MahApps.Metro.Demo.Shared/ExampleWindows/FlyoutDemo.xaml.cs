@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Input;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using TestExerciserPro.Models;
+using MetroDemo.Models;
 
-namespace TestExerciserPro.ExampleWindows
+namespace MetroDemo.ExampleWindows
 {
     public partial class FlyoutDemo : IDisposable
     {

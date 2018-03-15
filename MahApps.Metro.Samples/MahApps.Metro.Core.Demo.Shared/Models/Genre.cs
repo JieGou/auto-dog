@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace TestExerciserPro.Models
+namespace MetroDemo.Models
 {
     public class Genre : INotifyPropertyChanged
     {

@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
-namespace TestExerciserPro.ExampleWindows
+namespace MetroDemo.ExampleWindows
 {
     /// <summary>
     /// Interaction logic for CleanWindowDemo.xaml

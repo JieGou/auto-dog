@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using MahApps.Metro.Controls;
 
-namespace TestExerciserPro.ExampleViews
+namespace MetroDemo.ExampleViews
 {
     /// <summary>
     /// Interaction logic for TabControlExamples.xaml

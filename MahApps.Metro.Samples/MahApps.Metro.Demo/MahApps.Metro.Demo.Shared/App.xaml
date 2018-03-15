@@ -1,4 +1,4 @@
-﻿<Application x:Class="TestExerciserPro.App"
+﻿<Application x:Class="MetroDemo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"

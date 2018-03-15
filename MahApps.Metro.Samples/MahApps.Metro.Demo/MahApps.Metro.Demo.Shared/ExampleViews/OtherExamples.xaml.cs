@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using MahApps.Metro.Controls;
 
-namespace TestExerciserPro.ExampleViews
+namespace MetroDemo.ExampleViews
 {
     /// <summary>
     /// Interaction logic for OtherExamples.xaml

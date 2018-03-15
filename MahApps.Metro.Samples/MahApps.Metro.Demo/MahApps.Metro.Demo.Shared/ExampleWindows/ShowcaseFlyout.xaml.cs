@@ -1,4 +1,4 @@
-﻿namespace TestExerciserPro.ExampleWindows
+﻿namespace MetroDemo.ExampleWindows
 {
     using MahApps.Metro.Controls;
 

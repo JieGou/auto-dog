@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace TestExerciserPro.ExampleViews
+namespace MetroDemo.ExampleViews
 {
     /// <summary>
     /// Interaction logic for SelectionExamples.xaml

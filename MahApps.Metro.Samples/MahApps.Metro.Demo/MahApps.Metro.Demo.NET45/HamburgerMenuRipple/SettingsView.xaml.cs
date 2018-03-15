@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TestExerciserPro
+namespace MetroDemo
 {
     /// <summary>
     /// Interaction logic for AboutView.xaml

@@ -6,9 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using TestExerciserPro.ExampleWindows;
+using MetroDemo.ExampleWindows;
 
-namespace TestExerciserPro
+namespace MetroDemo
 {
     public partial class MainWindow
     {

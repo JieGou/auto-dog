@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TestExerciserPro.ExampleViews.HamburgerMenuCreatorsUpdate"
+﻿<UserControl x:Class="MetroDemo.ExampleViews.HamburgerMenuCreatorsUpdate"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
@@ -6,8 +6,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
-             d:DataContext="{d:DesignInstance TestExerciserPro:MainWindowViewModel}"
+             xmlns:metroDemo="clr-namespace:MetroDemo"
+             d:DataContext="{d:DesignInstance metroDemo:MainWindowViewModel}"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">

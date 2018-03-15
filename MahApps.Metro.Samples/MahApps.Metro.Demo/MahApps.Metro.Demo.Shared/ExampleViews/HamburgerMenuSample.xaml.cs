@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TestExerciserPro.ExampleViews
+namespace MetroDemo.ExampleViews
 {
     using System.Windows.Data;
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace TestExerciserPro
+namespace MetroDemo
 {
     /// <summary>
     /// Interaction logic for App.xaml

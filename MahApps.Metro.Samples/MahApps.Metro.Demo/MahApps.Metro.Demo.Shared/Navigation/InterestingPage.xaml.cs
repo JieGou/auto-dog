@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TestExerciserPro.Navigation
+namespace MetroDemo.Navigation
 {
     /// <summary>
     /// Interaction logic for InterestingPage.xaml
