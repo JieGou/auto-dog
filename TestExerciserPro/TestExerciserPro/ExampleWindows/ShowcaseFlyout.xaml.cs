@@ -1,6 +1,6 @@
 ﻿namespace TestExerciserPro.ExampleWindows
 {
-    using MahApps.Metro.Controls;
+    using TestExerciserPro.UI.Controls;
 
     public sealed partial class ShowcaseFlyout : Flyout
     {

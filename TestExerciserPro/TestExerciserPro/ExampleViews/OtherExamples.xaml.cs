@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using MahApps.Metro.Controls;
+using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.ExampleViews
 {

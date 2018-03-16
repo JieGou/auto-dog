@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="TestExerciserPro.ExampleViews.TilesExample"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"

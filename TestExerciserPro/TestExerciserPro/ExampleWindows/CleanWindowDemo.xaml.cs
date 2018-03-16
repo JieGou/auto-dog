@@ -1,6 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
-using MahApps.Metro.Controls.Dialogs;
+using TestExerciserPro.UI.Controls.Dialogs;
 
 namespace TestExerciserPro.ExampleWindows
 {

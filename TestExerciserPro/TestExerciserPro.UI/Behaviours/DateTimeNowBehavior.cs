@@ -1,4 +1,4 @@
-﻿namespace TestExerciserPro.Behaviors
+﻿namespace TestExerciserPro.UI.Behaviours
 {
     using System;
     using System.Windows.Interactivity;

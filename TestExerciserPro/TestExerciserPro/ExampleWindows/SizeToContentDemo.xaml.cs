@@ -1,4 +1,4 @@
-﻿using MahApps.Metro.Controls;
+﻿using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.ExampleWindows
 {

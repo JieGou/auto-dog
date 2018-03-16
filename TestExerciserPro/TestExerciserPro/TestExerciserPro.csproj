@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Binaries\System.Windows.Interactivity.dll</HintPath>
@@ -190,7 +191,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Behaviors\DateTimeNowBehavior.cs" />
     <Compile Include="ExampleViews\ColorExample.xaml.cs" />
     <Compile Include="ExampleViews\CustomDialogExample.xaml.cs" />
     <Compile Include="ExampleViews\DataGridExamples.xaml.cs" />
@@ -262,12 +262,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestExecutePro.UI\TestExerciserPro.UI.csproj">
+    <ProjectReference Include="..\TestExerciserPro.UI\TestExerciserPro.UI.csproj">
       <Project>{c3a73d36-a384-4cbd-8962-a0fd4ad749f8}</Project>
       <Name>TestExerciserPro.UI</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\Photos\BigFourSummerHeat.png" />
     <Resource Include="Assets\Photos\BisonBadlandsChillin.png" />

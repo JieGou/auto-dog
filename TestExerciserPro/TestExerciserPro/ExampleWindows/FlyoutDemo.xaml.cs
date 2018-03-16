@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
+using TestExerciserPro.UI.Controls;
+using TestExerciserPro.UI.Controls.Dialogs;
 using TestExerciserPro.Models;
 
 namespace TestExerciserPro.ExampleWindows
@@ -190,7 +190,7 @@ namespace TestExerciserPro.ExampleWindows
 
         private async void ClickMeOnClick(object sender, RoutedEventArgs e)
         {
-            await this.ShowMessageAsync("Title Template Test", "Thx for using MahApps.Metro!!!");
+            await this.ShowMessageAsync("Title Template Test", "Thx for using TestExerciserPro.UI!!!");
         }
 
         private void TopFlyoutCloseButtonOnClick(object sender, RoutedEventArgs e)

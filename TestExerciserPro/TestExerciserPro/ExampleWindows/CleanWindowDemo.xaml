@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="TestExerciserPro.ExampleWindows.CleanWindowDemo"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
                       xmlns:models="clr-namespace:TestExerciserPro.Models"
                       x:Name="ThisView"
                       Title="CleanWindowDemo"
@@ -16,7 +16,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Clean/Clean.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/TestExerciserPro.UI;component/Styles/Clean/Clean.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <ObjectDataProvider x:Key="HorizontalAlignmentEnumValues"
@@ -188,7 +188,7 @@
         </Grid>
 
         <StatusBar Grid.Row="2">
-            <StatusBarItem>MahApps.Metro Clean Window</StatusBarItem>
+            <StatusBarItem>TestExerciserPro.UI Clean Window</StatusBarItem>
             <Separator Style="{StaticResource CleanMetroStatusBarSeparator}" />
             <StatusBarItem>Some stuff</StatusBarItem>
         </StatusBar>

@@ -91,12 +91,12 @@
     </Window.Resources>
 
     <Controls:MetroWindow.WindowButtonCommands>
-        <Controls:WindowButtonCommands Style="{DynamicResource MahApps.Metro.Styles.WindowButtonCommands.Win10}" />
+        <Controls:WindowButtonCommands Style="{DynamicResource TestExerciserPro.UI.Styles.WindowButtonCommands.Win10}" />
     </Controls:MetroWindow.WindowButtonCommands>
 
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
-            <Button Click="LaunchMahAppsOnGitHub" ToolTip="MahApps.Metro on GitHub">
+            <Button Click="LaunchMahAppsOnGitHub" ToolTip="TestExerciserPro.UI on GitHub">
                 <iconPacks:PackIconModern Width="22"
                                           Height="22"
                                           Kind="SocialGithubOctocat" />
@@ -273,7 +273,7 @@
         </Controls:MetroAnimatedSingleRowTabControl>
 
         <StatusBar Grid.Row="2">
-            <StatusBarItem>MahApps.Metro DEMO Application</StatusBarItem>
+            <StatusBarItem>TestExerciserPro.UI DEMO Application</StatusBarItem>
             <Separator Style="{StaticResource MetroStatusBarSeparator}" />
             <StatusBarItem>Selected Tab:</StatusBarItem>
             <StatusBarItem Content="{Binding ElementName=MainTabControl, Path=SelectedItem.Header, Mode=OneWay}" />

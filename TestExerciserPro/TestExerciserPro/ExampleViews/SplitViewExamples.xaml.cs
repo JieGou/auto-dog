@@ -1,6 +1,6 @@
 ﻿namespace TestExerciserPro.ExampleViews
 {
-    using MahApps.Metro.Controls;
+    using TestExerciserPro.UI.Controls;
 
     /// <summary>
     ///     Interaction logic for SplitViewExamples.xaml

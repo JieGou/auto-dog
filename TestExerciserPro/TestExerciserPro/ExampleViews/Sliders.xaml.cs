@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using MahApps.Metro.Controls;
+using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.ExampleViews
 {

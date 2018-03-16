@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="TestExerciserPro.ExampleViews.SelectionExamples"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:Controls="TestExerciserPro.UI.controls"
+             xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
              xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -141,7 +141,7 @@
                     </ComboBox.ContextMenu>
                     <ComboBoxItem Content="Item 1" />
                     <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+                    <ComboBoxItem Content="Very long Item 3 for TestExerciserPro.UI" />
                     <ComboBoxItem Content="Item 4" />
                 </ComboBox>
                 <ComboBox Width="200"
@@ -156,7 +156,7 @@
                     </ComboBox.ContextMenu>
                     <ComboBoxItem Content="Item 1" />
                     <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+                    <ComboBoxItem Content="Very long Item 3 for TestExerciserPro.UI" />
                     <ComboBoxItem Content="Item 4" />
                 </ComboBox>
                 <ComboBox Width="200"
@@ -172,7 +172,7 @@
                     </ComboBox.ContextMenu>
                     <ComboBoxItem Content="Item 1" />
                     <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+                    <ComboBoxItem Content="Very long Item 3 for TestExerciserPro.UI" />
                     <ComboBoxItem Content="Item 4" />
                 </ComboBox>
                 <ComboBox Width="200"
@@ -187,7 +187,7 @@
                     </ComboBox.ContextMenu>
                     <ComboBoxItem Content="Item 1" />
                     <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Very long Item 3 for MahApps.Metro" />
+                    <ComboBoxItem Content="Very long Item 3 for TestExerciserPro.UI" />
                     <ComboBoxItem Content="Item 4" />
                 </ComboBox>
                 <ComboBox Width="200"

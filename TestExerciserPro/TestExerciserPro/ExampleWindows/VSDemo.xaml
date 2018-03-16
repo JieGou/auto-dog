@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="TestExerciserPro.ExampleWindows.VSDemo"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
                       xmlns:System="clr-namespace:System;assembly=mscorlib"
                       Title="Visual Studio 2012 Style Demo"
                       Width="1000"
@@ -12,8 +12,8 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/VS/Styles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/TestExerciserPro.UI;component/Styles/VS/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/TestExerciserPro.UI;component/Styles/VS/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>

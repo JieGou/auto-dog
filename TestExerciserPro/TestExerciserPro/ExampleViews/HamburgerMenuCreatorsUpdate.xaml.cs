@@ -2,7 +2,7 @@
 
 namespace TestExerciserPro.ExampleViews
 {
-    using MahApps.Metro.Controls;
+    using TestExerciserPro.UI.Controls;
 
     public sealed partial class HamburgerMenuCreatorsUpdate : UserControl
     {

@@ -1,5 +1,5 @@
 ﻿using System.Windows.Controls;
-using MahApps.Metro.Controls;
+using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.ExampleViews
 {

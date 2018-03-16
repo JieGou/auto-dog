@@ -487,7 +487,7 @@ namespace TestExerciserPro
         {
             var rd = new ResourceDictionary
                 {
-                    Source = new Uri(@"/MahApps.Metro;component/Styles/Colors.xaml", UriKind.RelativeOrAbsolute)
+                    Source = new Uri(@"/TestExerciserPro.UI;component/Styles/Colors.xaml", UriKind.RelativeOrAbsolute)
                 };
 
             var resources = rd.Keys.Cast<object>()

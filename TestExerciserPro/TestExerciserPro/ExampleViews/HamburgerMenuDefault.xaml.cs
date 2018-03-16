@@ -2,8 +2,8 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using JetBrains.Annotations;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
+using TestExerciserPro.UI.Controls;
+using TestExerciserPro.UI.Controls.Dialogs;
 
 namespace TestExerciserPro.ExampleViews
 {

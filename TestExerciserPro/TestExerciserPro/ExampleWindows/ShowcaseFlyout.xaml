@@ -1,7 +1,7 @@
 ﻿<controls:Flyout x:Class="TestExerciserPro.ExampleWindows.ShowcaseFlyout"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                 xmlns:actions="clr-namespace:MahApps.Metro.Actions;assembly=MahApps.Metro"
+                 xmlns:actions="clr-namespace:TestExerciserPro.UI.Actions;assembly=TestExerciserPro.UI"
                  xmlns:controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
@@ -46,7 +46,7 @@
                         FontSize="16"
                         Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:Flyout}}, Path=Foreground}"
                         IsCancel="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:Flyout}}, Path=CloseButtonIsCancel}"
-                        Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                        Style="{DynamicResource TestExerciserPro.UI.Styles.MetroCircleButtonStyle}"
                         Visibility="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:Flyout}}, Path=CloseButtonVisibility}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
@@ -139,7 +139,7 @@
                                        IsChecked="{Binding CanCloseFlyout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                        OffLabel="Disabled"
                                        OnLabel="Allowed"
-                                       Style="{DynamicResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
+                                       Style="{DynamicResource TestExerciserPro.UI.Styles.ToggleSwitch.Win10}" />
 
             </Grid>
 
@@ -183,7 +183,7 @@
                                 Maximum="100"
                                 Minimum="0"
                                 SmallChange="1"
-                                Style="{StaticResource MahApps.Metro.Styles.FlatSlider}"
+                                Style="{StaticResource TestExerciserPro.UI.Styles.FlatSlider}"
                                 Value="{Binding ElementName=TheSlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         <TextBlock Margin="2"
                                    HorizontalAlignment="Center"
