@@ -1,28 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace TestExerciserPro.ExampleViews
 {
     /// <summary>
-    /// ButtonsExample.xaml 的交互逻辑
+    /// Interaction logic for ButtonsExample.xaml
     /// </summary>
     public partial class ButtonsExample : UserControl
     {
         public ButtonsExample()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+        }
+
+        private void CountingButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (this.CountingBadge.Badge == null || Equals(this.CountingBadge.Badge, ""))
+            {
+                this.CountingBadge.Badge = 0;
+            }
+            var next = int.Parse(this.CountingBadge.Badge.ToString()) + 1;
+            this.CountingBadge.Badge = next < 43 ? (object)next : null;
+        }
+
+        private void SplitButton_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var index = ((Selector)sender).SelectedIndex;
+            var item = ((Selector)sender).SelectedItem;
+            var value = ((Selector)sender).SelectedValue;
+            Debug.WriteLine($">> SplitButton SelectionChanged: index={index}, item={item}, value={value}");
         }
     }
 }
