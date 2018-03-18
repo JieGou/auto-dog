@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx">
-      <HintPath>..\..\..\TestEngine\TestEngine\Binaries\ControlzEx.dll</HintPath>
+      <HintPath>..\Binaries\ControlzEx.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations">
-      <HintPath>..\..\..\TestEngine\TestEngine\Binaries\JetBrains.Annotations.dll</HintPath>
+      <HintPath>..\Binaries\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
