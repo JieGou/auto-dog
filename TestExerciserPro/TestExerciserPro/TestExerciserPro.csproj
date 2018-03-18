@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestExerciserPro</RootNamespace>
     <AssemblyName>TestExerciserPro</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET4_5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -87,6 +88,63 @@
     <Compile Include="ExampleViews\ButtonsExample.xaml.cs">
       <DependentUpon>ButtonsExample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExampleViews\ColorExample.xaml.cs">
+      <DependentUpon>ColorExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\CustomDialogExample.xaml.cs">
+      <DependentUpon>CustomDialogExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\DataGridExamples.xaml.cs">
+      <DependentUpon>DataGridExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\DateExamples.xaml.cs">
+      <DependentUpon>DateExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\HamburgerMenuCreatorsUpdate.xaml.cs">
+      <DependentUpon>HamburgerMenuCreatorsUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\HamburgerMenuDefault.xaml.cs">
+      <DependentUpon>HamburgerMenuDefault.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\HamburgerMenuSample.xaml.cs">
+      <DependentUpon>HamburgerMenuSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\OtherExamples.xaml.cs">
+      <DependentUpon>OtherExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\ProgressBars.xaml.cs">
+      <DependentUpon>ProgressBars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\SelectionExamples.xaml.cs">
+      <DependentUpon>SelectionExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\Sliders.xaml.cs">
+      <DependentUpon>Sliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\SplitViewExamples.xaml.cs">
+      <DependentUpon>SplitViewExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\TabControlExamples.xaml.cs">
+      <DependentUpon>TabControlExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\TextExamples.xaml.cs">
+      <DependentUpon>TextExamples.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleViews\TilesExample.xaml.cs">
+      <DependentUpon>TilesExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HamburgerMenuRipple\HamburgerMenuRipple.xaml.cs">
+      <DependentUpon>HamburgerMenuRipple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HamburgerMenuRipple\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HamburgerMenuRipple\PrivateView.xaml.cs">
+      <DependentUpon>PrivateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HamburgerMenuRipple\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskEx.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
@@ -96,64 +154,64 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\ColorExample.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\CustomDialogExample.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\DataGridExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\DateExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\HamburgerMenuCreatorsUpdate.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\HamburgerMenuDefault.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\HamburgerMenuSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\OtherExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\ProgressBars.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\SelectionExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\Sliders.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\SplitViewExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\TabControlExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\TextExamples.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleViews\TilesExample.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExampleWindows\CleanWindowDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -183,6 +241,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="HamburgerMenuRipple\HamburgerMenuRipple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HamburgerMenuRipple\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HamburgerMenuRipple\PrivateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HamburgerMenuRipple\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -191,21 +265,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ExampleViews\ColorExample.xaml.cs" />
-    <Compile Include="ExampleViews\CustomDialogExample.xaml.cs" />
-    <Compile Include="ExampleViews\DataGridExamples.xaml.cs" />
-    <Compile Include="ExampleViews\DateExamples.xaml.cs" />
-    <Compile Include="ExampleViews\HamburgerMenuCreatorsUpdate.xaml.cs" />
-    <Compile Include="ExampleViews\HamburgerMenuDefault.xaml.cs" />
-    <Compile Include="ExampleViews\HamburgerMenuSample.xaml.cs" />
-    <Compile Include="ExampleViews\OtherExamples.xaml.cs" />
-    <Compile Include="ExampleViews\ProgressBars.xaml.cs" />
-    <Compile Include="ExampleViews\SelectionExamples.xaml.cs" />
-    <Compile Include="ExampleViews\Sliders.xaml.cs" />
-    <Compile Include="ExampleViews\SplitViewExamples.xaml.cs" />
-    <Compile Include="ExampleViews\TabControlExamples.xaml.cs" />
-    <Compile Include="ExampleViews\TextExamples.xaml.cs" />
-    <Compile Include="ExampleViews\TilesExample.xaml.cs" />
     <Compile Include="ExampleWindows\CleanWindowDemo.xaml.cs" />
     <Compile Include="ExampleWindows\DynamicFlyout.xaml.cs" />
     <Compile Include="ExampleWindows\FlyoutDemo.xaml.cs" />

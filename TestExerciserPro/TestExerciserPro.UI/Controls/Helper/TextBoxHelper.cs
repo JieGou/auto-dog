@@ -209,11 +209,11 @@ namespace TestExerciserPro.UI.Controls
 #endif
                 if (!string.IsNullOrEmpty(propertyName))
                 {
-                    //.NET4.0
-                    //var resolvedType = ResolveBinding(bindingExpression.DataItem.GetType(), bindingExpression.ParentBinding.Path.Path.Split('.'));
-                    //.NET4.5
+#if NET4
+                    var resolvedType = ResolveBinding(bindingExpression.DataItem.GetType(), bindingExpression.ParentBinding.Path.Path.Split('.'));
+#elif NET4_5
                     var resolvedType = bindingExpression.ResolvedSource?.GetType();
-
+#endif
                     if (resolvedType != null)
                     {
                         return resolvedType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
