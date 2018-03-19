@@ -143,7 +143,7 @@ namespace TestExerciserPro
             dialog.DialogSettings.ColorScheme = MetroDialogOptions.ColorScheme;
             dialog = dialog.ShowDialogExternally();
 
-            await TaskEx.Delay(5000);
+            await MainTaskEx.Delay(5000);
 
             await dialog.RequestCloseAsync();
         }
@@ -197,12 +197,12 @@ namespace TestExerciserPro
             var textBlock = dialog.FindChild<TextBlock>("MessageTextBlock");
             textBlock.Text = "A message box will appear in 3 seconds.";
 
-            await TaskEx.Delay(3000);
+            await MainTaskEx.Delay(3000);
 
             await this.ShowMessageAsync("Secondary dialog", "This message is shown on top of another.", MessageDialogStyle.Affirmative, new MetroDialogSettings() { OwnerCanCloseWithDialog = true });
 
             textBlock.Text = "The dialog will close in 2 seconds.";
-            await TaskEx.Delay(2000);
+            await MainTaskEx.Delay(2000);
 
             await this.HideMetroDialogAsync(dialog);
         }
@@ -290,7 +290,7 @@ namespace TestExerciserPro
             var controller = await this.ShowProgressAsync("Please wait...", "We are baking some cupcakes!", settings: mySettings);
             controller.SetIndeterminate();
 
-            await TaskEx.Delay(5000);
+            await MainTaskEx.Delay(5000);
 
             controller.SetCancelable(true);
 
@@ -306,7 +306,7 @@ namespace TestExerciserPro
 
                 i += 1.0;
 
-                await TaskEx.Delay(2000);
+                await MainTaskEx.Delay(2000);
             }
 
             await controller.CloseAsync();

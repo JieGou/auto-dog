@@ -1,5 +1,5 @@
 ﻿using System.Windows.Controls;
-
+using System.Windows;
 namespace TestExerciserPro.TestViews
 {
     /// <summary>
@@ -10,6 +10,12 @@ namespace TestExerciserPro.TestViews
         public TilesExample()
         {
             InitializeComponent();
+        }
+
+        private void AutoTesting_OnClick(object sender, RoutedEventArgs e)
+        {
+            MainAutoTesting main = new MainAutoTesting();
+            main.Show();
         }
     }
 }

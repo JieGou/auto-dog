@@ -17,7 +17,6 @@
                       d:DesignWidth="800"
                       Closing="MetroWindow_Closing"
                       GlowBrush="{DynamicResource AccentColorBrush}"
-                      Icon="MainIcon.ico"
                       LeftWindowCommandsOverlayBehavior="Never"
                       NonActiveGlowBrush="#CDFF0000"
                       RightWindowCommandsOverlayBehavior="Never"

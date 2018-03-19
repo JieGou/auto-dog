@@ -56,6 +56,7 @@
                        VerticalAlignment="Top">
                 <Controls:Tile Title="自动化测试"
                                Margin="3"
+                               Click="AutoTesting_OnClick"
                                Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"                              
                                HorizontalTitleAlignment="Right"
                                Style="{StaticResource LargeTileStyle}">
