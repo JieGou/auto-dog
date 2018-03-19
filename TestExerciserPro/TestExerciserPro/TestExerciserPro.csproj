@@ -356,6 +356,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestExerciserPro.Editor\TestExerciserPro.Editor.csproj">
+      <Project>{250d858c-a761-44c1-89ba-4ba2b2d9ea85}</Project>
+      <Name>TestExerciserPro.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestExerciserPro.UI\TestExerciserPro.UI.csproj">
       <Project>{c3a73d36-a384-4cbd-8962-a0fd4ad749f8}</Project>
       <Name>TestExerciserPro.UI</Name>
