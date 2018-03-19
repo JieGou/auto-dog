@@ -11,16 +11,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TestExerciserPro.UI;
 
-namespace TestExerciserPro
+namespace TestExerciserPro.TestViews
 {
     /// <summary>
-    /// MainAutoTesting.xaml 的交互逻辑
+    /// MainPerformance.xaml 的交互逻辑
     /// </summary>
-    public partial class MainAutoTesting
+    public partial class MainPerformance : Window
     {
-        public MainAutoTesting()
+        public MainPerformance()
         {
             InitializeComponent();
         }

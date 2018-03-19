@@ -85,19 +85,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MainAutoTesting.xaml.cs">
+    <Compile Include="BraceFoldingStrategy.cs" />
+    <Compile Include="MyCompletionData.cs" />
+    <Compile Include="TestViews\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainInterface.xaml.cs">
+    <Compile Include="TestViews\MainInterface.xaml.cs">
       <DependentUpon>MainInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainMind.xaml.cs">
+    <Compile Include="TestViews\MainMind.xaml.cs">
       <DependentUpon>MainMind.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainNoteBook.xaml.cs">
+    <Compile Include="TestViews\MainNoteBook.xaml.cs">
       <DependentUpon>MainNoteBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPerformance.xaml.cs">
+    <Compile Include="TestViews\MainPerformance.xaml.cs">
       <DependentUpon>MainPerformance.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestViews\ButtonsExample.xaml.cs">
@@ -164,23 +166,23 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
-    <Page Include="MainAutoTesting.xaml">
+    <Page Include="TestViews\MainAutoTesting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainInterface.xaml">
+    <Page Include="TestViews\MainInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainMind.xaml">
+    <Page Include="TestViews\MainMind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainNoteBook.xaml">
+    <Page Include="TestViews\MainNoteBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPerformance.xaml">
+    <Page Include="TestViews\MainPerformance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -346,6 +348,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CustomHighlighting.xshd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -379,6 +382,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="MainIcon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="TestViews\Images\Copy.png" />
+    <Resource Include="TestViews\Images\Cut.png" />
+    <Resource Include="TestViews\Images\Delete.png" />
+    <Resource Include="TestViews\Images\Open.png" />
+    <Resource Include="TestViews\Images\Paste.png" />
+    <Resource Include="TestViews\Images\Redo.png" />
+    <Resource Include="TestViews\Images\Save.png" />
+    <Resource Include="TestViews\Images\Undo.png" />
+    <Resource Include="TestViews\Images\WordWrap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
