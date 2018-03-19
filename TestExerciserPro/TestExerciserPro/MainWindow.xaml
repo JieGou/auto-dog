@@ -96,7 +96,7 @@
 
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
-            <Button Click="LaunchMahAppsOnGitHub" ToolTip="TestExerciserPro.UI on GitHub">
+            <Button Click="LaunchAppsOnGitHub" ToolTip="TestExerciserPro.UI on GitHub">
                 <iconPacks:PackIconModern Width="22"
                                           Height="22"
                                           Kind="SocialGithubOctocat" />
@@ -114,6 +114,9 @@
                     ToolTip="All MahApp icons" />
             <Button Click="LaunchVisualStudioDemo"
                     Content="用例管理"
+                    ToolTip="Visual Studio style demo" />
+            <Button Click="LaunchVisualStudioDemo"
+                    Content="封装管理"
                     ToolTip="Visual Studio style demo" />
             <Button Click="LauchCleanDemo"
                     Content="任务管理"

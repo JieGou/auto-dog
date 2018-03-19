@@ -93,9 +93,9 @@ namespace TestExerciserPro
             set { SetValue(UseAccentForDialogsProperty, value); }
         }
 
-        private void LaunchMahAppsOnGitHub(object sender, RoutedEventArgs e)
+        private void LaunchAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/MahApps/MahApps.Metro");
+            System.Diagnostics.Process.Start("https://github.com/devdiv/TestExecutePro");
         }
 
         private void LaunchSizeToContentDemo(object sender, RoutedEventArgs e)

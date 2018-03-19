@@ -85,6 +85,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainAutoTesting.xaml.cs">
+      <DependentUpon>MainAutoTesting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainInterface.xaml.cs">
+      <DependentUpon>MainInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMind.xaml.cs">
+      <DependentUpon>MainMind.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainNoteBook.xaml.cs">
+      <DependentUpon>MainNoteBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPerformance.xaml.cs">
+      <DependentUpon>MainPerformance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TestViews\ButtonsExample.xaml.cs">
       <DependentUpon>ButtonsExample.xaml</DependentUpon>
     </Compile>
@@ -149,6 +164,26 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
+    <Page Include="MainAutoTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMind.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainNoteBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPerformance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TestViews\ButtonsExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
