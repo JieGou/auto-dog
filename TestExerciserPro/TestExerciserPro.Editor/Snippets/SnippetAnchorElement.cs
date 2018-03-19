@@ -17,9 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Creates a named anchor that can be accessed by other SnippetElements.

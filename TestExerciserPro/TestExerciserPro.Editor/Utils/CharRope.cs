@@ -21,7 +21,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Poor man's template specialization: extension methods for Rope&lt;char&gt;.

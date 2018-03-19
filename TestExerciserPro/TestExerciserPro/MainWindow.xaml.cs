@@ -95,7 +95,7 @@ namespace TestExerciserPro
 
         private void LaunchAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/devdiv/TestExecutePro");
+            System.Diagnostics.Process.Start("https://github.com/devdiv/TestExerciserPro");
         }
 
         private void LaunchSizeToContentDemo(object sender, RoutedEventArgs e)

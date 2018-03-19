@@ -19,7 +19,7 @@
 using System;
 using System.Windows.Documents;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Represents a text element in a snippet.

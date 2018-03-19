@@ -20,9 +20,9 @@ using System;
 using System.Diagnostics;
 using System.Text;
 
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/*
 	/// <summary>

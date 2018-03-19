@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	#if !NREFACTORY
 	/// <summary>

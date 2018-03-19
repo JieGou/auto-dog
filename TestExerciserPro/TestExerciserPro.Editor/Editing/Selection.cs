@@ -21,14 +21,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Highlighting;
-using TestExecutePro.Editor.Utils;
-#if NREFACTORY
-using ICSharpCode.NRefactory.Editor;
-#endif
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Highlighting;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Base class for selections.

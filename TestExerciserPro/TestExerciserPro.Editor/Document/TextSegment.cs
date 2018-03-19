@@ -22,7 +22,7 @@ using System.Diagnostics;
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// A segment that can be put into a <see cref="TextSegmentCollection{T}"/>.

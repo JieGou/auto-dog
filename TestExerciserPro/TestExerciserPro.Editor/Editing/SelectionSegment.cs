@@ -17,13 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-#if NREFACTORY
-using ICSharpCode.NRefactory.Editor;
-#else
-using TestExecutePro.Editor.Document;
-#endif
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Represents a selected segment.

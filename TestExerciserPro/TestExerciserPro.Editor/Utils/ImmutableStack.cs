@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// An immutable stack.

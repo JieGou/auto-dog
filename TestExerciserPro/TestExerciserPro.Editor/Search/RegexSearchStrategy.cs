@@ -22,8 +22,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Documents;
-using TestExecutePro.Editor.Document;
-namespace TestExecutePro.Editor.Search
+using TestExerciserPro.Editor.Document;
+namespace TestExerciserPro.Editor.Search
 {
 	class RegexSearchStrategy : ISearchStrategy
 	{

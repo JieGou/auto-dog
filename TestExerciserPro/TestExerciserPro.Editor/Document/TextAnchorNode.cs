@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// A TextAnchorNode is placed in the TextAnchorTree.

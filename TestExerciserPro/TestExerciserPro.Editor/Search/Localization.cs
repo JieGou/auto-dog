@@ -19,7 +19,7 @@
 using System;
 using System.ComponentModel;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// Holds default texts for buttons and labels in the SearchPanel. Override properties to add other languages.

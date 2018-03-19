@@ -18,9 +18,9 @@
 
 using System;
 using System.ComponentModel;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Represents a collapsed line section.

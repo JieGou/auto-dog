@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:AvalonEdit="clr-namespace:TestExecutePro.Editor"
-	xmlns:editing="clr-namespace:TestExecutePro.Editor.Editing"
+	xmlns:AvalonEdit="clr-namespace:TestExerciserPro.Editor"
+	xmlns:editing="clr-namespace:TestExerciserPro.Editor.Editing"
 >
 	<Style TargetType="{x:Type AvalonEdit:TextEditor}">
 		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />

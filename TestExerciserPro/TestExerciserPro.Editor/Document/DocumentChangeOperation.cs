@@ -19,7 +19,7 @@
 using System;
 using System.Diagnostics;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Describes a change to a TextDocument.

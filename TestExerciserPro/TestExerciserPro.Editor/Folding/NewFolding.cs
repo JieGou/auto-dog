@@ -20,10 +20,10 @@ using System;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #else
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 #endif
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// Helper class used for <see cref="FoldingManager.UpdateFoldings"/>.

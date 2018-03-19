@@ -23,10 +23,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// A <see cref="VisualLineElementGenerator"/> that produces line elements for folded <see cref="FoldingSection"/>s.

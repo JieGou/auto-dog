@@ -22,10 +22,10 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	sealed class FoldingMarginMarker : UIElement
 	{

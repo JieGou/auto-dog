@@ -22,7 +22,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// A inline UIElement in the document.

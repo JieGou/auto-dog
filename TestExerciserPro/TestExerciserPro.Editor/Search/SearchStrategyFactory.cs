@@ -20,9 +20,9 @@ using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// Provides factory methods for ISearchStrategies.

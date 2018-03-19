@@ -18,9 +18,9 @@
 
 using System;
 using System.Text.RegularExpressions;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	// This class is public because it can be used as a base class for custom links.
 	

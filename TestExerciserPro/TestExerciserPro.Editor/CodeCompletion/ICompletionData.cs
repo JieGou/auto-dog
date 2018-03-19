@@ -18,14 +18,14 @@
 
 using System;
 using System.Windows.Media;
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Editing;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #else
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 #endif
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// Describes an entry in the <see cref="CompletionList"/>.

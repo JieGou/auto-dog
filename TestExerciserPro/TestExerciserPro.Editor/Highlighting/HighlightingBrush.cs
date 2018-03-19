@@ -24,9 +24,9 @@ using System.Runtime.Serialization;
 using System.Windows;
 using System.Windows.Media;
 
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A brush used for syntax highlighting. Can retrieve a real brush on-demand.

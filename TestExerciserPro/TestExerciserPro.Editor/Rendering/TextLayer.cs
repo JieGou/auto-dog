@@ -22,7 +22,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// The control that contains the text.

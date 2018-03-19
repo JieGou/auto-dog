@@ -27,9 +27,9 @@ using System.Web;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// RichTextWriter implementation that produces HTML.

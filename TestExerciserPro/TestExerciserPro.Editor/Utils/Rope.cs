@@ -24,7 +24,7 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// A kind of List&lt;T&gt;, but more efficient for random insertions/removal.

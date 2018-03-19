@@ -20,7 +20,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// WeakEventManager with AddListener/RemoveListener and CurrentManager implementation.

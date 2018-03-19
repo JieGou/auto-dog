@@ -17,12 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Rendering;
-#if NREFACTORY
-using ICSharpCode.NRefactory.Editor;
-#endif
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Editing
+
+namespace TestExerciserPro.Editor.Editing
 {
 	sealed class SelectionColorizer : ColorizingTransformer
 	{

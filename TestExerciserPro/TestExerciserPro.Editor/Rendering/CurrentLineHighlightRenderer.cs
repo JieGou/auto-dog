@@ -20,9 +20,9 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	sealed class CurrentLineHighlightRenderer : IBackgroundRenderer
 	{

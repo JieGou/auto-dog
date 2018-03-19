@@ -18,10 +18,10 @@
 
 using System;
 using System.Collections.Generic;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Folding;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Folding;
 
-namespace TestExecutePro
+namespace TestExerciserPro
 {
 	/// <summary>
 	/// Allows producing foldings from a document based on braces.

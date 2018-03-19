@@ -20,10 +20,10 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	sealed class SelectionLayer : Layer, IWeakEventListener
 	{

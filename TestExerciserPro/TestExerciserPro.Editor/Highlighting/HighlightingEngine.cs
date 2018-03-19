@@ -24,12 +24,12 @@ using System.Text.RegularExpressions;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #else
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 #endif
-using TestExecutePro.Editor.Utils;
-using SpanStack = TestExecutePro.Editor.Utils.ImmutableStack<TestExecutePro.Editor.Highlighting.HighlightingSpan>;
+using TestExerciserPro.Editor.Utils;
+using SpanStack = TestExerciserPro.Editor.Utils.ImmutableStack<TestExerciserPro.Editor.Highlighting.HighlightingSpan>;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Regex-based highlighting engine.

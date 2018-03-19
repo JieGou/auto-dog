@@ -27,13 +27,13 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
-using TestExecutePro.Editor;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 using Draw = System.Drawing;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Native API required for IME support.

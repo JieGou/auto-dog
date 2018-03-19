@@ -20,10 +20,10 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Base class for margins.

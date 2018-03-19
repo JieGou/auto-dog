@@ -26,14 +26,11 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Highlighting;
-using TestExecutePro.Editor.Utils;
-#if NREFACTORY
-using ICSharpCode.NRefactory.Editor;
-#endif
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Highlighting;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// We re-use the CommandBinding and InputBinding instances between multiple text areas,

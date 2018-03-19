@@ -29,12 +29,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Indentation;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Indentation;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Control that wraps a TextView and adds support for user input and the caret.

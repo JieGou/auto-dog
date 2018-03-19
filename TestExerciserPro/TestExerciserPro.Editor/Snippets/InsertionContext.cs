@@ -19,10 +19,10 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Represents the context of a snippet insertion.
@@ -69,7 +69,7 @@ namespace TestExecutePro.Editor.Snippets
 		/// <summary>
 		/// Gets the text document.
 		/// </summary>
-		public TestExecutePro.Editor.Document.TextDocument Document { get; private set; }
+		public TestExerciserPro.Editor.Document.TextDocument Document { get; private set; }
 		
 		/// <summary>
 		/// Gets the text that was selected before the insertion of the snippet.
@@ -97,7 +97,7 @@ namespace TestExecutePro.Editor.Snippets
 		public int InsertionPosition { get; set; }
 		
 		readonly int startPosition;
-		TestExecutePro.Editor.Document.AnchorSegment wholeSnippetAnchor;
+		TestExerciserPro.Editor.Document.AnchorSegment wholeSnippetAnchor;
 		bool deactivateIfSnippetEmpty;
 		
 		/// <summary>

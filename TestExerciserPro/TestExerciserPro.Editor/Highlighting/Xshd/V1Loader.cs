@@ -25,9 +25,9 @@ using System.Windows.Media;
 using System.Xml;
 using System.Xml.Schema;
 
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// Loads .xshd files, version 1.0.

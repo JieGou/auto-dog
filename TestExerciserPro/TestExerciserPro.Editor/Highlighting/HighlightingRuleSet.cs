@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A highlighting rule set describes a set of spans that are valid at a given code location.

@@ -20,9 +20,9 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Formatted text (not normal document text).

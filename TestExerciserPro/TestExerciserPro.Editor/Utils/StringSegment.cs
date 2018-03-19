@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Represents a string with a segment.

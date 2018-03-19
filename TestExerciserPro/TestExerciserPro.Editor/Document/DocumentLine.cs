@@ -23,7 +23,7 @@ using System.Globalization;
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Represents a line inside a <see cref="TextDocument"/>.

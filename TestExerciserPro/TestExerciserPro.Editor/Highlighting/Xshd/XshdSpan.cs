@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// Specifies the type of the regex.

@@ -19,9 +19,9 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// The list box used inside the CompletionList.

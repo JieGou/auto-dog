@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Indentation.CSharp
+namespace TestExerciserPro.Editor.Indentation.CSharp
 {
 	/// <summary>
 	/// Interface used for the indentation class to access the document.

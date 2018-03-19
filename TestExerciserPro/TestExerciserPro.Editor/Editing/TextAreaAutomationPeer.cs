@@ -21,9 +21,9 @@ using System.Linq;
 using System.Windows.Automation;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	class TextAreaAutomationPeer : FrameworkElementAutomationPeer, IValueProvider, ITextProvider
 	{

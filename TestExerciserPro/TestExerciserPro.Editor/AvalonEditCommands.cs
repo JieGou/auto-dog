@@ -19,7 +19,7 @@
 using System;
 using System.Windows.Input;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// Custom commands for AvalonEdit.

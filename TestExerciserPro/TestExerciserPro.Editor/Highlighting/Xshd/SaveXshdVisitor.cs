@@ -20,7 +20,7 @@ using System;
 using System.Linq;
 using System.Xml;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// Xshd visitor implementation that saves an .xshd file as XML.

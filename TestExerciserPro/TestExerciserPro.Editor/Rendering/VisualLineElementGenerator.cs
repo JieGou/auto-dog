@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Abstract base class for generators that produce new visual line elements.

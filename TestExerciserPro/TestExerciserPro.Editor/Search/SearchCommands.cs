@@ -24,11 +24,11 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// Search commands for AvalonEdit.

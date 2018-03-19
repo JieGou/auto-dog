@@ -21,10 +21,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// The code completion window.

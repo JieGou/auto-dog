@@ -19,7 +19,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Provides immutable empty list instances.

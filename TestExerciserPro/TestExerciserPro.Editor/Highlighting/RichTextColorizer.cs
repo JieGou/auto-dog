@@ -17,10 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A colorizer that applies the highlighting from a <see cref="RichTextModel"/> to the editor.

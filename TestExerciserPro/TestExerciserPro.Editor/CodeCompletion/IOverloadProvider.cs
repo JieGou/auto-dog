@@ -22,7 +22,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// Provides the items for the OverloadViewer.

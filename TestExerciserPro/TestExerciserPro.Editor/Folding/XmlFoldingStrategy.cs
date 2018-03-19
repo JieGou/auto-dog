@@ -22,9 +22,9 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// Holds information about the start of a fold in an xml string.

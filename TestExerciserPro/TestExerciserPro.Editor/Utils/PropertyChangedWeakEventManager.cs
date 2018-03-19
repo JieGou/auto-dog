@@ -19,7 +19,7 @@
 using System;
 using System.ComponentModel;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// WeakEventManager for INotifyPropertyChanged.PropertyChanged.

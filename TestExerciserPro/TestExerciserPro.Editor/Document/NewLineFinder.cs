@@ -22,7 +22,7 @@ using System.Text;
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	static class NewLineFinder
 	{

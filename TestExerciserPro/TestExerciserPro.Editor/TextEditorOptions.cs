@@ -21,7 +21,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// A container for the text editor options.

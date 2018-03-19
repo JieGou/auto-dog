@@ -18,13 +18,13 @@
 
 using System;
 using System.Collections.Generic;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// A simple selection.

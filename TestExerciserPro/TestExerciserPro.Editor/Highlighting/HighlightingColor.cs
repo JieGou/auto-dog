@@ -23,9 +23,9 @@ using System.Security.Permissions;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A highlighting color is a set of font properties and foreground and background color.

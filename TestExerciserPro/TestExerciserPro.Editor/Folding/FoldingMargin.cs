@@ -24,11 +24,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// A margin that shows markers for foldings and allows to expand/collapse the foldings.

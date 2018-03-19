@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Provides information about the event that occured during use of snippets.

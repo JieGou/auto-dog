@@ -20,9 +20,9 @@ using System;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Contains weak event managers for the TextDocument events.

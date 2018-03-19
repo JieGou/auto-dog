@@ -20,10 +20,10 @@ using System;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #else
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 #endif
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A text section with syntax highlighting information.

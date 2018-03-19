@@ -23,12 +23,12 @@ using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
 using System.Windows.Controls;
 
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
-	/// Exposes <see cref="TestExecutePro.Editor.TextEditor"/> to automation.
+	/// Exposes <see cref="TestExerciserPro.Editor.TextEditor"/> to automation.
 	/// </summary>
 	public class TextEditorAutomationPeer : FrameworkElementAutomationPeer, IValueProvider
 	{

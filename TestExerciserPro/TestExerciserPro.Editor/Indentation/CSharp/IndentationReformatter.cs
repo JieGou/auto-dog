@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace TestExecutePro.Editor.Indentation.CSharp
+namespace TestExerciserPro.Editor.Indentation.CSharp
 {
 	sealed class IndentationSettings
 	{

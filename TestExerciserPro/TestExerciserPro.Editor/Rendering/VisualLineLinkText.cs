@@ -26,7 +26,7 @@ using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// VisualLineElement that represents a piece of text and is a clickable link.

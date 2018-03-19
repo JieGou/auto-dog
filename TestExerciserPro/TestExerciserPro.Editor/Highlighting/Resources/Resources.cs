@@ -19,7 +19,7 @@
 using System;
 using System.IO;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	static class Resources
 	{

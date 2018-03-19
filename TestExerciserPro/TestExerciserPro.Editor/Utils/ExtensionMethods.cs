@@ -24,7 +24,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Xml;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	static class ExtensionMethods
 	{

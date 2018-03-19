@@ -22,11 +22,11 @@ using System.Text;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// A section that can be folded.

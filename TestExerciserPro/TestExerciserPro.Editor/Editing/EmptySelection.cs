@@ -20,14 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
-#if NREFACTORY
-using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.Editor;
-#endif
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+
+namespace TestExerciserPro.Editor.Editing
 {
 	sealed class EmptySelection : Selection
 	{

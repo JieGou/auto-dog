@@ -17,9 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Indentation.CSharp
+namespace TestExerciserPro.Editor.Indentation.CSharp
 {
 	/// <summary>
 	/// Smart indentation for C#.

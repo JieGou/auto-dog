@@ -20,10 +20,10 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A RichTextWriter that writes into a document and RichTextModel.

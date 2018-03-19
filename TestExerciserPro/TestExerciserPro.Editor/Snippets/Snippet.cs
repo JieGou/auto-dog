@@ -17,10 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// A code snippet that can be inserted into the text editor.

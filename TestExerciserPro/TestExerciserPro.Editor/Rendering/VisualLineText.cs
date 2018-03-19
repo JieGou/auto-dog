@@ -21,10 +21,10 @@ using System.Collections.Generic;
 using System.Windows.Documents;
 using System.Windows.Media.TextFormatting;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// VisualLineElement that represents a piece of text.

@@ -21,10 +21,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Text element that is supposed to be replaced by the user.

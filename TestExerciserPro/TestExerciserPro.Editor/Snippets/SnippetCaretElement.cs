@@ -18,9 +18,9 @@
 
 using System;
 using System.Runtime.Serialization;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Sets the caret position after interactive mode has finished.

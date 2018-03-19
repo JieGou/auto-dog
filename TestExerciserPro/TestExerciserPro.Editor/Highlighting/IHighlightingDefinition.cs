@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A highlighting definition.

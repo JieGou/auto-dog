@@ -20,12 +20,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Contains predefined offset change mapping types.

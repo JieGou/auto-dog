@@ -19,7 +19,7 @@
 using System;
 using System.Text;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// Inserts the previously selected text at the selection marker.

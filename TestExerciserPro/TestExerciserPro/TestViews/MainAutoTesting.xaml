@@ -3,7 +3,8 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      xmlns:demoEditor="clr-namespace:TestExecutePro.Editor;assembly=TestExerciserPro.Editor"
+                      xmlns:demoEditor="clr-namespace:TestExerciserPro.Editor;assembly=TestExerciserPro.Editor"
+                      xmlns:demoHightlighting ="clr-namespace:TestExerciserPro.Editor.Highlighting;assembly=TestExerciserPro.Editor"
                       xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -128,8 +129,8 @@
                         <TextBlock Width="16" TextAlignment="Center">¶</TextBlock>
                     </CheckBox>
                     <ComboBox Name="highlightingComboBox"
-				SelectedItem="{Binding SyntaxHighlighting, ElementName=textEditor}"
-				ItemsSource="{Binding Source={x:Static demoEditor:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
+				SelectedItem="{Binding Syntax Highlighting, ElementName=textEditor}"
+				ItemsSource="{Binding Source={x:Static demoHightlighting:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
 				SelectionChanged="HighlightingComboBox_SelectionChanged"/>
                 </ToolBar>
                 <Grid>

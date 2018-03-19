@@ -26,14 +26,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Threading;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Handles selection of text using the mouse.

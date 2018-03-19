@@ -24,7 +24,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Creates TextFormatter instances that with the correct TextFormattingMode, if running on .NET 4.0.

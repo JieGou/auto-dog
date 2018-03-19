@@ -19,10 +19,10 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// A popup-like window that is attached to a text segment.

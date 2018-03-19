@@ -23,7 +23,7 @@ using System.Text;
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// A TextWriter implementation that directly inserts into a document.

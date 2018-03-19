@@ -22,12 +22,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Folding
+namespace TestExerciserPro.Editor.Folding
 {
 	/// <summary>
 	/// Stores a list of foldings for a specific TextView and TextDocument.

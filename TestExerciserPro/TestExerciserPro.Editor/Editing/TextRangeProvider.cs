@@ -19,11 +19,11 @@
 using System;
 using System.Windows.Automation.Provider;
 using System.Windows.Documents;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 using System.Windows.Automation.Text;
 using System.Diagnostics;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	class TextRangeProvider : ITextRangeProvider
 	{

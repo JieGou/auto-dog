@@ -19,7 +19,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A highlighting rule.

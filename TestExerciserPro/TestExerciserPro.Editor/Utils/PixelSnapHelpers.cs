@@ -20,7 +20,7 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Contains static helper methods for aligning stuff on a whole number of pixels.

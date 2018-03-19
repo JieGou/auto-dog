@@ -19,7 +19,7 @@
 using System;
 using System.Globalization;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Contains exception-throwing helper methods.

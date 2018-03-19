@@ -29,12 +29,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Folding;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Folding;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// Provides search functionality for AvalonEdit. It is displayed in the top-right corner of the TextArea.

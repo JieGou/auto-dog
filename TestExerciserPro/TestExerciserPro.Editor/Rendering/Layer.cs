@@ -21,7 +21,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Base class for known layers.

@@ -8,12 +8,12 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml;
 
-using TestExecutePro.Editor.CodeCompletion;
-using TestExecutePro.Editor.Folding;
-using TestExecutePro.Editor.Highlighting;
-using TestExecutePro.Editor.Search;
+using TestExerciserPro.Editor.CodeCompletion;
+using TestExerciserPro.Editor.Folding;
+using TestExerciserPro.Editor.Highlighting;
+using TestExerciserPro.Editor.Search;
 using Microsoft.Win32;
-using TestExecutePro;
+using TestExerciserPro;
 
 namespace TestExerciserPro.TestViews
 {
@@ -26,13 +26,13 @@ namespace TestExerciserPro.TestViews
         {
             // Load our custom highlighting definition
             IHighlightingDefinition customHighlighting;
-            using (Stream s = typeof(MainAutoTesting).Assembly.GetManifestResourceStream("TestExerciserPro.Editor.Sample.CustomHighlighting.xshd"))
+            using (Stream s = typeof(MainAutoTesting).Assembly.GetManifestResourceStream("TestExerciserPro.CustomHighlighting.xshd"))
             {
                 if (s == null)
                     throw new InvalidOperationException("Could not find embedded resource");
                 using (XmlReader reader = new XmlTextReader(s))
                 {
-                    customHighlighting = TestExecutePro.Editor.Highlighting.Xshd.
+                    customHighlighting = TestExerciserPro.Editor.Highlighting.Xshd.
                         HighlightingLoader.Load(reader, HighlightingManager.Instance);
                 }
             }
@@ -163,17 +163,17 @@ namespace TestExerciserPro.TestViews
                 {
                     case "XML":
                         foldingStrategy = new XmlFoldingStrategy();
-                        textEditor.TextArea.IndentationStrategy = new TestExecutePro.Editor.Indentation.DefaultIndentationStrategy();
+                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
                         break;
                     case "C#":
                     case "C++":
                     case "PHP":
                     case "Java":
-                        textEditor.TextArea.IndentationStrategy = new TestExecutePro.Editor.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
+                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
                         foldingStrategy = new BraceFoldingStrategy();
                         break;
                     default:
-                        textEditor.TextArea.IndentationStrategy = new TestExecutePro.Editor.Indentation.DefaultIndentationStrategy();
+                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
                         foldingStrategy = null;
                         break;
                 }

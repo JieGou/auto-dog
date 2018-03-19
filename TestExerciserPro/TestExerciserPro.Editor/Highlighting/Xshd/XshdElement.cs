@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// An element in a XSHD rule set.

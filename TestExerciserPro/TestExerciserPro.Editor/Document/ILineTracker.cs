@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Allows for low-level line tracking.

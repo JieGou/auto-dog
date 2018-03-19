@@ -20,7 +20,7 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	#if !NREFACTORY
 	/// <summary>

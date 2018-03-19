@@ -19,12 +19,12 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Represents a simple segment (Offset,Length pair) that is not automatically updated

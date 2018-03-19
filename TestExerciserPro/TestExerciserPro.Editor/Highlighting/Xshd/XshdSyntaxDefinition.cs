@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// A &lt;SyntaxDefinition&gt; element.

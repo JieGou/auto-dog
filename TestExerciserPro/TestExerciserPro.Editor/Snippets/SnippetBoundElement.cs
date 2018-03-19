@@ -18,9 +18,9 @@
 
 using System;
 using System.Windows.Documents;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// An element that binds to a <see cref="SnippetReplaceableTextElement"/> and displays the same text.

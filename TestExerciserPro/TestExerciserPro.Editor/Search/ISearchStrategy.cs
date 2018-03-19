@@ -19,9 +19,9 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// Basic interface for search algorithms.

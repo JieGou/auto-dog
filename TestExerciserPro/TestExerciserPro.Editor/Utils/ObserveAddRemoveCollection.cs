@@ -19,7 +19,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// A collection where adding and removing items causes a callback.

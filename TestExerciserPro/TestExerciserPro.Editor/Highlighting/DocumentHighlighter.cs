@@ -20,11 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
-using SpanStack = TestExecutePro.Editor.Utils.ImmutableStack<TestExecutePro.Editor.Highlighting.HighlightingSpan>;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
+using SpanStack = TestExerciserPro.Editor.Utils.ImmutableStack<TestExerciserPro.Editor.Highlighting.HighlightingSpan>;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// This class can syntax-highlight a document.

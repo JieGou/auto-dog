@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// This Interface describes a the basic Undo/Redo operation

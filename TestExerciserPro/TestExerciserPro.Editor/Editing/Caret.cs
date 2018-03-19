@@ -24,15 +24,12 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Threading;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
-#if NREFACTORY
-using ICSharpCode.NRefactory;
-using ICSharpCode.NRefactory.Editor;
-#endif
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Editing
+
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Helper class with caret-related methods.

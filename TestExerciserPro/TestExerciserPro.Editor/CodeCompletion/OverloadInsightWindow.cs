@@ -20,9 +20,9 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro.Editor.CodeCompletion
+namespace TestExerciserPro.Editor.CodeCompletion
 {
 	/// <summary>
 	/// Insight window that shows an OverloadViewer.

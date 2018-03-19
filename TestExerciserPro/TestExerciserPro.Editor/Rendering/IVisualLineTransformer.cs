@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Allows transforming visual line elements.

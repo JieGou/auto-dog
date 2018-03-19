@@ -31,13 +31,13 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Highlighting;
-using TestExecutePro.Editor.Rendering;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Highlighting;
+using TestExerciserPro.Editor.Rendering;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// The text editor control.

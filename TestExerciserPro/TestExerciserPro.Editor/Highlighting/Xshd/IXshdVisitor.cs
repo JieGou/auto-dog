@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Highlighting.Xshd
+namespace TestExerciserPro.Editor.Highlighting.Xshd
 {
 	/// <summary>
 	/// A visitor over the XSHD element tree.

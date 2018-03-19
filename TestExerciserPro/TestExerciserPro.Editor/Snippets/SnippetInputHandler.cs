@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	sealed class SnippetInputHandler : TextAreaStackedInputHandler
 	{

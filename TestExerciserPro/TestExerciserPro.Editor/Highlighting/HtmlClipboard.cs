@@ -21,9 +21,9 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Windows;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Allows copying HTML text to the clipboard.

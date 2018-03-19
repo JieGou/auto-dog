@@ -19,7 +19,7 @@
 using System;
 using System.Windows.Media;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Background renderers draw in the background of a known layer.

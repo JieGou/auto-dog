@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// A node in the text view's height tree.

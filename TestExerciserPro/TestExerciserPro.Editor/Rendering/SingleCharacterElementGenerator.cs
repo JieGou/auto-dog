@@ -22,10 +22,10 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	// This class is internal because it does not need to be accessed by the user - it can be configured using TextEditorOptions.
 	

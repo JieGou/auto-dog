@@ -20,7 +20,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// RichTextWriter implementation that writes plain text only

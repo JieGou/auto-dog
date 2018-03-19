@@ -20,7 +20,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 
-namespace TestExecutePro.Editor.Search
+namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
 	/// A button that opens a drop-down menu when clicked.

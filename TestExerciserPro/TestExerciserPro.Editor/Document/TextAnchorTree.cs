@@ -20,12 +20,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// A tree of TextAnchorNodes.

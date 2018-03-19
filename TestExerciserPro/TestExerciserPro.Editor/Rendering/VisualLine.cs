@@ -19,7 +19,7 @@
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Media;
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,9 +27,9 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media.TextFormatting;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// Represents a visual line in the document.

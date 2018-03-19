@@ -19,7 +19,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Wraps exceptions that occur during drag'n'drop.

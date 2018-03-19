@@ -29,11 +29,11 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
-using TestExecutePro.Editor;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	class ImeSupport
 	{

@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Interface for resolvers that can solve cross-definition references.

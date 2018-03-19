@@ -20,7 +20,7 @@ using System;
 using System.Windows;
 using System.Windows.Media.TextFormatting;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	sealed class VisualLineTextParagraphProperties : TextParagraphProperties
 	{

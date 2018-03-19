@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Maintains a list of delayed events to raise.

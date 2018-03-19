@@ -22,7 +22,7 @@ using System.Runtime.Serialization;
 
 using System.Text;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	// Class used to represent a node in the tree.
 	// There are three types of nodes:

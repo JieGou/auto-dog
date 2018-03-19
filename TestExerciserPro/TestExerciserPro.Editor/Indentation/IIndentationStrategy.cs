@@ -16,10 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 using System;
 
-namespace TestExecutePro.Editor.Indentation
+namespace TestExerciserPro.Editor.Indentation
 {
 	/// <summary>
 	/// Strategy how the text editor handles indentation when new lines are inserted.

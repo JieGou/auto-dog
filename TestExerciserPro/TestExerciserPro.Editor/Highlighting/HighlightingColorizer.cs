@@ -20,10 +20,10 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// A colorizes that interprets a highlighting rule set and colors the document accordingly.

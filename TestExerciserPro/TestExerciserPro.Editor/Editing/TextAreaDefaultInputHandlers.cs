@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Contains the predefined input handlers.

@@ -19,7 +19,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Indicates that the highlighting definition that was tried to load was invalid.

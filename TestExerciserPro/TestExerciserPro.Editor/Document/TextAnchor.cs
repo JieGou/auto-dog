@@ -17,10 +17,10 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.Utils;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Utils;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// The TextAnchor class references an offset (a position between two characters).

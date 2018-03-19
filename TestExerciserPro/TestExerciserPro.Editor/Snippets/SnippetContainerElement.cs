@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Documents;
 
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 
-namespace TestExecutePro.Editor.Snippets
+namespace TestExerciserPro.Editor.Snippets
 {
 	/// <summary>
 	/// A snippet element that has sub-elements.

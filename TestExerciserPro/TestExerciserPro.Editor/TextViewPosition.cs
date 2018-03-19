@@ -18,9 +18,9 @@
 
 using System;
 using System.Globalization;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// Represents a text location with a visual column.

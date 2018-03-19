@@ -16,10 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using TestExecutePro.Editor.Utils;
+using TestExerciserPro.Editor.Utils;
 using System;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// Contains weak event managers for <see cref="ITextEditorComponent"/>.

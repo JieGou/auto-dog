@@ -18,11 +18,11 @@
 
 using System;
 using System.ComponentModel;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
-using TestExecutePro.Editor.Rendering;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
+using TestExerciserPro.Editor.Rendering;
 
-namespace TestExecutePro.Editor
+namespace TestExerciserPro.Editor
 {
 	/// <summary>
 	/// Represents a text editor control (<see cref="TextEditor"/>, <see cref="TextArea"/>

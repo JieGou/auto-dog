@@ -23,7 +23,7 @@ using System.Windows.Documents;
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Document
+namespace TestExerciserPro.Editor.Document
 {
 	/// <summary>
 	/// Specifies the mode for getting the next caret position.

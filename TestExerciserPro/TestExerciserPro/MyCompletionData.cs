@@ -17,11 +17,11 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using TestExecutePro.Editor.CodeCompletion;
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Editing;
+using TestExerciserPro.Editor.CodeCompletion;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
 
-namespace TestExecutePro
+namespace TestExerciserPro
 {
 	/// <summary>
 	/// Implements AvalonEdit ICompletionData interface to provide the entries in the completion drop down.

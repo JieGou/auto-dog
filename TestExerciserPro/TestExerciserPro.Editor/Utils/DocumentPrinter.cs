@@ -21,10 +21,10 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Documents;
 
-using TestExecutePro.Editor.Document;
-using TestExecutePro.Editor.Highlighting;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Highlighting;
 
-namespace TestExecutePro.Editor.Utils
+namespace TestExerciserPro.Editor.Utils
 {
 	/// <summary>
 	/// Helps printing documents.

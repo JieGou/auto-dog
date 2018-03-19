@@ -18,12 +18,12 @@
 
 using System;
 using System.Collections.Generic;
-using TestExecutePro.Editor.Document;
+using TestExerciserPro.Editor.Document;
 #if NREFACTORY
 using ICSharpCode.NRefactory.Editor;
 #endif
 
-namespace TestExecutePro.Editor.Editing
+namespace TestExerciserPro.Editor.Editing
 {
 	/// <summary>
 	/// Implementation for <see cref="IReadOnlySectionProvider"/> that stores the segments

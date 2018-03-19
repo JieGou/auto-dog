@@ -18,7 +18,7 @@
 
 using System;
 
-namespace TestExecutePro.Editor.Rendering
+namespace TestExerciserPro.Editor.Rendering
 {
 	/// <summary>
 	/// An enum that specifies the possible Y positions that can be returned by VisualLine.GetVisualPosition.

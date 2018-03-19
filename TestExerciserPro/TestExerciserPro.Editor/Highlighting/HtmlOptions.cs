@@ -24,7 +24,7 @@ using System.Net;
 using System.Web;
 #endif
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Holds options for converting text to HTML.

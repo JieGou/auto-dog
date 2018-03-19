@@ -20,7 +20,7 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace TestExecutePro.Editor.Highlighting
+namespace TestExerciserPro.Editor.Highlighting
 {
 	/// <summary>
 	/// Converts between strings and <see cref="IHighlightingDefinition"/> by treating the string as the definition name
