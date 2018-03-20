@@ -37,7 +37,7 @@ using TestExerciserPro.Editor.Rendering;
 namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
-	/// Provides search functionality for AvalonEdit. It is displayed in the top-right corner of the TextArea.
+	/// Provides search functionality for demoEdit. It is displayed in the top-right corner of the TextArea.
 	/// </summary>
 	public class SearchPanel : Control
 	{

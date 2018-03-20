@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- syntaxdefinition for PHP 2001 by Chad Smith & Mike Krueger -->
-<!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
+<!-- converted to demoEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name ="PHP" extensions = ".php" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" exampleText="// comment" />
 	<Color name="String" foreground="Blue" exampleText="$text = &quot;Hello, World!&quot;" />

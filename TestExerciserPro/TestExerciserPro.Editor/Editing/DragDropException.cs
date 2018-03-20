@@ -24,7 +24,7 @@ namespace TestExerciserPro.Editor.Editing
 	/// <summary>
 	/// Wraps exceptions that occur during drag'n'drop.
 	/// Exceptions during drag'n'drop might
-	/// get swallowed by WPF/COM, so AvalonEdit catches them and re-throws them later
+	/// get swallowed by WPF/COM, so demoEdit catches them and re-throws them later
 	/// wrapped in a DragDropException.
 	/// </summary>
 	[Serializable()]

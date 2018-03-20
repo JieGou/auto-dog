@@ -78,7 +78,7 @@ namespace TestExerciserPro.Editor
 		}
 		
 		#if !DOTNET4
-		void SetCurrentValue(DependencyProperty property, object value)
+		private new void SetCurrentValue(DependencyProperty property, object value)
 		{
 			SetValue(property, value);
 		}

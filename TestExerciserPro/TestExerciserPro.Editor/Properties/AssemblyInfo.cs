@@ -1,6 +1,11 @@
-﻿using System.Reflection;
+﻿#region Using directives
+using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Markup;
+#endregion
 
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
@@ -13,6 +18,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: NeutralResourcesLanguage("en-US")]
+
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
 //对 COM 组件不可见。  如果需要从 COM 访问此程序集中的类型，
@@ -34,3 +42,15 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+//补充
+[assembly: XmlnsPrefix("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "demoEdit")]
+
+[assembly: XmlnsDefinition("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "TestExerciserPro.Editor")]
+[assembly: XmlnsDefinition("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "TestExerciserPro.Editor.Editing")]
+[assembly: XmlnsDefinition("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "TestExerciserPro.Editor.Rendering")]
+[assembly: XmlnsDefinition("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "TestExerciserPro.Editor.Highlighting")]
+[assembly: XmlnsDefinition("https://github.com/devdiv/TestExecutePro/tree/master/TestExerciserPro/TestExerciserPro.Editor", "TestExerciserPro.Editor.Search")]
+
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2243:AttributeStringLiteralsShouldParseCorrectly",
+    Justification = "AssemblyInformational Version does not need to be a parsable version")]

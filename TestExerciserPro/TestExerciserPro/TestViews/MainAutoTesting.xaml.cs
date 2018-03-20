@@ -13,14 +13,13 @@ using TestExerciserPro.Editor.Folding;
 using TestExerciserPro.Editor.Highlighting;
 using TestExerciserPro.Editor.Search;
 using Microsoft.Win32;
-using TestExerciserPro;
 
 namespace TestExerciserPro.TestViews
 {
     /// <summary>
     /// MainAutoTesting.xaml 的交互逻辑
     /// </summary>
-    public partial class MainAutoTesting
+    public partial class MainAutoTesting:Window
     {
         public MainAutoTesting()
         {

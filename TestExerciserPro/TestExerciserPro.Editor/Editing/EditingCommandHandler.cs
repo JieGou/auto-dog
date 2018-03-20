@@ -75,20 +75,20 @@ namespace TestExerciserPro.Editor.Editing
 			CommandBindings.Add(new CommandBinding(ApplicationCommands.Cut, OnCut, CanCutOrCopy));
 			CommandBindings.Add(new CommandBinding(ApplicationCommands.Paste, OnPaste, CanPaste));
 			
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ToggleOverstrike, OnToggleOverstrike));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.DeleteLine, OnDeleteLine));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ToggleOverstrike, OnToggleOverstrike));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.DeleteLine, OnDeleteLine));
 			
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.RemoveLeadingWhitespace, OnRemoveLeadingWhitespace));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.RemoveTrailingWhitespace, OnRemoveTrailingWhitespace));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertToUppercase, OnConvertToUpperCase));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertToLowercase, OnConvertToLowerCase));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertToTitleCase, OnConvertToTitleCase));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.InvertCase, OnInvertCase));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertTabsToSpaces, OnConvertTabsToSpaces));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertSpacesToTabs, OnConvertSpacesToTabs));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertLeadingTabsToSpaces, OnConvertLeadingTabsToSpaces));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.ConvertLeadingSpacesToTabs, OnConvertLeadingSpacesToTabs));
-			CommandBindings.Add(new CommandBinding(AvalonEditCommands.IndentSelection, OnIndentSelection));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.RemoveLeadingWhitespace, OnRemoveLeadingWhitespace));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.RemoveTrailingWhitespace, OnRemoveTrailingWhitespace));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertToUppercase, OnConvertToUpperCase));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertToLowercase, OnConvertToLowerCase));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertToTitleCase, OnConvertToTitleCase));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.InvertCase, OnInvertCase));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertTabsToSpaces, OnConvertTabsToSpaces));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertSpacesToTabs, OnConvertSpacesToTabs));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertLeadingTabsToSpaces, OnConvertLeadingTabsToSpaces));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.ConvertLeadingSpacesToTabs, OnConvertLeadingSpacesToTabs));
+			CommandBindings.Add(new CommandBinding(demoEditCommands.IndentSelection, OnIndentSelection));
 			
 			TextAreaDefaultInputHandler.WorkaroundWPFMemoryLeak(InputBindings);
 		}

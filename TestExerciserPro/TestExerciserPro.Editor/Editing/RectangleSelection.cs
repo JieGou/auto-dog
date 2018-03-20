@@ -388,7 +388,7 @@ namespace TestExerciserPro.Editor.Editing
 		/// <summary>
 		/// Gets the name of the entry in the DataObject that signals rectangle selections.
 		/// </summary>
-		public const string RectangularSelectionDataType = "AvalonEditRectangularSelection";
+		public const string RectangularSelectionDataType = "demoEditRectangularSelection";
 		
 		/// <inheritdoc/>
 		public override System.Windows.DataObject CreateDataObject(TextArea textArea)

@@ -31,7 +31,7 @@ using TestExerciserPro.Editor.Rendering;
 namespace TestExerciserPro.Editor.Search
 {
 	/// <summary>
-	/// Search commands for AvalonEdit.
+	/// Search commands for demoEdit.
 	/// </summary>
 	public static class SearchCommands
 	{

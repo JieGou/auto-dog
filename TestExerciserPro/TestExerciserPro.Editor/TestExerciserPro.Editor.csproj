@@ -293,28 +293,33 @@
     <EmbeddedResource Include="Highlighting\Resources\XmlDoc.xshd" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CodeCompletion\CompletionList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CodeCompletion\InsightWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Search\DropDownButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Search\SearchPanel.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TextEditor.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\CodeAnalysisDictionary.xml" />
-    <Content Include="Search\next.png" />
-    <Content Include="Search\prev.png" />
-    <Content Include="Themes\RightArrow.cur" />
+    <Resource Include="Search\next.png" />
+    <Resource Include="Search\prev.png" />
+    <Resource Include="Themes\RightArrow.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

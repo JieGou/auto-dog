@@ -22,9 +22,9 @@ using System.Windows.Input;
 namespace TestExerciserPro.Editor
 {
 	/// <summary>
-	/// Custom commands for AvalonEdit.
+	/// Custom commands for demoEdit.
 	/// </summary>
-	public static class AvalonEditCommands
+	public static class demoEditCommands
 	{
 		/// <summary>
 		/// Toggles Overstrike mode

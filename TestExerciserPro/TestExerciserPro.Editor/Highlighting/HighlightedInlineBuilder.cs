@@ -33,7 +33,7 @@ namespace TestExerciserPro.Editor.Highlighting
 	/// Later, it can build inline objects (for use with WPF TextBlock) from the commands.
 	/// </summary>
 	/// <remarks>
-	/// This class is not used in AvalonEdit - but it is useful for someone who wants to put a HighlightedLine
+	/// This class is not used in demoEdit - but it is useful for someone who wants to put a HighlightedLine
 	/// into a TextBlock.
 	/// In SharpDevelop, we use it to provide syntax highlighting inside the search results pad.
 	/// </remarks>
