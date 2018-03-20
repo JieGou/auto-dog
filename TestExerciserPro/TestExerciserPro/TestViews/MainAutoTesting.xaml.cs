@@ -8,10 +8,10 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml;
 
-using TestExerciserPro.Editor.CodeCompletion;
-using TestExerciserPro.Editor.Folding;
-using TestExerciserPro.Editor.Highlighting;
-using TestExerciserPro.Editor.Search;
+using ICSharpCode.AvalonEdit.CodeCompletion;
+using ICSharpCode.AvalonEdit.Folding;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Search;
 using Microsoft.Win32;
 
 namespace TestExerciserPro.TestViews
@@ -31,7 +31,7 @@ namespace TestExerciserPro.TestViews
                     throw new InvalidOperationException("Could not find embedded resource");
                 using (XmlReader reader = new XmlTextReader(s))
                 {
-                    customHighlighting = TestExerciserPro.Editor.Highlighting.Xshd.
+                    customHighlighting = ICSharpCode.AvalonEdit.Highlighting.Xshd.
                         HighlightingLoader.Load(reader, HighlightingManager.Instance);
                 }
             }
@@ -162,17 +162,17 @@ namespace TestExerciserPro.TestViews
                 {
                     case "XML":
                         foldingStrategy = new XmlFoldingStrategy();
-                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
+                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
                         break;
                     case "C#":
                     case "C++":
                     case "PHP":
                     case "Java":
-                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
+                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.CSharp.CSharpIndentationStrategy(textEditor.Options);
                         foldingStrategy = new BraceFoldingStrategy();
                         break;
                     default:
-                        textEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
+                        textEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
                         foldingStrategy = null;
                         break;
                 }

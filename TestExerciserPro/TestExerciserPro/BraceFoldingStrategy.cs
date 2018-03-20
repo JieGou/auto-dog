@@ -18,8 +18,8 @@
 
 using System;
 using System.Collections.Generic;
-using TestExerciserPro.Editor.Document;
-using TestExerciserPro.Editor.Folding;
+using ICSharpCode.AvalonEdit.Document;
+using ICSharpCode.AvalonEdit.Folding;
 
 namespace TestExerciserPro
 {
