@@ -51,7 +51,7 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         int clickCount = 0;
         string currentFileName;
-        TextEditor currentTextEditor;
+        static TextEditor currentTextEditor;
 
         void openFileClick(object sender, RoutedEventArgs e)
         {
@@ -79,9 +79,10 @@ namespace TestExerciserPro.IViews.AutoTesting
             foldingUpdateTimer.Tick += delegate { UpdateFoldings(myEditor); };
             foldingUpdateTimer.Start();
             layOutAnc.Content = myEditor;
-            layOutPane.Children.Add(layOutAnc);
+            layOutPane.Children.Add(layOutAnc);           
+            layOutAnc.IsActive = true;
             currentTextEditor = myEditor;
-            layOutAnc.IsActive = true;           
+            highlightingComboBox.Text = currentTextEditor.SyntaxHighlighting.Name;
         }
 
         void saveFileClick(object sender, EventArgs e)
@@ -133,8 +134,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             if (e.Text == ".")
             {
                 // open code completion after the user has pressed dot:
-                var myEditor = sender as TextEditor;
-                completionWindow = new CompletionWindow(myEditor.TextArea);
+                completionWindow = new CompletionWindow(currentTextEditor.TextArea);
                 // provide AvalonEdit with the data:
                 IList<ICompletionData> data = completionWindow.CompletionList.CompletionData;
                 data.Add(new MyCompletionData("Item1"));
