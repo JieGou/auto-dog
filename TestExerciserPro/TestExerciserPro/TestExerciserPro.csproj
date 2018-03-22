@@ -86,6 +86,30 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -94,85 +118,85 @@
     </ApplicationDefinition>
     <Compile Include="BraceFoldingStrategy.cs" />
     <Compile Include="MyCompletionData.cs" />
-    <Compile Include="TestViews\MainAutoTesting.xaml.cs">
+    <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainBugManager.xaml.cs">
+    <Compile Include="IViews\MainBugManager.xaml.cs">
       <DependentUpon>MainBugManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainCaseManager.xaml.cs">
+    <Compile Include="IViews\MainCaseManager.xaml.cs">
       <DependentUpon>MainCaseManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainInterface.xaml.cs">
+    <Compile Include="IViews\MainInterface.xaml.cs">
       <DependentUpon>MainInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainMind.xaml.cs">
+    <Compile Include="IViews\MainMind.xaml.cs">
       <DependentUpon>MainMind.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainNoteBook.xaml.cs">
+    <Compile Include="IViews\MainNoteBook.xaml.cs">
       <DependentUpon>MainNoteBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainPackageManager.xaml.cs">
+    <Compile Include="IViews\MainPackageManager.xaml.cs">
       <DependentUpon>MainPackageManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainPerformance.xaml.cs">
+    <Compile Include="IViews\MainPerformance.xaml.cs">
       <DependentUpon>MainPerformance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\ButtonsExample.xaml.cs">
+    <Compile Include="IViews\ButtonsExample.xaml.cs">
       <DependentUpon>ButtonsExample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\ColorExample.xaml.cs">
+    <Compile Include="IViews\ColorExample.xaml.cs">
       <DependentUpon>ColorExample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\CustomDialogExample.xaml.cs">
+    <Compile Include="IViews\CustomDialogExample.xaml.cs">
       <DependentUpon>CustomDialogExample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\DataGridExamples.xaml.cs">
+    <Compile Include="IViews\DataGridExamples.xaml.cs">
       <DependentUpon>DataGridExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\DateExamples.xaml.cs">
+    <Compile Include="IViews\DateExamples.xaml.cs">
       <DependentUpon>DateExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\HamburgerMenuCreatorsUpdate.xaml.cs">
+    <Compile Include="IViews\HamburgerMenuCreatorsUpdate.xaml.cs">
       <DependentUpon>HamburgerMenuCreatorsUpdate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\HamburgerMenuDefault.xaml.cs">
+    <Compile Include="IViews\HamburgerMenuDefault.xaml.cs">
       <DependentUpon>HamburgerMenuDefault.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\HamburgerMenuSample.xaml.cs">
+    <Compile Include="IViews\HamburgerMenuSample.xaml.cs">
       <DependentUpon>HamburgerMenuSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainProjectManager.xaml.cs">
+    <Compile Include="IViews\MainProjectManager.xaml.cs">
       <DependentUpon>MainProjectManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainTaskManager.xaml.cs">
+    <Compile Include="IViews\MainTaskManager.xaml.cs">
       <DependentUpon>MainTaskManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\MainUserManager.xaml.cs">
+    <Compile Include="IViews\MainUserManager.xaml.cs">
       <DependentUpon>MainUserManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\OtherExamples.xaml.cs">
+    <Compile Include="IViews\OtherExamples.xaml.cs">
       <DependentUpon>OtherExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\ProgressBars.xaml.cs">
+    <Compile Include="IViews\ProgressBars.xaml.cs">
       <DependentUpon>ProgressBars.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\SelectionExamples.xaml.cs">
+    <Compile Include="IViews\SelectionExamples.xaml.cs">
       <DependentUpon>SelectionExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\Sliders.xaml.cs">
+    <Compile Include="IViews\Sliders.xaml.cs">
       <DependentUpon>Sliders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\SplitViewExamples.xaml.cs">
+    <Compile Include="IViews\SplitViewExamples.xaml.cs">
       <DependentUpon>SplitViewExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\TabControlExamples.xaml.cs">
+    <Compile Include="IViews\TabControlExamples.xaml.cs">
       <DependentUpon>TabControlExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\TextExamples.xaml.cs">
+    <Compile Include="IViews\TextExamples.xaml.cs">
       <DependentUpon>TextExamples.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestViews\TilesExample.xaml.cs">
+    <Compile Include="IViews\TilesExample.xaml.cs">
       <DependentUpon>TilesExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuRipple\MenuRipple.xaml.cs">
@@ -191,139 +215,139 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
-    <Page Include="TestViews\MainAutoTesting.xaml">
+    <Page Include="IViews\AutoTesting\MainAutoTesting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainBugManager.xaml">
+    <Page Include="IViews\MainBugManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainCaseManager.xaml">
+    <Page Include="IViews\MainCaseManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainInterface.xaml">
+    <Page Include="IViews\MainInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainMind.xaml">
+    <Page Include="IViews\MainMind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainNoteBook.xaml">
+    <Page Include="IViews\MainNoteBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainPackageManager.xaml">
+    <Page Include="IViews\MainPackageManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainPerformance.xaml">
+    <Page Include="IViews\MainPerformance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\ButtonsExample.xaml">
+    <Page Include="IViews\ButtonsExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\ColorExample.xaml">
+    <Page Include="IViews\ColorExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\CustomDialogExample.xaml">
+    <Page Include="IViews\CustomDialogExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\DataGridExamples.xaml">
+    <Page Include="IViews\DataGridExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\DateExamples.xaml">
+    <Page Include="IViews\DateExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\HamburgerMenuCreatorsUpdate.xaml">
+    <Page Include="IViews\HamburgerMenuCreatorsUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\HamburgerMenuDefault.xaml">
+    <Page Include="IViews\HamburgerMenuDefault.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\HamburgerMenuSample.xaml">
+    <Page Include="IViews\HamburgerMenuSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainProjectManager.xaml">
+    <Page Include="IViews\MainProjectManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainTaskManager.xaml">
+    <Page Include="IViews\MainTaskManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\MainUserManager.xaml">
+    <Page Include="IViews\MainUserManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\OtherExamples.xaml">
+    <Page Include="IViews\OtherExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\ProgressBars.xaml">
+    <Page Include="IViews\ProgressBars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\SelectionExamples.xaml">
+    <Page Include="IViews\SelectionExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\Sliders.xaml">
+    <Page Include="IViews\Sliders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\SplitViewExamples.xaml">
+    <Page Include="IViews\SplitViewExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\TabControlExamples.xaml">
+    <Page Include="IViews\TabControlExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\TextExamples.xaml">
+    <Page Include="IViews\TextExamples.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestViews\TilesExample.xaml">
+    <Page Include="IViews\TilesExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestWindows\CleanWindowDemo.xaml">
+    <Page Include="IWindows\CleanWindowDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\DynamicFlyout.xaml">
+    <Page Include="IWindows\DynamicFlyout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\FlyoutDemo.xaml">
+    <Page Include="IWindows\FlyoutDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\InteropDemo.xaml">
+    <Page Include="IWindows\InteropDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\ShowcaseFlyout.xaml">
+    <Page Include="IWindows\ShowcaseFlyout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\SizeToContentDemo.xaml">
+    <Page Include="IWindows\SizeToContentDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TestWindows\VSDemo.xaml">
+    <Page Include="IWindows\VSDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -351,13 +375,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TestWindows\CleanWindowDemo.xaml.cs" />
-    <Compile Include="TestWindows\DynamicFlyout.xaml.cs" />
-    <Compile Include="TestWindows\FlyoutDemo.xaml.cs" />
-    <Compile Include="TestWindows\InteropDemo.xaml.cs" />
-    <Compile Include="TestWindows\ShowcaseFlyout.xaml.cs" />
-    <Compile Include="TestWindows\SizeToContentDemo.xaml.cs" />
-    <Compile Include="TestWindows\VSDemo.xaml.cs" />
+    <Compile Include="IWindows\CleanWindowDemo.xaml.cs" />
+    <Compile Include="IWindows\DynamicFlyout.xaml.cs" />
+    <Compile Include="IWindows\FlyoutDemo.xaml.cs" />
+    <Compile Include="IWindows\InteropDemo.xaml.cs" />
+    <Compile Include="IWindows\ShowcaseFlyout.xaml.cs" />
+    <Compile Include="IWindows\SizeToContentDemo.xaml.cs" />
+    <Compile Include="IWindows\VSDemo.xaml.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -429,17 +453,16 @@
   <ItemGroup>
     <Resource Include="MainIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="TestViews\Images\Copy.png" />
-    <Resource Include="TestViews\Images\Cut.png" />
-    <Resource Include="TestViews\Images\Delete.png" />
-    <Resource Include="TestViews\Images\Open.png" />
-    <Resource Include="TestViews\Images\Paste.png" />
-    <Resource Include="TestViews\Images\Redo.png" />
-    <Resource Include="TestViews\Images\Save.png" />
-    <Resource Include="TestViews\Images\Undo.png" />
-    <Resource Include="TestViews\Images\WordWrap.png" />
+    <Resource Include="IViews\AutoTesting\Images\Copy.png" />
+    <Resource Include="IViews\AutoTesting\Images\Cut.png" />
+    <Resource Include="IViews\AutoTesting\Images\Delete.png" />
+    <Resource Include="IViews\AutoTesting\Images\Open.png" />
+    <Resource Include="IViews\AutoTesting\Images\Paste.png" />
+    <Resource Include="IViews\AutoTesting\Images\Redo.png" />
+    <Resource Include="IViews\AutoTesting\Images\Save.png" />
+    <Resource Include="IViews\AutoTesting\Images\Undo.png" />
+    <Resource Include="IViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

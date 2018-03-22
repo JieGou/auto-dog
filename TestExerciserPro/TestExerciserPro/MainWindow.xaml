@@ -5,12 +5,12 @@
                       xmlns:Dialog="clr-namespace:TestExerciserPro.UI.Controls.Dialogs;assembly=TestExerciserPro.UI"
                       xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                      xmlns:TestViews="clr-namespace:TestExerciserPro.TestViews"
+                      xmlns:IViews="clr-namespace:TestExerciserPro.IViews"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       Title="测试管理平台"
-                      Width="900"
-                      Height="600"
+                      Width="1440"
+                      Height="900"
                       Dialog:DialogParticipation.Register="{Binding}"
                       d:DataContext="{d:DesignInstance TestExerciserPro:MainWindowViewModel}"
                       d:DesignHeight="600"
@@ -228,43 +228,43 @@
 
         <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="1">
             <TabItem Header="buttons">
-                <TestViews:ButtonsExample DataContext="{Binding}" />
+                <IViews:ButtonsExample DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="text">
-                <TestViews:TextExamples DataContext="{Binding}" />
+                <IViews:TextExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="dates">
-                <TestViews:DateExamples DataContext="{Binding}" />
+                <IViews:DateExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="selection">
-                <TestViews:SelectionExamples DataContext="{Binding}" />
+                <IViews:SelectionExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="sliders">
-                <TestViews:Sliders DataContext="{Binding}" />
+                <IViews:Sliders DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="progress">
-                <TestViews:ProgressBars DataContext="{Binding}" />
+                <IViews:ProgressBars DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="splitview">
-                <TestViews:SplitViewExamples DataContext="{Binding}" />
+                <IViews:SplitViewExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="hamburger">
-                <TestViews:HamburgerMenuSample DataContext="{Binding}" />
+                <IViews:HamburgerMenuSample DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="tabcontrol">
-                <TestViews:TabControlExamples DataContext="{Binding}" />
+                <IViews:TabControlExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="datagrid">
-                <TestViews:DataGridExamples DataContext="{Binding}" />
+                <IViews:DataGridExamples DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="tiles">
-                <TestViews:TilesExample DataContext="{Binding}" />
+                <IViews:TilesExample DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="colors">
-                <TestViews:ColorExample DataContext="{Binding}" />
+                <IViews:ColorExample DataContext="{Binding}" />
             </TabItem>
             <TabItem Header="others">
-                <TestViews:OtherExamples DataContext="{Binding}" />
+                <IViews:OtherExamples DataContext="{Binding}" />
             </TabItem>
         </Controls:MetroAnimatedSingleRowTabControl>
 

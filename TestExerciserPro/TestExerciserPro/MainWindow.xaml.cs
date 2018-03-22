@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TestExerciserPro.UI.Controls;
 using TestExerciserPro.UI.Controls.Dialogs;
-using TestExerciserPro.TestWindows;
+using TestExerciserPro.IWindows;
 
 namespace TestExerciserPro
 {

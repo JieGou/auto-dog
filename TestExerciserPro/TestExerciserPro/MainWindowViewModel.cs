@@ -14,7 +14,7 @@ using TestExerciserPro.Models;
 using System.Windows.Input;
 using TestExerciserPro.UI.Controls;
 using TestExerciserPro.UI.Controls.Dialogs;
-using TestExerciserPro.TestViews;
+using TestExerciserPro.IViews;
 using NHotkey;
 using NHotkey.Wpf;
 
