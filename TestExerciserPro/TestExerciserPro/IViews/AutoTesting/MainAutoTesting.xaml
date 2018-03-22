@@ -149,11 +149,9 @@
                 <xcad:LayoutRoot x:Name="_layoutRoot">
                     <xcad:LayoutPanel Orientation="Horizontal">
                         <xcad:LayoutAnchorablePane DockWidth="200">
-                            <xcad:LayoutAnchorable ContentId="properties" Title="Properties" CanHide="False" CanClose="False"
+                            <xcad:LayoutAnchorable ContentId="solution" Title="解决方案" CanHide="True" CanClose="True"
                                             AutoHideWidth="240"
                               >
-                                <xctk:PropertyGrid NameColumnWidth="110"
-                        SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"/>
                             </xcad:LayoutAnchorable>
                         </xcad:LayoutAnchorablePane>
                         <xcad:LayoutDocumentPaneGroup >
@@ -171,7 +169,7 @@
                                         <s:String>Alarm 3</s:String>
                                     </ListBox>
                                 </xcad:LayoutAnchorable>
-                                <xcad:LayoutAnchorable ContentId="journal" Title="Journal" >
+                                <xcad:LayoutAnchorable ContentId="journal" Title="日记" >
                                     <RichTextBox>
                                         <FlowDocument>
                                             <Paragraph FontSize="14" FontFamily="Segoe">
@@ -190,10 +188,10 @@
                     <xcad:LayoutRoot.LeftSide>
                         <xcad:LayoutAnchorSide>
                             <xcad:LayoutAnchorGroup>
-                                <xcad:LayoutAnchorable Title="Agenda" ContentId="agenda" >
+                                <xcad:LayoutAnchorable Title="日程表" ContentId="agenda" >
                                     <TextBlock Text="Agenda Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
                                 </xcad:LayoutAnchorable>
-                                <xcad:LayoutAnchorable Title="Contacts" ContentId="contacts">
+                                <xcad:LayoutAnchorable Title="联系人" ContentId="contacts">
                                     <TextBlock Text="Contacts Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
                                 </xcad:LayoutAnchorable>
                             </xcad:LayoutAnchorGroup>
