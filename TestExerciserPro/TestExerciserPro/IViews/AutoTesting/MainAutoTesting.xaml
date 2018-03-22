@@ -1,4 +1,4 @@
-﻿<Window x:Class="TestExerciserPro.IViews.AutoTesting.MainAutoTesting"
+﻿<Controls:MetroWindow x:Class="TestExerciserPro.IViews.AutoTesting.MainAutoTesting"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
@@ -7,10 +7,14 @@
                       xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                      xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+                      xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+                      xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       Title="自动化测试" 
-                      Height="600" 
-                      Width="800"
+                      Height="900" 
+                      Width="1440"
                       WindowStartupLocation="CenterScreen"
                       >
     <DockPanel>
@@ -110,44 +114,93 @@
                 <Image Source="Images/Redo.png" Height="16"/>
             </Button>
             <Separator/>
-            <CheckBox IsChecked="{Binding ElementName=textEditor,Path=WordWrap}">
+            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=WordWrap}">
                 <Image Source="Images/WordWrap.png" Height="16"/>
             </CheckBox>
-            <CheckBox IsChecked="{Binding ElementName=textEditor,Path=ShowLineNumbers}">
+            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=ShowLineNumbers}">
                 <TextBlock Width="16" TextAlignment="Center">#</TextBlock>
             </CheckBox>
-            <CheckBox IsChecked="{Binding ElementName=textEditor,Path=Options.ShowEndOfLine}">
+            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=Options.ShowEndOfLine}">
                 <TextBlock Width="16" TextAlignment="Center">¶</TextBlock>
             </CheckBox>
             <ComboBox Name="highlightingComboBox"
-				SelectedItem="{Binding SyntaxHighlighting, ElementName=textEditor}"
+				SelectedItem="{Binding SyntaxHighlighting, Source=currentTextEditor}"
 				ItemsSource="{Binding Source={x:Static demoEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
-				SelectionChanged="HighlightingComboBox_SelectionChanged"/>
+                SelectionChanged="HighlightingComboBox_SelectionChanged"/>
         </ToolBar>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="200"/>
-            </Grid.ColumnDefinitions>
-            <demoEdit:TextEditor
-				x:Name="textEditor"
-				FontFamily="Consolas"
-				FontSize="10pt"
-				SyntaxHighlighting="C#"
-			Text="Welcome to AvalonEdit!"
-			/>
-            <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Left"/>
-            <DockPanel Grid.Column="1" Margin="4 0 0 0">
-                <ComboBox Name="propertyGridComboBox" DockPanel.Dock="Top"
-				          SelectedIndex="0" SelectionChanged="propertyGridComboBoxSelectionChanged">
-                    <ComboBoxItem>TextEditor</ComboBoxItem>
-                    <ComboBoxItem>TextArea</ComboBoxItem>
-                    <ComboBoxItem>Options</ComboBoxItem>
-                </ComboBox>
-                <WindowsFormsHost DockPanel.Dock="Right" Name="propertyGridHost">
-                    <forms:PropertyGrid x:Name="propertyGrid"/>
-                </WindowsFormsHost>
-            </DockPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <xcad:DockingManager Grid.Row="1"
+                           AllowMixedOrientation="True"
+                           BorderBrush="Black"
+                           BorderThickness="1"
+                           Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
+                <xcad:DockingManager.DocumentHeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </xcad:DockingManager.DocumentHeaderTemplate>
+                <xcad:LayoutRoot x:Name="_layoutRoot">
+                    <xcad:LayoutPanel Orientation="Horizontal">
+                        <xcad:LayoutAnchorablePane DockWidth="200">
+                            <xcad:LayoutAnchorable ContentId="properties" Title="Properties" CanHide="False" CanClose="False"
+                                            AutoHideWidth="240"
+                              >
+                                <xctk:PropertyGrid NameColumnWidth="110"
+                        SelectedObject="{Binding ElementName=_layoutRoot, Path=LastFocusedDocument.Content}"/>
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorablePane>
+                        <xcad:LayoutDocumentPaneGroup >
+                            <xcad:LayoutDocumentPane x:Name="layOutPane">
+                                <xcad:LayoutDocument ContentId="welcomePage" Title="欢迎使用">
+                                </xcad:LayoutDocument>
+                            </xcad:LayoutDocumentPane>
+                        </xcad:LayoutDocumentPaneGroup >
+                        <xcad:LayoutAnchorablePaneGroup DockWidth="125">
+                            <xcad:LayoutAnchorablePane>
+                                <xcad:LayoutAnchorable ContentId="alarms" Title="Alarms" >
+                                    <ListBox>
+                                        <s:String>Alarm 1</s:String>
+                                        <s:String>Alarm 2</s:String>
+                                        <s:String>Alarm 3</s:String>
+                                    </ListBox>
+                                </xcad:LayoutAnchorable>
+                                <xcad:LayoutAnchorable ContentId="journal" Title="Journal" >
+                                    <RichTextBox>
+                                        <FlowDocument>
+                                            <Paragraph FontSize="14" FontFamily="Segoe">
+                                                This is the content of the Journal Pane.
+                                                <LineBreak/>
+                                                A
+                                                <Bold>RichTextBox</Bold> has been added here
+                                            </Paragraph>
+                                        </FlowDocument>
+                                    </RichTextBox>
+                                </xcad:LayoutAnchorable>
+                            </xcad:LayoutAnchorablePane>
+                        </xcad:LayoutAnchorablePaneGroup>
+                    </xcad:LayoutPanel>
+
+                    <xcad:LayoutRoot.LeftSide>
+                        <xcad:LayoutAnchorSide>
+                            <xcad:LayoutAnchorGroup>
+                                <xcad:LayoutAnchorable Title="Agenda" ContentId="agenda" >
+                                    <TextBlock Text="Agenda Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
+                                </xcad:LayoutAnchorable>
+                                <xcad:LayoutAnchorable Title="Contacts" ContentId="contacts">
+                                    <TextBlock Text="Contacts Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
+                                </xcad:LayoutAnchorable>
+                            </xcad:LayoutAnchorGroup>
+                        </xcad:LayoutAnchorSide>
+                    </xcad:LayoutRoot.LeftSide>
+                </xcad:LayoutRoot>
+            </xcad:DockingManager>
         </Grid>
     </DockPanel>
-</Window>
+</Controls:MetroWindow>
