@@ -16,6 +16,8 @@ using Microsoft.Win32;
 using Xceed.Wpf.AvalonDock;
 using Xceed.Wpf.AvalonDock.Layout;
 using System.Windows.Media.Imaging;
+using System.ComponentModel;
+using TestExerciserPro.UI.Controls.Dialogs;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
@@ -24,7 +26,25 @@ namespace TestExerciserPro.IViews.AutoTesting
     /// </summary>
     public partial class MainAutoTesting
     {
+
+        #region 变量
+        int clickCount = 0;
+        string currentFileName;
+        static TextEditor currentTextEditor;
+        FoldingManager foldingManager;
+        object foldingStrategy;
+        CompletionWindow completionWindow;
+        private bool closeMe;
+
+        #endregion
         public MainAutoTesting()
+        { 
+            InitializeComponent();
+            HightLightingDocument();
+
+        }
+
+        private void HightLightingDocument()
         {
             // Load our custom highlighting definition
             IHighlightingDefinition customHighlighting;
@@ -41,19 +61,10 @@ namespace TestExerciserPro.IViews.AutoTesting
             // and register it in the HighlightingManager
             HighlightingManager.Instance.RegisterHighlighting("Custom Highlighting", new string[] { ".cool" }, customHighlighting);
 
-
-            InitializeComponent();
-#if DOTNET4
-			this.SetValue(TextOptions.TextFormattingModeProperty, TextFormattingMode.Display);
-#endif
-         
         }
 
-        int clickCount = 0;
-        string currentFileName;
-        static TextEditor currentTextEditor;
 
-        void openFileClick(object sender, RoutedEventArgs e)
+        private void openFileClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.CheckFileExists = true;
@@ -64,10 +75,11 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
-        private void addDocumentItems(object sender, RoutedEventArgs e)
+        public void addDocumentItems(object sender, RoutedEventArgs e)
         {
             clickCount++;
-            LayoutAnchorable layOutAnc = new LayoutAnchorable() { Title = Path.GetFileName(currentFileName) };
+            LayoutAnchorable layOutAnc = new LayoutAnchorable() { Title = Path.GetFileName(currentFileName),CanClose = true};
+            layOutAnc.Closing += layOutAnc_DocumentClosing;
             TextEditor myEditor = new TextEditor() { SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#")};
             myEditor.Load(currentFileName);
             myEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(currentFileName));
@@ -85,7 +97,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             highlightingComboBox.Text = currentTextEditor.SyntaxHighlighting.Name;
         }
 
-        void saveFileClick(object sender, EventArgs e)
+        private void saveFileClick(object sender, EventArgs e)
         {
             if (currentFileName == null)
             {
@@ -103,7 +115,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             currentTextEditor.Save(currentFileName);
         }
 
-        void propertyGridComboBoxSelectionChanged(object sender, RoutedEventArgs e)
+        private void propertyGridComboBoxSelectionChanged(object sender, RoutedEventArgs e)
         {
             //if (propertyGrid == null)
             //    return;
@@ -121,15 +133,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             //}
         }
 
-        CompletionWindow completionWindow;
-
-
-        /// <summary>
-        /// 自动提示功能
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
+        private void textEditor_TextArea_TextEntered(object sender, TextCompositionEventArgs e)
         {
             if (e.Text == ".")
             {
@@ -149,7 +153,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
-        void textEditor_TextArea_TextEntering(object sender, TextCompositionEventArgs e)
+        private void textEditor_TextArea_TextEntering(object sender, TextCompositionEventArgs e)
         {
             if (e.Text.Length > 0 && completionWindow != null)
             {
@@ -164,10 +168,8 @@ namespace TestExerciserPro.IViews.AutoTesting
         }
 
         #region Folding
-        FoldingManager foldingManager;
-        object foldingStrategy;
-
-        void HighlightingComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+        private void HighlightingComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (currentTextEditor != null)
             {
@@ -213,7 +215,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             }          
         }
 
-        void UpdateFoldings(TextEditor textEditor)
+        private void UpdateFoldings(TextEditor textEditor)
         {
             if (foldingStrategy is BraceFoldingStrategy)
             {
@@ -225,6 +227,59 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
         #endregion
+
+        private async void layOutAnc_DocumentClosing(object sender, CancelEventArgs e)
+        {
+            var currentLayOutAnc = sender as LayoutAnchorable;
+            if (e.Cancel) return;
+
+            // we want manage the closing itself!
+            e.Cancel = !this.closeMe;
+            // yes we want now really close the window
+            if (this.closeMe) return;
+
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "退出",
+                NegativeButtonText = "取消",
+                AnimateShow = true,
+                AnimateHide = false
+            };
+            var result = await this.ShowMessageAsync(
+                "关闭当前文档？",
+                "确定要关闭当前文档吗？关闭后，未保存内容将会丢失！",
+                MessageDialogStyle.AffirmativeAndNegative, mySettings);
+
+                this.closeMe = result == MessageDialogResult.Affirmative;
+
+            if (this.closeMe) currentLayOutAnc.Close();
+        }
+
+        private async void MainAutoTesting_WinddowClosing(object sender, CancelEventArgs e)
+        {
+            if (e.Cancel) return;
+
+            // we want manage the closing itself!
+            e.Cancel = !this.closeMe;
+            // yes we want now really close the window
+            if (this.closeMe) return;
+
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "退出",
+                NegativeButtonText = "取消",
+                AnimateShow = true,
+                AnimateHide = false
+            };
+            var result = await this.ShowMessageAsync(
+                "退出窗口?",
+                "确定要退出当前窗口吗?",
+                MessageDialogStyle.AffirmativeAndNegative, mySettings);
+
+            this.closeMe = result == MessageDialogResult.Affirmative;
+
+            if (this.closeMe) this.Close();
+        }
     }
 }
 

@@ -13,8 +13,8 @@ namespace TestExerciserPro.UI.Controls.Dialogs
         {
             this.OwnerCanCloseWithDialog = false;
 
-            this.AffirmativeButtonText = "OK";
-            this.NegativeButtonText = "Cancel";
+            this.AffirmativeButtonText = "确定";
+            this.NegativeButtonText = "取消";
 
             this.ColorScheme = MetroDialogColorScheme.Theme;
             this.AnimateShow = this.AnimateHide = true;

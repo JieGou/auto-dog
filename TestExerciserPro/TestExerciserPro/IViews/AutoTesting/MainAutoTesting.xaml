@@ -9,16 +9,22 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
-                      xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       Title="自动化测试" 
                       Height="900" 
                       Width="1440"
                       WindowStartupLocation="CenterScreen"
+                      Closing="MainAutoTesting_WinddowClosing"
                       >
-    <DockPanel>
-        <Menu Height="30" DockPanel.Dock="Top">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Menu Height="30" Grid.Row="0">
             <MenuItem Header="文件(F)">
                 <MenuItem Header="新建(N)">
                     <MenuItem Header="项目"></MenuItem>
@@ -70,14 +76,16 @@
             <MenuItem Header="工具(T)"></MenuItem>
             <MenuItem Header="体系结构(C)"></MenuItem>
             <MenuItem Header="测试(S)"></MenuItem>
-            <MenuItem Header="窗口(W)"></MenuItem>
+            <MenuItem Header="窗口(W)">
+                <MenuItem Header="重置窗口布局(R)"/>
+            </MenuItem>
             <MenuItem Header="帮助(H)">
                 <MenuItem Header="查看帮助(V)...  Ctrl + F1"/>
                 <MenuItem Header="关于TestExerciserPro(A)"/>
             </MenuItem>
         </Menu>
 
-        <ToolBar Height="32" DockPanel.Dock="Top">
+        <ToolBar Height="32" Grid.Row="1">
             <ToolBar.Resources>
                 <Style TargetType="{x:Type Image}">
                     <Style.Triggers>
@@ -128,77 +136,80 @@
 				ItemsSource="{Binding Source={x:Static demoEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
                 SelectionChanged="HighlightingComboBox_SelectionChanged"/>
         </ToolBar>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <xcad:DockingManager Grid.Row="1"
-                           AllowMixedOrientation="True"
-                           BorderBrush="Black"
-                           BorderThickness="1"
-                           Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}">
-                <xcad:DockingManager.DocumentHeaderTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
-                            <TextBlock Text="{Binding Title}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </xcad:DockingManager.DocumentHeaderTemplate>
-                <xcad:LayoutRoot x:Name="_layoutRoot">
-                    <xcad:LayoutPanel Orientation="Horizontal">
-                        <xcad:LayoutAnchorablePane DockWidth="200">
-                            <xcad:LayoutAnchorable ContentId="solution" Title="解决方案" CanHide="True" CanClose="True"
-                                            AutoHideWidth="240"
-                              >
+
+        <xcad:DockingManager Name="dockManager" Grid.Row="2"
+                             AllowMixedOrientation="True"
+                             BorderBrush="Black"
+                             BorderThickness="1"
+                             Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}"
+                             
+                             >
+            <xcad:DockingManager.DocumentHeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+                        <TextBlock Text="{Binding Title}" />
+                    </StackPanel>
+                </DataTemplate>
+            </xcad:DockingManager.DocumentHeaderTemplate>
+            <xcad:LayoutRoot x:Name="_layoutRoot">
+                <xcad:LayoutPanel Orientation="Horizontal">
+                    <xcad:LayoutAnchorablePane DockWidth="200">
+                        <xcad:LayoutAnchorable ContentId="solution" Title="解决方案" CanHide="True" CanClose="True"
+                                            AutoHideWidth="240" CanFloat="True">
+                        </xcad:LayoutAnchorable>
+                    </xcad:LayoutAnchorablePane>
+                    <xcad:LayoutDocumentPaneGroup>
+                        <xcad:LayoutDocumentPane x:Name="layOutPane" >
+                            <xcad:LayoutDocument ContentId="welcomePage" Title="欢迎使用">
+                            </xcad:LayoutDocument>
+                        </xcad:LayoutDocumentPane>
+                    </xcad:LayoutDocumentPaneGroup >
+                    <xcad:LayoutAnchorablePaneGroup DockWidth="125">
+                        <xcad:LayoutAnchorablePane>
+                            <xcad:LayoutAnchorable ContentId="alarms" Title="Alarms" >
+                                <ListBox>
+                                    <s:String>Alarm 1</s:String>
+                                    <s:String>Alarm 2</s:String>
+                                    <s:String>Alarm 3</s:String>
+                                </ListBox>
+                            </xcad:LayoutAnchorable>
+                            <xcad:LayoutAnchorable ContentId="journal" Title="日记" >
+                                <RichTextBox>
+                                    <FlowDocument>
+                                        <Paragraph FontSize="14" FontFamily="Segoe">
+                                            This is the content of the Journal Pane.
+                                            <LineBreak/>
+                                            A
+                                            <Bold>RichTextBox</Bold> has been added here
+                                        </Paragraph>
+                                    </FlowDocument>
+                                </RichTextBox>
                             </xcad:LayoutAnchorable>
                         </xcad:LayoutAnchorablePane>
-                        <xcad:LayoutDocumentPaneGroup >
-                            <xcad:LayoutDocumentPane x:Name="layOutPane">
-                                <xcad:LayoutDocument ContentId="welcomePage" Title="欢迎使用">
-                                </xcad:LayoutDocument>
-                            </xcad:LayoutDocumentPane>
-                        </xcad:LayoutDocumentPaneGroup >
-                        <xcad:LayoutAnchorablePaneGroup DockWidth="125">
-                            <xcad:LayoutAnchorablePane>
-                                <xcad:LayoutAnchorable ContentId="alarms" Title="Alarms" >
-                                    <ListBox>
-                                        <s:String>Alarm 1</s:String>
-                                        <s:String>Alarm 2</s:String>
-                                        <s:String>Alarm 3</s:String>
-                                    </ListBox>
-                                </xcad:LayoutAnchorable>
-                                <xcad:LayoutAnchorable ContentId="journal" Title="日记" >
-                                    <RichTextBox>
-                                        <FlowDocument>
-                                            <Paragraph FontSize="14" FontFamily="Segoe">
-                                                This is the content of the Journal Pane.
-                                                <LineBreak/>
-                                                A
-                                                <Bold>RichTextBox</Bold> has been added here
-                                            </Paragraph>
-                                        </FlowDocument>
-                                    </RichTextBox>
-                                </xcad:LayoutAnchorable>
-                            </xcad:LayoutAnchorablePane>
-                        </xcad:LayoutAnchorablePaneGroup>
-                    </xcad:LayoutPanel>
+                    </xcad:LayoutAnchorablePaneGroup>
+                </xcad:LayoutPanel>
 
-                    <xcad:LayoutRoot.LeftSide>
-                        <xcad:LayoutAnchorSide>
-                            <xcad:LayoutAnchorGroup>
-                                <xcad:LayoutAnchorable Title="日程表" ContentId="agenda" >
-                                    <TextBlock Text="Agenda Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
-                                </xcad:LayoutAnchorable>
-                                <xcad:LayoutAnchorable Title="联系人" ContentId="contacts">
-                                    <TextBlock Text="Contacts Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
-                                </xcad:LayoutAnchorable>
-                            </xcad:LayoutAnchorGroup>
-                        </xcad:LayoutAnchorSide>
-                    </xcad:LayoutRoot.LeftSide>
-                </xcad:LayoutRoot>
-            </xcad:DockingManager>
+                <xcad:LayoutRoot.LeftSide>
+                    <xcad:LayoutAnchorSide>
+                        <xcad:LayoutAnchorGroup>
+                            <xcad:LayoutAnchorable Title="日程表" ContentId="agenda" >
+                                <TextBlock Text="Agenda Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
+                            </xcad:LayoutAnchorable>
+                            <xcad:LayoutAnchorable Title="联系人" ContentId="contacts">
+                                <TextBlock Text="Contacts Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorGroup>
+                    </xcad:LayoutAnchorSide>
+                </xcad:LayoutRoot.LeftSide>
+            </xcad:LayoutRoot>
+
+
+        </xcad:DockingManager>
+
+
+        <StatusBar Grid.Row="3">
+        </StatusBar>
+   
         </Grid>
-    </DockPanel>
 </Controls:MetroWindow>
