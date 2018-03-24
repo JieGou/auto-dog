@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TestExerciserPro.IViews.TilesExample"
+﻿<UserControl x:Class="TestExerciserPro.IViews.MainPlatfrom"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
@@ -46,7 +46,7 @@
                        FontSize="30"
                        FontWeight="Light"
                        Foreground="{DynamicResource BlackBrush}"
-                       Text="Only some Tiles in a WrapPanel" />
+                       Text="" />
 
             <WrapPanel Grid.Row="1"
                        Grid.Column="1"

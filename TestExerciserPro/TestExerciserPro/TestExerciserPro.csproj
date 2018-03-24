@@ -163,30 +163,6 @@
     <Compile Include="IViews\MainPerformance.xaml.cs">
       <DependentUpon>MainPerformance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\ButtonsExample.xaml.cs">
-      <DependentUpon>ButtonsExample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\ColorExample.xaml.cs">
-      <DependentUpon>ColorExample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\CustomDialogExample.xaml.cs">
-      <DependentUpon>CustomDialogExample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\DataGridExamples.xaml.cs">
-      <DependentUpon>DataGridExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\DateExamples.xaml.cs">
-      <DependentUpon>DateExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\HamburgerMenuCreatorsUpdate.xaml.cs">
-      <DependentUpon>HamburgerMenuCreatorsUpdate.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\HamburgerMenuDefault.xaml.cs">
-      <DependentUpon>HamburgerMenuDefault.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\HamburgerMenuSample.xaml.cs">
-      <DependentUpon>HamburgerMenuSample.xaml</DependentUpon>
-    </Compile>
     <Compile Include="IViews\MainProjectManager.xaml.cs">
       <DependentUpon>MainProjectManager.xaml</DependentUpon>
     </Compile>
@@ -196,29 +172,8 @@
     <Compile Include="IViews\MainUserManager.xaml.cs">
       <DependentUpon>MainUserManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\OtherExamples.xaml.cs">
-      <DependentUpon>OtherExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\ProgressBars.xaml.cs">
-      <DependentUpon>ProgressBars.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\SelectionExamples.xaml.cs">
-      <DependentUpon>SelectionExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\Sliders.xaml.cs">
-      <DependentUpon>Sliders.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\SplitViewExamples.xaml.cs">
-      <DependentUpon>SplitViewExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\TabControlExamples.xaml.cs">
-      <DependentUpon>TabControlExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\TextExamples.xaml.cs">
-      <DependentUpon>TextExamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IViews\TilesExample.xaml.cs">
-      <DependentUpon>TilesExample.xaml</DependentUpon>
+    <Compile Include="IViews\MainPlatfrom.xaml.cs">
+      <DependentUpon>MainPlatfrom.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuRipple\MenuRipple.xaml.cs">
       <DependentUpon>MenuRipple.xaml</DependentUpon>
@@ -268,38 +223,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\ButtonsExample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\ColorExample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\CustomDialogExample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\DataGridExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\DateExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\HamburgerMenuCreatorsUpdate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\HamburgerMenuDefault.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\HamburgerMenuSample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="IViews\MainProjectManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -312,35 +235,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\OtherExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\ProgressBars.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\SelectionExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\Sliders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\SplitViewExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\TabControlExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\TextExamples.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IViews\TilesExample.xaml">
+    <Page Include="IViews\MainPlatfrom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -226,47 +226,7 @@
             </MenuItem>
         </Menu>
 
-        <Controls:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="1">
-            <TabItem Header="buttons">
-                <IViews:ButtonsExample DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="text">
-                <IViews:TextExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="dates">
-                <IViews:DateExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="selection">
-                <IViews:SelectionExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="sliders">
-                <IViews:Sliders DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="progress">
-                <IViews:ProgressBars DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="splitview">
-                <IViews:SplitViewExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="hamburger">
-                <IViews:HamburgerMenuSample DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="tabcontrol">
-                <IViews:TabControlExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="datagrid">
-                <IViews:DataGridExamples DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="tiles">
-                <IViews:TilesExample DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="colors">
-                <IViews:ColorExample DataContext="{Binding}" />
-            </TabItem>
-            <TabItem Header="others">
-                <IViews:OtherExamples DataContext="{Binding}" />
-            </TabItem>
-        </Controls:MetroAnimatedSingleRowTabControl>
+        <IViews:MainPlatfrom DataContext="{Binding}"  Grid.Row="1"/>
 
         <StatusBar Grid.Row="2">
             <StatusBarItem>TestExerciserPro.UI DEMO Application</StatusBarItem>

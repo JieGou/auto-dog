@@ -438,35 +438,6 @@ namespace TestExerciserPro
             }
         }
 
-
-        private ICommand showCustomDialogCommand;
-
-        public ICommand ShowCustomDialogCommand
-        {
-            get
-            {
-                return this.showCustomDialogCommand ?? (this.showCustomDialogCommand = new SimpleCommand
-                {
-                    CanExecuteDelegate = x => true,
-                    ExecuteDelegate = x => RunCustomFromVm()
-                });
-            }
-        }
-
-        private async void RunCustomFromVm()
-        {
-            var customDialog = new CustomDialog() { Title = "Custom Dialog" };
-
-            var dataContext = new CustomDialogExampleContent(instance =>
-            {
-                _dialogCoordinator.HideMetroDialogAsync(this, customDialog);
-                System.Diagnostics.Debug.WriteLine(instance.FirstName);
-            });
-            customDialog.Content = new CustomDialogExample { DataContext = dataContext};
-
-            await _dialogCoordinator.ShowMetroDialogAsync(this, customDialog);
-        }
-
         public IEnumerable<string> BrushResources { get; private set; }
 
         public bool AnimateOnPositionChange
