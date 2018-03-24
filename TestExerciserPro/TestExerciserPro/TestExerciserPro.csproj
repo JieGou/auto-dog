@@ -138,36 +138,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BraceFoldingStrategy.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\PartMetadata.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\ToolBarPart.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\PartBase.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\MenuToolPart.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\MenuPart.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\IPart.cs" />
-    <Compile Include="IViews\AutoTesting\Services\OptionService.cs" />
-    <Compile Include="IViews\AutoTesting\Services\ConfigurationService.cs" />
-    <Compile Include="IViews\AutoTesting\Services\StatusBarService.cs" />
-    <Compile Include="IViews\AutoTesting\Services\ThemeService.cs" />
-    <Compile Include="IViews\AutoTesting\Util\NativeMethods.cs" />
-    <Compile Include="IViews\AutoTesting\Util\DynamicAccessEngine.cs" />
-    <Compile Include="IViews\AutoTesting\Util\BindingEngine.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Part\PartManager.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Screen\AvalonDockScreen.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Screen\AvalonDockWindowManager.cs" />
-    <Compile Include="IViews\AutoTesting\Views\Behavior.cs" />
-    <Compile Include="IViews\AutoTesting\Views\BindableToolBarTray.cs" />
-    <Compile Include="IViews\AutoTesting\Views\Converter.cs" />
-    <Compile Include="IViews\AutoTesting\Util\Extension.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\IDisplay.cs" />
-    <Compile Include="IViews\AutoTesting\Views\ImageResourceExtension.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Option\IOptionPage.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Screen\IScreenManager.cs" />
-    <Compile Include="IViews\AutoTesting\Util\PropertyObserver.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Screen\ScreenMetadata.cs" />
-    <Compile Include="IViews\AutoTesting\Services\ResourceService.cs" />
-    <Compile Include="IViews\AutoTesting\Views\StringResourceExtension.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\Screen\DockScreen.cs" />
-    <Compile Include="IViews\AutoTesting\Workbench\WorkbenchName.cs" />
     <Compile Include="MyCompletionData.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
