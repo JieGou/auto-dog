@@ -28,7 +28,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             Title = FileName;
 
             //Set the icon only for open documents (just a test)
-            IconSource = ISC.ConvertFromInvariantString(@"pack://application:,,/IViews/BugManager/Images/document.png") as ImageSource;
+            IconSource = ISC.ConvertFromInvariantString(@"pack://application:,,/IViews/AutoTesting/Images/document.png") as ImageSource;
         }
 
         public FileViewModel()
@@ -55,7 +55,7 @@ namespace TestExerciserPro.IViews.AutoTesting
                     if (File.Exists(this._filePath))
                     {
                         this._document = new TextDocument();
-                        this.HighlightDef = HighlightingManager.Instance.GetDefinition("XML");
+                        this.HighlightDef = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(value));
                         this._isDirty = false;
                         this.IsReadOnly = false;
 

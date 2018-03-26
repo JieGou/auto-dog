@@ -3,7 +3,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      xmlns:demoEdit="https://github.com/devdiv/TestExecutePro.Eidtor"
+                      xmlns:avalonEdit="https://github.com/devdiv/TestExecutePro.Eidtor"
                       xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -34,19 +34,20 @@
             <MenuItem Header="文件(F)">
                 <MenuItem Header="新建(N)">
                     <MenuItem Header="项目"></MenuItem>
-                    <MenuItem Header="文件"></MenuItem>
+                    <MenuItem Header="文件" Command="{Binding NewCommand}"/>
                 </MenuItem>
                 <MenuItem Header="打开(O)">
                     <MenuItem Header="项目"></MenuItem>
-                    <MenuItem Header="文件"></MenuItem>
+                    <MenuItem Header="文件"  Command="{Binding OpenCommand}"/>
                 </MenuItem>
                 <MenuItem Header="添加(D)">
                     <MenuItem Header="新建项目"></MenuItem>
                     <MenuItem Header="现有项目"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="关闭(C)"/>
+                <MenuItem Header="关闭(C)" Command="{Binding ActiveDocument.CloseCommand}"/>
                 <MenuItem Header="关闭解决方案(T)"/>
-                <MenuItem Header="保存(S)   Ctrl + S"/>
+                <MenuItem Header="保存(S)   Ctrl + S" Command="{Binding ActiveDocument.SaveCommand}"/>
+                <MenuItem Header="另存为(B)..." Command="{Binding ActiveDocument.SaveAsCommand}"/>
                 <MenuItem Header="全部保存(L)   Ctrl + Shift + S"/>
                 <MenuItem Header="账户设置(I)..."/>
                 <MenuItem Header="最近使用过的文件(F)"/>
@@ -83,7 +84,8 @@
             <MenuItem Header="体系结构(C)"></MenuItem>
             <MenuItem Header="测试(S)"></MenuItem>
             <MenuItem Header="窗口(W)">
-                <MenuItem Header="重置窗口布局(R)"/>
+                <MenuItem Header="保存窗口布局(S)" Command="{Binding SaveLayoutCommand, ElementName=mainWindow}"/>
+                <MenuItem Header="重置窗口布局(R)" Command="{Binding LoadLayoutCommand, ElementName=mainWindow}"/>
             </MenuItem>
             <MenuItem Header="帮助(H)">
                 <MenuItem Header="查看帮助(V)...  Ctrl + F1"/>
@@ -101,10 +103,10 @@
                     </Style.Triggers>
                 </Style>
             </ToolBar.Resources>
-            <Button Click="openFileClick">
+            <Button  Command="{Binding OpenCommand}">
                 <Image Source="Images/Open.png" Height="16"/>
             </Button>
-            <Button Click="saveFileClick">
+            <Button Command="{Binding ActiveDocument.SaveCommand}">
                 <Image Source="Images/Save.png" Height="16"/>
             </Button>
             <Separator/>
@@ -139,7 +141,7 @@
             </CheckBox>
             <ComboBox Name="highlightingComboBox"
 				SelectedItem="{Binding SyntaxHighlighting, Source=currentTextEditor}"
-				ItemsSource="{Binding Source={x:Static demoEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
+				ItemsSource="{Binding Source={x:Static avalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
                 SelectionChanged="HighlightingComboBox_SelectionChanged"/>
         </ToolBar>
 
@@ -147,15 +149,75 @@
                              AnchorablesSource="{Binding Tools}" 
                              DocumentsSource="{Binding Files}"
                              ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={StaticResource ActiveDocumentConverter}}">
-            <!--<avalonDock:DockingManager.Theme>
-                <avalonDock:AeroTheme/>
-            </avalonDock:DockingManager.Theme>-->
-
+            <xcad:DockingManager.Theme>
+                <xcad:AeroTheme/>
+            </xcad:DockingManager.Theme>
+            <xcad:DockingManager.DocumentHeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                        <!-- Show IsReadOnly Icon in document tab if that properties' present and true -->
+                        <Image Source="Images/App/DocTab/Lock-icon.png"
+                   Margin="3,0,0,0"
+                   VerticalAlignment="Center">
+                            <Image.Visibility>
+                                <PriorityBinding FallbackValue="Collapsed" >
+                                    <Binding Path="Content.IsReadOnly" Mode="OneWay" Converter="{StaticResource BoolToVisibilityConverter}" />
+                                </PriorityBinding>
+                            </Image.Visibility>
+                            <Image.ToolTip>
+                                <PriorityBinding FallbackValue="">
+                                    <Binding Path="Content.IsReadOnlyReason" Mode="OneWay" />
+                                </PriorityBinding>
+                            </Image.ToolTip>
+                        </Image>
+                    </StackPanel>
+                </DataTemplate>
+            </xcad:DockingManager.DocumentHeaderTemplate>
             <xcad:DockingManager.LayoutItemTemplateSelector>
                 <local:PanesTemplateSelector>
                     <local:PanesTemplateSelector.FileViewTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding TextContent, UpdateSourceTrigger=PropertyChanged}"/>
+                            <avalonEdit:TextEditor Document="{Binding Document, UpdateSourceTrigger=PropertyChanged}"
+                                      SyntaxHighlighting="{Binding HighlightDef}"
+									                    IsModified="{Binding Path=IsDirty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      IsReadOnly="{Binding IsReadOnly}"
+                                      >
+                                <avalonEdit:TextEditor.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Command="Cut" Header="Cut">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Cut32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Command="Copy" Header="Copy">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Copy32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Command="Paste" Header="Paste">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Paste32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Command="Delete" Header="Delete">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Delete32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Command="Undo" Header="Undo">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Undo32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Command="Redo" Header="Redo">
+                                            <MenuItem.Icon>
+                                                <Image Source="Images/App/Edit_Redo32.png" Height="16"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </avalonEdit:TextEditor.ContextMenu>
+                            </avalonEdit:TextEditor>
                         </DataTemplate>
                     </local:PanesTemplateSelector.FileViewTemplate>
                     <local:PanesTemplateSelector.FileStatsViewTemplate>
@@ -247,8 +309,6 @@
                     </xcad:LayoutAnchorSide>
                 </xcad:LayoutRoot.LeftSide>
             </xcad:LayoutRoot>
-
-
         </xcad:DockingManager>
 
 

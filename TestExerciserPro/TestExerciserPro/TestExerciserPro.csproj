@@ -399,6 +399,34 @@
     <Resource Include="IViews\AutoTesting\Images\document.png" />
     <Resource Include="IViews\AutoTesting\Images\property-blue.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Copy32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Cut32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Delete32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find16.ico" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find_Replace32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Paste32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Redo32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Edit_Undo32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_New32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_Open32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_Save16.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_Save32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_Save64.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\File_Save_All32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Help_About32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\Help_Hint32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\ShowEnter32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\ShowLineNumbers32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\ShowSpaces32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\ShowTab32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\ShowWordWrap32.png" />
+    <Resource Include="IViews\AutoTesting\Images\App\SyntaxHighlighting_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IViews\AutoTesting\Images\App\DocTab\Lock-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
