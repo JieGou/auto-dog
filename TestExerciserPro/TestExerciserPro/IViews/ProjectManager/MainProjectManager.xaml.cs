@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TestExerciserPro.IViews
+namespace TestExerciserPro.IViews.ProjectManager
 {
     /// <summary>
-    /// MainCaseManager.xaml 的交互逻辑
+    /// MainProjectManager.xaml 的交互逻辑
     /// </summary>
-    public partial class MainCaseManager : Window
+    public partial class MainProjectManager : Window
     {
-        public MainCaseManager()
+        public MainProjectManager()
         {
             InitializeComponent();
         }

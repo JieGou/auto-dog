@@ -142,34 +142,34 @@
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainBugManager.xaml.cs">
+    <Compile Include="IViews\BugManager\MainBugManager.xaml.cs">
       <DependentUpon>MainBugManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainCaseManager.xaml.cs">
+    <Compile Include="IViews\CaseManager\MainCaseManager.xaml.cs">
       <DependentUpon>MainCaseManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainInterface.xaml.cs">
+    <Compile Include="IViews\InterfaceTesting\MainInterface.xaml.cs">
       <DependentUpon>MainInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainMind.xaml.cs">
+    <Compile Include="IViews\MindMap\MainMind.xaml.cs">
       <DependentUpon>MainMind.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainNoteBook.xaml.cs">
+    <Compile Include="IViews\NoteBook\MainNoteBook.xaml.cs">
       <DependentUpon>MainNoteBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainPackageManager.xaml.cs">
+    <Compile Include="IViews\PackageManager\MainPackageManager.xaml.cs">
       <DependentUpon>MainPackageManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainPerformance.xaml.cs">
+    <Compile Include="IViews\Performance\MainPerformance.xaml.cs">
       <DependentUpon>MainPerformance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainProjectManager.xaml.cs">
+    <Compile Include="IViews\ProjectManager\MainProjectManager.xaml.cs">
       <DependentUpon>MainProjectManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainTaskManager.xaml.cs">
+    <Compile Include="IViews\TaskManager\MainTaskManager.xaml.cs">
       <DependentUpon>MainTaskManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainUserManager.xaml.cs">
+    <Compile Include="IViews\UserManager\MainUserManager.xaml.cs">
       <DependentUpon>MainUserManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="IViews\MainPlatfrom.xaml.cs">
@@ -195,43 +195,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainBugManager.xaml">
+    <Page Include="IViews\BugManager\MainBugManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainCaseManager.xaml">
+    <Page Include="IViews\CaseManager\MainCaseManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainInterface.xaml">
+    <Page Include="IViews\InterfaceTesting\MainInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainMind.xaml">
+    <Page Include="IViews\MindMap\MainMind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainNoteBook.xaml">
+    <Page Include="IViews\NoteBook\MainNoteBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainPackageManager.xaml">
+    <Page Include="IViews\PackageManager\MainPackageManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainPerformance.xaml">
+    <Page Include="IViews\Performance\MainPerformance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainProjectManager.xaml">
+    <Page Include="IViews\ProjectManager\MainProjectManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainTaskManager.xaml">
+    <Page Include="IViews\TaskManager\MainTaskManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainUserManager.xaml">
+    <Page Include="IViews\UserManager\MainUserManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

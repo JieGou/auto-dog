@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TestExerciserPro.IViews
+namespace TestExerciserPro.IViews.InterfaceTesting
 {
     /// <summary>
-    /// MainPackageManager.xaml 的交互逻辑
+    /// MainInterface.xaml 的交互逻辑
     /// </summary>
-    public partial class MainPackageManager : Window
+    public partial class MainInterface : Window
     {
-        public MainPackageManager()
+        public MainInterface()
         {
             InitializeComponent();
         }

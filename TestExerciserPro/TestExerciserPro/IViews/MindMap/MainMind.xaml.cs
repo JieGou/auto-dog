@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TestExerciserPro.IViews
+namespace TestExerciserPro.IViews.MindMap
 {
     /// <summary>
-    /// MainPerformance.xaml 的交互逻辑
+    /// MainMind.xaml 的交互逻辑
     /// </summary>
-    public partial class MainPerformance : Window
+    public partial class MainMind : Window
     {
-        public MainPerformance()
+        public MainMind()
         {
             InitializeComponent();
         }

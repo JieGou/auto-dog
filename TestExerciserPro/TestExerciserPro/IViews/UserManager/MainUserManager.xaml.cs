@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TestExerciserPro.IViews
+namespace TestExerciserPro.IViews.UserManager
 {
     /// <summary>
-    /// MainNoteBook.xaml 的交互逻辑
+    /// MainUserManager.xaml 的交互逻辑
     /// </summary>
-    public partial class MainNoteBook : Window
+    public partial class MainUserManager : Window
     {
-        public MainNoteBook()
+        public MainUserManager()
         {
             InitializeComponent();
         }
