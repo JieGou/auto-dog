@@ -60,12 +60,8 @@
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Binaries\ICSharpCode.AvalonEdit.dll</HintPath>
-    </Reference>
-    <Reference Include="JetBrains.Annotations, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.Annotations.11.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks, Version=2.1.0.15, Culture=neutral, processorArchitecture=MSIL">
@@ -138,6 +134,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BraceFoldingStrategy.cs" />
+    <Compile Include="IViews\BugManager\ActiveDocumentConverter.cs" />
+    <Compile Include="IViews\BugManager\FileStatsViewModel.cs" />
+    <Compile Include="IViews\BugManager\FileViewModel.cs" />
+    <Compile Include="IViews\BugManager\LayoutInitializer.cs" />
+    <Compile Include="IViews\BugManager\PanesStyleSelector.cs" />
+    <Compile Include="IViews\BugManager\PanesTemplateSelector.cs" />
+    <Compile Include="IViews\BugManager\PaneViewModel.cs" />
+    <Compile Include="IViews\BugManager\RelayCommand.cs" />
+    <Compile Include="IViews\BugManager\ToolViewModel.cs" />
+    <Compile Include="IViews\BugManager\ViewModelBase.cs" />
+    <Compile Include="IViews\BugManager\Workspace.cs" />
     <Compile Include="MyCompletionData.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
@@ -349,6 +356,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.AvalonEdit\TestExerciserPro.Editor.csproj">
+      <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
+      <Name>TestExerciserPro.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestExerciserPro.UI\TestExerciserPro.UI.csproj">
       <Project>{c3a73d36-a384-4cbd-8962-a0fd4ad749f8}</Project>
       <Name>TestExerciserPro.UI</Name>
@@ -380,7 +391,10 @@
     <Resource Include="IViews\AutoTesting\Images\Undo.png" />
     <Resource Include="IViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="IViews\BugManager\Images\document.png" />
+    <Resource Include="IViews\BugManager\Images\property-blue.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

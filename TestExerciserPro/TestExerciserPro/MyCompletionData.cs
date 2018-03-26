@@ -17,9 +17,9 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using ICSharpCode.AvalonEdit.CodeCompletion;
-using ICSharpCode.AvalonEdit.Document;
-using ICSharpCode.AvalonEdit.Editing;
+using TestExerciserPro.Editor.CodeCompletion;
+using TestExerciserPro.Editor.Document;
+using TestExerciserPro.Editor.Editing;
 
 namespace TestExerciserPro
 {

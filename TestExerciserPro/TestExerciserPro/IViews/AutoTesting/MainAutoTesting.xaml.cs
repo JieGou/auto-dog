@@ -7,11 +7,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml;
-using ICSharpCode.AvalonEdit;
-using ICSharpCode.AvalonEdit.CodeCompletion;
-using ICSharpCode.AvalonEdit.Folding;
-using ICSharpCode.AvalonEdit.Highlighting;
-using ICSharpCode.AvalonEdit.Search;
+using TestExerciserPro.Editor;
+using TestExerciserPro.Editor.CodeCompletion;
+using TestExerciserPro.Editor.Folding;
+using TestExerciserPro.Editor.Highlighting;
+using TestExerciserPro.Editor.Search;
 using Microsoft.Win32;
 using Xceed.Wpf.AvalonDock;
 using Xceed.Wpf.AvalonDock.Layout;
@@ -54,7 +54,7 @@ namespace TestExerciserPro.IViews.AutoTesting
                     throw new InvalidOperationException("Could not find embedded resource");
                 using (XmlReader reader = new XmlTextReader(s))
                 {
-                    customHighlighting = ICSharpCode.AvalonEdit.Highlighting.Xshd.
+                    customHighlighting = TestExerciserPro.Editor.Highlighting.Xshd.
                         HighlightingLoader.Load(reader, HighlightingManager.Instance);
                 }
             }
@@ -77,24 +77,24 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         public void addDocumentItems(object sender, RoutedEventArgs e)
         {
-            clickCount++;
-            LayoutAnchorable layOutAnc = new LayoutAnchorable() { Title = Path.GetFileName(currentFileName),CanClose = true};
-            layOutAnc.Closing += layOutAnc_DocumentClosing;
-            TextEditor myEditor = new TextEditor() { SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#")};
-            myEditor.Load(currentFileName);
-            myEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(currentFileName));
-            myEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
-            myEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
-            SearchPanel.Install(myEditor);
-            DispatcherTimer foldingUpdateTimer = new DispatcherTimer();
-            foldingUpdateTimer.Interval = TimeSpan.FromSeconds(2);
-            foldingUpdateTimer.Tick += delegate { UpdateFoldings(myEditor); };
-            foldingUpdateTimer.Start();
-            layOutAnc.Content = myEditor;
-            layOutPane.Children.Add(layOutAnc);           
-            layOutAnc.IsActive = true;
-            currentTextEditor = myEditor;
-            highlightingComboBox.Text = currentTextEditor.SyntaxHighlighting.Name;
+            //clickCount++;
+            //LayoutAnchorable layOutAnc = new LayoutAnchorable() { Title = Path.GetFileName(currentFileName),CanClose = true};
+            //layOutAnc.Closing += layOutAnc_DocumentClosing;
+            //TextEditor myEditor = new TextEditor() { SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("C#")};
+            //myEditor.Load(currentFileName);
+            //myEditor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(currentFileName));
+            //myEditor.TextArea.TextEntering += textEditor_TextArea_TextEntering;
+            //myEditor.TextArea.TextEntered += textEditor_TextArea_TextEntered;
+            //SearchPanel.Install(myEditor);
+            //DispatcherTimer foldingUpdateTimer = new DispatcherTimer();
+            //foldingUpdateTimer.Interval = TimeSpan.FromSeconds(2);
+            //foldingUpdateTimer.Tick += delegate { UpdateFoldings(myEditor); };
+            //foldingUpdateTimer.Start();
+            //layOutAnc.Content = myEditor;
+            //layOutPane.Children.Add(layOutAnc);           
+            //layOutAnc.IsActive = true;
+            //currentTextEditor = myEditor;
+            //highlightingComboBox.Text = currentTextEditor.SyntaxHighlighting.Name;
         }
 
         private void saveFileClick(object sender, EventArgs e)
@@ -183,17 +183,17 @@ namespace TestExerciserPro.IViews.AutoTesting
                     {
                         case "XML":
                             foldingStrategy = new XmlFoldingStrategy();
-                            currentTextEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
+                            currentTextEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
                             break;
                         case "C#":
                         case "C++":
                         case "PHP":
                         case "Java":
-                            currentTextEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.CSharp.CSharpIndentationStrategy(currentTextEditor.Options);
+                            currentTextEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.CSharp.CSharpIndentationStrategy(currentTextEditor.Options);
                             foldingStrategy = new BraceFoldingStrategy();
                             break;
                         default:
-                            currentTextEditor.TextArea.IndentationStrategy = new ICSharpCode.AvalonEdit.Indentation.DefaultIndentationStrategy();
+                            currentTextEditor.TextArea.IndentationStrategy = new TestExerciserPro.Editor.Indentation.DefaultIndentationStrategy();
                             foldingStrategy = null;
                             break;
                     }

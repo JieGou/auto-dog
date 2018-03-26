@@ -108,7 +108,7 @@
             <Button Click="LaunchFlyoutDemo"
                     Content="项目管理"
                     ToolTip="Flyouts demo window" />
-            <Button Click="LaunchIcons"
+            <Button Click="LaunchMainBugManager"
                     Content="缺陷管理"
                     ToolTip="All MahApp icons" />
             <Button Click="LaunchVisualStudioDemo"

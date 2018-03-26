@@ -118,6 +118,11 @@ namespace TestExerciserPro
             flyoutDemo.Launch();
         }
 
+        private void LaunchMainBugManager(object sender, RoutedEventArgs e)
+        {
+            new IViews.BugManager.MainBugManager() { Owner = this }.Show();
+        }
+
         private void LaunchIcons(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/MahApps/MahApps.Metro.IconPacks");
