@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Xceed.Wpf.AvalonDock.Layout;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     class LayoutInitializer : ILayoutUpdateStrategy
     {

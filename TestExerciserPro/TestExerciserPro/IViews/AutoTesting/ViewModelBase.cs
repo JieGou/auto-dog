@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     class ViewModelBase : INotifyPropertyChanged
     {

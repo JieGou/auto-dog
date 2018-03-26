@@ -35,6 +35,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonDock, Version=1.3.3600.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
       <HintPath>..\packages\AvalonDock-1.x.1.3.3600.2\lib\net40\AvalonDock.dll</HintPath>
@@ -133,19 +140,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BraceFoldingStrategy.cs" />
-    <Compile Include="IViews\BugManager\ActiveDocumentConverter.cs" />
-    <Compile Include="IViews\BugManager\FileStatsViewModel.cs" />
-    <Compile Include="IViews\BugManager\FileViewModel.cs" />
-    <Compile Include="IViews\BugManager\LayoutInitializer.cs" />
-    <Compile Include="IViews\BugManager\PanesStyleSelector.cs" />
-    <Compile Include="IViews\BugManager\PanesTemplateSelector.cs" />
-    <Compile Include="IViews\BugManager\PaneViewModel.cs" />
-    <Compile Include="IViews\BugManager\RelayCommand.cs" />
-    <Compile Include="IViews\BugManager\ToolViewModel.cs" />
-    <Compile Include="IViews\BugManager\ViewModelBase.cs" />
-    <Compile Include="IViews\BugManager\Workspace.cs" />
-    <Compile Include="MyCompletionData.cs" />
+    <Compile Include="IViews\AutoTesting\ActiveDocumentConverter.cs" />
+    <Compile Include="IViews\AutoTesting\FileStatsViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\FileViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\LayoutInitializer.cs" />
+    <Compile Include="IViews\AutoTesting\PanesStyleSelector.cs" />
+    <Compile Include="IViews\AutoTesting\PanesTemplateSelector.cs" />
+    <Compile Include="IViews\AutoTesting\PaneViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\RelayCommand.cs" />
+    <Compile Include="IViews\AutoTesting\ToolViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModelBase.cs" />
+    <Compile Include="IViews\AutoTesting\Workspace.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
@@ -182,6 +187,7 @@
     <Compile Include="IViews\MainPlatfrom.xaml.cs">
       <DependentUpon>MainPlatfrom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IWindows\FlyoutDemo.xaml.cs" />
     <Compile Include="MenuRipple\MenuRipple.xaml.cs">
       <DependentUpon>MenuRipple.xaml</DependentUpon>
     </Compile>
@@ -300,7 +306,6 @@
     </Compile>
     <Compile Include="IWindows\CleanWindowDemo.xaml.cs" />
     <Compile Include="IWindows\DynamicFlyout.xaml.cs" />
-    <Compile Include="IWindows\FlyoutDemo.xaml.cs" />
     <Compile Include="IWindows\InteropDemo.xaml.cs" />
     <Compile Include="IWindows\ShowcaseFlyout.xaml.cs" />
     <Compile Include="IWindows\SizeToContentDemo.xaml.cs" />
@@ -344,7 +349,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="IViews\AutoTesting\CustomHighlighting.xshd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -392,8 +396,8 @@
     <Resource Include="IViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\BugManager\Images\document.png" />
-    <Resource Include="IViews\BugManager\Images\property-blue.png" />
+    <Resource Include="IViews\AutoTesting\Images\document.png" />
+    <Resource Include="IViews\AutoTesting\Images\property-blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

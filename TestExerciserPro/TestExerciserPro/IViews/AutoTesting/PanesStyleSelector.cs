@@ -21,7 +21,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     class PanesStyleSelector : StyleSelector
     {

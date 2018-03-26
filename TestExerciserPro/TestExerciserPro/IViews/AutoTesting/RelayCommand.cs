@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     internal class RelayCommand : ICommand
     {

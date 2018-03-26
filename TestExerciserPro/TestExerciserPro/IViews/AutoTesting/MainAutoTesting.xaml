@@ -9,6 +9,7 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+                      xmlns:local="clr-namespace:TestExerciserPro.IViews.AutoTesting"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       Title="自动化测试" 
@@ -17,6 +18,11 @@
                       WindowStartupLocation="CenterScreen"
                       Closing="MainAutoTesting_WinddowClosing"
                       >
+
+    <Window.Resources>
+        <local:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
+        <xcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -138,20 +144,58 @@
         </ToolBar>
 
         <xcad:DockingManager Name="dockManager" Grid.Row="2"
-                             AllowMixedOrientation="True"
-                             BorderBrush="Black"
-                             BorderThickness="1"
-                             Theme="{Binding ElementName=_themeCombo, Path=SelectedItem.Tag}"
-                             
-                             >
-            <xcad:DockingManager.DocumentHeaderTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
-                        <TextBlock Text="{Binding Title}" />
-                    </StackPanel>
-                </DataTemplate>
-            </xcad:DockingManager.DocumentHeaderTemplate>
+                             AnchorablesSource="{Binding Tools}" 
+                             DocumentsSource="{Binding Files}"
+                             ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={StaticResource ActiveDocumentConverter}}">
+            <!--<avalonDock:DockingManager.Theme>
+                <avalonDock:AeroTheme/>
+            </avalonDock:DockingManager.Theme>-->
+
+            <xcad:DockingManager.LayoutItemTemplateSelector>
+                <local:PanesTemplateSelector>
+                    <local:PanesTemplateSelector.FileViewTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding TextContent, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.FileViewTemplate>
+                    <local:PanesTemplateSelector.FileStatsViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding FileSize}"/>
+                                <TextBlock Text="{Binding LastModified}"/>
+                                <TextBox Text="test"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.FileStatsViewTemplate>
+                </local:PanesTemplateSelector>
+            </xcad:DockingManager.LayoutItemTemplateSelector>
+            <xcad:DockingManager.LayoutItemContainerStyleSelector>
+                <local:PanesStyleSelector>
+                    <local:PanesStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type xcad:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                        </Style>
+                    </local:PanesStyleSelector.ToolStyle>
+                    <local:PanesStyleSelector.FileStyle>
+                        <Style TargetType="{x:Type xcad:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                            <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                        </Style>
+                    </local:PanesStyleSelector.FileStyle>
+                </local:PanesStyleSelector>
+            </xcad:DockingManager.LayoutItemContainerStyleSelector>
+            <xcad:DockingManager.LayoutUpdateStrategy>
+                <local:LayoutInitializer/>
+            </xcad:DockingManager.LayoutUpdateStrategy>
+
             <xcad:LayoutRoot x:Name="_layoutRoot">
                 <xcad:LayoutPanel Orientation="Horizontal">
                     <xcad:LayoutAnchorablePane DockWidth="200">

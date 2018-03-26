@@ -22,7 +22,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     class FileStatsViewModel : ToolViewModel
     {
@@ -34,7 +34,7 @@ namespace TestExerciserPro.IViews.BugManager
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/IViews/BugManager/Images/property-blue.png");
+            bi.UriSource = new Uri("pack://application:,,/IViews/AutoTesting/Images/property-blue.png");
             bi.EndInit();
             IconSource = bi;
         }

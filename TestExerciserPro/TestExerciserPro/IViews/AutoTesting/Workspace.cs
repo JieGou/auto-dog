@@ -25,7 +25,7 @@ using System.IO;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
 
-namespace TestExerciserPro.IViews.BugManager
+namespace TestExerciserPro.IViews.AutoTesting
 {
     class Workspace : ViewModelBase
     {
