@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
-        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:avalonEdit="https://github.com/devdiv/TestExecutePro.Eidtor"
         xmlns:local="clr-namespace:TestExerciserPro.IViews.BugManager"
         mc:Ignorable="d"
         Title="MainBugManager"

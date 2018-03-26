@@ -356,7 +356,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ICSharpCode.AvalonEdit\TestExerciserPro.Editor.csproj">
+    <ProjectReference Include="..\TestExerciserPro.Editor\TestExerciserPro.Editor.csproj">
       <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
       <Name>TestExerciserPro.Editor</Name>
     </ProjectReference>

@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>TestExerciserPro.Editor.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>TestExerciserPro.Editor.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <RunCodeAnalysis>False</RunCodeAnalysis>
@@ -447,7 +447,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Highlighting\Resources\CSS-Mode.xshd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="TestExerciserPro.Editor.pfx" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Search\next.png" />
     <Resource Include="Search\prev.png" />
