@@ -17,13 +17,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Microsoft.Win32;
+//using System.Windows.Forms;
 using System.IO;
-using System.Windows;
-using Xceed.Wpf.AvalonDock.Layout;
+using TestExerciserPro.UI.Controls.Dialogs;
+using TestExerciserPro.UI.Controls;
 using TestExerciserPro.Editor.Document;
 
 namespace TestExerciserPro.IViews.AutoTesting
@@ -189,16 +189,8 @@ namespace TestExerciserPro.IViews.AutoTesting
         {
             if (fileToClose.IsDirty)
             {
-                var res = MessageBox.Show(string.Format("需要将更改保存到文件'{0}'吗?", fileToClose.FileName), "提示信息：", MessageBoxButton.YesNoCancel);
-                if (res == MessageBoxResult.Cancel)
-                    return;
-                if (res == MessageBoxResult.Yes)
-                {
-                    Save(fileToClose);
-                }
+                ShowMessageDialog(MainAutoTesting.AutoTestingWindow, fileToClose);
             }
-
-            _files.Remove(fileToClose);
         }
 
         internal void Save(FileViewModel fileToSave, bool saveAsFlag = false)
@@ -207,14 +199,37 @@ namespace TestExerciserPro.IViews.AutoTesting
             {
                 var dlg = new SaveFileDialog();
                 if (dlg.ShowDialog().GetValueOrDefault())
+                {
                     fileToSave.FilePath = dlg.SafeFileName;
+                    File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
+                    ActiveDocument.IsDirty = false;
+                }
             }
-
-            File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
-            ActiveDocument.IsDirty = false;
         }
 
+        private async void ShowMessageDialog(MetroWindow window,FileViewModel fileToClose)
+        {
+            // This demo runs on .Net 4.0, but we're using the Microsoft.Bcl.Async package so we have async/await support
+            // The package is only used by the demo and not a dependency of the library!
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "保存",
+                NegativeButtonText = "不保存",
+                FirstAuxiliaryButtonText = "关闭",
+                ColorScheme = window.MetroDialogOptions.ColorScheme
+            };
 
+            MessageDialogResult result = await window.ShowMessageAsync("提示信息", "确定要保存当前文档吗？",
+                MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary, mySettings);
+
+
+            if (result == MessageDialogResult.FirstAuxiliary)
+                return;
+            else if(result == MessageDialogResult.Affirmative)
+                Save(fileToClose);
+            else if(result == MessageDialogResult.Negative)
+                _files.Remove(fileToClose);
+        }
 
     }
 }

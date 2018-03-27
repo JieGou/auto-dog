@@ -14,13 +14,14 @@ using Xceed.Wpf.AvalonDock.Layout;
 using System.ComponentModel;
 using TestExerciserPro.UI.Controls.Dialogs;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
+using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
     /// <summary>
     /// MainAutoTesting.xaml 的交互逻辑
     /// </summary>
-    public partial class MainAutoTesting
+    public partial class MainAutoTesting :MetroWindow
     {
 
         #region 变量
@@ -31,12 +32,13 @@ namespace TestExerciserPro.IViews.AutoTesting
         object foldingStrategy;
         CompletionWindow completionWindow;
         private bool closeMe;
+        public static MetroWindow AutoTestingWindow;
 
         #endregion
         public MainAutoTesting()
         {
             InitializeComponent();
-
+            AutoTestingWindow = this;
             this.DataContext = Workspace.This;
 
             this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
