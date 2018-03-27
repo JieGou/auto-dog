@@ -141,9 +141,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="IViews\AutoTesting\ActiveDocumentConverter.cs" />
+    <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
     <Compile Include="IViews\AutoTesting\FileStatsViewModel.cs" />
     <Compile Include="IViews\AutoTesting\FileViewModel.cs" />
     <Compile Include="IViews\AutoTesting\LayoutInitializer.cs" />
+    <Compile Include="IViews\AutoTesting\MyCompletionData.cs" />
     <Compile Include="IViews\AutoTesting\PanesStyleSelector.cs" />
     <Compile Include="IViews\AutoTesting\PanesTemplateSelector.cs" />
     <Compile Include="IViews\AutoTesting\PaneViewModel.cs" />

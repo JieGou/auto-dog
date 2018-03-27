@@ -24,6 +24,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
+using TestExerciserPro.Editor.Document;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
@@ -144,7 +145,7 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         private void OnNew(object parameter)
         {
-            _files.Add(new FileViewModel());
+            _files.Add(new FileViewModel(){ Document = new TextDocument() });
             ActiveDocument = _files.Last();
         }
 
