@@ -21,7 +21,7 @@ using TestExerciserPro.Editor.CodeCompletion;
 using TestExerciserPro.Editor.Document;
 using TestExerciserPro.Editor.Editing;
 
-namespace TestExerciserPro
+namespace TestExerciserPro.IViews.AutoTesting
 {
 	/// <summary>
 	/// Implements AvalonEdit ICompletionData interface to provide the entries in the completion drop down.
