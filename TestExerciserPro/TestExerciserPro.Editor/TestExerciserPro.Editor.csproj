@@ -448,7 +448,8 @@
     <EmbeddedResource Include="Highlighting\Resources\CSS-Mode.xshd" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Highlighting\Resources\Python-Mode.xshd" />
+    <EmbeddedResource Include="Highlighting\Resources\MarkDown-Mode.xshd" />
+    <EmbeddedResource Include="Highlighting\Resources\Python-Mode.xshd" />
     <None Include="TestExerciserPro.Editor.pfx" />
   </ItemGroup>
   <ItemGroup>
