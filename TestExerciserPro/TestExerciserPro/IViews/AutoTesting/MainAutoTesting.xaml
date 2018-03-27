@@ -68,6 +68,8 @@
             </MenuItem>
             <MenuItem Header="视图(V)">
                 <MenuItem Header="类视图(A)  Ctrl + Shift + C"/>
+                <MenuItem Header="解决方案资源管理器(P)  Ctrl + Alt + L" IsChecked="{Binding Solution.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="属性窗口(W)  F4" IsChecked="{Binding FileStats.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
             </MenuItem>
             <MenuItem Header="项目(P)">
                 <MenuItem Header="添加项目(P)...  Ctrl + Shift + N"/>
@@ -75,8 +77,8 @@
                 <MenuItem Header="添加文件(P)..."/>
             </MenuItem>
 
-            <MenuItem Header="生成"></MenuItem>
-            <MenuItem Header="调试"></MenuItem>
+            <MenuItem Header="生成(B)"></MenuItem>
+            <MenuItem Header="调试(D)"></MenuItem>
             <MenuItem Header="团队(M)">
                 <MenuItem Header="管理连接(N)..."/>
             </MenuItem>
@@ -130,19 +132,15 @@
                 <Image Source="Images/Redo.png" Height="16"/>
             </Button>
             <Separator/>
-            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=WordWrap}">
+            <CheckBox IsChecked="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type avalonEdit:TextEditor}},Path=ShowLineNumbers}">
                 <Image Source="Images/WordWrap.png" Height="16"/>
             </CheckBox>
-            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=ShowLineNumbers}">
+            <CheckBox IsChecked="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type avalonEdit:TextEditor}},Path=ShowLineNumbers}">
                 <TextBlock Width="16" TextAlignment="Center">#</TextBlock>
             </CheckBox>
-            <CheckBox IsChecked="{Binding Source=currentTextEditor,Path=Options.ShowEndOfLine}">
+            <CheckBox IsChecked="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type avalonEdit:TextEditor}},Path=Options.ShowEndOfLine}">
                 <TextBlock Width="16" TextAlignment="Center">¶</TextBlock>
             </CheckBox>
-            <ComboBox Name="highlightingComboBox"
-				SelectedItem="{Binding SyntaxHighlighting, Source=currentTextEditor}"
-				ItemsSource="{Binding Source={x:Static avalonEdit:HighlightingManager.Instance}, Path=HighlightingDefinitions}"
-                SelectionChanged="HighlightingComboBox_SelectionChanged"/>
         </ToolBar>
 
         <xcad:DockingManager Name="dockManager" Grid.Row="2"
@@ -178,39 +176,40 @@
                 <local:PanesTemplateSelector>
                     <local:PanesTemplateSelector.FileViewTemplate>
                         <DataTemplate>
-                            <avalonEdit:TextEditor Document="{Binding Document, UpdateSourceTrigger=PropertyChanged}"
+                            <avalonEdit:TextEditor Name="myEditor"
+                                      Document="{Binding Document, UpdateSourceTrigger=PropertyChanged}"
                                       SyntaxHighlighting="{Binding HighlightDef}"
-									                    IsModified="{Binding Path=IsDirty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+									  IsModified="{Binding Path=IsDirty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       >
                                 <avalonEdit:TextEditor.ContextMenu>
                                     <ContextMenu>
-                                        <MenuItem Command="Cut" Header="Cut">
+                                        <MenuItem Command="Cut" Header="剪切">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Cut32.png" Height="16"/>
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                        <MenuItem Command="Copy" Header="Copy">
+                                        <MenuItem Command="Copy" Header="复制">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Copy32.png" Height="16"/>
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                        <MenuItem Command="Paste" Header="Paste">
+                                        <MenuItem Command="Paste" Header="粘贴">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Paste32.png" Height="16"/>
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                        <MenuItem Command="Delete" Header="Delete">
+                                        <MenuItem Command="Delete" Header="删除">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Delete32.png" Height="16"/>
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                        <MenuItem Command="Undo" Header="Undo">
+                                        <MenuItem Command="Undo" Header="撤销">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Undo32.png" Height="16"/>
                                             </MenuItem.Icon>
                                         </MenuItem>
-                                        <MenuItem Command="Redo" Header="Redo">
+                                        <MenuItem Command="Redo" Header="重做">
                                             <MenuItem.Icon>
                                                 <Image Source="Images/App/Edit_Redo32.png" Height="16"/>
                                             </MenuItem.Icon>
@@ -229,6 +228,15 @@
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.FileStatsViewTemplate>
+                    <local:PanesTemplateSelector.SolutionViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TreeView x:Name="mySolution">
+                                    <TreeViewItem Header="sss"/>
+                                </TreeView>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.SolutionViewTemplate>
                 </local:PanesTemplateSelector>
             </xcad:DockingManager.LayoutItemTemplateSelector>
             <xcad:DockingManager.LayoutItemContainerStyleSelector>
@@ -257,63 +265,10 @@
             <xcad:DockingManager.LayoutUpdateStrategy>
                 <local:LayoutInitializer/>
             </xcad:DockingManager.LayoutUpdateStrategy>
-
             <xcad:LayoutRoot x:Name="_layoutRoot">
-                <xcad:LayoutPanel Orientation="Horizontal">
-                    <xcad:LayoutAnchorablePane DockWidth="200">
-                        <xcad:LayoutAnchorable ContentId="solution" Title="解决方案" CanHide="True" CanClose="True"
-                                            AutoHideWidth="240" CanFloat="True">
-                        </xcad:LayoutAnchorable>
-                    </xcad:LayoutAnchorablePane>
-                    <xcad:LayoutDocumentPaneGroup>
-                        <xcad:LayoutDocumentPane x:Name="layOutPane" >
-                            <xcad:LayoutDocument ContentId="welcomePage" Title="欢迎使用">
-                            </xcad:LayoutDocument>
-                        </xcad:LayoutDocumentPane>
-                    </xcad:LayoutDocumentPaneGroup >
-                    <xcad:LayoutAnchorablePaneGroup DockWidth="125">
-                        <xcad:LayoutAnchorablePane>
-                            <xcad:LayoutAnchorable ContentId="alarms" Title="Alarms" >
-                                <ListBox>
-                                    <s:String>Alarm 1</s:String>
-                                    <s:String>Alarm 2</s:String>
-                                    <s:String>Alarm 3</s:String>
-                                </ListBox>
-                            </xcad:LayoutAnchorable>
-                            <xcad:LayoutAnchorable ContentId="journal" Title="日记" >
-                                <RichTextBox>
-                                    <FlowDocument>
-                                        <Paragraph FontSize="14" FontFamily="Segoe">
-                                            This is the content of the Journal Pane.
-                                            <LineBreak/>
-                                            A
-                                            <Bold>RichTextBox</Bold> has been added here
-                                        </Paragraph>
-                                    </FlowDocument>
-                                </RichTextBox>
-                            </xcad:LayoutAnchorable>
-                        </xcad:LayoutAnchorablePane>
-                    </xcad:LayoutAnchorablePaneGroup>
-                </xcad:LayoutPanel>
-
-                <xcad:LayoutRoot.LeftSide>
-                    <xcad:LayoutAnchorSide>
-                        <xcad:LayoutAnchorGroup>
-                            <xcad:LayoutAnchorable Title="日程表" ContentId="agenda" >
-                                <TextBlock Text="Agenda Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
-                            </xcad:LayoutAnchorable>
-                            <xcad:LayoutAnchorable Title="联系人" ContentId="contacts">
-                                <TextBlock Text="Contacts Content" Margin="10" FontSize="18" FontWeight="Black" TextWrapping="Wrap"/>
-                            </xcad:LayoutAnchorable>
-                        </xcad:LayoutAnchorGroup>
-                    </xcad:LayoutAnchorSide>
-                </xcad:LayoutRoot.LeftSide>
             </xcad:LayoutRoot>
         </xcad:DockingManager>
-
-
         <StatusBar Grid.Row="3">
         </StatusBar>
-   
-        </Grid>
+    </Grid>
 </controls:MetroWindow>

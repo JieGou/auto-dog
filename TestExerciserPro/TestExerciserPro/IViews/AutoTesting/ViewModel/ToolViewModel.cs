@@ -54,6 +54,5 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         #endregion
 
-
     }
 }

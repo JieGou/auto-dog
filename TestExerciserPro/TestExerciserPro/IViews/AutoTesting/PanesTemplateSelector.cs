@@ -44,6 +44,12 @@ namespace TestExerciserPro.IViews.AutoTesting
             set;
         }
 
+        public DataTemplate SolutionViewTemplate
+        {
+            get;
+            set;
+        }
+
         public override System.Windows.DataTemplate SelectTemplate(object item, System.Windows.DependencyObject container)
         {
             var itemAsLayoutContent = item as LayoutContent;
@@ -53,6 +59,9 @@ namespace TestExerciserPro.IViews.AutoTesting
 
             if (item is FileStatsViewModel)
                 return FileStatsViewTemplate;
+
+            if (item is SolutionViewModel)
+                return SolutionViewTemplate;
 
             return base.SelectTemplate(item, container);
         }

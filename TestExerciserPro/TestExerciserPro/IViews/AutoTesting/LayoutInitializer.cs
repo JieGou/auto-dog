@@ -26,14 +26,13 @@ namespace TestExerciserPro.IViews.AutoTesting
                 toolsPane.Children.Add(anchorableToShow);
                 return true;
             }
-
             return false;
-
         }
 
 
         public void AfterInsertAnchorable(LayoutRoot layout, LayoutAnchorable anchorableShown)
         {
+
         }
 
 

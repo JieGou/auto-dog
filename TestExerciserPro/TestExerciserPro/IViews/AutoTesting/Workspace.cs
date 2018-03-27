@@ -63,7 +63,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats };
+                    _tools = new ToolViewModel[] { FileStats, Solution };
                 return _tools;
             }
         }
@@ -77,6 +77,17 @@ namespace TestExerciserPro.IViews.AutoTesting
                     _fileStats = new FileStatsViewModel();
 
                 return _fileStats;
+            }
+        }
+
+        SolutionViewModel _solution = null;
+        public SolutionViewModel Solution
+        {
+            get
+            {
+                if (_solution == null)
+                    _solution = new SolutionViewModel();
+                return _solution;
             }
         }
 
@@ -178,7 +189,7 @@ namespace TestExerciserPro.IViews.AutoTesting
         {
             if (fileToClose.IsDirty)
             {
-                var res = MessageBox.Show(string.Format("Save changes for file '{0}'?", fileToClose.FileName), "AvalonDock Test App", MessageBoxButton.YesNoCancel);
+                var res = MessageBox.Show(string.Format("需要将更改保存到文件'{0}'吗?", fileToClose.FileName), "提示信息：", MessageBoxButton.YesNoCancel);
                 if (res == MessageBoxResult.Cancel)
                     return;
                 if (res == MessageBoxResult.Yes)

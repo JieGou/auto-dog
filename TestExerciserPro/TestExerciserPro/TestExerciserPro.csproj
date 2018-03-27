@@ -142,16 +142,17 @@
     </ApplicationDefinition>
     <Compile Include="IViews\AutoTesting\ActiveDocumentConverter.cs" />
     <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
-    <Compile Include="IViews\AutoTesting\FileStatsViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\FileViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\FileStatsViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\FileViewModel.cs" />
     <Compile Include="IViews\AutoTesting\LayoutInitializer.cs" />
     <Compile Include="IViews\AutoTesting\MyCompletionData.cs" />
     <Compile Include="IViews\AutoTesting\PanesStyleSelector.cs" />
     <Compile Include="IViews\AutoTesting\PanesTemplateSelector.cs" />
-    <Compile Include="IViews\AutoTesting\PaneViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\PaneViewModel.cs" />
     <Compile Include="IViews\AutoTesting\RelayCommand.cs" />
-    <Compile Include="IViews\AutoTesting\ToolViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModelBase.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\SolutionViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\ToolViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\Base\ViewModelBase.cs" />
     <Compile Include="IViews\AutoTesting\Workspace.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>

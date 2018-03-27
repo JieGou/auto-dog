@@ -27,7 +27,7 @@ namespace TestExerciserPro.IViews.AutoTesting
     class FileStatsViewModel : ToolViewModel
     {
         public FileStatsViewModel()
-            :base("File Stats")
+            :base("文件属性")
         {
             Workspace.This.ActiveDocumentChanged += new EventHandler(OnActiveDocumentChanged);
             ContentId = ToolContentId;
@@ -93,9 +93,6 @@ namespace TestExerciserPro.IViews.AutoTesting
         }
 
         #endregion
-
-
-
 
     }
 }
