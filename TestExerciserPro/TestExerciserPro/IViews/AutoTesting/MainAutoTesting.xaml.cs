@@ -54,14 +54,14 @@ namespace TestExerciserPro.IViews.AutoTesting
                 args.Content = args.Content;
             };
 
-            if (File.Exists(@".\AvalonDock.config"))
-                serializer.Deserialize(@".\AvalonDock.config");
+            if (File.Exists(@".\TestExerciserPro.Editor.config"))
+                serializer.Deserialize(@".\TestExerciserPro.Editor.config");
         }
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
             var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.Serialize(@".\AvalonDock.config");
+            serializer.Serialize(@".\TestExerciserPro.Editor.config");
         }
 
         #region LoadLayoutCommand
