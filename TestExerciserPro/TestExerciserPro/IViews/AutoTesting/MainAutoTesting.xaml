@@ -106,7 +106,7 @@
                     </Style.Triggers>
                 </Style>
             </ToolBar.Resources>
-            <Button  Command="{Binding OpenCommand}">
+            <Button  Command="{Binding OpenFile}">
                 <Image Source="Images/Open.png" Height="16"/>
             </Button>
             <Button Command="{Binding ActiveDocument.SaveCommand}">

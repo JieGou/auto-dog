@@ -99,25 +99,25 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
-                <Label Content="名称(N)："  HorizontalAlignment="Left"  Width="120" FontWeight="Bold"/>
-                <TextBox Text="C:School" Margin="120,0,230,0"/>
+                <Label Content="名称(N)："  HorizontalAlignment="Left"  Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <TextBox Text="C:School" Margin="137,0,163,0"/>
             </Grid>
             <Grid Grid.Row="2">
-                <Label Content="位置(L)：" HorizontalAlignment="Left" Width="120" FontWeight="Bold"/>
-                <ComboBox Text="C:School" Margin="120,0,230,0"/>
-                <Button Content="浏览(B)..." Margin="677,0,156,0" />
+                <Label Content="位置(L)：" HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <ComboBox Text="C:School" Margin="137,0,162,0"/>
+                <Button Content="浏览(B)..." Margin="737,0,96,0" />
             </Grid>
             <Grid Grid.Row="3">
-                <Label Content="解决方案(S)："  HorizontalAlignment="Left" Width="120" FontWeight="Bold"/>
-                <ComboBox Text="C:School" Margin="120,0,230,0"/>
+                <Label Content="解决方案(S)："  HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <ComboBox Text="创建解决方案" Margin="137,0,162,0"/>
             </Grid>
             <Grid Grid.Row="4">
-                <Label Content="解决方案名称(M)：" HorizontalAlignment="Left" Width="120" FontWeight="Bold"/>
-                <TextBox Text="C:School" Margin="120,0,230,0"/>
-                <CheckBox Content="为解决方案创建目录" IsChecked="True" HorizontalAlignment="Right" Margin="0,0,61,0" Width="156"/>
+                <Label Content="解决方案名称(M)：" HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <TextBox Text="C:School" Margin="137,0,163,0"/>
+                <CheckBox Content="为解决方案创建目录" IsChecked="True" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
             </Grid>
             <Grid Grid.Row="5">
-                <CheckBox Content="新建Git存储库" IsChecked="False" HorizontalAlignment="Right" Margin="0,0,61,0" Width="156"/>
+                <CheckBox Content="新建Git存储库" IsChecked="False" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
             </Grid>
             <Grid Grid.Row="6">
                 <Button Width="116"                
