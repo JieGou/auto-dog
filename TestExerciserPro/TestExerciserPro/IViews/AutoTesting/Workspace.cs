@@ -125,18 +125,18 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
-        #region OpenCommand
-        RelayCommand _openCommand = null;
-        public ICommand OpenCommand
+        #region OpenFile
+        RelayCommand _openFile = null;
+        public ICommand OpenFile
         {
             get
             {
-                if (_openCommand == null)
+                if (_openFile == null)
                 {
-                    _openCommand = new RelayCommand((p) => OnOpen(p), (p) => CanOpen(p));
+                    _openFile = new RelayCommand((p) => OnOpen(p), (p) => CanOpen(p));
                 }
 
-                return _openCommand;
+                return _openFile;
             }
         }
 
@@ -168,18 +168,18 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         #endregion 
 
-        #region NewCommand
-        RelayCommand _newCommand = null;
-        public ICommand NewCommand
+        #region NewFile
+        RelayCommand _newFile = null;
+        public ICommand NewFile
         {
             get
             {
-                if (_newCommand == null)
+                if (_newFile == null)
                 {
-                    _newCommand = new RelayCommand((p) => OnNew(p), (p) => CanNew(p));
+                    _newFile = new RelayCommand((p) => OnNew(p), (p) => CanNew(p));
                 }
 
-                return _newCommand;
+                return _newFile;
             }
         }
 

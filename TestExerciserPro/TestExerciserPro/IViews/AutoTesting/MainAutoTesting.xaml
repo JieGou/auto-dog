@@ -34,12 +34,12 @@
         <Menu Height="30" Grid.Row="0">
             <MenuItem Header="文件(F)">
                 <MenuItem Header="新建(N)">
-                    <MenuItem Header="项目"></MenuItem>
-                    <MenuItem Header="文件" Command="{Binding NewCommand}"/>
+                    <MenuItem Header="项目" Click="newProject"/>
+                    <MenuItem Header="文件" Command="{Binding NewFile}"/>
                 </MenuItem>
                 <MenuItem Header="打开(O)">
                     <MenuItem Header="项目"></MenuItem>
-                    <MenuItem Header="文件"  Command="{Binding OpenCommand}"/>
+                    <MenuItem Header="文件"  Command="{Binding OpenFile}"/>
                 </MenuItem>
                 <MenuItem Header="添加(D)">
                     <MenuItem Header="新建项目"></MenuItem>

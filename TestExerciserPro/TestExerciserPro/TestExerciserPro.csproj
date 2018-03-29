@@ -148,6 +148,9 @@
     </ApplicationDefinition>
     <Compile Include="IViews\AutoTesting\ActiveDocumen\ActiveDocumentConverter.cs" />
     <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="IViews\AutoTesting\Controls\NewProject.xaml.cs">
+      <DependentUpon>NewProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IViews\AutoTesting\ViewModel\ClassViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\ErrorListViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\FileStatsViewModel.cs" />
@@ -217,6 +220,10 @@
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
     <Page Include="IViews\AutoTesting\MainAutoTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IViews\AutoTesting\Controls\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

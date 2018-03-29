@@ -171,7 +171,13 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
-        public void addDocumentItems(object sender, RoutedEventArgs e)
+        private void newProject(object sender, RoutedEventArgs e)
+        {
+            var newProject = new Controls.NewProject();
+            newProject.Show();
+        }
+
+        private void addDocumentItems(object sender, RoutedEventArgs e)
         {
             //clickCount++;
             //LayoutAnchorable layOutAnc = new LayoutAnchorable() { Title = Path.GetFileName(currentFileName),CanClose = true};
