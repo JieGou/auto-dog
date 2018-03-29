@@ -22,7 +22,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 
-namespace TestExerciserPro.IViews.AutoTesting
+namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 {
     class FileStatsViewModel : ToolViewModel
     {

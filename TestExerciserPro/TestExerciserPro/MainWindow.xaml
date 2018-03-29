@@ -22,6 +22,7 @@
                       RightWindowCommandsOverlayBehavior="Never"
                       ShowIconOnTitleBar="True"
                       ShowTitleBar="{Binding ShowMyTitleBar, Mode=OneWay}"
+                      Icon="MainIcon.ico"
                       WindowStartupLocation="CenterScreen"
                       mc:Ignorable="d">
     <!--

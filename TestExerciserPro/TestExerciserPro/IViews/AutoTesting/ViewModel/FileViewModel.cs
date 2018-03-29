@@ -13,7 +13,7 @@ using TestExerciserPro.Editor.Document;
 using TestExerciserPro.Editor.Utils;
 using TestExerciserPro.Editor.Highlighting;
 
-namespace TestExerciserPro.IViews.AutoTesting
+namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 {
     class FileViewModel : PaneViewModel
     {

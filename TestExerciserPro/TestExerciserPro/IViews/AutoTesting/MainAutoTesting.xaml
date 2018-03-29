@@ -15,6 +15,7 @@
                       Title="自动化测试" 
                       Height="900" 
                       Width="1440"
+                      Icon="../../MainIcon.ico"
                       WindowStartupLocation="CenterScreen"
                       Closing="MainAutoTesting_WinddowClosing"
                       >

@@ -25,6 +25,7 @@ using System.IO;
 using TestExerciserPro.UI.Controls.Dialogs;
 using TestExerciserPro.UI.Controls;
 using TestExerciserPro.Editor.Document;
+using TestExerciserPro.IViews.AutoTesting.ViewModel;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
@@ -63,7 +64,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats, Solution };
+                    _tools = new ToolViewModel[] { FileStats,SolutionView,ClassView };
                 return _tools;
             }
         }
@@ -80,14 +81,25 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
-        SolutionViewModel _solution = null;
-        public SolutionViewModel Solution
+        SolutionViewModel _solutionView = null;
+        public SolutionViewModel SolutionView
         {
             get
             {
-                if (_solution == null)
-                    _solution = new SolutionViewModel();
-                return _solution;
+                if (_solutionView == null)
+                    _solutionView = new SolutionViewModel();
+                return _solutionView;
+            }
+        }
+
+        ClassViewModel _classView = null;
+        public ClassViewModel ClassView
+        {
+            get
+            {
+                if (_classView == null)
+                    _classView = new ClassViewModel();
+                return _classView;
             }
         }
 

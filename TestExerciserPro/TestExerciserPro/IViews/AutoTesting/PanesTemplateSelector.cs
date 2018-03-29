@@ -21,6 +21,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
+using TestExerciserPro.IViews.AutoTesting.ViewModel;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
@@ -50,6 +51,12 @@ namespace TestExerciserPro.IViews.AutoTesting
             set;
         }
 
+        public DataTemplate ClassViewTemplate
+        {
+            get;
+            set;
+        }
+
         public override System.Windows.DataTemplate SelectTemplate(object item, System.Windows.DependencyObject container)
         {
             var itemAsLayoutContent = item as LayoutContent;
@@ -62,6 +69,9 @@ namespace TestExerciserPro.IViews.AutoTesting
 
             if (item is SolutionViewModel)
                 return SolutionViewTemplate;
+
+            if (item is ClassViewModel)
+                return ClassViewTemplate;
 
             return base.SelectTemplate(item, container);
         }

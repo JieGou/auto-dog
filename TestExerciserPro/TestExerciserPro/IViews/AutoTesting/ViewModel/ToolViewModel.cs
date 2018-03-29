@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TestExerciserPro.IViews.AutoTesting
+namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 {
     class ToolViewModel : PaneViewModel
     {

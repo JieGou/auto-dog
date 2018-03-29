@@ -15,6 +15,7 @@ using System.ComponentModel;
 using TestExerciserPro.UI.Controls.Dialogs;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
 using TestExerciserPro.UI.Controls;
+using TestExerciserPro.IViews.AutoTesting.ViewModel;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {
@@ -92,7 +93,9 @@ namespace TestExerciserPro.IViews.AutoTesting
                 if (e.Model.ContentId == FileStatsViewModel.ToolContentId)
                     e.Content = Workspace.This.FileStats;
                 else if (e.Model.ContentId == SolutionViewModel.ToolContentId)
-                    e.Content = Workspace.This.Solution;
+                    e.Content = Workspace.This.SolutionView;
+                else if (e.Model.ContentId == ClassViewModel.ToolContentId)
+                    e.Content = Workspace.This.ClassView;
                 else if (!string.IsNullOrWhiteSpace(e.Model.ContentId) &&
                     File.Exists(e.Model.ContentId))
                     e.Content = Workspace.This.Open(e.Model.ContentId);

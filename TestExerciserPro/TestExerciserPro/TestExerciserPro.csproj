@@ -42,6 +42,12 @@
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MainIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TestExerciserPro.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonDock, Version=1.3.3600.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
       <HintPath>..\packages\AvalonDock-1.x.1.3.3600.2\lib\net40\AvalonDock.dll</HintPath>
@@ -142,6 +148,7 @@
     </ApplicationDefinition>
     <Compile Include="IViews\AutoTesting\ActiveDocumentConverter.cs" />
     <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\ClassViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\FileStatsViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\FileViewModel.cs" />
     <Compile Include="IViews\AutoTesting\LayoutInitializer.cs" />
