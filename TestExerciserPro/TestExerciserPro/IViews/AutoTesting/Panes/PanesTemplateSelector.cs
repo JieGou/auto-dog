@@ -57,6 +57,18 @@ namespace TestExerciserPro.IViews.AutoTesting
             set;
         }
 
+        public DataTemplate ErrorListViewTemplate
+        {
+            get;
+            set;
+        }
+
+        public DataTemplate OutPutViewTemplate
+        {
+            get;
+            set;
+        }
+
         public override System.Windows.DataTemplate SelectTemplate(object item, System.Windows.DependencyObject container)
         {
             var itemAsLayoutContent = item as LayoutContent;
@@ -73,6 +85,11 @@ namespace TestExerciserPro.IViews.AutoTesting
             if (item is ClassViewModel)
                 return ClassViewTemplate;
 
+            if (item is OutPutViewModel)
+                return OutPutViewTemplate;
+
+            if (item is ErrorListViewModel)
+                return ErrorListViewTemplate;
             return base.SelectTemplate(item, container);
         }
     }

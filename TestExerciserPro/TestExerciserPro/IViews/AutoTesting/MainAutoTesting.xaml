@@ -68,8 +68,8 @@
                 <MenuItem Header="定位到(,)...  Ctrl + ,"/>
             </MenuItem>
             <MenuItem Header="视图(V)">
-                <MenuItem Header="类视图(A)  Ctrl + Shift + C"/>
-                <MenuItem Header="解决方案资源管理器(P)  Ctrl + Alt + L" IsChecked="{Binding Solution.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="类视图(A)  Ctrl + Shift + C" IsChecked="{Binding ClassView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="解决方案资源管理器(P)  Ctrl + Alt + L" IsChecked="{Binding SolutionView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
                 <MenuItem Header="属性窗口(W)  F4" IsChecked="{Binding FileStats.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
             </MenuItem>
             <MenuItem Header="项目(P)">

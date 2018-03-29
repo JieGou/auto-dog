@@ -64,7 +64,7 @@ namespace TestExerciserPro.IViews.AutoTesting
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats,SolutionView,ClassView };
+                    _tools = new ToolViewModel[] { FileStats,SolutionView,ClassView,ErrorList,OutPut};
                 return _tools;
             }
         }
@@ -100,6 +100,28 @@ namespace TestExerciserPro.IViews.AutoTesting
                 if (_classView == null)
                     _classView = new ClassViewModel();
                 return _classView;
+            }
+        }
+
+        ErrorListViewModel _errorList = null;
+        public ErrorListViewModel ErrorList
+        {
+            get
+            {
+                if (_errorList == null)
+                    _errorList = new ErrorListViewModel();
+                return _errorList;
+            }
+        }
+
+        OutPutViewModel _outPut = null;
+        public OutPutViewModel OutPut
+        {
+            get
+            {
+                if (_outPut == null)
+                    _outPut = new OutPutViewModel();
+                return _outPut;
             }
         }
 
