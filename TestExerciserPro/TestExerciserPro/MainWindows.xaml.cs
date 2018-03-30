@@ -19,7 +19,6 @@ namespace TestExerciserPro
             DataContext = _viewModel;
 
             InitializeComponent();
-
             flyoutDemo = new FlyoutDemo();
             flyoutDemo.ApplyTemplate();
             flyoutDemo.Closed += (o, e) => flyoutDemo = null;
@@ -36,6 +35,21 @@ namespace TestExerciserPro
                 }
             };
         }
+
+        private void addNotifyIcon()
+        {
+            using (System.Windows.Forms.NotifyIcon myNotifyIcon = new System.Windows.Forms.NotifyIcon())
+            {
+                System.Windows.Forms.ContextMenuStrip notifyContextMenu = new System.Windows.Forms.ContextMenuStrip();
+                System.Windows.Forms.ToolStripMenuItem showMainWindow = new System.Windows.Forms.ToolStripMenuItem();
+                System.Windows.Forms.ToolStripMenuItem loginOutWindow = new System.Windows.Forms.ToolStripMenuItem();
+                System.Windows.Forms.ToolStripMenuItem loginInWindow = new System.Windows.Forms.ToolStripMenuItem();
+                System.Windows.Forms.ToolStripMenuItem quitWindow = new System.Windows.Forms.ToolStripMenuItem();
+                System.Windows.Forms.ToolStripMenuItem aboutWindow = new System.Windows.Forms.ToolStripMenuItem();
+
+            }
+        }
+
 
         public static readonly DependencyProperty ToggleFullScreenProperty =
             DependencyProperty.Register("ToggleFullScreen",
