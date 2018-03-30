@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
+using TestExerciserPro.UI.Controls.Dialogs;
+using TestExerciserPro.IControls;
 
 namespace TestExerciserPro.IViews.AutoTesting.Controls
 {
@@ -19,10 +22,31 @@ namespace TestExerciserPro.IViews.AutoTesting.Controls
     /// </summary>
     public partial class NewProject
     {
+
+        private readonly NewProjectViewModel _viewModel;
         public NewProject()
         {
+            _viewModel = new NewProjectViewModel(DialogCoordinator.Instance);
+            DataContext = _viewModel;
+
             InitializeComponent();
+            this.DataContextChanged += (sender, args) => {
+                var vm = args.NewValue as NewProjectViewModel;
+                if (vm != null)
+                {
+                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Clear();
+                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
+                }
+            };
         }
 
+        private void openFolderClick(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            if (folder.ShowDialog() == true)
+            {
+                locationCmb.Text = folder.FileName;
+            }
+        }
     }
 }

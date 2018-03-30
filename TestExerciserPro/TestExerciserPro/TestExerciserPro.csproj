@@ -146,11 +146,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IViews\AutoTesting\ActiveDocumen\ActiveDocumentConverter.cs" />
+    <Compile Include="IControls\COMGuids.cs" />
+    <Compile Include="IControls\ErrorHelper.cs" />
+    <Compile Include="IControls\FolderBrowserDialog.cs" />
+    <Compile Include="IControls\Helpers.cs" />
+    <Compile Include="IControls\NativeMethods.cs" />
+    <Compile Include="IControls\NativeTaskDialogShowState.cs" />
+    <Compile Include="IControls\ShellComInterfaces.cs" />
+    <Compile Include="IControls\ShellWrapperDefinitions.cs" />
+    <Compile Include="IViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
     <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
     <Compile Include="IViews\AutoTesting\Controls\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IViews\AutoTesting\Controls\NewProjectViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\Models\Album.cs" />
+    <Compile Include="IViews\AutoTesting\Models\Artist.cs" />
+    <Compile Include="IViews\AutoTesting\Models\Genre.cs" />
+    <Compile Include="IViews\AutoTesting\Models\SampleData.cs" />
+    <Compile Include="IViews\AutoTesting\Models\LocationMap.cs" />
+    <Compile Include="IViews\AutoTesting\Models\SolutionType.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\ClassViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\ErrorListViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\FileStatsViewModel.cs" />
@@ -315,7 +330,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="MainWindows.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -329,8 +344,8 @@
     <Compile Include="IWindows\ShowcaseFlyout.xaml.cs" />
     <Compile Include="IWindows\SizeToContentDemo.xaml.cs" />
     <Compile Include="IWindows\VSDemo.xaml.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="MainWindows.xaml.cs">
+      <DependentUpon>MainWindows.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Navigation\HomePage.xaml">

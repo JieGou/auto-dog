@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
              xmlns:local="clr-namespace:TestExerciserPro"
              x:Name="App"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindows.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
