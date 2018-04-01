@@ -4,6 +4,9 @@
              xmlns:controls="clr-namespace:TestExerciserPro.UI.Controls;assembly=TestExerciserPro.UI"
              xmlns:local="clr-namespace:TestExerciserPro"
              x:Name="App"
+             ShutdownMode="OnExplicitShutdown"
+             Startup="ApplicationStartup"
+             Exit="ApplicationExit"
              StartupUri="MainWindows.xaml">
     <Application.Resources>
         <ResourceDictionary>
