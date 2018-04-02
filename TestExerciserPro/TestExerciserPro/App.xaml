@@ -7,7 +7,7 @@
              ShutdownMode="OnExplicitShutdown"
              Startup="ApplicationStartup"
              Exit="ApplicationExit"
-             StartupUri="MainWindows.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

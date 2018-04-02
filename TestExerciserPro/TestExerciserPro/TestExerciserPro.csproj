@@ -331,7 +331,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindows.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -345,8 +345,8 @@
     <Compile Include="IWindows\ShowcaseFlyout.xaml.cs" />
     <Compile Include="IWindows\SizeToContentDemo.xaml.cs" />
     <Compile Include="IWindows\VSDemo.xaml.cs" />
-    <Compile Include="MainWindows.xaml.cs">
-      <DependentUpon>MainWindows.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Navigation\HomePage.xaml">

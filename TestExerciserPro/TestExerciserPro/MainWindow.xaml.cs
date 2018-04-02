@@ -8,13 +8,13 @@ using TestExerciserPro.IWindows;
 namespace TestExerciserPro
 {
     public delegate void SetMainWindow();
-    public partial class MainWindows
+    public partial class MainWindow
     {
         private bool _shutdown;
         private readonly MainWindowViewModel _viewModel;
         private FlyoutDemo flyoutDemo;
 
-        public MainWindows()
+        public MainWindow()
         {
             _viewModel = new MainWindowViewModel(DialogCoordinator.Instance);
             DataContext = _viewModel;
@@ -39,7 +39,7 @@ namespace TestExerciserPro
         public static readonly DependencyProperty ToggleFullScreenProperty =
             DependencyProperty.Register("ToggleFullScreen",
                                         typeof(bool),
-                                        typeof(MainWindows),
+                                        typeof(MainWindow),
                                         new PropertyMetadata(default(bool), ToggleFullScreenPropertyChangedCallback));
 
         private static void ToggleFullScreenPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
@@ -73,7 +73,7 @@ namespace TestExerciserPro
         public static readonly DependencyProperty UseAccentForDialogsProperty =
             DependencyProperty.Register("UseAccentForDialogs",
                                         typeof(bool),
-                                        typeof(MainWindows),
+                                        typeof(MainWindow),
                                         new PropertyMetadata(default(bool), ToggleUseAccentForDialogsPropertyChangedCallback));
 
         private static void ToggleUseAccentForDialogsPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)

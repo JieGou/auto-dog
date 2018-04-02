@@ -43,6 +43,7 @@ namespace TestExerciserPro
             MenuItem loginItem = new MenuItem() { Text = "登录" };
             MenuItem loginOutItem = new MenuItem() { Text = "注销" };
             MenuItem showMainItem = new MenuItem() { Text = "显示主窗口" };
+            showMainItem.Click += showMainItem_Click;
 
             menu.MenuItems.AddRange(new MenuItem[] { showMainItem, loginOutItem, loginItem, closeItem, aboutItem });
 
@@ -62,6 +63,11 @@ namespace TestExerciserPro
         private void ApplicationExit(object sender, ExitEventArgs e)
         {
             RemoveTrayIcon();
+        }
+        private void showMainItem_Click(object sender, EventArgs e)
+        {
+            if (this.MainWindow == null) MainWindow = new MainWindow();
+            this.MainWindow.Show();
         }
     }
 }
