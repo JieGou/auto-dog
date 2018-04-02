@@ -7,18 +7,17 @@ using TestExerciserPro.IWindows;
 
 namespace TestExerciserPro
 {
+    public delegate void SetMainWindow();
     public partial class MainWindows
     {
         private bool _shutdown;
         private readonly MainWindowViewModel _viewModel;
         private FlyoutDemo flyoutDemo;
-        System.Windows.Forms.NotifyIcon myNotifyIcon;
 
         public MainWindows()
         {
             _viewModel = new MainWindowViewModel(DialogCoordinator.Instance);
             DataContext = _viewModel;
-
             InitializeComponent();
             flyoutDemo = new FlyoutDemo();
             flyoutDemo.ApplyTemplate();
@@ -36,62 +35,6 @@ namespace TestExerciserPro
                 }
             };
         }
-
-        private void addNotifyIcon()
-        {
-            this.myNotifyIcon = new System.Windows.Forms.NotifyIcon();
-            System.Windows.Forms.ContextMenuStrip notifyContextMenu = new System.Windows.Forms.ContextMenuStrip();
-            System.Windows.Forms.ToolStripMenuItem showMainWindow = new System.Windows.Forms.ToolStripMenuItem();
-            showMainWindow.Size = new System.Drawing.Size(185, 22);
-            showMainWindow.Text = "显示主窗口";
-            showMainWindow.Click += new System.EventHandler(this.showMainWindow_Click);
-            System.Windows.Forms.ToolStripMenuItem loginOutWindow = new System.Windows.Forms.ToolStripMenuItem();
-            loginOutWindow.Size = new System.Drawing.Size(188, 22);
-            loginOutWindow.Text = "注销";
-            loginOutWindow.Click += new EventHandler(this.loginOutWindow_Click);
-            System.Windows.Forms.ToolStripMenuItem loginInWindow = new System.Windows.Forms.ToolStripMenuItem();
-            loginInWindow.Text = "登录";
-            loginInWindow.Click += new EventHandler(this.loginInWindow_Click);
-            System.Windows.Forms.ToolStripMenuItem quitWindow = new System.Windows.Forms.ToolStripMenuItem();
-            quitWindow.Text = "退出";
-            quitWindow.Click += new EventHandler(this.quitWindow_Click);
-            System.Windows.Forms.ToolStripMenuItem aboutWindow = new System.Windows.Forms.ToolStripMenuItem();
-            aboutWindow.Text = "关于";
-            aboutWindow.Click += new EventHandler(this.aboutWindow_Click);
-            notifyContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { showMainWindow, loginOutWindow, loginInWindow, quitWindow, aboutWindow });
-            myNotifyIcon.ContextMenuStrip = notifyContextMenu;
-            myNotifyIcon.Icon = new System.Drawing.Icon("../../MainIcon.ico");
-            myNotifyIcon.Visible = true;
-            myNotifyIcon.DoubleClick += new System.EventHandler(this.myNotifyIcon_DoubleClick);
-        }
-
-
-
-        private void showMainWindow_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void loginOutWindow_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void loginInWindow_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void quitWindow_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void aboutWindow_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void myNotifyIcon_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
 
         public static readonly DependencyProperty ToggleFullScreenProperty =
             DependencyProperty.Register("ToggleFullScreen",

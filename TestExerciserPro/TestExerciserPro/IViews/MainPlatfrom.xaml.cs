@@ -15,6 +15,7 @@ namespace TestExerciserPro.IViews
 
         private void AutoTesting_OnClick(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Visibility = Visibility.Hidden;
             MainAutoTesting main = new MainAutoTesting();
             main.Show();
         }
