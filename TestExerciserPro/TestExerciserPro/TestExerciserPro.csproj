@@ -181,6 +181,7 @@
     <Compile Include="IViews\AutoTesting\ViewModel\SolutionViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ToolViewModel\ToolViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\TreeViewModel.cs" />
     <Compile Include="IViews\AutoTesting\Workspace.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>

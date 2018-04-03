@@ -10,6 +10,7 @@
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
                       xmlns:local="clr-namespace:TestExerciserPro.IViews.AutoTesting"
+                      xmlns:viewModels ="clr-namespace:TestExerciserPro.IViews.AutoTesting.ViewModel"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       Title="自动化测试" 
@@ -38,7 +39,7 @@
                     <MenuItem Header="文件" Command="{Binding NewFile}"/>
                 </MenuItem>
                 <MenuItem Header="打开(O)">
-                    <MenuItem Header="项目"></MenuItem>
+                    <MenuItem Header="项目" Click="openProject"/>
                     <MenuItem Header="文件"  Command="{Binding OpenFile}"/>
                 </MenuItem>
                 <MenuItem Header="添加(D)">
@@ -219,7 +220,7 @@
                                 </avalonEdit:TextEditor.ContextMenu>
                             </avalonEdit:TextEditor>
                         </DataTemplate>
-                    </local:PanesTemplateSelector.FileViewTemplate>
+                    </local:PanesTemplateSelector.FileViewTemplate >
                     <local:PanesTemplateSelector.FileStatsViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
@@ -232,8 +233,19 @@
                     <local:PanesTemplateSelector.SolutionViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <TreeView x:Name="mySolution">
-                                    <TreeViewItem Header="sss"/>
+                                <TreeView Name="mySolution" Width="250" Padding="0" Margin="0" BorderThickness="1">
+                                    <TreeView.ItemTemplate>
+                                        <HierarchicalDataTemplate DataType="{x:Type viewModels:TreeViewModel}" ItemsSource="{Binding Path = Children}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{Binding Icon}" Width="16" Height="16" Margin="0,0,2,2"/>
+                                                <TextBlock/>
+                                                <Image Source="{Binding EditIcon}" Margin="2,0,0,0"/>
+                                                <StackPanel.ToolTip>
+                                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="300"/>
+                                                </StackPanel.ToolTip>
+                                            </StackPanel>
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.ItemTemplate>
                                 </TreeView>
                             </StackPanel>
                         </DataTemplate>

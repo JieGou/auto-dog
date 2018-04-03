@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Windows.Controls;
 
 
 namespace TestExerciserPro.IViews.AutoTesting.ViewModel
@@ -12,6 +13,8 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
     class SolutionViewModel:ToolViewModel
     {
         public const string ToolContentId = "SolutionTool";
+
+        public TreeView myTreeView;
         public SolutionViewModel()
             :base("解决方案资源管理器")
         {
@@ -22,6 +25,6 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
             bi.UriSource = new Uri("pack://application:,,/IViews/AutoTesting/Images/property-blue.png");
             bi.EndInit();
             IconSource = bi;
-        }
+        } 
     }
 }
