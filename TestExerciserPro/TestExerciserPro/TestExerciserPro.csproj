@@ -179,7 +179,7 @@
     <Compile Include="IViews\AutoTesting\Command\RelayCommand.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\OutPutViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\SolutionViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ToolViewModel\ToolViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModel\ToolViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\Base\ViewModelBase.cs" />
     <Compile Include="IViews\AutoTesting\ViewModel\TreeViewModel.cs" />
     <Compile Include="IViews\AutoTesting\Workspace.cs" />
@@ -462,6 +462,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IViews\AutoTesting\Images\App\DocTab\Lock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IViews\AutoTesting\Images\Add.png" />
+    <Resource Include="IViews\AutoTesting\Images\FolderClosed.png" />
+    <Resource Include="IViews\AutoTesting\Images\FolderOpen.png" />
+    <Resource Include="IViews\AutoTesting\Images\FolderSelected.png" />
+    <Resource Include="IViews\AutoTesting\Images\Home.png" />
+    <Resource Include="IViews\AutoTesting\Images\Remove.png" />
+    <Resource Include="IViews\AutoTesting\Images\Star.png" />
+    <Resource Include="IViews\AutoTesting\Images\WinFolder.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 {
-    class TreeViewModel
+    class TreeViewModel:SolutionViewModel
     {
         public string Icon { get; set; }
 
@@ -14,16 +16,33 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 
         public string DisplayName { get; set; }
 
-        public string Name { get; set; }
+        public string Text { get; set; }
 
-        public List<TreeViewModel> Children { get; set; }
+        public bool IsModify { get; set; }
+
+        public bool IsChecked { get; set; }
+
+        public string Tag { get; set; }
+
+        public string IsDeleted { get; set; }
+
+        public enum FileType
+        {
+           
+
+        }
+        public TreeViewItem Child { get; set; }
 
         public TreeViewModel()
-
         {
+            
+        }
 
-            Children = new List<TreeViewModel>();
 
+        private ObservableCollection<TreeViewModel> _children;
+        public ObservableCollection<TreeViewModel> Children
+        {
+            get { return (_children ?? (_children = new ObservableCollection<TreeViewModel>())); }
         }
     }
 }

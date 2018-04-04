@@ -14,7 +14,6 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
     {
         public const string ToolContentId = "SolutionTool";
 
-        public TreeView myTreeView;
         public SolutionViewModel()
             :base("解决方案资源管理器")
         {

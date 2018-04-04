@@ -170,16 +170,14 @@ namespace TestExerciserPro.IViews.AutoTesting
             }
         }
 
+        static public string solutionPath = null;
         private void openProject(object sender, RoutedEventArgs e)
         {
             IControls.FolderBrowserDialog folder = new IControls.FolderBrowserDialog();
             folder.Title = "打开项目";
             if (folder.ShowDialog() == true)
             {
-                TreeView mySolution = sender as TreeView;
-                TreeViewItem myItem = null;
-                getFiles(folder.FileName, myItem);
-                mySolution.Items.Add(myItem);
+                solutionPath = folder.FileName;
             }
         }
 
@@ -422,6 +420,11 @@ namespace TestExerciserPro.IViews.AutoTesting
             {
 
             }
+        }
+
+        private void InitDocking()
+        {
+            
         }
     }
 }
