@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Data;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
 
-namespace TestExerciserPro.TEViews.AutoTesting
+namespace TestExerciserPro.TEViews.AutoTesting.Converter
 {
     class ActiveDocumentConverter : IValueConverter
     {

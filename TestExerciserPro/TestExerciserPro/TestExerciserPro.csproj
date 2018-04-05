@@ -155,8 +155,9 @@
     <Compile Include="TEControls\NativeTaskDialogShowState.cs" />
     <Compile Include="TEControls\ShellComInterfaces.cs" />
     <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
-    <Compile Include="TEViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
+    <Compile Include="TEViews\AutoTesting\Converter\ActiveDocumentConverter.cs" />
     <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="TEViews\AutoTesting\Converter\ResourcesTemplateConverter.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\ResourcesViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml.cs">
       <DependentUpon>ClassTemplateView.xaml</DependentUpon>
@@ -515,6 +516,11 @@
     <Resource Include="TEViews\AutoTesting\Images\Remove.png" />
     <Resource Include="TEViews\AutoTesting\Images\Star.png" />
     <Resource Include="TEViews\AutoTesting\Images\WinFolder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Views\Images\Computer.png" />
+    <Resource Include="TEViews\AutoTesting\Views\Images\DiskDrive.png" />
+    <Resource Include="TEViews\AutoTesting\Views\Images\Folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

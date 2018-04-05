@@ -64,7 +64,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats,SolutionView,ClassView,ErrorList,OutPut};
+                    _tools = new ToolViewModel[] { FileStats,SolutionView, Resources,ClassView, ErrorList,OutPut};
                 return _tools;
             }
         }
@@ -122,6 +122,17 @@ namespace TestExerciserPro.TEViews.AutoTesting
                 if (_outPut == null)
                     _outPut = new OutPutViewModel();
                 return _outPut;
+            }
+        }
+
+        ResourcesViewModel _resources;
+        public ResourcesViewModel Resources
+        {
+            get
+            {
+                if (_resources == null)
+                    _resources = new ResourcesViewModel();
+                return _resources;
             }
         }
 

@@ -12,6 +12,7 @@
                       xmlns:local="clr-namespace:TestExerciserPro.TEViews.AutoTesting"
                       xmlns:view ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.Views"
                       xmlns:viewModels ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.ViewModels"
+                      xmlns:converter ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.Converter"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       Title="自动化测试" 
@@ -22,7 +23,7 @@
                       Closing="MainAutoTesting_WinddowClosing"
                       >
     <Window.Resources>
-        <local:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
+        <converter:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
         <xcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         <TreeViewItem x:Key="CustomRootNode">
             <TreeViewItem.Header>
