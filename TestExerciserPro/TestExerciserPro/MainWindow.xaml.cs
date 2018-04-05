@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using TestExerciserPro.UI.Controls;
 using TestExerciserPro.UI.Controls.Dialogs;
-using TestExerciserPro.IWindows;
+using TestExerciserPro.TEWindows;
 
 namespace TestExerciserPro
 {
@@ -119,7 +119,7 @@ namespace TestExerciserPro
 
         private void LaunchMainBugManager(object sender, RoutedEventArgs e)
         {
-            new IViews.BugManager.MainBugManager() { Owner = this }.Show();
+            new TEViews.BugManager.MainBugManager() { Owner = this }.Show();
         }
 
         private void LaunchIcons(object sender, RoutedEventArgs e)

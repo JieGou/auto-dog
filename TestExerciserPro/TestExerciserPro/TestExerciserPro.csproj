@@ -147,82 +147,82 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IControls\COMGuids.cs" />
-    <Compile Include="IControls\ErrorHelper.cs" />
-    <Compile Include="IControls\FolderBrowserDialog.cs" />
-    <Compile Include="IControls\Helpers.cs" />
-    <Compile Include="IControls\NativeMethods.cs" />
-    <Compile Include="IControls\NativeTaskDialogShowState.cs" />
-    <Compile Include="IControls\ShellComInterfaces.cs" />
-    <Compile Include="IControls\ShellWrapperDefinitions.cs" />
-    <Compile Include="IViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
-    <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
-    <Compile Include="IViews\AutoTesting\Views\NewProject.xaml.cs">
+    <Compile Include="TEControls\COMGuids.cs" />
+    <Compile Include="TEControls\ErrorHelper.cs" />
+    <Compile Include="TEControls\FolderBrowserDialog.cs" />
+    <Compile Include="TEControls\Helpers.cs" />
+    <Compile Include="TEControls\NativeMethods.cs" />
+    <Compile Include="TEControls\NativeTaskDialogShowState.cs" />
+    <Compile Include="TEControls\ShellComInterfaces.cs" />
+    <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
+    <Compile Include="TEViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
+    <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="TEViews\AutoTesting\Views\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\AutoTesting\ViewModels\NewProjectViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\Models\Album.cs" />
-    <Compile Include="IViews\AutoTesting\Models\Artist.cs" />
-    <Compile Include="IViews\AutoTesting\Models\Genre.cs" />
-    <Compile Include="IViews\AutoTesting\Models\SampleData.cs" />
-    <Compile Include="IViews\AutoTesting\Models\LocationMap.cs" />
-    <Compile Include="IViews\AutoTesting\Models\SolutionType.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\ClassViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\ErrorListViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\FileStatsViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\FileViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\LayoutInitializer.cs" />
-    <Compile Include="IViews\AutoTesting\MyCompletionData.cs" />
-    <Compile Include="IViews\AutoTesting\Panes\PanesStyleSelector.cs" />
-    <Compile Include="IViews\AutoTesting\Panes\PanesTemplateSelector.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\PaneViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\Command\RelayCommand.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\OutPutViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\SolutionViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\ToolViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
-    <Compile Include="IViews\AutoTesting\ViewModels\TreeViewModel.cs" />
-    <Compile Include="IViews\AutoTesting\Views\TreeSolution.xaml.cs">
+    <Compile Include="TEViews\AutoTesting\ViewModels\NewProjectViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\Album.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\Artist.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\Genre.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\SampleData.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\LocationMap.cs" />
+    <Compile Include="TEViews\AutoTesting\Models\SolutionType.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\ClassViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\ErrorListViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\FileStatsViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\FileViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\LayoutInitializer.cs" />
+    <Compile Include="TEViews\AutoTesting\MyCompletionData.cs" />
+    <Compile Include="TEViews\AutoTesting\Panes\PanesStyleSelector.cs" />
+    <Compile Include="TEViews\AutoTesting\Panes\PanesTemplateSelector.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\PaneViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\Command\RelayCommand.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\OutPutViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\SolutionViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\ToolViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModel.cs" />
+    <Compile Include="TEViews\AutoTesting\Views\TreeSolution.xaml.cs">
       <DependentUpon>TreeSolution.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\AutoTesting\Workspace.cs" />
-    <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
+    <Compile Include="TEViews\AutoTesting\Workspace.cs" />
+    <Compile Include="TEViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\BugManager\MainBugManager.xaml.cs">
+    <Compile Include="TEViews\BugManager\MainBugManager.xaml.cs">
       <DependentUpon>MainBugManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\CaseManager\MainCaseManager.xaml.cs">
+    <Compile Include="TEViews\CaseManager\MainCaseManager.xaml.cs">
       <DependentUpon>MainCaseManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\InterfaceTesting\MainInterface.xaml.cs">
+    <Compile Include="TEViews\InterfaceTesting\MainInterface.xaml.cs">
       <DependentUpon>MainInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MindMap\MainMind.xaml.cs">
+    <Compile Include="TEViews\MindMap\MainMind.xaml.cs">
       <DependentUpon>MainMind.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\NoteBook\MainNoteBook.xaml.cs">
+    <Compile Include="TEViews\NoteBook\MainNoteBook.xaml.cs">
       <DependentUpon>MainNoteBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\PackageManager\MainPackageManager.xaml.cs">
+    <Compile Include="TEViews\PackageManager\MainPackageManager.xaml.cs">
       <DependentUpon>MainPackageManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\Performance\MainPerformance.xaml.cs">
+    <Compile Include="TEViews\Performance\MainPerformance.xaml.cs">
       <DependentUpon>MainPerformance.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\ProjectManager\MainProjectManager.xaml.cs">
+    <Compile Include="TEViews\ProjectManager\MainProjectManager.xaml.cs">
       <DependentUpon>MainProjectManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\TaskManager\MainTaskManager.xaml.cs">
+    <Compile Include="TEViews\TaskManager\MainTaskManager.xaml.cs">
       <DependentUpon>MainTaskManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\UserManager\MainUserManager.xaml.cs">
+    <Compile Include="TEViews\UserManager\MainUserManager.xaml.cs">
       <DependentUpon>MainUserManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\MainPlatfrom.xaml.cs">
+    <Compile Include="TEViews\MainPlatfrom.xaml.cs">
       <DependentUpon>MainPlatfrom.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IWindows\FlyoutDemo.xaml.cs" />
+    <Compile Include="TEWindows\FlyoutDemo.xaml.cs" />
     <Compile Include="MenuRipple\MenuRipple.xaml.cs">
       <DependentUpon>MenuRipple.xaml</DependentUpon>
     </Compile>
@@ -239,87 +239,87 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
-    <Page Include="IViews\AutoTesting\MainAutoTesting.xaml">
+    <Page Include="TEViews\AutoTesting\MainAutoTesting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\AutoTesting\Views\NewProject.xaml">
+    <Page Include="TEViews\AutoTesting\Views\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\AutoTesting\Views\TreeSolution.xaml">
+    <Page Include="TEViews\AutoTesting\Views\TreeSolution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\BugManager\MainBugManager.xaml">
+    <Page Include="TEViews\BugManager\MainBugManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\CaseManager\MainCaseManager.xaml">
+    <Page Include="TEViews\CaseManager\MainCaseManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\InterfaceTesting\MainInterface.xaml">
+    <Page Include="TEViews\InterfaceTesting\MainInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MindMap\MainMind.xaml">
+    <Page Include="TEViews\MindMap\MainMind.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\NoteBook\MainNoteBook.xaml">
+    <Page Include="TEViews\NoteBook\MainNoteBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\PackageManager\MainPackageManager.xaml">
+    <Page Include="TEViews\PackageManager\MainPackageManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\Performance\MainPerformance.xaml">
+    <Page Include="TEViews\Performance\MainPerformance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\ProjectManager\MainProjectManager.xaml">
+    <Page Include="TEViews\ProjectManager\MainProjectManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\TaskManager\MainTaskManager.xaml">
+    <Page Include="TEViews\TaskManager\MainTaskManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\UserManager\MainUserManager.xaml">
+    <Page Include="TEViews\UserManager\MainUserManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\MainPlatfrom.xaml">
+    <Page Include="TEViews\MainPlatfrom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IWindows\CleanWindowDemo.xaml">
+    <Page Include="TEWindows\CleanWindowDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\DynamicFlyout.xaml">
+    <Page Include="TEWindows\DynamicFlyout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\FlyoutDemo.xaml">
+    <Page Include="TEWindows\FlyoutDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\InteropDemo.xaml">
+    <Page Include="TEWindows\InteropDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\ShowcaseFlyout.xaml">
+    <Page Include="TEWindows\ShowcaseFlyout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\SizeToContentDemo.xaml">
+    <Page Include="TEWindows\SizeToContentDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IWindows\VSDemo.xaml">
+    <Page Include="TEWindows\VSDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -347,12 +347,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IWindows\CleanWindowDemo.xaml.cs" />
-    <Compile Include="IWindows\DynamicFlyout.xaml.cs" />
-    <Compile Include="IWindows\InteropDemo.xaml.cs" />
-    <Compile Include="IWindows\ShowcaseFlyout.xaml.cs" />
-    <Compile Include="IWindows\SizeToContentDemo.xaml.cs" />
-    <Compile Include="IWindows\VSDemo.xaml.cs" />
+    <Compile Include="TEWindows\CleanWindowDemo.xaml.cs" />
+    <Compile Include="TEWindows\DynamicFlyout.xaml.cs" />
+    <Compile Include="TEWindows\InteropDemo.xaml.cs" />
+    <Compile Include="TEWindows\ShowcaseFlyout.xaml.cs" />
+    <Compile Include="TEWindows\SizeToContentDemo.xaml.cs" />
+    <Compile Include="TEWindows\VSDemo.xaml.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -428,57 +428,57 @@
     <Resource Include="MainIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\AutoTesting\Images\Copy.png" />
-    <Resource Include="IViews\AutoTesting\Images\Cut.png" />
-    <Resource Include="IViews\AutoTesting\Images\Delete.png" />
-    <Resource Include="IViews\AutoTesting\Images\Open.png" />
-    <Resource Include="IViews\AutoTesting\Images\Paste.png" />
-    <Resource Include="IViews\AutoTesting\Images\Redo.png" />
-    <Resource Include="IViews\AutoTesting\Images\Save.png" />
-    <Resource Include="IViews\AutoTesting\Images\Undo.png" />
-    <Resource Include="IViews\AutoTesting\Images\WordWrap.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Copy.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Cut.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Delete.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Open.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Paste.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Redo.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Save.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Undo.png" />
+    <Resource Include="TEViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\AutoTesting\Images\document.png" />
-    <Resource Include="IViews\AutoTesting\Images\property-blue.png" />
+    <Resource Include="TEViews\AutoTesting\Images\document.png" />
+    <Resource Include="TEViews\AutoTesting\Images\property-blue.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Copy32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Cut32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Delete32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find16.ico" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Find_Replace32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Paste32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Redo32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Edit_Undo32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_New32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_Open32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_Save16.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_Save32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_Save64.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\File_Save_All32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Help_About32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\Help_Hint32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\ShowEnter32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\ShowLineNumbers32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\ShowSpaces32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\ShowTab32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\ShowWordWrap32.png" />
-    <Resource Include="IViews\AutoTesting\Images\App\SyntaxHighlighting_32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Copy32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Cut32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Delete32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find16.ico" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find_Replace32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Paste32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Redo32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Undo32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_New32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_Open32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_Save16.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_Save32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_Save64.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\File_Save_All32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Help_About32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\Help_Hint32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\ShowEnter32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\ShowLineNumbers32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\ShowSpaces32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\ShowTab32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\ShowWordWrap32.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\SyntaxHighlighting_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\AutoTesting\Images\App\DocTab\Lock-icon.png" />
+    <Resource Include="TEViews\AutoTesting\Images\App\DocTab\Lock-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IViews\AutoTesting\Images\Add.png" />
-    <Resource Include="IViews\AutoTesting\Images\FolderClosed.png" />
-    <Resource Include="IViews\AutoTesting\Images\FolderOpen.png" />
-    <Resource Include="IViews\AutoTesting\Images\FolderSelected.png" />
-    <Resource Include="IViews\AutoTesting\Images\Home.png" />
-    <Resource Include="IViews\AutoTesting\Images\Remove.png" />
-    <Resource Include="IViews\AutoTesting\Images\Star.png" />
-    <Resource Include="IViews\AutoTesting\Images\WinFolder.gif" />
+    <Resource Include="TEViews\AutoTesting\Images\Add.png" />
+    <Resource Include="TEViews\AutoTesting\Images\FolderClosed.png" />
+    <Resource Include="TEViews\AutoTesting\Images\FolderOpen.png" />
+    <Resource Include="TEViews\AutoTesting\Images\FolderSelected.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Home.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Remove.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Star.png" />
+    <Resource Include="TEViews\AutoTesting\Images\WinFolder.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

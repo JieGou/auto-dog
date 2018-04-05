@@ -5,7 +5,7 @@
                       xmlns:Dialog="clr-namespace:TestExerciserPro.UI.Controls.Dialogs;assembly=TestExerciserPro.UI"
                       xmlns:TestExerciserPro="clr-namespace:TestExerciserPro"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                      xmlns:IViews="clr-namespace:TestExerciserPro.IViews"
+                      xmlns:TEViews="clr-namespace:TestExerciserPro.TEViews"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       Title="测试管理平台"
@@ -227,7 +227,7 @@
             </MenuItem>
         </Menu>
 
-        <IViews:MainPlatfrom DataContext="{Binding}"  Grid.Row="1"/>
+        <TEViews:MainPlatfrom DataContext="{Binding}"  Grid.Row="1"/>
 
         <StatusBar Grid.Row="2">
             <StatusBarItem>TestExerciserPro.UI DEMO Application</StatusBarItem>
