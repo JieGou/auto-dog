@@ -184,7 +184,7 @@ namespace TestExerciserPro.IViews.AutoTesting
 
         private void newProject(object sender, RoutedEventArgs e)
         {
-            var newProject = new Controls.NewProject();
+            var newProject = new Views.NewProject();
             newProject.Show();
         }
 

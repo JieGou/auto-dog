@@ -10,6 +10,7 @@
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
                       xmlns:local="clr-namespace:TestExerciserPro.IViews.AutoTesting"
+                      xmlns:view ="clr-namespace:TestExerciserPro.IViews.AutoTesting.Views"
                       xmlns:viewModels ="clr-namespace:TestExerciserPro.IViews.AutoTesting.ViewModels"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
@@ -247,23 +248,7 @@
                     <local:PanesTemplateSelector.SolutionViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <TreeView Name="mySolution" ItemsSource="{Binding Path = TreeItems}">
-                                    <TreeView.DataContext>
-                                        <viewModels:TreeViewModel />
-                                    </TreeView.DataContext>
-                                    <TreeView.ItemTemplate>
-                                        <HierarchicalDataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Image Source="{Binding Icon}" Width="16" Height="16" Margin="0,0,2,2"/>
-                                                <TextBlock/>
-                                                <Image Source="{Binding EditIcon}" Margin="2,0,0,0"/>
-                                                <StackPanel.ToolTip>
-                                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="300"/>
-                                                </StackPanel.ToolTip>
-                                            </StackPanel>
-                                        </HierarchicalDataTemplate>
-                                    </TreeView.ItemTemplate>
-                                </TreeView>
+                                <view:TreeSolution></view:TreeSolution>
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.SolutionViewTemplate>

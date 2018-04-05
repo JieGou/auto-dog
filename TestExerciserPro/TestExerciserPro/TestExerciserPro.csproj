@@ -157,10 +157,10 @@
     <Compile Include="IControls\ShellWrapperDefinitions.cs" />
     <Compile Include="IViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
     <Compile Include="IViews\AutoTesting\BraceFoldingStrategy.cs" />
-    <Compile Include="IViews\AutoTesting\Controls\NewProject.xaml.cs">
+    <Compile Include="IViews\AutoTesting\Views\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IViews\AutoTesting\Controls\NewProjectViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\ViewModels\NewProjectViewModel.cs" />
     <Compile Include="IViews\AutoTesting\Models\Album.cs" />
     <Compile Include="IViews\AutoTesting\Models\Artist.cs" />
     <Compile Include="IViews\AutoTesting\Models\Genre.cs" />
@@ -182,6 +182,9 @@
     <Compile Include="IViews\AutoTesting\ViewModels\ToolViewModel.cs" />
     <Compile Include="IViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="IViews\AutoTesting\ViewModels\TreeViewModel.cs" />
+    <Compile Include="IViews\AutoTesting\Views\TreeSolution.xaml.cs">
+      <DependentUpon>TreeSolution.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IViews\AutoTesting\Workspace.cs" />
     <Compile Include="IViews\AutoTesting\MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
@@ -240,7 +243,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IViews\AutoTesting\Controls\NewProject.xaml">
+    <Page Include="IViews\AutoTesting\Views\NewProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IViews\AutoTesting\Views\TreeSolution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

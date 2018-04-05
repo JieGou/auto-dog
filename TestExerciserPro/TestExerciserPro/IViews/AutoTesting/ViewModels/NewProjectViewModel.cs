@@ -7,7 +7,7 @@ using System.ComponentModel;
 using TestExerciserPro.UI.Controls.Dialogs;
 using TestExerciserPro.IViews.AutoTesting.Models;
 
-namespace TestExerciserPro.IViews.AutoTesting.Controls
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
     class NewProjectViewModel : INotifyPropertyChanged
     {

@@ -27,6 +27,8 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModels
         public string IsDeleted { get; set; }
 
         public string FileType { get; set; }
+
+        public string FolderPath { get; set; }
         public TreeViewItem Child { get; set; }
 
         public TreeViewModel()

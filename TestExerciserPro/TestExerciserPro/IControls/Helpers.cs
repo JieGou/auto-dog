@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Text;
 using System.Threading.Tasks;
-using TestExerciserPro.IViews.AutoTesting.Controls;
+using TestExerciserPro.IViews.AutoTesting.Views;
 using TestExerciserPro.UI.Controls;
 
 namespace TestExerciserPro.IControls

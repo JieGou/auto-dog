@@ -14,8 +14,9 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using TestExerciserPro.UI.Controls.Dialogs;
 using TestExerciserPro.IControls;
+using TestExerciserPro.IViews.AutoTesting.ViewModels;
 
-namespace TestExerciserPro.IViews.AutoTesting.Controls
+namespace TestExerciserPro.IViews.AutoTesting.Views
 {
     /// <summary>
     /// NewSolution.xaml 的交互逻辑
