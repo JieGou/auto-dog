@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Windows.Controls;
 
-namespace TestExerciserPro.IViews.AutoTesting.ViewModel
+
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
-    class ErrorListViewModel:ToolViewModel
+    class SolutionViewModel:ToolViewModel
     {
-        public const string ToolContentId = "ErrorListTool";
-        public ErrorListViewModel()
-            : base("错误列表")
+        public const string ToolContentId = "SolutionTool";
+
+        public SolutionViewModel()
+            :base("解决方案资源管理器")
         {
             ContentId = ToolContentId;
 
@@ -20,6 +24,6 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
             bi.UriSource = new Uri("pack://application:,,/IViews/AutoTesting/Images/property-blue.png");
             bi.EndInit();
             IconSource = bi;
-        }
+        } 
     }
 }

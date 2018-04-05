@@ -25,7 +25,7 @@ using System.IO;
 using TestExerciserPro.UI.Controls.Dialogs;
 using TestExerciserPro.UI.Controls;
 using TestExerciserPro.Editor.Document;
-using TestExerciserPro.IViews.AutoTesting.ViewModel;
+using TestExerciserPro.IViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {

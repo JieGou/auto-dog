@@ -6,7 +6,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 
-namespace TestExerciserPro.IViews.AutoTesting.ViewModel
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
     class ClassViewModel : ToolViewModel
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Data;
-using TestExerciserPro.IViews.AutoTesting.ViewModel;
+using TestExerciserPro.IViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {

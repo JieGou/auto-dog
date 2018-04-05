@@ -21,7 +21,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using Xceed.Wpf.AvalonDock.Layout;
-using TestExerciserPro.IViews.AutoTesting.ViewModel;
+using TestExerciserPro.IViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {

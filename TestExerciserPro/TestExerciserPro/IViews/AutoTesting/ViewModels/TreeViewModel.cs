@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
-namespace TestExerciserPro.IViews.AutoTesting.ViewModel
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
     class TreeViewModel:SolutionViewModel
     {
@@ -26,11 +26,7 @@ namespace TestExerciserPro.IViews.AutoTesting.ViewModel
 
         public string IsDeleted { get; set; }
 
-        public enum FileType
-        {
-           
-
-        }
+        public string FileType { get; set; }
         public TreeViewItem Child { get; set; }
 
         public TreeViewModel()

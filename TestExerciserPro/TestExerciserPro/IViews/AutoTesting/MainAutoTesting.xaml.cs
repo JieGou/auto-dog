@@ -15,7 +15,7 @@ using System.ComponentModel;
 using TestExerciserPro.UI.Controls.Dialogs;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
 using TestExerciserPro.UI.Controls;
-using TestExerciserPro.IViews.AutoTesting.ViewModel;
+using TestExerciserPro.IViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.IViews.AutoTesting
 {

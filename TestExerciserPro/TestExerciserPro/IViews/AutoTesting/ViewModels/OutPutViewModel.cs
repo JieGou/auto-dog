@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace TestExerciserPro.IViews.AutoTesting.ViewModel
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
     class OutPutViewModel:ToolViewModel
     {

@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Media;
 
-namespace TestExerciserPro.IViews.AutoTesting.ViewModel
+namespace TestExerciserPro.IViews.AutoTesting.ViewModels
 {
     class PaneViewModel : ViewModelBase
     {
