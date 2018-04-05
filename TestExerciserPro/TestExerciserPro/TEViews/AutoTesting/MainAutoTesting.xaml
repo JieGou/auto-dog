@@ -253,6 +253,13 @@
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.SolutionViewTemplate>
+                    <local:PanesTemplateSelector.ResourcesViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <view:ResourcesTemplateView/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.ResourcesViewTemplate>
                     <local:PanesTemplateSelector.ClassViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">

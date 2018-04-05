@@ -69,6 +69,12 @@ namespace TestExerciserPro.TEViews.AutoTesting
             set;
         }
 
+        public DataTemplate ResourcesViewTemplate
+        {
+            get;
+            set;
+        }
+
         public override System.Windows.DataTemplate SelectTemplate(object item, System.Windows.DependencyObject container)
         {
             var itemAsLayoutContent = item as LayoutContent;
@@ -90,6 +96,8 @@ namespace TestExerciserPro.TEViews.AutoTesting
 
             if (item is ErrorListViewModel)
                 return ErrorListViewTemplate;
+            if (item is ResourcesViewModel)
+                return ResourcesViewTemplate;
             return base.SelectTemplate(item, container);
         }
     }

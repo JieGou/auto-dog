@@ -157,6 +157,7 @@
     <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
     <Compile Include="TEViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
     <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\ResourcesViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml.cs">
       <DependentUpon>ClassTemplateView.xaml</DependentUpon>
     </Compile>
@@ -193,6 +194,9 @@
     <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml.cs">
       <DependentUpon>OutPutTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEViews\AutoTesting\Views\ResourcesTemplateView.xaml.cs">
+      <DependentUpon>ResourcesTemplateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TEViews\AutoTesting\Views\SolutionTemplateView.xaml.cs">
       <DependentUpon>SolutionTemplateView.xaml</DependentUpon>
@@ -272,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEViews\AutoTesting\Views\ResourcesTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
