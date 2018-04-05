@@ -157,6 +157,15 @@
     <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
     <Compile Include="TEViews\AutoTesting\ActiveDocument\ActiveDocumentConverter.cs" />
     <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
+    <Compile Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml.cs">
+      <DependentUpon>ClassTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEViews\AutoTesting\Views\ErrorListTemplateView.xaml.cs">
+      <DependentUpon>ErrorListTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEViews\AutoTesting\Views\FileStatsTemplateView.xaml.cs">
+      <DependentUpon>FileStatsTemplateView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TEViews\AutoTesting\Views\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
@@ -182,8 +191,11 @@
     <Compile Include="TEViews\AutoTesting\ViewModels\ToolViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\Views\TreeSolution.xaml.cs">
-      <DependentUpon>TreeSolution.xaml</DependentUpon>
+    <Compile Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml.cs">
+      <DependentUpon>OutPutTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEViews\AutoTesting\Views\SolutionTemplateView.xaml.cs">
+      <DependentUpon>SolutionTemplateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TEViews\AutoTesting\Workspace.cs" />
     <Compile Include="TEViews\AutoTesting\MainAutoTesting.xaml.cs">
@@ -243,11 +255,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEViews\AutoTesting\Views\ErrorListTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEViews\AutoTesting\Views\FileStatsTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TEViews\AutoTesting\Views\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\TreeSolution.xaml">
+    <Page Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEViews\AutoTesting\Views\SolutionTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

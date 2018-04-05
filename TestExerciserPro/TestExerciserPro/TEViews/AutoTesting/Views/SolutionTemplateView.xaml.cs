@@ -18,9 +18,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
     /// <summary>
     /// TreeSolution.xaml 的交互逻辑
     /// </summary>
-    public partial class TreeSolution : UserControl
+    public partial class SolutionTemplateView : UserControl
     {
-        public TreeSolution()
+        public SolutionTemplateView()
         {
             InitializeComponent();
         }

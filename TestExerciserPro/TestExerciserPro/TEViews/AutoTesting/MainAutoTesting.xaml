@@ -239,19 +239,41 @@
                     <local:PanesTemplateSelector.FileStatsViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding FileSize}"/>
+                                <!--<TextBlock Text="{Binding FileSize}"/>
                                 <TextBlock Text="{Binding LastModified}"/>
-                                <TextBox Text="test"/>
+                                <TextBox Text="test"/>-->
+                                <view:FileStatsTemplateView/>
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.FileStatsViewTemplate>
                     <local:PanesTemplateSelector.SolutionViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <view:TreeSolution></view:TreeSolution>
+                                <view:SolutionTemplateView/>
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.SolutionViewTemplate>
+                    <local:PanesTemplateSelector.ClassViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <view:ClassTemplateView/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.ClassViewTemplate>
+                    <local:PanesTemplateSelector.ErrorListViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <view:ErrorListTemplateView/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.ErrorListViewTemplate>
+                    <local:PanesTemplateSelector.OutPutViewTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <view:OutPutTemplateView/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.OutPutViewTemplate>
                 </local:PanesTemplateSelector>
             </xcad:DockingManager.LayoutItemTemplateSelector>
             <xcad:DockingManager.LayoutItemContainerStyleSelector>
