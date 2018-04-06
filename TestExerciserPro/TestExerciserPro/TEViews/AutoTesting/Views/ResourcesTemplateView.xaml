@@ -30,7 +30,7 @@
                                             Path=(viewModels:TreeViewItemProps.IsCanceled),
                                             Converter={x:Static converter:BoolToVisiableConverter.Instance}}"
                                                 Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TreeViewItem}}}">
-                                            <TextBlock FontSize="9" Text="Reload..." TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock FontSize="8.6" Text="Reload..." TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Button>
                                         <StackPanel Name="sploading" Orientation="Horizontal"
                                                     Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor ,AncestorType={x:Type TreeViewItem}},
@@ -44,7 +44,7 @@
                                                 Path=(viewModels:TreeViewItemProps.IsCanceled),
                                                Converter={x:Static converter:FlipBoolConverter.Instance}}" 
                                                     Tag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}}">
-                                                <TextBlock FontSize="9" Text="Cancel" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <TextBlock FontSize="8.6" Text="Cancel" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </Button>
                                         </StackPanel>
                                     </StackPanel>
