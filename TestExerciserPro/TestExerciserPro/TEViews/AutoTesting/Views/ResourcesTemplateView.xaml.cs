@@ -23,7 +23,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         public ResourcesTemplateView()
         {
             InitializeComponent();
-            this.Loaded += new RoutedEventHandler(DemoWindow_Loaded);
+            //this.Loaded += new RoutedEventHandler(AutoTestingWindow_Loaded);
+            AutoTestingWindowLoaded();
         }
 
         private readonly object _dummyNode = null;
@@ -40,13 +41,13 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // RUNS ON:  Background Thread
         delegate IEnumerable<string> DEL_GetItems(string strParent);
 
-        void DemoWindow_Loaded(object sender, RoutedEventArgs e)
+        public void AutoTestingWindowLoaded()
         {
             // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
 
             // Set the header to display the text of the item.
-            tviRoot.Header = "My Computer";
+            tviRoot.Header = "我的电脑";
 
             // Add a dummy node so the 'plus' indicator
             // shows in the tree

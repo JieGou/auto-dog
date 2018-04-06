@@ -10,9 +10,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Converter
 {
     [ValueConversion(typeof(bool), typeof(Visibility))]
 
-    public class ResourcesTemplateConverter : IValueConverter
+    public class BoolToVisiableConverter : IValueConverter
     {
-        public static ResourcesTemplateConverter Instance = new ResourcesTemplateConverter();
+        public static BoolToVisiableConverter Instance = new BoolToVisiableConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
