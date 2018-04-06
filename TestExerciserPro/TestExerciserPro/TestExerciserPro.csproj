@@ -519,9 +519,8 @@
     <Resource Include="TEViews\AutoTesting\Images\WinFolder.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Views\Images\Computer.png" />
-    <Resource Include="TEViews\AutoTesting\Views\Images\DiskDrive.png" />
-    <Resource Include="TEViews\AutoTesting\Views\Images\Folder.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Computer.png" />
+    <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

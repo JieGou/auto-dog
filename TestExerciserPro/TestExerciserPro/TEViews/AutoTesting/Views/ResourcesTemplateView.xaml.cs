@@ -24,7 +24,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             InitializeComponent();
             //this.Loaded += new RoutedEventHandler(AutoTestingWindow_Loaded);
-            AutoTestingWindowLoaded();
+            ResourcesTemplateViewInit();
         }
 
         private readonly object _dummyNode = null;
@@ -41,7 +41,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // RUNS ON:  Background Thread
         delegate IEnumerable<string> DEL_GetItems(string strParent);
 
-        public void AutoTestingWindowLoaded()
+        public void ResourcesTemplateViewInit()
         {
             // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
@@ -58,7 +58,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviRoot.Expanded += OnRoot_Expanded;
 
             // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            TreeViewItemProps.SetItemImageName(tviRoot, @"Images/Computer.png");
+            TreeViewItemProps.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
             // Add the item to the tree	folders
             myResourcesTree.Items.Add(tviRoot);
@@ -89,6 +89,16 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             {
                 e.Handled = true;
                 StartItemLoading(tviSender, GetFolders, AddFolderItem);
+            }
+        }
+
+        void OnFile_Expanded(object sender,RoutedEventArgs e)
+        {
+            var tviSender = e.OriginalSource as TreeViewItem;
+            if(IsItemNotLoaded(tviSender))
+            {
+                e.Handled = true;
+                StartItemLoading(tviSender, GetFiles, AddFileItem);
             }
         }
 
@@ -208,6 +218,11 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             }
         }
 
+        // Runs on Background thread.
+        IEnumerable<string> GetFiles(string strParent)
+        {
+            return (Directory.GetFiles(strParent));
+        }
 
         // Runs on Background thread.
         IEnumerable<string> GetFolders(string strParent)
@@ -224,13 +239,18 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // Runs on UI thread.
         void AddFolderItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"Images/Folder.png");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/WinFolder.gif");
+        }
+
+        void AddFileItem(TreeViewItem tviParent, string strPath)
+        {
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"..Images/document.png");
         }
 
         // Runs on UI thread.
         void AddDriveItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, strPath, strPath, @"Images/DiskDrive.png");
+            IntAddItem(tviParent, strPath, strPath, @"../Images/DiskDrive.png");
         }
 
         private void IntAddItem(TreeViewItem tviParent, string strName, string strTag, string strImageName)

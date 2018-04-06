@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TreeView x:Name="MySolutionTempTree">
+        <TreeView x:Name="MySolutionTempView">
             <TreeViewItem Header="我的工程"/>
         </TreeView>
     </Grid>
