@@ -89,15 +89,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             {
                 e.Handled = true;
                 StartItemLoading(tviSender, GetFolders, AddFolderItem);
-            }
-        }
-
-        void OnFile_Expanded(object sender,RoutedEventArgs e)
-        {
-            var tviSender = e.OriginalSource as TreeViewItem;
-            if(IsItemNotLoaded(tviSender))
-            {
-                e.Handled = true;
                 StartItemLoading(tviSender, GetFiles, AddFileItem);
             }
         }
@@ -244,7 +235,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void AddFileItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"..Images/document.png");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/document.png");
         }
 
         // Runs on UI thread.
@@ -260,6 +251,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviSubItem.Tag = strTag;
             tviSubItem.Items.Add(_dummyNode);
             tviSubItem.Expanded += OnFolder_Expanded;
+
 
             TreeViewItemProps.SetItemImageName(tviSubItem, strImageName);
             TreeViewItemProps.SetIsLoading(tviSubItem, false);

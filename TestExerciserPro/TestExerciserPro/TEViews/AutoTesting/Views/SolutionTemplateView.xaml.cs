@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
+using TestExerciserPro.TEViews.AutoTesting;
 
 namespace TestExerciserPro.TEViews.AutoTesting.Views
 {
@@ -23,6 +24,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         public SolutionTemplateView()
         {
             InitializeComponent();
+            SolutionTemplateViewInit();
         }
 
         private readonly object _dummyNode = null;
@@ -39,7 +41,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // RUNS ON:  Background Thread
         delegate IEnumerable<string> DEL_GetItems(string strParent);
 
-        public void SolutionTemplateViewInit()
+       public void SolutionTemplateViewInit()
         {
             // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
@@ -49,25 +51,59 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             // Add a dummy node so the 'plus' indicator
             // shows in the tree
-            tviRoot.Items.Add(_dummyNode);
+            //getFiles(MainAutoTesting.solutionPath,tviRoot);
+            getFiles(@"F:\自动化测试", tviRoot);
+            //tviRoot.Items.Add(_dummyNode);
 
             // Set the item expand handler
             // This is where the defered loading is handled
-            tviRoot.Expanded += OnRoot_Expanded;
+            //tviRoot.Expanded += OnFolder_Expanded;
 
             // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            TreeViewItemProps.SetItemImageName(tviRoot, @"Images/Computer.png");
+            TreeViewItemProps.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
             // Add the item to the tree	folders
             MySolutionTempView.Items.Add(tviRoot);
         }
 
-        void OnRoot_Expanded(object sender, RoutedEventArgs e)
+
+        private void getFiles(string filePath, TreeViewItem tvi)
         {
-            var tviSender = e.OriginalSource as TreeViewItem;
-            if (IsItemNotLoaded(tviSender))
+            try
             {
-                StartItemLoading(tviSender, GetDrives, AddDriveItem);
+                if (filePath == null || filePath == "")
+                {
+
+                }
+                else
+                {
+                    DirectoryInfo folder = new DirectoryInfo(filePath);
+                    tvi.Header = folder.Name;
+                    tvi.Tag = folder.FullName;
+                    FileInfo[] chldFiles = folder.GetFiles("*.*");
+                    foreach (FileInfo chlFile in chldFiles)
+                    {
+                        TreeViewItem chldNode = new TreeViewItem();
+                        chldNode.Header = chlFile.Name;
+                        chldNode.Tag = chlFile.FullName;
+                        string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
+                        tvi.Items.Add(chldNode);
+                    }
+
+                    DirectoryInfo[] chldFolders = folder.GetDirectories();
+                    foreach (DirectoryInfo chldFolder in chldFolders)
+                    {
+                        TreeViewItem chldNode = new TreeViewItem();
+                        chldNode.Header = folder.Name;
+                        chldNode.Tag = folder.FullName;
+                        tvi.Items.Add(chldNode);
+                        getFiles(chldFolder.FullName, chldNode);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+
             }
         }
 
@@ -210,13 +246,12 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // Runs on Background thread.
         IEnumerable<string> GetFolders(string strParent)
         {
-            return (Directory.GetDirectories(strParent));
+            return (Directory.GetDirectories(MainAutoTesting.solutionPath));
         }
 
-        // Runs on Background thread.
-        IEnumerable<string> GetDrives(string strParent)
+        IEnumerable<string> GetFiles(string strParent)
         {
-            return (Directory.GetLogicalDrives());
+            return (Directory.GetFiles(strParent));
         }
 
         // Runs on UI thread.

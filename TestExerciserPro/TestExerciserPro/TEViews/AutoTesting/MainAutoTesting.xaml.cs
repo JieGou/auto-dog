@@ -29,6 +29,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
         #region 变量
         int clickCount = 0;
         string currentFileName;
+        public static string solutionPath = null;
         static TextEditor currentTextEditor;
         FoldingManager foldingManager;
         object foldingStrategy;
@@ -170,8 +171,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
                 addDocumentItems(sender,e);
             }
         }
-
-        static public string solutionPath = null;
+ 
         private void openProject(object sender, RoutedEventArgs e)
         {
             TEControls.FolderBrowserDialog folder = new TEControls.FolderBrowserDialog();
