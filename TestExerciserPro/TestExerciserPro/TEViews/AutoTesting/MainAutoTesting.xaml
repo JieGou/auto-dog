@@ -240,9 +240,6 @@
                     <local:PanesTemplateSelector.FileStatsViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <!--<TextBlock Text="{Binding FileSize}"/>
-                                <TextBlock Text="{Binding LastModified}"/>
-                                <TextBox Text="test"/>-->
                                 <view:FileStatsTemplateView/>
                             </StackPanel>
                         </DataTemplate>
@@ -250,7 +247,7 @@
                     <local:PanesTemplateSelector.SolutionViewTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <view:SolutionTemplateView/>
+                                <view:SolutionTemplateView />
                             </StackPanel>
                         </DataTemplate>
                     </local:PanesTemplateSelector.SolutionViewTemplate>

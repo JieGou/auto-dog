@@ -27,6 +27,15 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             SolutionTemplateViewInit();
         }
 
+        //打开项目事件
+        private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "solutionPath")
+            {
+                SolutionTemplateViewInit();
+            }
+        }
+
         private readonly object _dummyNode = null;
 
         // The main loader, in this sample app it is always "LoadSubItems"
@@ -45,22 +54,21 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
+            // Add Nodes
+            getFiles(Properties.Settings.Default.solutionPath, tviRoot);
+            // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
+            if (tviRoot!=null) TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
-            // Set the header to display the text of the item.
-            //tviRoot.Header = "我的电脑";
 
             // Add a dummy node so the 'plus' indicator
             // shows in the tree
-            //getFiles(MainAutoTesting.solutionPath,tviRoot);
-            getFiles(Properties.Settings.Default.solutionPath, tviRoot);
             //tviRoot.Items.Add(_dummyNode);
 
             // Set the item expand handler
             // This is where the defered loading is handled
             //tviRoot.Expanded += OnFolder_Expanded;
 
-            // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
+
             // Add the item to the tree	folders
             MySolutionTempView.Items.Add(tviRoot);
         }
