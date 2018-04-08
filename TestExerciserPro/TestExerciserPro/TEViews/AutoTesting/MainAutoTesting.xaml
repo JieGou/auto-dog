@@ -239,44 +239,44 @@
                     </local:PanesTemplateSelector.FileViewTemplate >
                     <local:PanesTemplateSelector.FileStatsViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer>
                                 <view:FileStatsTemplateView/>
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.FileStatsViewTemplate>
                     <local:PanesTemplateSelector.SolutionViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer>
                                 <view:SolutionTemplateView />
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.SolutionViewTemplate>
                     <local:PanesTemplateSelector.ResourcesViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer >
                                 <view:ResourcesTemplateView/>
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.ResourcesViewTemplate>
                     <local:PanesTemplateSelector.ClassViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer >
                                 <view:ClassTemplateView/>
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.ClassViewTemplate>
                     <local:PanesTemplateSelector.ErrorListViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer>
                                 <view:ErrorListTemplateView/>
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.ErrorListViewTemplate>
                     <local:PanesTemplateSelector.OutPutViewTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
+                            <ScrollViewer>
                                 <view:OutPutTemplateView/>
-                            </StackPanel>
+                            </ScrollViewer>
                         </DataTemplate>
                     </local:PanesTemplateSelector.OutPutViewTemplate>
                 </local:PanesTemplateSelector>
