@@ -8,43 +8,7 @@ using System.Windows.Controls;
 
 namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 {
-    class TreeViewModel
-    {
-        public string Icon { get; set; }
-
-        public string EditIcon { get; set; }
-
-        public string DisplayName { get; set; }
-
-        public string Text { get; set; }
-
-        public bool IsModify { get; set; }
-
-        public bool IsChecked { get; set; }
-
-        public string Tag { get; set; }
-
-        public string IsDeleted { get; set; }
-
-        public string FileType { get; set; }
-
-        public string FolderPath { get; set; }
-        public TreeViewItem Child { get; set; }
-
-        public TreeViewModel()
-        {
-            
-        }
-
-
-        private ObservableCollection<TreeViewModel> _children;
-        public ObservableCollection<TreeViewModel> Children
-        {
-            get { return (_children ?? (_children = new ObservableCollection<TreeViewModel>())); }
-        }
-    }
-
-    public static class TreeViewItemProps
+    public static class TreeViewModel
     {
         public static string GetItemImageName(DependencyObject obj)
         {
@@ -91,20 +55,20 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         public static readonly DependencyProperty IsLoadedProperty;
         public static readonly DependencyProperty IsCanceledProperty;
 
-        static TreeViewItemProps()
+        static TreeViewModel()
         {
-            ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewItemProps), new UIPropertyMetadata(string.Empty));
+            ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
 
             IsLoadingProperty = DependencyProperty.RegisterAttached("IsLoading",
-                                                                    typeof(bool), typeof(TreeViewItemProps),
+                                                                    typeof(bool), typeof(TreeViewModel),
                                                                     new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender));
 
             IsLoadedProperty = DependencyProperty.RegisterAttached("IsLoaded",
-                                                                    typeof(bool), typeof(TreeViewItemProps),
+                                                                    typeof(bool), typeof(TreeViewModel),
                                                                     new FrameworkPropertyMetadata(false));
 
             IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
-                                                                    typeof(bool), typeof(TreeViewItemProps),
+                                                                    typeof(bool), typeof(TreeViewModel),
                                                                     new FrameworkPropertyMetadata(false));
         }
     }

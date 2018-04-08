@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExerciserPro.UI", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExerciserPro.Editor", "TestExerciserPro.Editor\TestExerciserPro.Editor.csproj", "{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExerciserPro.TreeView", "TestExerciserPro.TreeView\TestExerciserPro.TreeView.csproj", "{012C8923-BA09-4CDE-9B19-110316C81178}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,22 @@ Global
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Release|Net40.Build.0 = Release|Any CPU
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Release|WithNRefactory.ActiveCfg = Release|Any CPU
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Release|WithNRefactory.Build.0 = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Net35.ActiveCfg = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Net35.Build.0 = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Net40.ActiveCfg = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|Net40.Build.0 = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|WithNRefactory.ActiveCfg = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Debug|WithNRefactory.Build.0 = Debug|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Net35.ActiveCfg = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Net35.Build.0 = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Net40.ActiveCfg = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|Net40.Build.0 = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|WithNRefactory.ActiveCfg = Release|Any CPU
+		{012C8923-BA09-4CDE-9B19-110316C81178}.Release|WithNRefactory.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

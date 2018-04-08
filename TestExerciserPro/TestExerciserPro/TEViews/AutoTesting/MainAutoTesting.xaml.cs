@@ -179,6 +179,8 @@ namespace TestExerciserPro.TEViews.AutoTesting
             if (folder.ShowDialog() == true)
             {
                 solutionPath = folder.FileName;
+                Properties.Settings.Default.solutionPath = solutionPath;
+                Properties.Settings.Default.Save();
             }
         }
 

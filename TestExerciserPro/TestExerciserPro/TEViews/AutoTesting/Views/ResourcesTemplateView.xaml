@@ -19,21 +19,21 @@
                                 <Grid>
                                     <StackPanel x:Name="spImg" Orientation="Horizontal">
                                         <Image x:Name="img" Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
-                                               Source="{Binding (viewModels:TreeViewItemProps.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
+                                               Source="{Binding (viewModels:TreeViewModel.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
                                         <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
                                         <Button x:Name="btnReload" Click="btnReload_Click"  VerticalAlignment="Center" 
-                                                Visibility="{Binding (viewModels:TreeViewItemProps.IsCanceled), Converter={x:Static converter:BoolToVisiableConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"
+                                                Visibility="{Binding (viewModels:TreeViewModel.IsCanceled), Converter={x:Static converter:BoolToVisiableConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"
                                                 Tag="{Binding RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}">
                                             <TextBlock FontSize="8.6" Text="Reload..." TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Button>
                                         <StackPanel x:Name="sploading" Orientation="Horizontal"
-                                                    Visibility="{Binding (viewModels:TreeViewItemProps.IsLoading), Converter={x:Static converter:BoolToVisiableConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}">
+                                                    Visibility="{Binding (viewModels:TreeViewModel.IsLoading), Converter={x:Static converter:BoolToVisiableConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}">
                                             <Grid Height="13"  MinWidth="50" MaxWidth="75" Margin="5,0">
                                                 <ProgressBar x:Name="pbLoading"  MinWidth="50" MaxWidth="75" IsIndeterminate="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                 <TextBlock  x:Name="txtLoading" FontSize="8.6" Text="Loading..." Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </Grid>
                                             <Button x:Name="btnCancelLoad" Click="btnCancelLoad_Click" VerticalAlignment="Center"
-                                                    IsEnabled="{Binding (viewModels:TreeViewItemProps.IsCanceled), Converter={x:Static converter:FlipBoolConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}" 
+                                                    IsEnabled="{Binding (viewModels:TreeViewModel.IsCanceled), Converter={x:Static converter:FlipBoolConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}" 
                                                     Tag="{Binding RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}">
                                                 <TextBlock FontSize="8.6" Text="Cancel" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </Button>

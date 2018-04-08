@@ -58,7 +58,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviRoot.Expanded += OnRoot_Expanded;
 
             // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            TreeViewItemProps.SetItemImageName(tviRoot, @"../Images/Computer.png");
+            TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
             // Add the item to the tree	folders
             myResourcesTree.Items.Add(tviRoot);
@@ -77,7 +77,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             if (tviSender != null)
             {
-                return (TreeViewItemProps.GetIsLoaded(tviSender) == false);
+                return (TreeViewModel.GetIsLoaded(tviSender) == false);
             }
             return (false);
         }
@@ -103,9 +103,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             // Set all attached props to their proper default values
             // This causes the progress bar and cancel button to appear
-            TreeViewItemProps.SetIsCanceled(tviSender, false);
-            TreeViewItemProps.SetIsLoaded(tviSender, true);
-            TreeViewItemProps.SetIsLoading(tviSender, true);
+            TreeViewModel.SetIsCanceled(tviSender, false);
+            TreeViewModel.SetIsLoaded(tviSender, true);
+            TreeViewModel.SetIsLoading(tviSender, true);
 
             // Store a ref to the main loader logic for cleanup purposes
             DEL_Loader actLoad = LoadSubItems;
@@ -156,7 +156,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 tviIn.Items.Add(_dummyNode);
                 tviIn.IsExpanded = false;
             }
-            TreeViewItemProps.SetIsLoaded(tviIn, false);
+            TreeViewModel.SetIsLoaded(tviIn, false);
         }
 
         // Amount of delay for each item in this demo
@@ -205,7 +205,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
                 // Set the "IsLoading" dependency property is set to 'false'
                 // this will cause all loading UI (i.e. progress bar, cancel button) to disappear.
-                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewItemProps.SetIsLoading(tviParent, false)));
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewModel.SetIsLoading(tviParent, false)));
             }
         }
 
@@ -253,8 +253,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviSubItem.Expanded += OnFolder_Expanded;
 
 
-            TreeViewItemProps.SetItemImageName(tviSubItem, strImageName);
-            TreeViewItemProps.SetIsLoading(tviSubItem, false);
+            TreeViewModel.SetItemImageName(tviSubItem, strImageName);
+            TreeViewModel.SetIsLoading(tviSubItem, false);
 
             tviParent.Items.Add(tviSubItem);
         }
@@ -291,7 +291,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 var tviOwner = btnSend.Tag as TreeViewItem;
                 if (tviOwner != null)
                 {
-                    TreeViewItemProps.SetIsCanceled(tviOwner, true);
+                    TreeViewModel.SetIsCanceled(tviOwner, true);
                     lock (m_dic_ItemsExecuting)
                     {
                         if (m_dic_ItemsExecuting.ContainsKey(tviOwner))

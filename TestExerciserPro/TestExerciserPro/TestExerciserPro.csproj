@@ -147,6 +147,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Settings.cs" />
     <Compile Include="TEControls\COMGuids.cs" />
     <Compile Include="TEControls\ErrorHelper.cs" />
     <Compile Include="TEControls\FolderBrowserDialog.cs" />

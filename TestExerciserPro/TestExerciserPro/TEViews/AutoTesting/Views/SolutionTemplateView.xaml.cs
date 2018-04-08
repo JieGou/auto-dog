@@ -41,18 +41,18 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         // RUNS ON:  Background Thread
         delegate IEnumerable<string> DEL_GetItems(string strParent);
 
-       public void SolutionTemplateViewInit()
+        public void SolutionTemplateViewInit()
         {
             // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
 
             // Set the header to display the text of the item.
-            tviRoot.Header = "我的电脑";
+            //tviRoot.Header = "我的电脑";
 
             // Add a dummy node so the 'plus' indicator
             // shows in the tree
             //getFiles(MainAutoTesting.solutionPath,tviRoot);
-            getFiles(@"F:\自动化测试", tviRoot);
+            getFiles(Properties.Settings.Default.solutionPath, tviRoot);
             //tviRoot.Items.Add(_dummyNode);
 
             // Set the item expand handler
@@ -60,24 +60,23 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             //tviRoot.Expanded += OnFolder_Expanded;
 
             // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            TreeViewItemProps.SetItemImageName(tviRoot, @"../Images/Computer.png");
-
+            TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
             // Add the item to the tree	folders
             MySolutionTempView.Items.Add(tviRoot);
         }
 
 
-        private void getFiles(string filePath, TreeViewItem tvi)
+        private void getFiles(string solutionPath, TreeViewItem tvi)
         {
             try
             {
-                if (filePath == null || filePath == "")
+                if (solutionPath == null || solutionPath == "")
                 {
 
                 }
                 else
                 {
-                    DirectoryInfo folder = new DirectoryInfo(filePath);
+                    DirectoryInfo folder = new DirectoryInfo(solutionPath);
                     tvi.Header = folder.Name;
                     tvi.Tag = folder.FullName;
                     FileInfo[] chldFiles = folder.GetFiles("*.*");
@@ -111,7 +110,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             if (tviSender != null)
             {
-                return (TreeViewItemProps.GetIsLoaded(tviSender) == false);
+                return (TreeViewModel.GetIsLoaded(tviSender) == false);
             }
             return (false);
         }
@@ -136,9 +135,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             // Set all attached props to their proper default values
             // This causes the progress bar and cancel button to appear
-            TreeViewItemProps.SetIsCanceled(tviSender, false);
-            TreeViewItemProps.SetIsLoaded(tviSender, true);
-            TreeViewItemProps.SetIsLoading(tviSender, true);
+            TreeViewModel.SetIsCanceled(tviSender, false);
+            TreeViewModel.SetIsLoaded(tviSender, true);
+            TreeViewModel.SetIsLoading(tviSender, true);
 
             // Store a ref to the main loader logic for cleanup purposes
             DEL_Loader actLoad = LoadSubItems;
@@ -189,7 +188,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 tviIn.Items.Add(_dummyNode);
                 tviIn.IsExpanded = false;
             }
-            TreeViewItemProps.SetIsLoaded(tviIn, false);
+            TreeViewModel.SetIsLoaded(tviIn, false);
         }
 
         // Amount of delay for each item in this demo
@@ -238,7 +237,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
                 // Set the "IsLoading" dependency property is set to 'false'
                 // this will cause all loading UI (i.e. progress bar, cancel button) to disappear.
-                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewItemProps.SetIsLoading(tviParent, false)));
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewModel.SetIsLoading(tviParent, false)));
             }
         }
 
@@ -274,8 +273,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviSubItem.Items.Add(_dummyNode);
             tviSubItem.Expanded += OnFolder_Expanded;
 
-            TreeViewItemProps.SetItemImageName(tviSubItem, strImageName);
-            TreeViewItemProps.SetIsLoading(tviSubItem, false);
+            TreeViewModel.SetItemImageName(tviSubItem, strImageName);
+            TreeViewModel.SetIsLoading(tviSubItem, false);
 
             tviParent.Items.Add(tviSubItem);
         }
@@ -312,7 +311,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 var tviOwner = btnSend.Tag as TreeViewItem;
                 if (tviOwner != null)
                 {
-                    TreeViewItemProps.SetIsCanceled(tviOwner, true);
+                    TreeViewModel.SetIsCanceled(tviOwner, true);
                     lock (m_dic_ItemsExecuting)
                     {
                         if (m_dic_ItemsExecuting.ContainsKey(tviOwner))
