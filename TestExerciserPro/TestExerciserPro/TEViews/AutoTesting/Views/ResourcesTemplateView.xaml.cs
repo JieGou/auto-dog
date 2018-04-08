@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
+using TestExerciserPro.TEViews.AutoTesting.Logic;
 
 namespace TestExerciserPro.TEViews.AutoTesting.Views
 {
@@ -52,7 +53,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             // Add a dummy node so the 'plus' indicator
             // shows in the tree
             tviRoot.Items.Add(_dummyNode);
-
             // Set the item expand handler
             // This is where the defered loading is handled
             tviRoot.Expanded += OnRoot_Expanded;
@@ -235,7 +235,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void AddFileItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/document.png");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath,SetFileIcons.setFileIcon(strPath));
         }
 
         // Runs on UI thread.

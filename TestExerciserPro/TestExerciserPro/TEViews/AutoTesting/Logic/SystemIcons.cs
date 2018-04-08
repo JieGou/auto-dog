@@ -4,7 +4,9 @@ using System.Drawing;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 
-
+/// <summary>
+/// 尚未使用此方法
+/// </summary>
 namespace TestExerciserPro.TEViews.AutoTesting.Logic
 {
     /// <summary>

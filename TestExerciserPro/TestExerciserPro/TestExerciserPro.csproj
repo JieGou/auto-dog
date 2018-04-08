@@ -160,8 +160,8 @@
     <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\BoolToVisiableConverter.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\FlipBoolConverter.cs" />
-    <Compile Include="TEViews\AutoTesting\Logic\GetSystemIcons.cs" />
     <Compile Include="TEViews\AutoTesting\Logic\SetFileIcons.cs" />
+    <Compile Include="TEViews\AutoTesting\Logic\SystemIcons.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\ResourcesViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml.cs">
       <DependentUpon>ClassTemplateView.xaml</DependentUpon>
@@ -526,7 +526,13 @@
     <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TEViews\AutoTesting\Images\FileIcons\" />
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\python.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\txt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
