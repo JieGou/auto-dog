@@ -526,13 +526,25 @@
     <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FileIcons\python.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\FileIcons\txt.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\FileIcons\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\csharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\php.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\cpp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\python.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileIcons\c.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

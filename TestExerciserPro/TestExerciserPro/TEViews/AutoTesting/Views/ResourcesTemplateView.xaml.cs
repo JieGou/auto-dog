@@ -160,7 +160,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         }
 
         // Amount of delay for each item in this demo
-        static private double sm_dbl_ItemDelayInSeconds = 0.3;
+        //static private double sm_dbl_ItemDelayInSeconds = 0.3;
 
         // Runs on background thread.
         // Queuing updates can help in rapid loading scenerios,
@@ -172,7 +172,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 foreach (string dir in actGetItems(strPath))
                 {
                     // Be really slow :) for demo purposes
-                    Thread.Sleep(TimeSpan.FromSeconds(sm_dbl_ItemDelayInSeconds).Milliseconds);
+                    //Thread.Sleep(TimeSpan.FromSeconds(sm_dbl_ItemDelayInSeconds).Milliseconds);
 
                     // Check to see if cancel is requested
                     if (GetCancelState(tviParent))
@@ -235,7 +235,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void AddFileItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath,SetFileIcons.setFileIcon(strPath));
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath,@"../Images/document.png");
         }
 
         // Runs on UI thread.
