@@ -24,7 +24,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         public ResourcesTemplateView()
         {
             InitializeComponent();
-            //this.Loaded += new RoutedEventHandler(AutoTestingWindow_Loaded);
             ResourcesTemplateViewInit();
         }
 

@@ -9,7 +9,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TreeView x:Name="MySolutionTempView">
+        <TreeView x:Name="MySolutionTempView"
+                  SelectedItemChanged="MySolutionTempView_SelectedItemChanged"
+                  MouseDoubleClick="MySolutionTempView_MouseDoubleClick"
+                  MouseWheel="MySolutionTempView_MouseWheel">
             <TreeView.Resources>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="HeaderTemplate">
@@ -27,6 +30,22 @@
                     </Setter>
                 </Style>
             </TreeView.Resources>
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="添加(D)">
+                        <MenuItem Header="新建文件夹(D)"/>
+                        <MenuItem Header="新建文件(F)..."/>
+                    </MenuItem>
+                    <MenuItem Icon="" Header="打开(O)"/>
+                    <MenuItem Icon="" Header="剪贴(T) Ctrl + X"/>
+                    <MenuItem Icon="" Header="复制(Y) Ctrl + C"/>
+                    <MenuItem Icon="" Header="粘贴(P) Ctrl + V"/>
+                    <MenuItem Icon="" Header="删除(D) Del"/>
+                    <MenuItem Icon="" Header="重命名(M)"/>
+                    <MenuItem Icon="" Header="在文件资源管理器中打开文件夹(X)"/>
+                    <MenuItem Icon="" Header="属性"/>
+                </ContextMenu>
+            </TreeView.ContextMenu>
         </TreeView>
     </Grid>
 </UserControl>

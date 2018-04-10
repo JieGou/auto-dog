@@ -84,5 +84,39 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 
             }
         }
+
+        private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            var tviNew = (TreeViewItem)e.NewValue;
+            if (tviNew!=null)
+            {
+                if (!File.Exists(tviNew.Tag.ToString()))
+                {
+                    TreeViewModel.SetItemImageName(tviNew, @"../Images/FolderSelected.png");
+                    if (e.OldValue != null)
+                    {
+                        var tviOld = (TreeViewItem)e.OldValue;
+                        TreeViewModel.SetItemImageName(tviOld, @"../Images/FolderClosed.png");
+                    }
+                }
+                else
+                {
+
+                }
+            }
+                    
+            MessageBox.Show((tviNew.Tag).ToString());
+           
+        }
+
+        private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void MySolutionTempView_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+
+        }
     }
 }
