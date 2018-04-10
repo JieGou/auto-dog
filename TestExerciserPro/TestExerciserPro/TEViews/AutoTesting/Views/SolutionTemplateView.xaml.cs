@@ -24,93 +24,42 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         public SolutionTemplateView()
         {
             InitializeComponent();
-            SolutionTemplateViewInit();
-        }
-
-        //打开项目事件
-        private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == "solutionPath")
-            {
-                SolutionTemplateViewInit();
-            }
+            //this.Loaded += new RoutedEventHandler(AutoTestingWindow_Loaded);
+            ResourcesTemplateViewInit();
         }
 
         private readonly object _dummyNode = null;
 
-        // The main loader, in this sample app it is always "LoadSubItems"
-        // RUNS ON:  Background Thread
-        delegate void DEL_Loader(TreeViewItem tviLoad, string strPath, DEL_GetItems actGetItems, DEL_AddSubItem actAddSubItem);
+        //后台线程
+        delegate void DelegateLoader(TreeViewItem tviLoad, string strPath, DelegateGetItems actGetItems, DelegateAddSubItem actAddSubItem);
 
-        // Adds the actual TreeViewItem, in this sample it's either "AddFolderItem" or "AddDriveItem"
-        // RUNS ON:  UI Thread
-        delegate void DEL_AddSubItem(TreeViewItem tviParent, string strPath);
+        //UI线程
+        delegate void DelegateAddSubItem(TreeViewItem tviParent, string strPath);
 
-        // Gets an IEnumerable for the items to load, in this sample it's either "GetFolders" or "GetDrives"
-        // RUNS ON:  Background Thread
-        delegate IEnumerable<string> DEL_GetItems(string strParent);
+        //后台线程
+        delegate IEnumerable<string> DelegateGetItems(string strParent);
 
-        public void SolutionTemplateViewInit()
+        public void ResourcesTemplateViewInit()
         {
-            // Create a new TreeViewItem to serve as the root.
             var tviRoot = new TreeViewItem();
-            // Add Nodes
-            getFiles(Properties.Settings.Default.solutionPath, tviRoot);
-            // Set the attached property 'ItemImageName'	// to the image we want displayed in the tree
-            if (tviRoot!=null) TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
+            tviRoot.Header = "我的电脑";
 
-            // Add a dummy node so the 'plus' indicator
-            // shows in the tree
-            //tviRoot.Items.Add(_dummyNode);
+            tviRoot.Items.Add(_dummyNode);
 
-            // Set the item expand handler
-            // This is where the defered loading is handled
-            //tviRoot.Expanded += OnFolder_Expanded;
+            tviRoot.Expanded += OnRoot_Expanded;
 
+            TreeViewModel.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
-            // Add the item to the tree	folders
             MySolutionTempView.Items.Add(tviRoot);
         }
 
-
-        private void getFiles(string solutionPath, TreeViewItem tvi)
+        void OnRoot_Expanded(object sender, RoutedEventArgs e)
         {
-            try
+            var tviSender = e.OriginalSource as TreeViewItem;
+            if (IsItemNotLoaded(tviSender))
             {
-                if (solutionPath == null || solutionPath == "")
-                {
-
-                }
-                else
-                {
-                    DirectoryInfo folder = new DirectoryInfo(solutionPath);
-                    tvi.Header = folder.Name;
-                    tvi.Tag = folder.FullName;
-                    FileInfo[] chldFiles = folder.GetFiles("*.*");
-                    foreach (FileInfo chlFile in chldFiles)
-                    {
-                        TreeViewItem chldNode = new TreeViewItem();
-                        chldNode.Header = chlFile.Name;
-                        chldNode.Tag = chlFile.FullName;
-                        string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
-                        tvi.Items.Add(chldNode);
-                    }
-
-                    DirectoryInfo[] chldFolders = folder.GetDirectories();
-                    foreach (DirectoryInfo chldFolder in chldFolders)
-                    {
-                        TreeViewItem chldNode = new TreeViewItem();
-                        chldNode.Header = folder.Name;
-                        chldNode.Tag = folder.FullName;
-                        tvi.Items.Add(chldNode);
-                        getFiles(chldFolder.FullName, chldNode);
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-
+                StartItemLoading(tviSender, GetDrives, AddDriveItem);
             }
         }
 
@@ -130,35 +79,31 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             {
                 e.Handled = true;
                 StartItemLoading(tviSender, GetFolders, AddFolderItem);
+                StartItemLoading(tviSender, GetFiles, AddFileItem);
             }
         }
 
-        void StartItemLoading(TreeViewItem tviSender, DEL_GetItems actGetItems, DEL_AddSubItem actAddSubItem)
+        void StartItemLoading(TreeViewItem tviSender, DelegateGetItems actGetItems, DelegateAddSubItem actAddSubItem)
         {
-            // Add a entry in the cancel state dictionary
             SetCancelState(tviSender, false);
 
-            // Clear away the dummy node
             tviSender.Items.Clear();
 
-            // Set all attached props to their proper default values
-            // This causes the progress bar and cancel button to appear
             TreeViewModel.SetIsCanceled(tviSender, false);
             TreeViewModel.SetIsLoaded(tviSender, true);
             TreeViewModel.SetIsLoading(tviSender, true);
 
-            // Store a ref to the main loader logic for cleanup purposes
-            DEL_Loader actLoad = LoadSubItems;
+            DelegateLoader actLoad = LoadSubItems;
 
-            // Invoke the loader on a background thread.
+            // 调用Load事件
             actLoad.BeginInvoke(tviSender, tviSender.Tag as string, actGetItems, actAddSubItem, ProcessAsyncCallback, actLoad);
         }
 
-        // Keeps a list of all TreeViewItems currently expanding.
-        // If a cancel request comes, it cause the bool value to be set to true.
+        // 保存当前正在扩展的所有treeviewitem的列表。
+        // 如果一个cancel请求出现，它会导致bool值被设置为true。
         Dictionary<TreeViewItem, bool> m_dic_ItemsExecuting = new Dictionary<TreeViewItem, bool>();
 
-        // Set's the cancel state of specific TreeViewItem
+        // 设置取消状态
         void SetCancelState(TreeViewItem tviSender, bool bState)
         {
             lock (m_dic_ItemsExecuting)
@@ -167,7 +112,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             }
         }
 
-        // Get's the cancel state of specific TreeViewItem
+        // 获取取消状态
         bool GetCancelState(TreeViewItem tviSender)
         {
             lock (m_dic_ItemsExecuting)
@@ -178,7 +123,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             }
         }
 
-        // Remove's the TreeViewItem from the cancel dictionary
+        // 从字典中删除TreeViewItem
         void RemoveCancel(TreeViewItem tviSender)
         {
             lock (m_dic_ItemsExecuting)
@@ -199,78 +144,81 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             TreeViewModel.SetIsLoaded(tviIn, false);
         }
 
-        // Amount of delay for each item in this demo
-        static private double sm_dbl_ItemDelayInSeconds = 0.3;
+        // 设置延迟时间
+        //static private double sm_dbl_ItemDelayInSeconds = 0.3;
 
-        // Runs on background thread.
-        // Queuing updates can help in rapid loading scenerios,
-        // I just wanted to illustrate a more granualar approach.
-        void LoadSubItems(TreeViewItem tviParent, string strPath, DEL_GetItems actGetItems, DEL_AddSubItem actAddSubItem)
+        void LoadSubItems(TreeViewItem tviParent, string strPath, DelegateGetItems actGetItems, DelegateAddSubItem actAddSubItem)
         {
             try
             {
                 foreach (string dir in actGetItems(strPath))
                 {
-                    // Be really slow :) for demo purposes
-                    Thread.Sleep(TimeSpan.FromSeconds(sm_dbl_ItemDelayInSeconds).Milliseconds);
+                    // 设置延迟
+                    //Thread.Sleep(TimeSpan.FromSeconds(sm_dbl_ItemDelayInSeconds).Milliseconds);
 
-                    // Check to see if cancel is requested
+                    // 检查取消是否被访问
                     if (GetCancelState(tviParent))
                     {
-                        // If cancel dispatch "ResetTreeItem" for the parent node and
-                        // get out of here.
+                        // 如果取消为父节点发送“ResetTreeItem”。
                         Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ResetTreeItem(tviParent, false)));
                         break;
                     }
                     else
                     {
-                        // Call "actAddSubItem" on the UI thread to create a TreeViewItem and add it the control.
+                        //在UI线程上调用“actAddSubItem”来创建TreeViewItem并添加它的控件。
                         Dispatcher.BeginInvoke(DispatcherPriority.Normal, actAddSubItem, tviParent, dir);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Reset the TreeViewItem to unloaded state if an exception occurs
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ResetTreeItem(tviParent, true)));
-
-                // Rethrow any exceptions, the EndInvoke handler "ProcessAsyncCallback" 
-                // will redispatch on UI thread for further processing and notification.
                 throw ex;
             }
             finally
             {
-                // Ensure the TreeViewItem is no longer in the cancel state dictionary.
+                // 确保TreeViewItem不再在取消状态中
                 RemoveCancel(tviParent);
 
-                // Set the "IsLoading" dependency property is set to 'false'
-                // this will cause all loading UI (i.e. progress bar, cancel button) to disappear.
+                // 设置“IsLoading”依赖性属性设置为“false”
+                // 所有加载UI（例如进度条、取消按钮）消失。
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewModel.SetIsLoading(tviParent, false)));
             }
         }
 
-
-        // Runs on Background thread.
-        IEnumerable<string> GetFolders(string strParent)
-        {
-            return (Directory.GetDirectories(MainAutoTesting.solutionPath));
-        }
-
+        // 后台线程
         IEnumerable<string> GetFiles(string strParent)
         {
             return (Directory.GetFiles(strParent));
         }
 
-        // Runs on UI thread.
-        void AddFolderItem(TreeViewItem tviParent, string strPath)
+        // 后台线程
+        IEnumerable<string> GetFolders(string strParent)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"Images/Folder.png");
+            return (Directory.GetDirectories(strParent));
         }
 
-        // Runs on UI thread.
+        // 后台线程
+        IEnumerable<string> GetDrives(string strParent)
+        {
+            return (Directory.GetLogicalDrives());
+        }
+
+        // UI线程
+        void AddFolderItem(TreeViewItem tviParent, string strPath)
+        {
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/WinFolder.gif");
+        }
+
+        void AddFileItem(TreeViewItem tviParent, string strPath)
+        {
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/document.png");
+        }
+
+        // UI线程
         void AddDriveItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, strPath, strPath, @"Images/DiskDrive.png");
+            IntAddItem(tviParent, strPath, strPath, @"../Images/DiskDrive.png");
         }
 
         private void IntAddItem(TreeViewItem tviParent, string strName, string strTag, string strImageName)
@@ -281,6 +229,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviSubItem.Items.Add(_dummyNode);
             tviSubItem.Expanded += OnFolder_Expanded;
 
+
             TreeViewModel.SetItemImageName(tviSubItem, strImageName);
             TreeViewModel.SetIsLoading(tviSubItem, false);
 
@@ -289,7 +238,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void ProcessAsyncCallback(IAsyncResult iAR)
         {
-            // Call end invoke on UI thread to process any exceptions, etc.
+            // 在UI线程上调用end invoke来处理任何异常，等等。
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, (Action)(() => ProcessEndInvoke(iAR)));
         }
 
@@ -297,20 +246,16 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             try
             {
-                var actInvoked = (DEL_Loader)iAR.AsyncState;
+                var actInvoked = (DelegateLoader)iAR.AsyncState;
                 actInvoked.EndInvoke(iAR);
             }
             catch (Exception ex)
             {
-                // Probably should check for useful inner exceptions
                 MessageBox.Show(string.Format("Error in ProcessEndInvoke\r\nException:  {0}", ex.Message));
             }
         }
 
-        // When the cancel button is clicked, I get access to 
-        // the TreeViewItem in question from the button's Tag property,
-        // which I set a binding for in the XAML.
-        // Then I mark the TreeViewItem as canceling.
+        //当“取消”按钮被点击时，根据按钮的Tag属性来标记取消状态为正在取消
         private void btnCancelLoad_Click(object sender, RoutedEventArgs e)
         {
             var btnSend = e.OriginalSource as Button;
