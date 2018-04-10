@@ -479,7 +479,7 @@
     <Resource Include="TEViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\document.png" />
+    <Resource Include="TEViews\AutoTesting\Images\Document.png" />
     <Resource Include="TEViews\AutoTesting\Images\property-blue.png" />
   </ItemGroup>
   <ItemGroup>
@@ -523,9 +523,6 @@
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\Computer.png" />
     <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FileIcons\default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
