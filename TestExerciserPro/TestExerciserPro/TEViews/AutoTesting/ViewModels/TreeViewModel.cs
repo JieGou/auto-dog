@@ -8,8 +8,24 @@ using System.Windows.Controls;
 
 namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 {
-    public class TreeViewModel:DependencyObject
+    public class TreeViewModel
     {
+        public static readonly DependencyProperty ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
+
+        public static readonly DependencyProperty IsLoadingProperty = DependencyProperty.RegisterAttached("IsLoading",
+                                                                    typeof(bool), typeof(TreeViewModel),
+                                                                    new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public static readonly DependencyProperty IsLoadedProperty = DependencyProperty.RegisterAttached("IsLoaded",
+                                                                    typeof(bool), typeof(TreeViewModel),
+                                                                    new FrameworkPropertyMetadata(false));
+
+        public static readonly DependencyProperty IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
+                                                                    typeof(bool), typeof(TreeViewModel),
+                                                                    new FrameworkPropertyMetadata(false));
+        public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
+
+
         #region 附加属性：节点图片
         public static string GetItemImageName(DependencyObject obj)
         {
@@ -69,48 +85,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
             obj.SetValue(ItemTypeProperty, value);
         }
         #endregion
-
-        #region 附加属性：是否显示“打开资源管理器对应文件夹”
-        public static Visibility GetMenuVisibility(DependencyObject obj)
-        {
-            return (Visibility)obj.GetValue(MenuVisibilityProperty);
-        }
-
-        public static void SetMenuVisibility(DependencyObject obj, Visibility value)
-        {
-            obj.SetValue(MenuVisibilityProperty, value);
-        }
-        #endregion
-
-        public static readonly DependencyProperty ItemImageNameProperty;
-        public static readonly DependencyProperty IsLoadingProperty;
-        public static readonly DependencyProperty IsLoadedProperty;
-        public static readonly DependencyProperty IsCanceledProperty;
-        public static readonly DependencyProperty ItemTypeProperty;
-        public static readonly DependencyProperty MenuVisibilityProperty;
-
-
-        static TreeViewModel()
-        {
-            ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
-
-            IsLoadingProperty = DependencyProperty.RegisterAttached("IsLoading",
-                                                                    typeof(bool), typeof(TreeViewModel),
-                                                                    new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender));
-
-            IsLoadedProperty = DependencyProperty.RegisterAttached("IsLoaded",
-                                                                    typeof(bool), typeof(TreeViewModel),
-                                                                    new FrameworkPropertyMetadata(false));
-
-            IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
-                                                                    typeof(bool), typeof(TreeViewModel),
-                                                                    new FrameworkPropertyMetadata(false));
-
-            ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
-
-            MenuVisibilityProperty = DependencyProperty.Register("MenuVisibility",
-                                                                    typeof(Visibility), typeof(TreeViewModel),
-                                                                    new FrameworkPropertyMetadata(Visibility.Hidden));
-        }
+        
     }
 }

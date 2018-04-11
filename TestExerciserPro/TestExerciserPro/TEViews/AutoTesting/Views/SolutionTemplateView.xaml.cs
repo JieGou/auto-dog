@@ -107,8 +107,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             selectedTVI = (TreeViewItem)e.NewValue;
+            mySolutionMenu.Visibility = Visibility.Visible;
             SetItemStyles(selectedTVI, image_FolderSelected, image_DocumentSelected);
-            TreeViewModel.SetMenuVisibility(selectedTVI, Visibility.Visible);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
@@ -145,7 +145,11 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(selectedTVI.Tag.ToString());
+            //此处需要判断是否选中节点，防止未选中节点时，鼠标在空白区域点击后引发异常
+            if (selectedTVI != null) 
+            {
+                MessageBox.Show(selectedTVI.Tag.ToString());
+            }  
         }
 
         private void MySolutionTempView_MouseWheel(object sender, MouseWheelEventArgs e)
