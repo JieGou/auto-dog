@@ -72,6 +72,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     TreeViewItem chldNode = new TreeViewItem();
                     chldNode.Header = folder.Name;
                     chldNode.Tag = folder.FullName;
+                    chldNode.Expanded += ChldNode_Expanded;
+                    chldNode.Collapsed += ChldNode_Collapsed;
                     TreeViewModel.SetItemImageName(chldNode, @"../Images/FolderClosed.png");
                     TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
                     tviRoot.Items.Add(chldNode);
@@ -80,29 +82,54 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             }
            }
 
+        private void ChldNode_Collapsed(object sender, RoutedEventArgs e)
+        {
+            var tviSender = e.OriginalSource as TreeViewItem;
+            SetItemStyles(tviSender, @"../Images/FolderClosed.png");
+        }
+
+        private void ChldNode_Expanded(object sender, RoutedEventArgs e)
+        {
+            var tviSender = e.OriginalSource as TreeViewItem;
+            SetItemStyles(tviSender, @"../Images/FolderOpened.png");
+        }
+
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             var tviNew = (TreeViewItem)e.NewValue;
-            if (TreeViewModel.GetItemTypeName(tviNew) == ATConfig.TreeNodeType.FolderNode.ToString())
-            {
-                TreeViewModel.SetItemImageName(tviNew, @"../Images/FolderSelected.png");
-            }
-            else if (TreeViewModel.GetItemTypeName(tviNew) == ATConfig.TreeNodeType.FileNode.ToString())
-            {
-                TreeViewModel.SetItemImageName(tviNew, @"../Images/DocumentSelected.png");
-            }
+            SetItemStyles(tviNew, @"../Images/FolderSelected.png", @"../Images/DocumentSelected.png");
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
-                if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString())
+                if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
                 {
-                    TreeViewModel.SetItemImageName(tviOld, @"../Images/FolderClosed.png");
-                }
-                else if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FileNode.ToString())
+                    SetItemStyles(tviOld, @"../Images/FolderOpened.png");
+                }             
+                else
                 {
-                    TreeViewModel.SetItemImageName(tviOld, @"../Images/DocumentClosed.png");
-                }
+                    SetItemStyles(tviOld, @"../Images/FolderClosed.png", @"../Images/DocumentClosed.png");
+                }       
             }                         
+        }
+
+        void SetItemStyles(TreeViewItem tvi, string folderImage, string fileImage)
+        {
+            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            {
+                TreeViewModel.SetItemImageName(tvi, folderImage);
+            }
+            else if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            {
+                TreeViewModel.SetItemImageName(tvi, fileImage);
+            }
+        }
+
+        void SetItemStyles(TreeViewItem tvi, string folderImage)
+        {
+            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            {
+                TreeViewModel.SetItemImageName(tvi, folderImage);
+            }
         }
 
         private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
