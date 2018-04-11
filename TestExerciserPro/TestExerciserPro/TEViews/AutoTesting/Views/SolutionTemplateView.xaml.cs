@@ -21,6 +21,13 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
     /// </summary>
     public partial class SolutionTemplateView : UserControl
     {
+
+        string image_Home = @"../Images/Home.png";
+        string image_FolderClosed = @"../Images/FolderClosed.png";
+        string image_FolderOpened = @"../Images/FolderOpened.png";
+        string image_FolderSelected = @"../Images/FolderSelected.png";
+        string image_DocumentSelected = @"../Images/DocumentSelected.png";
+        string image_DocumentClosed = @"../Images/DocumentClosed.png";
         public SolutionTemplateView()
         {
             InitializeComponent();
@@ -38,7 +45,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             var tviRoot = new TreeViewItem();
 
             GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
-            TreeViewModel.SetItemImageName(tviRoot, @"../Images/Home.png");
+            TreeViewModel.SetItemImageName(tviRoot, image_Home);
             TreeViewModel.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
             MySolutionTempView.Items.Add(tviRoot);
         }
@@ -59,7 +66,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     TreeViewItem chldNode = new TreeViewItem();
                     chldNode.Header = chlFile.Name;
                     chldNode.Tag = chlFile.FullName;
-                    TreeViewModel.SetItemImageName(chldNode, @"../Images/DocumentClosed.png");
+                    TreeViewModel.SetItemImageName(chldNode, image_DocumentClosed);
                     TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
@@ -74,7 +81,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Tag = folder.FullName;
                     chldNode.Expanded += ChldNode_Expanded;
                     chldNode.Collapsed += ChldNode_Collapsed;
-                    TreeViewModel.SetItemImageName(chldNode, @"../Images/FolderClosed.png");
+                    TreeViewModel.SetItemImageName(chldNode, image_FolderClosed);
                     TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldFolder.FullName, chldNode);
@@ -85,29 +92,29 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         private void ChldNode_Collapsed(object sender, RoutedEventArgs e)
         {
             var tviSender = e.OriginalSource as TreeViewItem;
-            SetItemStyles(tviSender, @"../Images/FolderClosed.png");
+            SetItemStyles(tviSender, image_FolderClosed);
         }
 
         private void ChldNode_Expanded(object sender, RoutedEventArgs e)
         {
             var tviSender = e.OriginalSource as TreeViewItem;
-            SetItemStyles(tviSender, @"../Images/FolderOpened.png");
+            SetItemStyles(tviSender, image_FolderOpened);
         }
 
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             var tviNew = (TreeViewItem)e.NewValue;
-            SetItemStyles(tviNew, @"../Images/FolderSelected.png", @"../Images/DocumentSelected.png");
+            SetItemStyles(tviNew, image_FolderSelected, image_DocumentSelected);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
                 if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
                 {
-                    SetItemStyles(tviOld, @"../Images/FolderOpened.png");
+                    SetItemStyles(tviOld, image_FolderOpened);
                 }             
                 else
                 {
-                    SetItemStyles(tviOld, @"../Images/FolderClosed.png", @"../Images/DocumentClosed.png");
+                    SetItemStyles(tviOld, image_FolderClosed, image_DocumentClosed);
                 }       
             }                         
         }
