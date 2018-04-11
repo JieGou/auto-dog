@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
-using TestExerciserPro.TEViews.AutoTesting;
+using TestExerciserPro.TEViews.AutoTesting.Logic;
 
 namespace TestExerciserPro.TEViews.AutoTesting.Views
 {
@@ -39,8 +39,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
             TreeViewModel.SetItemImageName(tviRoot, @"../Images/Home.png");
-            TreeViewModel.SetItemTypeName(tviRoot, "Root");
-
+            TreeViewModel.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
             MySolutionTempView.Items.Add(tviRoot);
         }
 
@@ -61,7 +60,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Header = chlFile.Name;
                     chldNode.Tag = chlFile.FullName;
                     TreeViewModel.SetItemImageName(chldNode, @"../Images/DocumentClosed.png");
-                    TreeViewModel.SetItemTypeName(chldNode,"File");
+                    TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
@@ -74,7 +73,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Header = folder.Name;
                     chldNode.Tag = folder.FullName;
                     TreeViewModel.SetItemImageName(chldNode, @"../Images/FolderClosed.png");
-                    TreeViewModel.SetItemTypeName(chldNode, "Folder");
+                    TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldFolder.FullName, chldNode);
                 }
@@ -84,30 +83,26 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             var tviNew = (TreeViewItem)e.NewValue;
-            if (TreeViewModel.GetItemTypeName(tviNew) == "Folder")
+            if (TreeViewModel.GetItemTypeName(tviNew) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModel.SetItemImageName(tviNew, @"../Images/FolderSelected.png");
-                if (e.OldValue != null)
-                {
-                    if (TreeViewModel.GetItemTypeName(tviNew) == "Folder")
-                    {
-                        var tviOld = (TreeViewItem)e.OldValue;
-                        TreeViewModel.SetItemImageName(tviOld, @"../Images/FolderClosed.png");
-                    }    
-                }
             }
-            else if (TreeViewModel.GetItemTypeName(tviNew) == "File")
+            else if (TreeViewModel.GetItemTypeName(tviNew) == ATConfig.TreeNodeType.FileNode.ToString())
             {
                 TreeViewModel.SetItemImageName(tviNew, @"../Images/DocumentSelected.png");
-                if (e.OldValue != null)
+            }
+            if (e.OldValue != null)
+            {
+                var tviOld = (TreeViewItem)e.OldValue;
+                if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString())
                 {
-                    var tviOld = (TreeViewItem)e.OldValue;
+                    TreeViewModel.SetItemImageName(tviOld, @"../Images/FolderClosed.png");
+                }
+                else if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FileNode.ToString())
+                {
                     TreeViewModel.SetItemImageName(tviOld, @"../Images/DocumentClosed.png");
                 }
-            }
-                    
-            MessageBox.Show((tviNew.Tag).ToString());
-           
+            }                         
         }
 
         private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
