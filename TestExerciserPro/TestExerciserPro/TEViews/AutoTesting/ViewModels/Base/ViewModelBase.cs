@@ -1,22 +1,6 @@
-﻿/************************************************************************
-
-   AvalonDock
-
-   Copyright (C) 2007-2013 Xceed Software Inc.
-
-   This program is provided to you under the terms of the New BSD
-   License (BSD) as published at http://avalondock.codeplex.com/license 
-
-   For more features, controls, and fast professional support,
-   pick up AvalonDock in Extended WPF Toolkit Plus at http://xceed.com/wpf_toolkit
-
-   Stay informed: follow @datagrid on Twitter or Like facebook.com/datagrids
-
-  **********************************************************************/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.ComponentModel;
 
@@ -24,14 +8,49 @@ namespace TestExerciserPro.TEViews.AutoTesting
 {
     class ViewModelBase : INotifyPropertyChanged
     {
-
-        protected virtual void RaisePropertyChanged(string propertyName)
+        protected ViewModelBase()
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+
         }
 
-
         public event PropertyChangedEventHandler PropertyChanged;
+
+        #region Event Handlers
+
+        /// <summary>
+        /// 获取属性名称
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public static string GetPropertyName<T>(Expression<Func<T>> e)
+        {
+            var member = (MemberExpression)e.Body;
+            return member.Member.Name;
+        }
+        /// <summary>
+        /// 属性改变触发事件
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="propertyExpression"></param>
+        protected virtual void RaisePropertyChanged<T>
+            (Expression<Func<T>> propertyExpression)
+        {
+            RaisePropertyChanged(GetPropertyName(propertyExpression));
+        }
+        /// <summary>
+        /// 属性改变触发事件
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected virtual void RaisePropertyChanged(String propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
     }
 }

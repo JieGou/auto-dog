@@ -211,7 +211,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void AddFileItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/Document.png");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/DocumentClosed.png");
         }
 
         // UI线程

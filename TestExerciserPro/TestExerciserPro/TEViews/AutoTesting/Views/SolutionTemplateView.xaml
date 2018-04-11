@@ -12,7 +12,8 @@
         <TreeView x:Name="MySolutionTempView"
                   SelectedItemChanged="MySolutionTempView_SelectedItemChanged"
                   MouseDoubleClick="MySolutionTempView_MouseDoubleClick"
-                  MouseWheel="MySolutionTempView_MouseWheel">
+                  MouseWheel="MySolutionTempView_MouseWheel"
+                  >
             <TreeView.Resources>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="HeaderTemplate">

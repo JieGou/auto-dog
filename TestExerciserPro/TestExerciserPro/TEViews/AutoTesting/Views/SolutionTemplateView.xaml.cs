@@ -39,69 +39,70 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
             TreeViewModel.SetItemImageName(tviRoot, @"../Images/Home.png");
+            TreeViewModel.SetItemTypeName(tviRoot, "Root");
 
             MySolutionTempView.Items.Add(tviRoot);
         }
 
         private void GetSolutionTree(string filePath,TreeViewItem tviRoot)
-        {           
-            try
+        {
+            if (filePath != null && filePath != "")
             {
-                if (filePath != null && filePath != "")
+                //设置树根节点
+                DirectoryInfo folder = new DirectoryInfo(filePath);
+                tviRoot.Header = folder.Name;
+                tviRoot.Tag = folder.FullName;
+
+                //设置树文件节点
+                FileInfo[] chldFiles = folder.GetFiles("*.*");
+                foreach (FileInfo chlFile in chldFiles)
                 {
-                    //设置树根节点
-                    DirectoryInfo folder = new DirectoryInfo(filePath);
-                    tviRoot.Header = folder.Name;
-                    tviRoot.Tag = folder.FullName;
+                    TreeViewItem chldNode = new TreeViewItem();
+                    chldNode.Header = chlFile.Name;
+                    chldNode.Tag = chlFile.FullName;
+                    TreeViewModel.SetItemImageName(chldNode, @"../Images/DocumentClosed.png");
+                    TreeViewModel.SetItemTypeName(chldNode,"File");
+                    //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
+                    tviRoot.Items.Add(chldNode);
+                }
 
-                    //设置树文件节点
-                    FileInfo[] chldFiles = folder.GetFiles("*.*");
-                    foreach (FileInfo chlFile in chldFiles)
-                    {
-                        TreeViewItem chldNode = new TreeViewItem();
-                        chldNode.Header = chlFile.Name;
-                        chldNode.Tag = chlFile.FullName;
-                        TreeViewModel.SetItemImageName(chldNode, @"../Images/Document.png");
-                        //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
-                        tviRoot.Items.Add(chldNode);
-                    }
-
-                    //设置树文件夹节点
-                    DirectoryInfo[] chldFolders = folder.GetDirectories();
-                    foreach (DirectoryInfo chldFolder in chldFolders)
-                    {
-                        TreeViewItem chldNode = new TreeViewItem();
-                        chldNode.Header = folder.Name;
-                        chldNode.Tag = folder.FullName;
-                        TreeViewModel.SetItemImageName(chldNode, @"../Images/FolderClosed.png");
-                        tviRoot.Items.Add(chldNode);
-                        GetSolutionTree(chldFolder.FullName, chldNode);
-                    }
+                //设置树文件夹节点
+                DirectoryInfo[] chldFolders = folder.GetDirectories();
+                foreach (DirectoryInfo chldFolder in chldFolders)
+                {
+                    TreeViewItem chldNode = new TreeViewItem();
+                    chldNode.Header = folder.Name;
+                    chldNode.Tag = folder.FullName;
+                    TreeViewModel.SetItemImageName(chldNode, @"../Images/FolderClosed.png");
+                    TreeViewModel.SetItemTypeName(chldNode, "Folder");
+                    tviRoot.Items.Add(chldNode);
+                    GetSolutionTree(chldFolder.FullName, chldNode);
                 }
             }
-            catch (Exception ex)
-            {
-                
-            }
-        }
+           }
 
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             var tviNew = (TreeViewItem)e.NewValue;
-            if (tviNew!=null)
+            if (TreeViewModel.GetItemTypeName(tviNew) == "Folder")
             {
-                if (!File.Exists(tviNew.Tag.ToString()))
+                TreeViewModel.SetItemImageName(tviNew, @"../Images/FolderSelected.png");
+                if (e.OldValue != null)
                 {
-                    TreeViewModel.SetItemImageName(tviNew, @"../Images/FolderSelected.png");
-                    if (e.OldValue != null)
+                    if (TreeViewModel.GetItemTypeName(tviNew) == "Folder")
                     {
                         var tviOld = (TreeViewItem)e.OldValue;
                         TreeViewModel.SetItemImageName(tviOld, @"../Images/FolderClosed.png");
-                    }
+                    }    
                 }
-                else
+            }
+            else if (TreeViewModel.GetItemTypeName(tviNew) == "File")
+            {
+                TreeViewModel.SetItemImageName(tviNew, @"../Images/DocumentSelected.png");
+                if (e.OldValue != null)
                 {
-
+                    var tviOld = (TreeViewItem)e.OldValue;
+                    TreeViewModel.SetItemImageName(tviOld, @"../Images/DocumentClosed.png");
                 }
             }
                     

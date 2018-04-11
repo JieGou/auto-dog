@@ -8,8 +8,9 @@ using System.Windows.Controls;
 
 namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 {
-    public static class TreeViewModel
+    public class TreeViewModel:DependencyObject
     {
+        #region 附加属性：节点图片
         public static string GetItemImageName(DependencyObject obj)
         {
             return (string)obj.GetValue(ItemImageNameProperty);
@@ -19,7 +20,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         {
             obj.SetValue(ItemImageNameProperty, value);
         }
+        #endregion
 
+        #region 附加属性：是否正在加载
         public static bool GetIsLoading(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsLoadingProperty);
@@ -29,7 +32,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         {
             obj.SetValue(IsLoadingProperty, value);
         }
+        #endregion
 
+        #region 附加属性：是否已加载
         public static bool GetIsLoaded(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsLoadedProperty);
@@ -39,7 +44,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         {
             obj.SetValue(IsLoadedProperty, value);
         }
+        #endregion
 
+        #region 附加属性：是否已取消加载
         public static bool GetIsCanceled(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsCanceledProperty);
@@ -49,11 +56,25 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         {
             obj.SetValue(IsCanceledProperty, value);
         }
+        #endregion
+
+        #region 附加属性：树节点类型
+        public static string GetItemTypeName(DependencyObject obj)
+        {
+            return (string)obj.GetValue(ItemTypeProperty);
+        }
+
+        public static void SetItemTypeName(DependencyObject obj, string value)
+        {
+            obj.SetValue(ItemTypeProperty, value);
+        }
+        #endregion
 
         public static readonly DependencyProperty ItemImageNameProperty;
         public static readonly DependencyProperty IsLoadingProperty;
         public static readonly DependencyProperty IsLoadedProperty;
         public static readonly DependencyProperty IsCanceledProperty;
+        public static readonly DependencyProperty ItemTypeProperty;
 
         static TreeViewModel()
         {
@@ -70,6 +91,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
             IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
                                                                     typeof(bool), typeof(TreeViewModel),
                                                                     new FrameworkPropertyMetadata(false));
+
+            ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
         }
     }
 }

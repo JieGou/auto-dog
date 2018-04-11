@@ -479,7 +479,7 @@
     <Resource Include="TEViews\AutoTesting\Images\WordWrap.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\Document.png" />
+    <Resource Include="TEViews\AutoTesting\Images\DocumentClosed.png" />
     <Resource Include="TEViews\AutoTesting\Images\property-blue.png" />
   </ItemGroup>
   <ItemGroup>
@@ -513,7 +513,7 @@
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\Add.png" />
     <Resource Include="TEViews\AutoTesting\Images\FolderClosed.png" />
-    <Resource Include="TEViews\AutoTesting\Images\FolderOpen.png" />
+    <Resource Include="TEViews\AutoTesting\Images\FolderOpened.png" />
     <Resource Include="TEViews\AutoTesting\Images\FolderSelected.png" />
     <Resource Include="TEViews\AutoTesting\Images\Home.png" />
     <Resource Include="TEViews\AutoTesting\Images\Remove.png" />
@@ -523,6 +523,9 @@
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\Computer.png" />
     <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\DocumentSelected.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
