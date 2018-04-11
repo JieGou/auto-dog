@@ -76,7 +76,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
             return (Visibility)obj.GetValue(MenuVisibilityProperty);
         }
 
-        public static void SetMenuVisibility(DependencyObject obj, Enum value)
+        public static void SetMenuVisibility(DependencyObject obj, Visibility value)
         {
             obj.SetValue(MenuVisibilityProperty, value);
         }

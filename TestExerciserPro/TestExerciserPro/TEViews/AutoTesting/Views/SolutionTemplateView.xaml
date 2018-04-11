@@ -33,7 +33,7 @@
                 </Style>
             </TreeView.Resources>
             <TreeView.ContextMenu>
-                <ContextMenu  Visibility ="{Binding (viewModels:TreeViewModel.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}, Mode=FindAncestor}}">
+                <ContextMenu  Visibility ="{Binding (viewModels:TreeViewModel.MenuVisibility)}">
                     <MenuItem Header="添加(D)">
                         <MenuItem Header="新建文件夹(D)"/>
                         <MenuItem Header="新建文件(F)..."/>
