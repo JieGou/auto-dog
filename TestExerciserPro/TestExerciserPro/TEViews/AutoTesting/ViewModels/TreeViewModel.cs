@@ -70,11 +70,25 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         }
         #endregion
 
+        #region 附加属性：是否显示“打开资源管理器对应文件夹”
+        public static Visibility GetMenuVisibility(DependencyObject obj)
+        {
+            return (Visibility)obj.GetValue(MenuVisibilityProperty);
+        }
+
+        public static void SetMenuVisibility(DependencyObject obj, Enum value)
+        {
+            obj.SetValue(MenuVisibilityProperty, value);
+        }
+        #endregion
+
         public static readonly DependencyProperty ItemImageNameProperty;
         public static readonly DependencyProperty IsLoadingProperty;
         public static readonly DependencyProperty IsLoadedProperty;
         public static readonly DependencyProperty IsCanceledProperty;
         public static readonly DependencyProperty ItemTypeProperty;
+        public static readonly DependencyProperty MenuVisibilityProperty;
+
 
         static TreeViewModel()
         {
@@ -93,6 +107,10 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
                                                                     new FrameworkPropertyMetadata(false));
 
             ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
+
+            MenuVisibilityProperty = DependencyProperty.Register("MenuVisibility",
+                                                                    typeof(Visibility), typeof(TreeViewModel),
+                                                                    new FrameworkPropertyMetadata(Visibility.Hidden));
         }
     }
 }

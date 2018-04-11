@@ -8,6 +8,7 @@
              xmlns:converter ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <Grid>
         <TreeView x:Name="MySolutionTempView"
                   SelectedItemChanged="MySolutionTempView_SelectedItemChanged"
@@ -32,18 +33,23 @@
                 </Style>
             </TreeView.Resources>
             <TreeView.ContextMenu>
-                <ContextMenu>
+                <ContextMenu  Visibility ="{Binding (viewModels:TreeViewModel.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}, Mode=FindAncestor}}">
                     <MenuItem Header="添加(D)">
                         <MenuItem Header="新建文件夹(D)"/>
                         <MenuItem Header="新建文件(F)..."/>
                     </MenuItem>
                     <MenuItem Icon="" Header="打开(O)"/>
-                    <MenuItem Icon="" Header="剪贴(T) Ctrl + X"/>
-                    <MenuItem Icon="" Header="复制(Y) Ctrl + C"/>
-                    <MenuItem Icon="" Header="粘贴(P) Ctrl + V"/>
-                    <MenuItem Icon="" Header="删除(D) Del"/>
+                    <MenuItem Command="Cut" Header="剪贴(T) Ctrl + X"/>
+                    <MenuItem Command="Copy" Header="复制(Y) Ctrl + C"/>
+                    <MenuItem Command="Paste" Header="粘贴(P) Ctrl + V"/>
+                    <MenuItem Command="Delete" Header="删除(D) Del"/>
                     <MenuItem Icon="" Header="重命名(M)"/>
-                    <MenuItem Icon="" Header="在文件资源管理器中打开文件夹(X)"/>
+                    <MenuItem Icon="" Header="在文件资源管理器中打开文件夹(X)" Click="MenuItem_OpenFolder_Click"
+                              >
+                        <MenuItem.Resources>
+
+                        </MenuItem.Resources>
+                    </MenuItem>
                     <MenuItem Icon="" Header="属性"/>
                 </ContextMenu>
             </TreeView.ContextMenu>

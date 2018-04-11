@@ -28,6 +28,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         string image_FolderSelected = @"../Images/FolderSelected.png";
         string image_DocumentSelected = @"../Images/DocumentSelected.png";
         string image_DocumentClosed = @"../Images/DocumentClosed.png";
+
+        public static TreeViewItem selectedTVI = null;
+
         public SolutionTemplateView()
         {
             InitializeComponent();
@@ -103,8 +106,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            var tviNew = (TreeViewItem)e.NewValue;
-            SetItemStyles(tviNew, image_FolderSelected, image_DocumentSelected);
+            selectedTVI = (TreeViewItem)e.NewValue;
+            SetItemStyles(selectedTVI, image_FolderSelected, image_DocumentSelected);
+            TreeViewModel.SetMenuVisibility(selectedTVI, Visibility.Visible);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
@@ -141,12 +145,29 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MessageBox.Show(selectedTVI.Tag.ToString());
         }
 
         private void MySolutionTempView_MouseWheel(object sender, MouseWheelEventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 定位对应文件夹下的文件
+        /// </summary>
+        /// <param name="fileFullName"></param>
+        private void OpenFolderAndSelectFile(String fileFullName)
+        {
+            System.Threading.Thread.Sleep(30);
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");
+            psi.Arguments = "/e,/select," + fileFullName;
+            System.Diagnostics.Process.Start(psi);
+        }
+
+        private void MenuItem_OpenFolder_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFolderAndSelectFile(selectedTVI.Tag.ToString());
         }
     }
 }
