@@ -148,7 +148,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             //此处需要判断是否选中节点，防止未选中节点时，鼠标在空白区域点击后引发异常
             if (selectedTVI != null) 
             {
-                MessageBox.Show(selectedTVI.Tag.ToString());
+                var fileViewModel = Workspace.This.Open(selectedTVI.Tag.ToString());
+                Workspace.This.ActiveDocument = fileViewModel;
             }  
         }
 

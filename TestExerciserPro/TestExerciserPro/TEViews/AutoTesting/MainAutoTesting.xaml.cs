@@ -378,57 +378,6 @@ namespace TestExerciserPro.TEViews.AutoTesting
 
             if (this.closeMe) this.Close();
         }
-
-        private void getFiles(string filePath, TreeViewItem tvi)
-        {
-            try
-            {
-                if (filePath == null || filePath == "")
-                {
-
-                }
-                else
-                {
-                    DirectoryInfo folder = new DirectoryInfo(filePath);
-                    tvi.Header = folder.Name;
-                    tvi.Tag = folder.FullName;
-                    FileInfo[] chldFiles = folder.GetFiles("*.*");
-                    foreach (FileInfo chlFile in chldFiles)
-                    {
-                        if (!chlFile.Name.StartsWith(".") && chlFile.Name != "workspace" && chlFile.Name != "__pycache__" && !chlFile.Name.StartsWith("__runner"))
-                        {
-                            TreeViewItem chldNode = new TreeViewItem();
-                            chldNode.Header = chlFile.Name;
-                            chldNode.Tag = chlFile.FullName;
-                            string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
-                            tvi.Items.Add(chldNode);
-                        }
-                    }
-
-                    DirectoryInfo[] chldFolders = folder.GetDirectories();
-                    foreach (DirectoryInfo chldFolder in chldFolders)
-                    {
-                        if (!chldFolder.Name.StartsWith(".") && chldFolder.Name != "workspace" && chldFolder.Name != "__pycache__")
-                        {
-                            TreeViewItem chldNode = new TreeViewItem();
-                            chldNode.Header = folder.Name;
-                            chldNode.Tag = folder.FullName;
-                            tvi.Items.Add(chldNode);
-                            getFiles(chldFolder.FullName, chldNode);
-                        }
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-
-            }
-        }
-
-        private void InitDocking()
-        {
-            
-        }
     }
 }
 

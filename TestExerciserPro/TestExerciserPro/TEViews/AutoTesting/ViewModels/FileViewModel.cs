@@ -26,9 +26,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         {
             FilePath = filePath;
             Title = FileName;
-
-            //Set the icon only for open documents (just a test)
-            IconSource = ISC.ConvertFromInvariantString(@"pack://application:,,/TEViews/AutoTesting/Images/document.png") as ImageSource;
         }
 
         public FileViewModel()
