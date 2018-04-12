@@ -1,20 +1,4 @@
-﻿/************************************************************************
-
-   AvalonDock
-
-   Copyright (C) 2007-2013 Xceed Software Inc.
-
-   This program is provided to you under the terms of the New BSD
-   License (BSD) as published at http://avalondock.codeplex.com/license 
-
-   For more features, controls, and fast professional support,
-   pick up AvalonDock in Extended WPF Toolkit Plus at http://xceed.com/wpf_toolkit
-
-   Stay informed: follow @datagrid on Twitter or Like facebook.com/datagrids
-
-  **********************************************************************/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
@@ -234,7 +218,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
         {
             if (fileToClose.IsDirty)
             {
-                ShowMessageDialog(MainAutoTesting.AutoTestingWindow, fileToClose);
+                ShowFileClosingDialog(MainAutoTesting.AutoTestingWindow, fileToClose);
             }
         }
 
@@ -243,37 +227,65 @@ namespace TestExerciserPro.TEViews.AutoTesting
             if (fileToSave.FilePath == null || saveAsFlag)
             {
                 var dlg = new SaveFileDialog();
-                if (dlg.ShowDialog().GetValueOrDefault())
+
+                //设置对话框标题
+                dlg.Title = "保存文件";
+
+                //设置文件类型
+                dlg.Filter = "txt files(*.txt)|*.txt|xls files(*.xls)|*.xls|All files(*.*)|*.*";
+
+                //设置默认文件名（可以不设置）
+                dlg.FileName = "Document1";
+
+                //主设置默认文件extension（可以不设置）
+                dlg.DefaultExt = "txt";
+
+                //获取或设置一个值，该值指示如果用户省略扩展名，文件对话框是否自动在文件名中添加扩展名。（可以不设置）
+                dlg.AddExtension = true;
+
+                //设置默认文件类型显示顺序（可以不设置）
+                dlg.FilterIndex = 2;
+
+                //保存对话框是否记忆上次打开的目录
+                dlg.RestoreDirectory = true;
+
+                bool? result = dlg.ShowDialog();
+                if (result==true)
                 {
-                    fileToSave.FilePath = dlg.SafeFileName;
-                    File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
-                    ActiveDocument.IsDirty = false;
+                    fileToSave.FilePath = dlg.FileName.ToString();
+                    SaveFileDirectly(fileToSave);
                 }
             }
+            else { SaveFileDirectly(fileToSave); }
         }
 
-        public async void ShowMessageDialog(MetroWindow window,FileViewModel fileToClose)
+        void SaveFileDirectly(FileViewModel fileToSave)
         {
-            // This demo runs on .Net 4.0, but we're using the Microsoft.Bcl.Async package so we have async/await support
-            // The package is only used by the demo and not a dependency of the library!
-            var mySettings = new MetroDialogSettings()
+            File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
+            ActiveDocument.IsDirty = false;
+        }
+
+        public async void ShowFileClosingDialog(MetroWindow window,FileViewModel fileToClose)
+        {
+            if (fileToClose.IsDirty)
             {
-                AffirmativeButtonText = "保存",
-                NegativeButtonText = "不保存",
-                FirstAuxiliaryButtonText = "关闭",
-                ColorScheme = window.MetroDialogOptions.ColorScheme
-            };
+                var mySettings = new MetroDialogSettings()
+                {
+                    AffirmativeButtonText = "保存",
+                    NegativeButtonText = "不保存",
+                    FirstAuxiliaryButtonText = "关闭",
+                    ColorScheme = window.MetroDialogOptions.ColorScheme
+                };
 
-            MessageDialogResult result = await window.ShowMessageAsync("提示信息", "确定要保存当前文档吗？",
-                MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary, mySettings);
+                MessageDialogResult result = await window.ShowMessageAsync("提示信息", "确定要保存当前文档吗？",
+                    MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary, mySettings);
 
 
-            if (result == MessageDialogResult.FirstAuxiliary)
-                return;
-            else if(result == MessageDialogResult.Affirmative)
-                Save(fileToClose);
-            else if(result == MessageDialogResult.Negative)
-                _files.Remove(fileToClose);
+                if (result == MessageDialogResult.FirstAuxiliary) return;
+                if (result == MessageDialogResult.Affirmative) Save(fileToClose);
+                if (result == MessageDialogResult.Negative) _files.Remove(fileToClose);
+            }
+            else { _files.Remove(fileToClose); } 
         }
 
     }
