@@ -14,6 +14,7 @@
                   SelectedItemChanged="MySolutionTempView_SelectedItemChanged"
                   MouseDoubleClick="MySolutionTempView_MouseDoubleClick"
                   MouseWheel="MySolutionTempView_MouseWheel"
+                  Style="{DynamicResource VirtualisedMetroTreeView}"
                   >
             <TreeView.Resources>
                 <Style TargetType="{x:Type TreeViewItem}">
@@ -21,7 +22,7 @@
                         <Setter.Value>
                             <DataTemplate DataType="ContentPresenter">
                                 <Grid>
-                                    <StackPanel x:Name="spImg" Orientation="Horizontal">
+                                    <StackPanel x:Name="spImg" Orientation="Horizontal" >
                                         <Image x:Name="img" Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
                                                Source="{Binding (viewModels:TreeViewModel.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
                                         <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
@@ -33,9 +34,10 @@
                 </Style>
             </TreeView.Resources>
             <TreeView.ContextMenu>
-                <ContextMenu  x:Name="mySolutionMenu" Visibility="Hidden">
-                    <MenuItem Header="添加(D)">
-                        <MenuItem Header="新建文件夹(D)">
+                <ContextMenu x:Name="MySolutionContextMenu">
+                    <MenuItem x:Name="MyMenuAdd" Header="添加(D)">
+                        <MenuItem Header="新建文件夹(D)"                                  
+                                  >
                             <MenuItem.Icon>
                                 <Image Source="../Images/FolderAdd.png" Height="18"/>
                             </MenuItem.Icon>
@@ -46,7 +48,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="打开(O)">
+                    <MenuItem x:Name="MyMenuOpen" Header="打开(O)">
                         <MenuItem.Icon>
                             <Image Source="../Images/FileEdit.png" Height="18"/>
                         </MenuItem.Icon>

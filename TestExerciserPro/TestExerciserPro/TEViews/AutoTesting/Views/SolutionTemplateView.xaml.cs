@@ -107,8 +107,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             selectedTVI = (TreeViewItem)e.NewValue;
-            mySolutionMenu.Visibility = Visibility.Visible;
-            SetItemStyles(selectedTVI, image_FolderSelected, image_DocumentSelected);
+            SetNewItemStyles(selectedTVI);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
@@ -118,20 +117,38 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 }             
                 else
                 {
-                    SetItemStyles(tviOld, image_FolderClosed, image_DocumentClosed);
+                    SetOldItemStyles(tviOld);
                 }       
             }                         
         }
 
-        void SetItemStyles(TreeViewItem tvi, string folderImage, string fileImage)
+        void SetNewItemStyles(TreeViewItem tvi)
         {
+            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
+            {
+                return;
+            }
             if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, folderImage);
+                TreeViewModel.SetItemImageName(tvi, image_FolderSelected);
+                TreeViewModel.SetIsFolderItemSelected(tvi, true);
             }
             else if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, fileImage);
+                TreeViewModel.SetItemImageName(tvi, image_DocumentSelected);
+            }
+        }
+
+
+        void SetOldItemStyles(TreeViewItem tvi)
+        {
+            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            {
+                TreeViewModel.SetItemImageName(tvi, image_FolderClosed);
+            }
+            else if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            {
+                TreeViewModel.SetItemImageName(tvi, image_DocumentClosed);
             }
         }
 

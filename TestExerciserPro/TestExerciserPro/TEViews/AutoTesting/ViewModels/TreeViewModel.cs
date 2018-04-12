@@ -23,7 +23,12 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         public static readonly DependencyProperty IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
                                                                     typeof(bool), typeof(TreeViewModel),
                                                                     new FrameworkPropertyMetadata(false));
+
         public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModel), new UIPropertyMetadata(string.Empty));
+
+        public static readonly DependencyProperty IsFolderItemSelectedProperty = DependencyProperty.RegisterAttached("IsFolderItemSelected",
+                                                                    typeof(bool), typeof(TreeViewModel),
+                                                                    new FrameworkPropertyMetadata(false));
 
 
         #region 附加属性：节点图片
@@ -85,6 +90,18 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
             obj.SetValue(ItemTypeProperty, value);
         }
         #endregion
-        
+
+        #region 附加属性：树节点中的文件节点是否被选中
+        public static bool GetIsFolderItemSelected(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(IsFolderItemSelectedProperty);
+        }
+
+        public static void SetIsFolderItemSelected(DependencyObject obj, bool value)
+        {
+            obj.SetValue(IsFolderItemSelectedProperty, value);
+        }
+        #endregion
+
     }
 }
