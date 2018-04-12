@@ -48,7 +48,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats,SolutionView, Resources,ClassView, ErrorList,OutPut};
+                    _tools = new ToolViewModel[] { FileStats,SolutionView,Resources,ClassView, ErrorList,OutPut};
                 return _tools;
             }
         }

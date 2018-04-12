@@ -27,16 +27,9 @@ namespace TestExerciserPro.TEViews.AutoTesting
     {
 
         #region 变量
-        int clickCount = 0;
-        string currentFileName;
         public static string solutionPath = null;
-        static TextEditor currentTextEditor;
-        FoldingManager foldingManager;
-        object foldingStrategy;
-        CompletionWindow completionWindow;
         private bool closeMe;
         public static MetroWindow AutoTestingWindow;
-
         #endregion
         public MainAutoTesting()
         {
@@ -141,7 +134,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
         }
 
  
-        private void openProject(object sender, RoutedEventArgs e)
+        private void OpenProject_Click(object sender, RoutedEventArgs e)
         {
             TEControls.FolderBrowserDialog folder = new TEControls.FolderBrowserDialog();
             folder.Title = "打开项目";
@@ -154,7 +147,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
         }
 
 
-        private void newProject(object sender, RoutedEventArgs e)
+        private void NewProject_Click(object sender, RoutedEventArgs e)
         {
             var newProject = new Views.NewProject();
             newProject.Show();
@@ -205,6 +198,11 @@ namespace TestExerciserPro.TEViews.AutoTesting
             this.closeMe = result == MessageDialogResult.Affirmative;
 
             if (this.closeMe) this.Close();
+        }
+
+        private void MainWindowExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

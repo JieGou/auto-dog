@@ -14,6 +14,7 @@
                       xmlns:viewModels ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.ViewModels"
                       xmlns:converter ="clr-namespace:TestExerciserPro.TEViews.AutoTesting.Converter"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
+                      x:Name="mainAutoTestingWindow"
                       mc:Ignorable="d"
                       Title="自动化测试" 
                       Width="1200"
@@ -51,35 +52,99 @@
         <Menu Height="30" Grid.Row="0">
             <MenuItem Header="文件(F)">
                 <MenuItem Header="新建(N)">
-                    <MenuItem Header="项目" Click="newProject"/>
-                    <MenuItem Header="文件" Command="{Binding NewFile}"/>
+                    <MenuItem Header="项目" Click="NewProject_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Images/ProjectAdd.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="文件" Command="{Binding NewFile}">
+                        <MenuItem.Icon>
+                            <Image Source="Images/DocumentClosed.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="打开(O)">
-                    <MenuItem Header="项目" Click="openProject"/>
-                    <MenuItem Header="文件"  Command="{Binding OpenFile}"/>
+                    <MenuItem Header="项目" Click="OpenProject_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Images/ProjectDefault.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="文件"  Command="{Binding OpenFile}">
+                        <MenuItem.Icon>
+                            <Image Source="Images/DocumentClosed.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="添加(D)">
-                    <MenuItem Header="新建项目"></MenuItem>
-                    <MenuItem Header="现有项目"></MenuItem>
+                    <MenuItem Header="新建项目">
+                        <MenuItem.Icon>
+                            <Image Source="Images/ProjectAdd.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="现有项目">
+                        <MenuItem.Icon>
+                            <Image Source="Images/ProjectDefault.png" Height="18"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
-                <MenuItem Header="关闭(C)" Command="{Binding ActiveDocument.CloseCommand}"/>
-                <MenuItem Header="关闭解决方案(T)"/>
-                <MenuItem Header="保存(S)   Ctrl + S" Command="{Binding ActiveDocument.SaveCommand}"/>
+                <MenuItem Header="关闭(C)" Command="{Binding ActiveDocument.CloseCommand}">
+                </MenuItem>
+                <MenuItem Header="关闭解决方案(T)">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Delete.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="保存(S)   Ctrl + S" Command="{Binding ActiveDocument.SaveCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Save.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="另存为(B)..." Command="{Binding ActiveDocument.SaveAsCommand}"/>
-                <MenuItem Header="全部保存(L)   Ctrl + Shift + S"/>
+                <MenuItem Header="全部保存(L)   Ctrl + Shift + S">
+                    <MenuItem.Icon>
+                        <Image Source="Images/SaveAll.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="账户设置(I)..."/>
                 <MenuItem Header="最近使用过的文件(F)"/>
                 <MenuItem Header="最近使用过的项目和解决方案"/>
-                <MenuItem Header="退出(X)   Ctrl + F4"/>
+                <MenuItem Header="退出(X)   Ctrl + F4" Click="MainWindowExit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/WindowClose.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="编辑(E)">
-                <MenuItem Header="撤销(U)   Ctrl + Z"/>
-                <MenuItem Header="重做(R)  Ctrl + Y"/>
-                <MenuItem Header="剪贴(T)  Ctrl + X"/>
-                <MenuItem Header="复制(C)  Ctrl + C"/>
-                <MenuItem Header="粘贴(P)  Ctrl + V"/>
-                <MenuItem Header="删除(D)  Del"/>
-                <MenuItem Header="全选(U)  Ctrl + A"/>
+                <MenuItem Header="撤销(U)   Ctrl + Z">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Undo.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="重做(R)  Ctrl + Y">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Redo.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="剪贴(T)  Ctrl + X">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Cut.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="复制(C)  Ctrl + C">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Copy.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="粘贴(P)  Ctrl + V">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Paste.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="删除(D)  Del">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Delete.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Header="查找和替换...(F)"/>
                 <MenuItem Header="转到(G)...  Ctrl + G"/>
                 <MenuItem Header="定位到(,)...  Ctrl + ,"/>
@@ -88,11 +153,26 @@
                 <MenuItem Header="类视图(A)  Ctrl + Shift + C" IsChecked="{Binding ClassView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
                 <MenuItem Header="解决方案资源管理器(P)  Ctrl + Alt + L" IsChecked="{Binding SolutionView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
                 <MenuItem Header="属性窗口(W)  F4" IsChecked="{Binding FileStats.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="资源视图(R)  Ctrl + \. R" IsChecked="{Binding Resources.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="错误列表(I)  Ctrl + \. E" IsChecked="{Binding ErrorList.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="输出(O)  Ctrl + Alt + O" IsChecked="{Binding ErrorList.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
             </MenuItem>
             <MenuItem Header="项目(P)">
-                <MenuItem Header="添加项目(P)...  Ctrl + Shift + N"/>
-                <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F"/>
-                <MenuItem Header="添加文件(P)..."/>
+                <MenuItem Header="添加项目(P)...  Ctrl + Shift + N">
+                    <MenuItem.Icon>
+                        <Image Source="Images/ProjectAdd.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F">
+                    <MenuItem.Icon>
+                        <Image Source="Images/FolderAdd.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="添加文件(P)...">
+                    <MenuItem.Icon>
+                        <Image Source="Images/FileAdd.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
 
             <MenuItem Header="生成(B)"></MenuItem>
@@ -104,12 +184,20 @@
             <MenuItem Header="体系结构(C)"></MenuItem>
             <MenuItem Header="测试(S)"></MenuItem>
             <MenuItem Header="窗口(W)">
-                <MenuItem Header="保存窗口布局(S)" Command="{Binding SaveLayoutCommand, ElementName=mainWindow}"/>
-                <MenuItem Header="重置窗口布局(R)" Command="{Binding LoadLayoutCommand, ElementName=mainWindow}"/>
+                <MenuItem Header="保存窗口布局(S)" Command="{Binding SaveLayoutCommand, ElementName=mainAutoTestingWindow}"/>
+                <MenuItem Header="重置窗口布局(R)" Command="{Binding LoadLayoutCommand, ElementName=mainAutoTestingWindow}"/>
             </MenuItem>
             <MenuItem Header="帮助(H)">
-                <MenuItem Header="查看帮助(V)...  Ctrl + F1"/>
-                <MenuItem Header="关于TestExerciserPro(A)"/>
+                <MenuItem Header="查看帮助(V)...  Ctrl + F1">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Help.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="关于TestExerciserPro(A)">
+                    <MenuItem.Icon>
+                        <Image Source="Images/About.png" Height="18"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
 

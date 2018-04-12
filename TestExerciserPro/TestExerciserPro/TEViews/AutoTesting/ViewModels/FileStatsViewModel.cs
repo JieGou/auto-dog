@@ -34,7 +34,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/TEViews/AutoTesting/Images/property-blue.png");
+            bi.UriSource = new Uri("pack://application:,,/TEViews/AutoTesting/Images/PropertyView.png");
             bi.EndInit();
             IconSource = bi;
         }

@@ -157,7 +157,6 @@
     <Compile Include="TEControls\ShellComInterfaces.cs" />
     <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\ActiveDocumentConverter.cs" />
-    <Compile Include="TEViews\AutoTesting\BraceFoldingStrategy.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\BoolToVisiableConverter.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\FlipBoolConverter.cs" />
     <Compile Include="TEViews\AutoTesting\Logic\AutoTestingConfig.cs" />
@@ -186,7 +185,6 @@
     <Compile Include="TEViews\AutoTesting\ViewModels\FileStatsViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\FileViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\LayoutInitializer.cs" />
-    <Compile Include="TEViews\AutoTesting\MyCompletionData.cs" />
     <Compile Include="TEViews\AutoTesting\Panes\PanesStyleSelector.cs" />
     <Compile Include="TEViews\AutoTesting\Panes\PanesTemplateSelector.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\PaneViewModel.cs" />
@@ -480,7 +478,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\DocumentClosed.png" />
-    <Resource Include="TEViews\AutoTesting\Images\property-blue.png" />
+    <Resource Include="TEViews\AutoTesting\Images\PropertyView.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\App\Edit_Copy32.png" />
@@ -526,6 +524,36 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\DocumentSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\ProjectFileMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TEViews\AutoTesting\Images\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\ProjectDefault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\ProjectAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\WindowClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FolderAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\About.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
