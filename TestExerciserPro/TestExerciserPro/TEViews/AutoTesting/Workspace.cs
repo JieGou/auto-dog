@@ -213,7 +213,6 @@ namespace TestExerciserPro.TEViews.AutoTesting
 
         #endregion
 
-
         internal void Close(FileViewModel fileToClose)
         {
             ShowFileClosingDialog(fileToClose);
