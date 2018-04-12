@@ -555,6 +555,18 @@
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\About.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\PropertyItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FolderSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TEViews\AutoTesting\Images\FileReName.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
