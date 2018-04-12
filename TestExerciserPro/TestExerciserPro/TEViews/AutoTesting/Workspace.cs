@@ -216,10 +216,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
 
         internal void Close(FileViewModel fileToClose)
         {
-            if (fileToClose.IsDirty)
-            {
-                ShowFileClosingDialog(MainAutoTesting.AutoTestingWindow, fileToClose);
-            }
+            ShowFileClosingDialog(fileToClose);
         }
 
         internal void Save(FileViewModel fileToSave, bool saveAsFlag = false)
@@ -265,8 +262,9 @@ namespace TestExerciserPro.TEViews.AutoTesting
             ActiveDocument.IsDirty = false;
         }
 
-        public async void ShowFileClosingDialog(MetroWindow window,FileViewModel fileToClose)
+        public async void ShowFileClosingDialog(FileViewModel fileToClose)
         {
+            MetroWindow window = MainAutoTesting.AutoTestingWindow;
             if (fileToClose.IsDirty)
             {
                 var mySettings = new MetroDialogSettings()
@@ -287,6 +285,5 @@ namespace TestExerciserPro.TEViews.AutoTesting
             }
             else { _files.Remove(fileToClose); } 
         }
-
     }
 }
