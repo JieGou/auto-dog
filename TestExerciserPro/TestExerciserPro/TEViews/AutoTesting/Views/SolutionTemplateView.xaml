@@ -66,14 +66,14 @@
                             <Image Source="../Images/Paste.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="删除(D) Del">
+                    <MenuItem Header="删除(D) Del" Click="MenuItem_Delete_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/Delete.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="重命名(M)">
+                    <MenuItem Header="重命名(M)" Click="MenuItem_ReName_Click">
                         <MenuItem.Icon>
-                            <Image Source="../Images/FileRename.png" Height="18"/>
+                            <Image Source="../Images/FileReName.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="在文件资源管理器中打开文件夹(X)" Click="MenuItem_OpenFolder_Click">
@@ -81,7 +81,7 @@
                             <Image Source="../Images/FolderSearch.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="属性">
+                    <MenuItem Header="属性" Click="MenuItem_ShowProperty_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/PropertyItem.png" Height="18"/>
                         </MenuItem.Icon>

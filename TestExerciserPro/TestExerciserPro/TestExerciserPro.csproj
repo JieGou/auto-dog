@@ -528,9 +528,7 @@
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\ProjectFileMark.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TEViews\AutoTesting\Images\Default\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="TEViews\AutoTesting\Images\ProjectDefault.png" />
   </ItemGroup>

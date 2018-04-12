@@ -174,5 +174,19 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             OpenFolderAndSelectFile(selectedTVI.Tag.ToString());
         }
+
+        private void MenuItem_ShowProperty_Click(object sender, RoutedEventArgs e)
+        {
+            Workspace.This.FileStats.IsSelected = true;
+        }
+
+        private void MenuItem_ReName_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void MenuItem_Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
