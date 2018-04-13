@@ -8,30 +8,25 @@ using System.Windows.Controls;
 
 namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 {
-    class TreeViewModel:ViewModelBase
+    public partial class TreeViewModel:ViewModelBase
     {
-        public string Icon { get; set; }
-        public string EditIcon { get; set; }
-        public string Header { get; set; }
-        public string Tag { get; set; }
-        public bool IsExpand { get; set; }
+        public string IconSelected { get; set; }
+        public string IconClosed { get; set; }
+        public string IconOpened { get; set; }
         public Enum ItemType { get; set; }
 
-        protected bool isChecked;
-        /// <summary>
-        /// 是否被勾选
-        /// </summary>
-        public bool IsChecked
+        bool isInEditMode = false;
+        public bool IsInEditMode
         {
-            get { return isChecked; }
+            get { return isInEditMode; }
             set
             {
-                isChecked = value;
-                RaisePropertyChanged("IsChecked");
+                isInEditMode = value;
+                RaisePropertyChanged("IsInEditMode");
             }
         }
-        public List<TreeViewModel> Children { get; set; }
 
+        public List<TreeViewModel> Children { get; set; }
 
         public TreeViewModel()
         {

@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace TestExerciserPro.TEViews.AutoTesting
 {
-    class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         protected ViewModelBase()
         {

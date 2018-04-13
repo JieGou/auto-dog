@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
 using TestExerciserPro.TEViews.AutoTesting.Logic;
 
@@ -71,6 +70,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Tag = chlFile.FullName;
                     TreeViewModelDepend.SetItemImageName(chldNode, image_DocumentClosed);
                     TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
+                    TreeViewModelDepend.SetIsInEditMode(chldNode, false);
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
@@ -86,6 +86,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Collapsed += ChldNode_Collapsed;
                     TreeViewModelDepend.SetItemImageName(chldNode, image_FolderClosed);
                     TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
+                    TreeViewModelDepend.SetIsInEditMode(chldNode, false);
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldFolder.FullName, chldNode);
                 }
@@ -105,9 +106,10 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         }
 
         private void mySTV_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
+        {           
             selectedTVI = (TreeViewItem)e.NewValue;
             SetNewItemStyles(selectedTVI);
+            TreeViewModelDepend.SetIsInEditMode(selectedTVI,true);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
@@ -131,7 +133,6 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModelDepend.SetItemImageName(tvi, image_FolderSelected);
-                TreeViewModelDepend.SetIsFolderItemSelected(tvi, true);
             }
             else if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
@@ -213,9 +214,43 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void mySTV_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key==Key.F2)
+            if (e.Key == Key.F2)
             {
+                if (selectedTVI != null)
+                {
+                    var tb = sender as TextBox;
+                    TreeViewModelDepend.SetIsInEditMode(selectedTVI, true);
+                }
+            }
+        }
 
+        string oldText;
+        private void spTBox_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            var tb = sender as TextBox;
+            if (tb.IsVisible)
+            {
+                tb.Focus();
+                tb.SelectAll();
+                //备份数据
+                oldText = tb.Text;
+            }
+        }
+
+        private void spTBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
+        }
+
+        private void spTBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
+            if (e.Key == Key.Escape)
+            {
+                var tb = sender as TextBox;
+                tb.Text = oldText;
+                TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
             }
         }
     }

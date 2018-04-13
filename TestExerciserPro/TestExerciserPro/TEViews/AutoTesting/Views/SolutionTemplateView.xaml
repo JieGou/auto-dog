@@ -24,9 +24,15 @@
                             <DataTemplate DataType="ContentPresenter">
                                 <Grid>
                                     <StackPanel Orientation="Horizontal" >
-                                        <Image Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
+                                        <Image  x:Name="spImage" Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
                                                Source="{Binding (viewModels:TreeViewModelDepend.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
-                                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
+                                        <TextBlock x:Name="spTBlock" Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
+                                        <TextBox x:Name="spTBox" Margin="5,0" VerticalAlignment="Center"  Visibility="Hidden"
+                                                 Text="{Binding ElementName=spTBlock,Path=Text,UpdateSourceTrigger=LostFocus}"
+                                                 LostFocus ="spTBox_LostFocus"
+                                                 IsVisibleChanged="spTBox_IsVisibleChanged"
+                                                 KeyDown ="spTBox_KeyDown"
+                                                 />
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>

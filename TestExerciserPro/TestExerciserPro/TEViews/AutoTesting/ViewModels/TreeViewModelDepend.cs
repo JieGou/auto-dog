@@ -26,7 +26,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 
         public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModelDepend), new UIPropertyMetadata(string.Empty));
 
-        public static readonly DependencyProperty IsFolderItemSelectedProperty = DependencyProperty.RegisterAttached("IsFolderItemSelected",
+        public static readonly DependencyProperty IsInEditModeProperty = DependencyProperty.RegisterAttached("IsInEditMode",
                                                                     typeof(bool), typeof(TreeViewModelDepend),
                                                                     new FrameworkPropertyMetadata(false));
 
@@ -92,14 +92,14 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         #endregion
 
         #region 附加属性：树节点中的文件节点是否被选中
-        public static bool GetIsFolderItemSelected(DependencyObject obj)
+        public static bool GetIsInEditMode(DependencyObject obj)
         {
-            return (bool)obj.GetValue(IsFolderItemSelectedProperty);
+            return (bool)obj.GetValue(IsInEditModeProperty);
         }
 
-        public static void SetIsFolderItemSelected(DependencyObject obj, bool value)
+        public static void SetIsInEditMode(DependencyObject obj, bool value)
         {
-            obj.SetValue(IsFolderItemSelectedProperty, value);
+            obj.SetValue(IsInEditModeProperty, value);
         }
         #endregion
 
