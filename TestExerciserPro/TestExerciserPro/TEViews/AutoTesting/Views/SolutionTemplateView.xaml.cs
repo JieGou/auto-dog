@@ -34,58 +34,58 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         public SolutionTemplateView()
         {
             InitializeComponent();
-            SolutionTemplateViewInit();
+            mySTVInit();
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
         }
 
         private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            SolutionTemplateViewInit();
+            mySTVInit();
         }
 
-        public void SolutionTemplateViewInit()
+        public void mySTVInit()
         {
             var tviRoot = new TreeViewItem();
 
             GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
-            TreeViewModel.SetItemImageName(tviRoot, image_Home);
-            TreeViewModel.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
-            MySolutionTempView.Items.Add(tviRoot);
+            TreeViewModelDepend.SetItemImageName(tviRoot, image_Home);
+            TreeViewModelDepend.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
+            mySTV.Items.Add(tviRoot);
         }
 
-        private void GetSolutionTree(string filePath,TreeViewItem tviRoot)
+        private void GetSolutionTree(string rootPath,TreeViewItem tviRoot)
         {
-            if (filePath != null && filePath != "")
+            if (rootPath != null && rootPath != "")
             {
                 //设置树根节点
-                DirectoryInfo folder = new DirectoryInfo(filePath);
-                tviRoot.Header = folder.Name;
-                tviRoot.Tag = folder.FullName;
+                DirectoryInfo rootFolder = new DirectoryInfo(rootPath);
+                tviRoot.Header = rootFolder.Name;
+                tviRoot.Tag = rootFolder.FullName;
 
                 //设置树文件节点
-                FileInfo[] chldFiles = folder.GetFiles("*.*");
+                FileInfo[] chldFiles = rootFolder.GetFiles("*.*");
                 foreach (FileInfo chlFile in chldFiles)
                 {
                     TreeViewItem chldNode = new TreeViewItem();
                     chldNode.Header = chlFile.Name;
                     chldNode.Tag = chlFile.FullName;
-                    TreeViewModel.SetItemImageName(chldNode, image_DocumentClosed);
-                    TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
+                    TreeViewModelDepend.SetItemImageName(chldNode, image_DocumentClosed);
+                    TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
 
                 //设置树文件夹节点
-                DirectoryInfo[] chldFolders = folder.GetDirectories();
+                DirectoryInfo[] chldFolders = rootFolder.GetDirectories();
                 foreach (DirectoryInfo chldFolder in chldFolders)
                 {
                     TreeViewItem chldNode = new TreeViewItem();
-                    chldNode.Header = folder.Name;
-                    chldNode.Tag = folder.FullName;
+                    chldNode.Header = chldFolder.Name;
+                    chldNode.Tag = chldFolder.FullName;
                     chldNode.Expanded += ChldNode_Expanded;
                     chldNode.Collapsed += ChldNode_Collapsed;
-                    TreeViewModel.SetItemImageName(chldNode, image_FolderClosed);
-                    TreeViewModel.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
+                    TreeViewModelDepend.SetItemImageName(chldNode, image_FolderClosed);
+                    TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldFolder.FullName, chldNode);
                 }
@@ -104,14 +104,14 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             SetItemStyles(tviSender, image_FolderOpened);
         }
 
-        private void MySolutionTempView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void mySTV_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             selectedTVI = (TreeViewItem)e.NewValue;
             SetNewItemStyles(selectedTVI);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
-                if (TreeViewModel.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
+                if (TreeViewModelDepend.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
                 {
                     SetItemStyles(tviOld, image_FolderOpened);
                 }             
@@ -124,53 +124,53 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void SetNewItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
+            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
             {
                 return;
             }
-            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, image_FolderSelected);
-                TreeViewModel.SetIsFolderItemSelected(tvi, true);
+                TreeViewModelDepend.SetItemImageName(tvi, image_FolderSelected);
+                TreeViewModelDepend.SetIsFolderItemSelected(tvi, true);
             }
-            else if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, image_DocumentSelected);
+                TreeViewModelDepend.SetItemImageName(tvi, image_DocumentSelected);
             }
         }
 
 
         void SetOldItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, image_FolderClosed);
+                TreeViewModelDepend.SetItemImageName(tvi, image_FolderClosed);
             }
-            else if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, image_DocumentClosed);
+                TreeViewModelDepend.SetItemImageName(tvi, image_DocumentClosed);
             }
         }
 
         void SetItemStyles(TreeViewItem tvi, string folderImage)
         {
-            if (TreeViewModel.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModel.SetItemImageName(tvi, folderImage);
+                TreeViewModelDepend.SetItemImageName(tvi, folderImage);
             }
         }
 
-        private void MySolutionTempView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void mySTV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //此处需要判断是否选中节点，防止未选中节点时，鼠标在空白区域点击后引发异常
-            if (selectedTVI != null) 
+            if (selectedTVI != null)
             {
                 var fileViewModel = Workspace.This.Open(selectedTVI.Tag.ToString());
                 Workspace.This.ActiveDocument = fileViewModel;
-            }  
+            }
         }
 
-        private void MySolutionTempView_MouseWheel(object sender, MouseWheelEventArgs e)
+        private void mySTV_MouseWheel(object sender, MouseWheelEventArgs e)
         {
 
         }
@@ -199,11 +199,24 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void MenuItem_ReName_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
         private void MenuItem_Delete_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void TextBlock_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void mySTV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.F2)
+            {
+
+            }
         }
     }
 }

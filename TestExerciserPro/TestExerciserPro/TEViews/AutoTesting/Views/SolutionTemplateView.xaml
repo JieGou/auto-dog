@@ -10,10 +10,11 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        <TreeView x:Name="MySolutionTempView"
-                  SelectedItemChanged="MySolutionTempView_SelectedItemChanged"
-                  MouseDoubleClick="MySolutionTempView_MouseDoubleClick"
-                  MouseWheel="MySolutionTempView_MouseWheel"
+        <TreeView x:Name="mySTV"
+                  SelectedItemChanged="mySTV_SelectedItemChanged"
+                  MouseDoubleClick="mySTV_MouseDoubleClick"
+                  MouseWheel="mySTV_MouseWheel"
+                  KeyDown="mySTV_KeyDown"
                   Style="{DynamicResource VirtualisedMetroTreeView}"
                   >
             <TreeView.Resources>
@@ -22,9 +23,9 @@
                         <Setter.Value>
                             <DataTemplate DataType="ContentPresenter">
                                 <Grid>
-                                    <StackPanel x:Name="spImg" Orientation="Horizontal" >
-                                        <Image x:Name="img" Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
-                                               Source="{Binding (viewModels:TreeViewModel.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Image Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
+                                               Source="{Binding (viewModels:TreeViewModelDepend.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
                                         <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
                                     </StackPanel>
                                 </Grid>
