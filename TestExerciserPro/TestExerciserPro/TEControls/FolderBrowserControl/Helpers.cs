@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TestExerciserPro.TEViews.AutoTesting.Views;
 using TestExerciserPro.UI.Controls;
 
-namespace TestExerciserPro.TEControls
+namespace TestExerciserPro.TEControls.FolderBrowserControl
 {
     internal static class Helpers
     {

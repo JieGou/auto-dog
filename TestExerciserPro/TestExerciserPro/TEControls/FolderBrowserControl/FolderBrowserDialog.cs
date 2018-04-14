@@ -10,7 +10,7 @@ using System.Windows.Interop;
 //using Microsoft.SDK.Samples.VistaBridge.Library;
 //using Microsoft.SDK.Samples.VistaBridge.Interop;
 
-namespace TestExerciserPro.TEControls
+namespace TestExerciserPro.TEControls.FolderBrowserControl
 {
     public class FolderBrowserDialog : IDisposable //, IDialogControlHost
     {

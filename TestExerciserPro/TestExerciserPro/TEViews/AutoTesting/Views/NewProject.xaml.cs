@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using TestExerciserPro.UI.Controls.Dialogs;
-using TestExerciserPro.TEControls;
+using TestExerciserPro.TEControls.FolderBrowserControl;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.TEViews.AutoTesting.Views

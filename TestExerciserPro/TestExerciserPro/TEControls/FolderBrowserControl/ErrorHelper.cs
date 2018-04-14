@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
-namespace TestExerciserPro.TEControls
+namespace TestExerciserPro.TEControls.FolderBrowserControl
 {
     internal static class ErrorHelper
     {

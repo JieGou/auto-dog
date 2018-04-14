@@ -148,14 +148,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Settings.cs" />
-    <Compile Include="TEControls\COMGuids.cs" />
-    <Compile Include="TEControls\ErrorHelper.cs" />
-    <Compile Include="TEControls\FolderBrowserDialog.cs" />
-    <Compile Include="TEControls\Helpers.cs" />
-    <Compile Include="TEControls\NativeMethods.cs" />
-    <Compile Include="TEControls\NativeTaskDialogShowState.cs" />
-    <Compile Include="TEControls\ShellComInterfaces.cs" />
-    <Compile Include="TEControls\ShellWrapperDefinitions.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\COMGuids.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\ErrorHelper.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\FolderBrowserDialog.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\Helpers.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\NativeMethods.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\NativeTaskDialogShowState.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\ShellComInterfaces.cs" />
+    <Compile Include="TEControls\FolderBrowserControl\ShellWrapperDefinitions.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\ActiveDocumentConverter.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\BoolToVisiableConverter.cs" />
     <Compile Include="TEViews\AutoTesting\Converter\FlipBoolConverter.cs" />
@@ -194,7 +194,7 @@
     <Compile Include="TEViews\AutoTesting\ViewModels\SolutionViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\ToolViewModel.cs" />
     <Compile Include="TEViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModelDepend.cs" />
+    <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModelRef.cs" />
     <Compile Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml.cs">
       <DependentUpon>OutPutTemplateView.xaml</DependentUpon>
     </Compile>

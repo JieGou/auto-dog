@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace TestExerciserPro.TEControls
+namespace TestExerciserPro.TEControls.FolderBrowserControl
 {
     //wpffb used
     [ComImport(),

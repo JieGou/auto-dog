@@ -48,7 +48,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             tviRoot.Expanded += OnRoot_Expanded;
 
-            TreeViewModelDepend.SetItemImageName(tviRoot, @"../Images/Computer.png");
+            TreeViewModelRef.SetItemImageName(tviRoot, @"../Images/Computer.png");
 
             myResourcesTree.Items.Add(tviRoot);
         }
@@ -66,7 +66,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {
             if (tviSender != null)
             {
-                return (TreeViewModelDepend.GetIsLoaded(tviSender) == false);
+                return (TreeViewModelRef.GetIsLoaded(tviSender) == false);
             }
             return (false);
         }
@@ -88,9 +88,9 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
             tviSender.Items.Clear();
 
-            TreeViewModelDepend.SetIsCanceled(tviSender, false);
-            TreeViewModelDepend.SetIsLoaded(tviSender, true);
-            TreeViewModelDepend.SetIsLoading(tviSender, true);
+            TreeViewModelRef.SetIsCanceled(tviSender, false);
+            TreeViewModelRef.SetIsLoaded(tviSender, true);
+            TreeViewModelRef.SetIsLoading(tviSender, true);
 
             DelegateLoader actLoad = LoadSubItems;
 
@@ -140,7 +140,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 tviIn.Items.Add(_dummyNode);
                 tviIn.IsExpanded = false;
             }
-            TreeViewModelDepend.SetIsLoaded(tviIn, false);
+            TreeViewModelRef.SetIsLoaded(tviIn, false);
         }
 
         // 设置延迟时间
@@ -181,7 +181,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
                 // 设置“IsLoading”依赖性属性设置为“false”
                 // 所有加载UI（例如进度条、取消按钮）消失。
-                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewModelDepend.SetIsLoading(tviParent, false)));
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => TreeViewModelRef.SetIsLoading(tviParent, false)));
             }
         }
 
@@ -229,8 +229,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             tviSubItem.Expanded += OnFolder_Expanded;
 
 
-            TreeViewModelDepend.SetItemImageName(tviSubItem, strImageName);
-            TreeViewModelDepend.SetIsLoading(tviSubItem, false);
+            TreeViewModelRef.SetItemImageName(tviSubItem, strImageName);
+            TreeViewModelRef.SetIsLoading(tviSubItem, false);
 
             tviParent.Items.Add(tviSubItem);
         }
@@ -263,7 +263,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                 var tviOwner = btnSend.Tag as TreeViewItem;
                 if (tviOwner != null)
                 {
-                    TreeViewModelDepend.SetIsCanceled(tviOwner, true);
+                    TreeViewModelRef.SetIsCanceled(tviOwner, true);
                     lock (m_dic_ItemsExecuting)
                     {
                         if (m_dic_ItemsExecuting.ContainsKey(tviOwner))

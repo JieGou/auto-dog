@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestExerciserPro.TEControls
+namespace TestExerciserPro.TEControls.FolderBrowserControl
 {
     internal enum NativeDialogShowState
     {

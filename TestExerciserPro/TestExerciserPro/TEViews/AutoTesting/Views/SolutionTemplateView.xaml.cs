@@ -29,6 +29,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         string image_DocumentClosed = @"../Images/DocumentClosed.png";
 
         public static TreeViewItem selectedTVI = null;
+        public static TextBox selectedTBox = null;
 
         public SolutionTemplateView()
         {
@@ -47,8 +48,8 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             var tviRoot = new TreeViewItem();
 
             GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
-            TreeViewModelDepend.SetItemImageName(tviRoot, image_Home);
-            TreeViewModelDepend.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
+            TreeViewModelRef.SetItemImageName(tviRoot, image_Home);
+            TreeViewModelRef.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
             mySTV.Items.Add(tviRoot);
         }
 
@@ -68,9 +69,7 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     TreeViewItem chldNode = new TreeViewItem();
                     chldNode.Header = chlFile.Name;
                     chldNode.Tag = chlFile.FullName;
-                    TreeViewModelDepend.SetItemImageName(chldNode, image_DocumentClosed);
-                    TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FileNode.ToString());
-                    TreeViewModelDepend.SetIsInEditMode(chldNode, false);
+                    AddTreeViewItem(chldNode, image_DocumentClosed, ATConfig.TreeNodeType.FileNode.ToString(), false);
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
@@ -84,14 +83,20 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Tag = chldFolder.FullName;
                     chldNode.Expanded += ChldNode_Expanded;
                     chldNode.Collapsed += ChldNode_Collapsed;
-                    TreeViewModelDepend.SetItemImageName(chldNode, image_FolderClosed);
-                    TreeViewModelDepend.SetItemTypeName(chldNode, ATConfig.TreeNodeType.FolderNode.ToString());
-                    TreeViewModelDepend.SetIsInEditMode(chldNode, false);
+                    AddTreeViewItem(chldNode,image_FolderClosed, ATConfig.TreeNodeType.FolderNode.ToString(),false);
+
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldFolder.FullName, chldNode);
                 }
             }
            }
+
+        private void AddTreeViewItem( TreeViewItem chldNode,string imageName,string typeName,bool editMode)
+        {
+            TreeViewModelRef.SetItemImageName(chldNode, imageName);
+            TreeViewModelRef.SetItemTypeName(chldNode, typeName);
+            TreeViewModelRef.SetIsEditMode(chldNode, editMode);
+        }
 
         private void ChldNode_Collapsed(object sender, RoutedEventArgs e)
         {
@@ -109,11 +114,10 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         {           
             selectedTVI = (TreeViewItem)e.NewValue;
             SetNewItemStyles(selectedTVI);
-            TreeViewModelDepend.SetIsInEditMode(selectedTVI,true);
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
-                if (TreeViewModelDepend.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
+                if (TreeViewModelRef.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
                 {
                     SetItemStyles(tviOld, image_FolderOpened);
                 }             
@@ -126,38 +130,38 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         void SetNewItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
             {
                 return;
             }
-            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModelDepend.SetItemImageName(tvi, image_FolderSelected);
+                TreeViewModelRef.SetItemImageName(tvi, image_FolderSelected);
             }
-            else if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
-                TreeViewModelDepend.SetItemImageName(tvi, image_DocumentSelected);
+                TreeViewModelRef.SetItemImageName(tvi, image_DocumentSelected);
             }
         }
 
 
         void SetOldItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModelDepend.SetItemImageName(tvi, image_FolderClosed);
+                TreeViewModelRef.SetItemImageName(tvi, image_FolderClosed);
             }
-            else if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
-                TreeViewModelDepend.SetItemImageName(tvi, image_DocumentClosed);
+                TreeViewModelRef.SetItemImageName(tvi, image_DocumentClosed);
             }
         }
 
         void SetItemStyles(TreeViewItem tvi, string folderImage)
         {
-            if (TreeViewModelDepend.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
-                TreeViewModelDepend.SetItemImageName(tvi, folderImage);
+                TreeViewModelRef.SetItemImageName(tvi, folderImage);
             }
         }
 
@@ -188,21 +192,21 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
             System.Diagnostics.Process.Start(psi);
         }
 
-        private void MenuItem_OpenFolder_Click(object sender, RoutedEventArgs e)
+        private void mySTVMenuItem_OpenFolder_Click(object sender, RoutedEventArgs e)
         {
             OpenFolderAndSelectFile(selectedTVI.Tag.ToString());
         }
 
-        private void MenuItem_ShowProperty_Click(object sender, RoutedEventArgs e)
+        private void mySTVMenuItem_ShowProperty_Click(object sender, RoutedEventArgs e)
         {
             Workspace.This.FileStats.IsSelected = true;
         }
 
-        private void MenuItem_ReName_Click(object sender, RoutedEventArgs e)
+        private void mySTVMenuItem_ReName_Click(object sender, RoutedEventArgs e)
         {
             
         }
-        private void MenuItem_Delete_Click(object sender, RoutedEventArgs e)
+        private void mySTVMenuItem_Delete_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -214,12 +218,14 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void mySTV_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F2)
+            if (selectedTVI != null)
             {
-                if (selectedTVI != null)
+                if (e.Key == Key.F2)
                 {
-                    var tb = sender as TextBox;
-                    TreeViewModelDepend.SetIsInEditMode(selectedTVI, true);
+                    TreeViewModelRef.SetIsEditMode(selectedTVI, true);
+                    selectedTBox.Focus();
+                    selectedTBox.SelectAll();
+                    oldText = selectedTBox.Text;
                 }
             }
         }
@@ -227,30 +233,22 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
         string oldText;
         private void spTBox_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            var tb = sender as TextBox;
-            if (tb.IsVisible)
-            {
-                tb.Focus();
-                tb.SelectAll();
-                //备份数据
-                oldText = tb.Text;
-            }
+            selectedTBox = sender as TextBox;      
         }
 
         private void spTBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
+            TreeViewModelRef.SetIsEditMode(selectedTVI, false);
         }
 
         private void spTBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
+                TreeViewModelRef.SetIsEditMode(selectedTVI, false);
             if (e.Key == Key.Escape)
             {
-                var tb = sender as TextBox;
-                tb.Text = oldText;
-                TreeViewModelDepend.SetIsInEditMode(selectedTVI, false);
+                selectedTBox.Text = oldText;
+                TreeViewModelRef.SetIsEditMode(selectedTVI, false);
             }
         }
     }

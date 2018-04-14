@@ -15,7 +15,7 @@ using System.ComponentModel;
 using TestExerciserPro.UI.Controls.Dialogs;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
 using TestExerciserPro.UI.Controls;
-using TestExerciserPro.TEViews.AutoTesting.Views;
+using TestExerciserPro.TEControls.FolderBrowserControl;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
 
 namespace TestExerciserPro.TEViews.AutoTesting
@@ -136,7 +136,7 @@ namespace TestExerciserPro.TEViews.AutoTesting
  
         private void OpenProject_Click(object sender, RoutedEventArgs e)
         {
-            TEControls.FolderBrowserDialog folder = new TEControls.FolderBrowserDialog();
+            FolderBrowserDialog folder = new FolderBrowserDialog();
             folder.Title = "打开项目";
             if (folder.ShowDialog() == true)
             {

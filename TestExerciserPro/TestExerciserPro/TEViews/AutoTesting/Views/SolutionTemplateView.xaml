@@ -25,10 +25,10 @@
                                 <Grid>
                                     <StackPanel Orientation="Horizontal" >
                                         <Image  x:Name="spImage" Width="20" Height="20" Stretch="Fill" VerticalAlignment="Center"
-                                               Source="{Binding (viewModels:TreeViewModelDepend.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
+                                               Source="{Binding (viewModels:TreeViewModelRef.ItemImageName), RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor}}"/>
                                         <TextBlock x:Name="spTBlock" Margin="5,0" VerticalAlignment="Center" Text="{Binding}"/>
-                                        <TextBox x:Name="spTBox" Margin="5,0" VerticalAlignment="Center"  Visibility="Hidden"
-                                                 Text="{Binding ElementName=spTBlock,Path=Text,UpdateSourceTrigger=LostFocus}"
+                                        <TextBox x:Name="spTBox" Margin="5,0" VerticalAlignment="Center"  Visibility="{Binding (viewModels:TreeViewModelRef.IsEditMode),Converter={x:Static converter:BoolToVisiableConverter.Instance}, RelativeSource={RelativeSource AncestorType={x:Type TreeViewItem}, Mode=FindAncestor},Mode=TwoWay}"
+                                                 Text="{Binding ElementName=spTBlock,Path=Text,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"
                                                  LostFocus ="spTBox_LostFocus"
                                                  IsVisibleChanged="spTBox_IsVisibleChanged"
                                                  KeyDown ="spTBox_KeyDown"
@@ -41,8 +41,8 @@
                 </Style>
             </TreeView.Resources>
             <TreeView.ContextMenu>
-                <ContextMenu x:Name="MySolutionContextMenu">
-                    <MenuItem x:Name="MyMenuAdd" Header="添加(D)">
+                <ContextMenu x:Name="mySTVContextMenu">
+                    <MenuItem x:Name="mySTVMenuAdd" Header="添加(D)">
                         <MenuItem Header="新建文件夹(D)"                                  
                                   >
                             <MenuItem.Icon>
@@ -55,7 +55,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem x:Name="MyMenuOpen" Header="打开(O)">
+                    <MenuItem x:Name="mySTVMenuOpen" Header="打开(O)">
                         <MenuItem.Icon>
                             <Image Source="../Images/FileEdit.png" Height="18"/>
                         </MenuItem.Icon>
@@ -75,22 +75,22 @@
                             <Image Source="../Images/Paste.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="删除(D) Del" Click="MenuItem_Delete_Click">
+                    <MenuItem Header="删除(D) Del" Click="mySTVMenuItem_Delete_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/Delete.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="重命名(M)" Click="MenuItem_ReName_Click">
+                    <MenuItem Header="重命名(M)" Click="mySTVMenuItem_ReName_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/FileReName.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="在文件资源管理器中打开文件夹(X)" Click="MenuItem_OpenFolder_Click">
+                    <MenuItem Header="在文件资源管理器中打开文件夹(X)" Click="mySTVMenuItem_OpenFolder_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/FolderSearch.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="属性" Click="MenuItem_ShowProperty_Click">
+                    <MenuItem Header="属性" Click="mySTVMenuItem_ShowProperty_Click">
                         <MenuItem.Icon>
                             <Image Source="../Images/PropertyItem.png" Height="18"/>
                         </MenuItem.Icon>

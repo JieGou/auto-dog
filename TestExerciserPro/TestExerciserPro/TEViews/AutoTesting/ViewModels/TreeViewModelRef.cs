@@ -8,26 +8,26 @@ using System.Windows.Controls;
 
 namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
 {
-    public class TreeViewModelDepend
+    public class TreeViewModelRef
     {
-        public static readonly DependencyProperty ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewModelDepend), new UIPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty ItemImageNameProperty = DependencyProperty.RegisterAttached("ItemImageName", typeof(string), typeof(TreeViewModelRef), new UIPropertyMetadata(string.Empty));
 
         public static readonly DependencyProperty IsLoadingProperty = DependencyProperty.RegisterAttached("IsLoading",
-                                                                    typeof(bool), typeof(TreeViewModelDepend),
+                                                                    typeof(bool), typeof(TreeViewModelRef),
                                                                     new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender));
 
         public static readonly DependencyProperty IsLoadedProperty = DependencyProperty.RegisterAttached("IsLoaded",
-                                                                    typeof(bool), typeof(TreeViewModelDepend),
+                                                                    typeof(bool), typeof(TreeViewModelRef),
                                                                     new FrameworkPropertyMetadata(false));
 
         public static readonly DependencyProperty IsCanceledProperty = DependencyProperty.RegisterAttached("IsCanceled",
-                                                                    typeof(bool), typeof(TreeViewModelDepend),
+                                                                    typeof(bool), typeof(TreeViewModelRef),
                                                                     new FrameworkPropertyMetadata(false));
 
-        public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModelDepend), new UIPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.RegisterAttached("ItemTypeName", typeof(string), typeof(TreeViewModelRef), new UIPropertyMetadata(string.Empty));
 
-        public static readonly DependencyProperty IsInEditModeProperty = DependencyProperty.RegisterAttached("IsInEditMode",
-                                                                    typeof(bool), typeof(TreeViewModelDepend),
+        public static readonly DependencyProperty IsEditModeProperty = DependencyProperty.RegisterAttached("IsEditMode",
+                                                                    typeof(bool), typeof(TreeViewModelRef),
                                                                     new FrameworkPropertyMetadata(false));
 
 
@@ -92,14 +92,14 @@ namespace TestExerciserPro.TEViews.AutoTesting.ViewModels
         #endregion
 
         #region 附加属性：树节点中的文件节点是否被选中
-        public static bool GetIsInEditMode(DependencyObject obj)
+        public static bool GetIsEditMode(DependencyObject obj)
         {
-            return (bool)obj.GetValue(IsInEditModeProperty);
+            return (bool)obj.GetValue(IsEditModeProperty);
         }
 
-        public static void SetIsInEditMode(DependencyObject obj, bool value)
+        public static void SetIsEditMode(DependencyObject obj, bool value)
         {
-            obj.SetValue(IsInEditModeProperty, value);
+            obj.SetValue(IsEditModeProperty, value);
         }
         #endregion
 
