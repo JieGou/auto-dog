@@ -9,7 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Text.RegularExpressions;
 using TestExerciserPro.TEViews.AutoTesting.ViewModels;
 using TestExerciserPro.TEViews.AutoTesting.Logic;
 
@@ -45,25 +45,36 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         public void mySTVInit()
         {
-            var tviRoot = new TreeViewItem();
-
-            GetSolutionTree(Properties.Settings.Default.solutionPath,tviRoot);
-            TreeViewModelRef.SetItemImageName(tviRoot, image_Home);
-            TreeViewModelRef.SetItemTypeName(tviRoot,ATConfig.TreeNodeType.RootNode.ToString());
-            mySTV.Items.Add(tviRoot);
+            string rootPath = Properties.Settings.Default.solutionPath;
+            if (Directory.Exists(rootPath))
+            {
+                DirectoryInfo rootFolder = new DirectoryInfo(rootPath);
+                if(rootFolder.Exists)
+                {
+                    //设置树根节点
+                    var tviRoot = new TreeViewItem();
+                    tviRoot.Header = rootFolder.Name;
+                    tviRoot.Tag = rootFolder.FullName;
+                    TreeViewModelRef.SetItemImageName(tviRoot, image_Home);
+                    TreeViewModelRef.SetItemTypeName(tviRoot, ATConfig.TreeNodeType.RootNode.ToString());
+                    GetSolutionTree(tviRoot, rootFolder);
+                    mySTV.Items.Add(tviRoot);
+                }
+            }           
         }
 
-        private void GetSolutionTree(string rootPath,TreeViewItem tviRoot)
+        private void RefreshTreeNode(TreeViewItem tviRoot)
         {
-            if (rootPath != null && rootPath != "")
-            {
-                //设置树根节点
-                DirectoryInfo rootFolder = new DirectoryInfo(rootPath);
-                tviRoot.Header = rootFolder.Name;
-                tviRoot.Tag = rootFolder.FullName;
+            tviRoot.Items.Clear();
+            GetSolutionTree(tviRoot,new DirectoryInfo(tviRoot.Tag.ToString()));
+        }
 
-                //设置树文件节点
-                FileInfo[] chldFiles = rootFolder.GetFiles("*.*");
+        private void SetFileNode(TreeViewItem tviRoot,DirectoryInfo rootFolder)
+        {
+            //设置树文件节点
+            FileInfo[] chldFiles = rootFolder.GetFiles("*.*");
+            if (chldFiles != null)
+            {
                 foreach (FileInfo chlFile in chldFiles)
                 {
                     TreeViewItem chldNode = new TreeViewItem();
@@ -73,9 +84,15 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
+            }
+        }
 
-                //设置树文件夹节点
-                DirectoryInfo[] chldFolders = rootFolder.GetDirectories();
+        private void SetFolderNode(TreeViewItem tviRoot, DirectoryInfo rootFolder)
+        {
+            //设置树文件夹节点
+            DirectoryInfo[] chldFolders = rootFolder.GetDirectories();
+            if (chldFolders != null)
+            {
                 foreach (DirectoryInfo chldFolder in chldFolders)
                 {
                     TreeViewItem chldNode = new TreeViewItem();
@@ -83,13 +100,19 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
                     chldNode.Tag = chldFolder.FullName;
                     chldNode.Expanded += ChldNode_Expanded;
                     chldNode.Collapsed += ChldNode_Collapsed;
-                    AddTreeViewItem(chldNode,image_FolderClosed, ATConfig.TreeNodeType.FolderNode.ToString(),false);
+                    AddTreeViewItem(chldNode, image_FolderClosed, ATConfig.TreeNodeType.FolderNode.ToString(), false);
 
                     tviRoot.Items.Add(chldNode);
-                    GetSolutionTree(chldFolder.FullName, chldNode);
+                    GetSolutionTree(chldNode, chldFolder);
                 }
             }
-           }
+        }
+
+        private void GetSolutionTree(TreeViewItem tviRoot, DirectoryInfo rootFolder)
+        {
+            SetFileNode(tviRoot, rootFolder);
+            SetFolderNode(tviRoot, rootFolder);
+        }
 
         private void AddTreeViewItem( TreeViewItem chldNode,string imageName,string typeName,bool editMode)
         {
@@ -243,12 +266,99 @@ namespace TestExerciserPro.TEViews.AutoTesting.Views
 
         private void spTBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter)     
+            {
+                string oldPath = selectedTVI.Tag.ToString();
+                selectedTVI.Header = selectedTBox.Text;
+                selectedTVI.Tag = Regex.Match(oldPath, @"[\S\s]*\\").Value + selectedTVI.Header;
+                string newPath = selectedTVI.Tag.ToString();              
+                MoveFile(oldPath, newPath);
+                RefreshTreeNode(selectedTVI);
                 TreeViewModelRef.SetIsEditMode(selectedTVI, false);
+            }
             if (e.Key == Key.Escape)
             {
                 selectedTBox.Text = oldText;
                 TreeViewModelRef.SetIsEditMode(selectedTVI, false);
+            }
+        }
+
+
+        private void MoveFile(string oldPath,string newPath)
+        {
+            FileInfo fileToMove = new FileInfo(oldPath);
+            fileToMove.MoveTo(newPath);
+        }
+
+        private static void MoveFolder(string oldPath, string newPath)
+        {
+            if (Directory.Exists(oldPath))
+            {
+                if (!Directory.Exists(newPath))
+                {
+                    //目标目录不存在则创建  
+                    try
+                    {
+                        Directory.CreateDirectory(newPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("创建目标目录失败：" + ex.Message);
+                    }
+                }
+                //获得源文件下所有文件  
+                List<string> files = new List<string>(Directory.GetFiles(oldPath));
+                files.ForEach(c =>
+                {
+                    string destFile = Path.Combine(new string[] { newPath, Path.GetFileName(c) });
+                    //覆盖模式  
+                    if (File.Exists(destFile))
+                    {
+                        File.Delete(destFile);
+                    }
+                    File.Move(c, destFile);
+                });
+                //获得源文件下所有目录文件  
+                List<string> folders = new List<string>(Directory.GetDirectories(oldPath));
+
+                folders.ForEach(c =>
+                {
+                    string destDir = Path.Combine(new string[] { newPath, Path.GetFileName(c) });
+                    //Directory.Move必须要在同一个根目录下移动才有效，不能在不同卷中移动。  
+                    //Directory.Move(c, destDir);  
+
+                    //采用递归的方法实现  
+                    MoveFolder(c, destDir);
+                });
+            }
+            else
+            {
+                throw new DirectoryNotFoundException("源目录不存在！");
+            }
+        }
+
+        private void DelectDir(string srcPath)
+        {
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(srcPath);
+                FileSystemInfo[] fileinfo = dir.GetFileSystemInfos();  //返回目录中所有文件和子目录
+                foreach (FileSystemInfo i in fileinfo)
+                {
+                    if (i is DirectoryInfo)
+                    {
+                        DirectoryInfo subdir = new DirectoryInfo(i.FullName);
+                        subdir.Delete(true);          //删除子目录和文件
+                    }
+                    else
+                    {
+                        File.Delete(i.FullName);      //删除指定文件
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("删除目标目录失败：" + ex.Message);
             }
         }
     }
