@@ -1,4 +1,4 @@
-﻿<Controls:MetroWindow x:Class="AutoDog.MainAutoTesting"
+﻿<Controls:MetroWindow x:Class="AutoDog.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
@@ -15,14 +15,13 @@
                       xmlns:viewModels ="clr-namespace:AutoDog.ViewModels"
                       xmlns:converter ="clr-namespace:AutoDog.Converter"
                       xmlns:s="clr-namespace:System;assembly=mscorlib"
-                      x:Name="mainAutoTestingWindow"
+                      x:Name="mainWindow"
                       mc:Ignorable="d"
-                      Title="自动化测试" 
+                      Title="AutoDog" 
                       Width="1200"
                       Height="800"
                       Dialog:DialogParticipation.Register="{Binding}"
-                      xmlns:AutoDog="clr-namespace:AutoDog"
-                      d:DataContext="{d:DesignInstance AutoDog:MainWindowViewModel}"
+                      d:DataContext="{d:DesignInstance local:Workspace}"
                       Icon="Images/AutoDog.png"
                       WindowStartupLocation="CenterScreen"
                       Closing="MainAutoTesting_WinddowClosing"
@@ -35,6 +34,9 @@
                       >
     <Window.Resources>
         <ResourceDictionary>
+            <converter:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
+            <xcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            
             <Ellipse x:Key="AppThemeMenuIcon"
                      Width="16"
                      Height="16"
@@ -42,6 +44,7 @@
                      Fill="{Binding ColorBrush, Mode=OneWay}"
                      Stroke="{Binding BorderColorBrush, Mode=OneWay}"
                      StrokeThickness="1" />
+            
             <Ellipse x:Key="AccentMenuIcon"
                      Width="16"
                      Height="16"
@@ -87,29 +90,21 @@
 
             </Dialog:CustomDialog>
 
-            <converter:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
-            <xcad:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Controls:MetroWindow.WindowButtonCommands>
         <Controls:WindowButtonCommands Style="{DynamicResource AutoDog.UI.Styles.WindowButtonCommands.Win10}" />
     </Controls:MetroWindow.WindowButtonCommands>
-    
-    <Controls:MetroWindow.LeftWindowCommands>
-        <Controls:WindowCommands>
-            <Button Click="LaunchAppsOnGitHub" ToolTip="AutoDog.UI on GitHub">
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands ShowLastSeparator="False">
+            <Button Content="XXXX" ToolTip="Flyouts demo window" />
+            <Button Click="LaunchAppsOnGitHub" ToolTip="AutoDog on GitHub">
                 <iconPacks:PackIconModern Width="22"
                                           Height="22"
                                           Kind="SocialGithubOctocat" />
             </Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.LeftWindowCommands>
-
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands ShowLastSeparator="False">
-            <Button Content="项目管理" ToolTip="Flyouts demo window" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 
@@ -221,10 +216,10 @@
                 <MenuItem Header="定位到(,)...  Ctrl + ,"/>
             </MenuItem>
             <MenuItem Header="视图(V)">
-                <MenuItem Header="主题(T)"
+                <MenuItem Header="边框主题(T)"
                       ItemContainerStyle="{StaticResource AppThemeMenuItemStyle}"
                       ItemsSource="{Binding AppThemes, Mode=OneWay}" />
-                <MenuItem Header="风格(S)"
+                <MenuItem Header="边框风格(S)"
                       ItemContainerStyle="{StaticResource AccentColorMenuItemStyle}"
                       ItemsSource="{Binding AccentColors, Mode=OneWay}" />
                 <MenuItem Header="类视图(A)  Ctrl + Shift + C" IsChecked="{Binding ClassView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
@@ -261,8 +256,8 @@
             <MenuItem Header="体系结构(C)"></MenuItem>
             <MenuItem Header="测试(S)"></MenuItem>
             <MenuItem Header="窗口(W)">
-                <MenuItem Header="保存窗口布局(S)" Command="{Binding SaveLayoutCommand, ElementName=mainAutoTestingWindow}"/>
-                <MenuItem Header="重置窗口布局(R)" Command="{Binding LoadLayoutCommand, ElementName=mainAutoTestingWindow}"/>
+                <MenuItem Header="保存窗口布局(S)" Command="{Binding SaveLayoutCommand, ElementName=mainWindow}"/>
+                <MenuItem Header="重置窗口布局(R)" Command="{Binding LoadLayoutCommand, ElementName=mainWindow}"/>
             </MenuItem>
             <MenuItem Header="帮助(H)">
                 <MenuItem Header="查看帮助(V)...  Ctrl + F1">
@@ -331,7 +326,7 @@
                              DocumentsSource="{Binding Files}"
                              ActiveContent="{Binding ActiveDocument, Mode=TwoWay, Converter={StaticResource ActiveDocumentConverter}}">
             <xcad:DockingManager.Theme>
-                <xcad:AeroTheme/>
+                <xcad:MetroTheme/>
             </xcad:DockingManager.Theme>
             <xcad:DockingManager.DocumentHeaderTemplate>
                 <DataTemplate>

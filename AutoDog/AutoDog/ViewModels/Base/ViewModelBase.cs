@@ -3,15 +3,37 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.ComponentModel;
+using NHotkey.Wpf;
 
 namespace AutoDog.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
-    {
+    public class ViewModelBase : INotifyPropertyChanged, IDataErrorInfo, IDisposable
+    {   
         protected ViewModelBase()
         {
 
         }
+
+        #region IDisposable
+        public void Dispose()
+        {
+            HotkeyManager.Current.Remove("demo");
+        }
+
+        #endregion
+
+
+        #region IDataErrorInfo
+        public string Error { get { return string.Empty; } }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 

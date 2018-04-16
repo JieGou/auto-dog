@@ -43,8 +43,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>AutoDog.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AutoDog.App</StartupObject>
@@ -148,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\CustomDialogExampleContent.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\SimpleCommand.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Controls\FolderBrowserControl\COMGuids.cs" />
@@ -177,12 +180,6 @@
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\NewProjectViewModel.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artist.cs" />
-    <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\SampleData.cs" />
-    <Compile Include="Models\LocationMap.cs" />
-    <Compile Include="Models\SolutionType.cs" />
     <Compile Include="ViewModels\ClassViewModel.cs" />
     <Compile Include="ViewModels\ErrorListViewModel.cs" />
     <Compile Include="ViewModels\FileStatsViewModel.cs" />
@@ -207,13 +204,12 @@
       <DependentUpon>SolutionTemplateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Workspace.cs" />
-    <Compile Include="MainAutoTesting.xaml.cs">
-      <DependentUpon>MainAutoTesting.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
-    <Page Include="MainAutoTesting.xaml">
+    <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -415,6 +411,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AutoDog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AutoDog.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

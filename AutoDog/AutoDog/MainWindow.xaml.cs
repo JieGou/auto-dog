@@ -23,22 +23,78 @@ namespace AutoDog
     /// <summary>
     /// MainAutoTesting.xaml 的交互逻辑
     /// </summary>
-    public partial class MainAutoTesting :MetroWindow
+    public partial class MainWindow 
     {
 
         #region 变量
         public static string solutionPath = null;
         private bool closeMe;
-        public static MetroWindow AutoTestingWindow;
+        public static MetroWindow metroWindow;
         #endregion
-        public MainAutoTesting()
+        public MainWindow()
         {
             InitializeComponent();
-            AutoTestingWindow = this;
+            metroWindow = this;
             this.DataContext = Workspace.This;
             this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
             this.Unloaded += new RoutedEventHandler(MainWindow_Unloaded);
 
+        }
+
+        public static readonly DependencyProperty ToggleFullScreenProperty =
+    DependencyProperty.Register("ToggleFullScreen",
+                                typeof(bool),
+                                typeof(MainWindow),
+                                new PropertyMetadata(default(bool), ToggleFullScreenPropertyChangedCallback));
+
+        private static void ToggleFullScreenPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        {
+            var metroWindow = (MetroWindow)dependencyObject;
+            if (e.OldValue != e.NewValue)
+            {
+                var fullScreen = (bool)e.NewValue;
+                if (fullScreen)
+                {
+                    metroWindow.IgnoreTaskbarOnMaximize = true;
+                    metroWindow.WindowState = WindowState.Maximized;
+                    metroWindow.UseNoneWindowStyle = true;
+                }
+                else
+                {
+                    metroWindow.WindowState = WindowState.Normal;
+                    metroWindow.UseNoneWindowStyle = false;
+                    metroWindow.ShowTitleBar = true; // <-- this must be set to true
+                    metroWindow.IgnoreTaskbarOnMaximize = false;
+                }
+            }
+        }
+
+        public bool ToggleFullScreen
+        {
+            get { return (bool)GetValue(ToggleFullScreenProperty); }
+            set { SetValue(ToggleFullScreenProperty, value); }
+        }
+
+        public static readonly DependencyProperty UseAccentForDialogsProperty =
+            DependencyProperty.Register("UseAccentForDialogs",
+                                        typeof(bool),
+                                        typeof(MainWindow),
+                                        new PropertyMetadata(default(bool), ToggleUseAccentForDialogsPropertyChangedCallback));
+
+        private static void ToggleUseAccentForDialogsPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        {
+            var metroWindow = (MetroWindow)dependencyObject;
+            if (e.OldValue != e.NewValue)
+            {
+                var useAccentForDialogs = (bool)e.NewValue;
+                metroWindow.MetroDialogOptions.ColorScheme = useAccentForDialogs ? MetroDialogColorScheme.Accented : MetroDialogColorScheme.Theme;
+            }
+        }
+
+        public bool UseAccentForDialogs
+        {
+            get { return (bool)GetValue(UseAccentForDialogsProperty); }
+            set { SetValue(UseAccentForDialogsProperty, value); }
         }
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -207,7 +263,7 @@ namespace AutoDog
 
         private void LaunchAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-
+            //System.Diagnostics.Process.Start("https://github.com/");
         }
 
         private async void CloseCustomDialog(object sender, RoutedEventArgs e)

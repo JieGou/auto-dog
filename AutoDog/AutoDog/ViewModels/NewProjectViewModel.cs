@@ -13,14 +13,11 @@ namespace AutoDog.ViewModels
     {
         public List<Album> Albums { get; set; }
         public List<Artist> Artists { get; set; }
-
-        public List<SolutionType> SolutionType { get; set; }
         public NewProjectViewModel(IDialogCoordinator dialogCoordinator)
         {
             SampleData.Seed();
             Albums = SampleData.Albums;
             Artists = SampleData.Artists;
-            SolutionType = SampleData.SolutionTypes;
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
