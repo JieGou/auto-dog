@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Xml;
-using AutoDog.Editor;
-using AutoDog.Editor.CodeCompletion;
-using AutoDog.Editor.Folding;
-using AutoDog.Editor.Highlighting;
-using Microsoft.Win32;
 using Xceed.Wpf.AvalonDock.Layout;
 using System.ComponentModel;
 using AutoDog.UI.Controls.Dialogs;
