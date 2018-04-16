@@ -7,7 +7,7 @@
              ShutdownMode="OnExplicitShutdown"
              Startup="ApplicationStartup"
              Exit="ApplicationExit"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainAutoTesting.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

@@ -43,7 +43,8 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>MainIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AutoDog.App</StartupObject>
@@ -147,253 +148,105 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\SimpleCommand.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\COMGuids.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\ErrorHelper.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\FolderBrowserDialog.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\Helpers.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\NativeMethods.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\NativeTaskDialogShowState.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\ShellComInterfaces.cs" />
-    <Compile Include="TEControls\FolderBrowserControl\ShellWrapperDefinitions.cs" />
-    <Compile Include="TEViews\AutoTesting\Converter\ActiveDocumentConverter.cs" />
-    <Compile Include="TEViews\AutoTesting\Converter\BoolToVisiableConverter.cs" />
-    <Compile Include="TEViews\AutoTesting\Converter\FlipBoolConverter.cs" />
-    <Compile Include="TEViews\AutoTesting\Logic\AutoTestingConfig.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\ResourcesViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml.cs">
+    <Compile Include="Controls\FolderBrowserControl\COMGuids.cs" />
+    <Compile Include="Controls\FolderBrowserControl\ErrorHelper.cs" />
+    <Compile Include="Controls\FolderBrowserControl\FolderBrowserDialog.cs" />
+    <Compile Include="Controls\FolderBrowserControl\Helpers.cs" />
+    <Compile Include="Controls\FolderBrowserControl\NativeMethods.cs" />
+    <Compile Include="Controls\FolderBrowserControl\NativeTaskDialogShowState.cs" />
+    <Compile Include="Controls\FolderBrowserControl\ShellComInterfaces.cs" />
+    <Compile Include="Controls\FolderBrowserControl\ShellWrapperDefinitions.cs" />
+    <Compile Include="Converter\ActiveDocumentConverter.cs" />
+    <Compile Include="Converter\BoolToVisiableConverter.cs" />
+    <Compile Include="Converter\FlipBoolConverter.cs" />
+    <Compile Include="Logic\AutoTestingConfig.cs" />
+    <Compile Include="ViewModels\ResourcesViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewModel.cs" />
+    <Compile Include="Views\ClassTemplateView.xaml.cs">
       <DependentUpon>ClassTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Views\ErrorListTemplateView.xaml.cs">
+    <Compile Include="Views\ErrorListTemplateView.xaml.cs">
       <DependentUpon>ErrorListTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Views\FileStatsTemplateView.xaml.cs">
+    <Compile Include="Views\FileStatsTemplateView.xaml.cs">
       <DependentUpon>FileStatsTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Views\NewProject.xaml.cs">
+    <Compile Include="Views\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\ViewModels\NewProjectViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\Album.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\Artist.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\Genre.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\SampleData.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\LocationMap.cs" />
-    <Compile Include="TEViews\AutoTesting\Models\SolutionType.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\ClassViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\ErrorListViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\FileStatsViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\FileViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\LayoutInitializer.cs" />
-    <Compile Include="TEViews\AutoTesting\Panes\PanesStyleSelector.cs" />
-    <Compile Include="TEViews\AutoTesting\Panes\PanesTemplateSelector.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\PaneViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\Command\RelayCommand.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\OutPutViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\SolutionViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\ToolViewModel.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\Base\ViewModelBase.cs" />
-    <Compile Include="TEViews\AutoTesting\ViewModels\TreeViewModelRef.cs" />
-    <Compile Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml.cs">
+    <Compile Include="ViewModels\NewProjectViewModel.cs" />
+    <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\LocationMap.cs" />
+    <Compile Include="Models\SolutionType.cs" />
+    <Compile Include="ViewModels\ClassViewModel.cs" />
+    <Compile Include="ViewModels\ErrorListViewModel.cs" />
+    <Compile Include="ViewModels\FileStatsViewModel.cs" />
+    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="LayoutInitializer.cs" />
+    <Compile Include="Panes\PanesStyleSelector.cs" />
+    <Compile Include="Panes\PanesTemplateSelector.cs" />
+    <Compile Include="ViewModels\PaneViewModel.cs" />
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="ViewModels\OutPutViewModel.cs" />
+    <Compile Include="ViewModels\SolutionViewModel.cs" />
+    <Compile Include="ViewModels\ToolViewModel.cs" />
+    <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModels\TreeViewModelRef.cs" />
+    <Compile Include="Views\OutPutTemplateView.xaml.cs">
       <DependentUpon>OutPutTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Views\ResourcesTemplateView.xaml.cs">
+    <Compile Include="Views\ResourcesTemplateView.xaml.cs">
       <DependentUpon>ResourcesTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Views\SolutionTemplateView.xaml.cs">
+    <Compile Include="Views\SolutionTemplateView.xaml.cs">
       <DependentUpon>SolutionTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\AutoTesting\Workspace.cs" />
-    <Compile Include="TEViews\AutoTesting\MainAutoTesting.xaml.cs">
+    <Compile Include="Workspace.cs" />
+    <Compile Include="MainAutoTesting.xaml.cs">
       <DependentUpon>MainAutoTesting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TEViews\BugManager\MainBugManager.xaml.cs">
-      <DependentUpon>MainBugManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\CaseManager\MainCaseManager.xaml.cs">
-      <DependentUpon>MainCaseManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\InterfaceTesting\MainInterface.xaml.cs">
-      <DependentUpon>MainInterface.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\MindMap\MainMind.xaml.cs">
-      <DependentUpon>MainMind.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\NoteBook\MainNoteBook.xaml.cs">
-      <DependentUpon>MainNoteBook.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\PackageManager\MainPackageManager.xaml.cs">
-      <DependentUpon>MainPackageManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\Performance\MainPerformance.xaml.cs">
-      <DependentUpon>MainPerformance.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\ProjectManager\MainProjectManager.xaml.cs">
-      <DependentUpon>MainProjectManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\TaskManager\MainTaskManager.xaml.cs">
-      <DependentUpon>MainTaskManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\UserManager\MainUserManager.xaml.cs">
-      <DependentUpon>MainUserManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEViews\MainPlatfrom.xaml.cs">
-      <DependentUpon>MainPlatfrom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEWindows\FlyoutDemo.xaml.cs" />
-    <Compile Include="MenuRipple\MenuRipple.xaml.cs">
-      <DependentUpon>MenuRipple.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuRipple\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuRipple\PrivateView.xaml.cs">
-      <DependentUpon>PrivateView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuRipple\SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainTaskEx.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
-    <Page Include="TEViews\AutoTesting\MainAutoTesting.xaml">
+    <Page Include="MainAutoTesting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\ClassTemplateView.xaml">
+    <Page Include="Views\ClassTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\ErrorListTemplateView.xaml">
+    <Page Include="Views\ErrorListTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\FileStatsTemplateView.xaml">
+    <Page Include="Views\FileStatsTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\NewProject.xaml">
+    <Page Include="Views\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\OutPutTemplateView.xaml">
+    <Page Include="Views\OutPutTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\ResourcesTemplateView.xaml">
+    <Page Include="Views\ResourcesTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEViews\AutoTesting\Views\SolutionTemplateView.xaml">
+    <Page Include="Views\SolutionTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\BugManager\MainBugManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\CaseManager\MainCaseManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\InterfaceTesting\MainInterface.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\MindMap\MainMind.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\NoteBook\MainNoteBook.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\PackageManager\MainPackageManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\Performance\MainPerformance.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\ProjectManager\MainProjectManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\TaskManager\MainTaskManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\UserManager\MainUserManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEViews\MainPlatfrom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEWindows\CleanWindowDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\DynamicFlyout.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\FlyoutDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\InteropDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\ShowcaseFlyout.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\SizeToContentDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TEWindows\VSDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MenuRipple\MenuRipple.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MenuRipple\HomeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MenuRipple\PrivateView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MenuRipple\SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="TEWindows\CleanWindowDemo.xaml.cs" />
-    <Compile Include="TEWindows\DynamicFlyout.xaml.cs" />
-    <Compile Include="TEWindows\InteropDemo.xaml.cs" />
-    <Compile Include="TEWindows\ShowcaseFlyout.xaml.cs" />
-    <Compile Include="TEWindows\SizeToContentDemo.xaml.cs" />
-    <Compile Include="TEWindows\VSDemo.xaml.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Navigation\HomePage.xaml">
@@ -407,11 +260,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Markup\EnumBindingSourceExtension.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artist.cs" />
-    <Compile Include="Models\CustomDialogExampleContent.cs" />
-    <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\SimpleCommand.cs" />
     <Compile Include="Navigation\HomePage.xaml.cs" />
     <Compile Include="Navigation\InterestingPage.xaml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -461,110 +309,112 @@
     <Resource Include="Assets\Photos\Settings.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="FodyWeavers.xml" />
+    <Resource Include="Images\Copy.png" />
+    <Resource Include="Images\Cut.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Open.png" />
+    <Resource Include="Images\Paste.png" />
+    <Resource Include="Images\Redo.png" />
+    <Resource Include="Images\Save.png" />
+    <Resource Include="Images\Undo.png" />
+    <Resource Include="Images\WordWrap.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MainIcon.ico" />
+    <Resource Include="Images\DocumentClosed.png" />
+    <Resource Include="Images\PropertyView.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\Copy.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Cut.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Delete.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Open.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Paste.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Redo.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Save.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Undo.png" />
-    <Resource Include="TEViews\AutoTesting\Images\WordWrap.png" />
+    <Resource Include="Images\App\Edit_Copy32.png" />
+    <Resource Include="Images\App\Edit_Cut32.png" />
+    <Resource Include="Images\App\Edit_Delete32.png" />
+    <Resource Include="Images\App\Edit_Find16.ico" />
+    <Resource Include="Images\App\Edit_Find32.png" />
+    <Resource Include="Images\App\Edit_Find_Replace32.png" />
+    <Resource Include="Images\App\Edit_Paste32.png" />
+    <Resource Include="Images\App\Edit_Redo32.png" />
+    <Resource Include="Images\App\Edit_Undo32.png" />
+    <Resource Include="Images\App\File_New32.png" />
+    <Resource Include="Images\App\File_Open32.png" />
+    <Resource Include="Images\App\File_Save16.png" />
+    <Resource Include="Images\App\File_Save32.png" />
+    <Resource Include="Images\App\File_Save64.png" />
+    <Resource Include="Images\App\File_Save_All32.png" />
+    <Resource Include="Images\App\Help_About32.png" />
+    <Resource Include="Images\App\Help_Hint32.png" />
+    <Resource Include="Images\App\ShowEnter32.png" />
+    <Resource Include="Images\App\ShowLineNumbers32.png" />
+    <Resource Include="Images\App\ShowSpaces32.png" />
+    <Resource Include="Images\App\ShowTab32.png" />
+    <Resource Include="Images\App\ShowWordWrap32.png" />
+    <Resource Include="Images\App\SyntaxHighlighting_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\DocumentClosed.png" />
-    <Resource Include="TEViews\AutoTesting\Images\PropertyView.png" />
+    <Resource Include="Images\App\DocTab\Lock-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Copy32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Cut32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Delete32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find16.ico" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Find_Replace32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Paste32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Redo32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Edit_Undo32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_New32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_Open32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_Save16.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_Save32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_Save64.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\File_Save_All32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Help_About32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\Help_Hint32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\ShowEnter32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\ShowLineNumbers32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\ShowSpaces32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\ShowTab32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\ShowWordWrap32.png" />
-    <Resource Include="TEViews\AutoTesting\Images\App\SyntaxHighlighting_32.png" />
+    <Resource Include="Images\Add.png" />
+    <Resource Include="Images\FolderClosed.png" />
+    <Resource Include="Images\FolderOpened.png" />
+    <Resource Include="Images\FolderSelected.png" />
+    <Resource Include="Images\Home.png" />
+    <Resource Include="Images\Remove.png" />
+    <Resource Include="Images\Star.png" />
+    <Resource Include="Images\WinFolder.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\App\DocTab\Lock-icon.png" />
+    <Resource Include="Images\Computer.png" />
+    <Resource Include="Images\DiskDrive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\Add.png" />
-    <Resource Include="TEViews\AutoTesting\Images\FolderClosed.png" />
-    <Resource Include="TEViews\AutoTesting\Images\FolderOpened.png" />
-    <Resource Include="TEViews\AutoTesting\Images\FolderSelected.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Home.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Remove.png" />
-    <Resource Include="TEViews\AutoTesting\Images\Star.png" />
-    <Resource Include="TEViews\AutoTesting\Images\WinFolder.gif" />
+    <Resource Include="Images\DocumentSelected.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\Computer.png" />
-    <Resource Include="TEViews\AutoTesting\Images\DiskDrive.png" />
+    <Resource Include="Images\ProjectFileMark.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\DocumentSelected.png" />
+    <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\ProjectFileMark.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\ProjectDefault.png" />
+    <Resource Include="Images\ProjectDefault.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\ProjectAdd.png" />
+    <Resource Include="Images\ProjectAdd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\SaveAll.png" />
+    <Resource Include="Images\SaveAll.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\WindowClose.png" />
+    <Resource Include="Images\WindowClose.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FolderAdd.png" />
+    <Resource Include="Images\FolderAdd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FileAdd.png" />
+    <Resource Include="Images\FileAdd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\Help.png" />
+    <Resource Include="Images\Help.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\About.png" />
+    <Resource Include="Images\About.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\PropertyItem.png" />
+    <Resource Include="Images\PropertyItem.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FolderSearch.png" />
+    <Resource Include="Images\FolderSearch.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FileEdit.png" />
+    <Resource Include="Images\FileEdit.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TEViews\AutoTesting\Images\FileReName.png" />
+    <Resource Include="Images\FileReName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AutoDog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AutoDog.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

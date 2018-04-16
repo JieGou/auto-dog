@@ -14,7 +14,7 @@ using AutoDog.Models;
 using System.Windows.Input;
 using AutoDog.UI.Controls;
 using AutoDog.UI.Controls.Dialogs;
-using AutoDog.TEViews;
+using AutoDog.Views;
 using NHotkey;
 using NHotkey.Wpf;
 
@@ -421,7 +421,6 @@ namespace AutoDog
             var controller = await _dialogCoordinator.ShowProgressAsync(this, "Progress from VM", "Progressing all the things, wait 3 seconds");
             controller.SetIndeterminate();
 
-            await MainTaskEx.Delay(3000);
 
             await controller.CloseAsync();
         }

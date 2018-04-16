@@ -1,0 +1,170 @@
+﻿<Controls:MetroWindow x:Class="AutoDog.Views.NewProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoDog.Views"
+        d:DataContext="{d:DesignInstance local:NewProjectViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"   ResizeMode="CanMinimize" Icon="../../../MainIcon.ico"
+        Title="新建项目" Height="600" Width="900">
+    <AdornerDecorator>
+        <Grid Height="569" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer>
+                    <UniformGrid Grid.Column="0">
+                        <TreeView ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}">
+                            <TreeView.ItemTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding Albums}">
+                                    <TextBlock Text="{Binding Name}" />
+                                    <HierarchicalDataTemplate.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Title}" />
+                                        </DataTemplate>
+                                    </HierarchicalDataTemplate.ItemTemplate>
+                                </HierarchicalDataTemplate>
+                            </TreeView.ItemTemplate>
+                        </TreeView>
+                    </UniformGrid>
+                </ScrollViewer>
+
+                <StackPanel Grid.Column="1">
+                    <ListBox Margin="1"
+                         DisplayMemberPath="Name"
+                         ItemsSource="{Binding Artists}"
+                         SelectedIndex="0"
+                         Style="{StaticResource VirtualisedMetroListBox}" />
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <ListBox Margin="1"
+                         DisplayMemberPath="Name"
+                         ItemsSource="{Binding Artists}"
+                         SelectedIndex="0"
+                         Style="{StaticResource VirtualisedMetroListBox}" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label Content="名称(N)："  HorizontalAlignment="Left"  Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <TextBox x:Name="projectName"
+                         Margin="137,0,162,0"
+                         Controls:TextBoxHelper.ButtonCommand="{Binding TextBoxButtonCmd, Mode=OneWay}"
+                         ContextMenu="{x:Null}"
+                         Text="Project1">
+                    <TextBox.Style>
+                        <Style BasedOn="{StaticResource MetroTextBox}" TargetType="{x:Type TextBox}">
+                            <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="True" />
+                            <Style.Triggers>
+                                <Trigger Property="Controls:TextBoxHelper.HasText" Value="False">
+                                    <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="False" />
+                                    <Setter Property="Controls:TextBoxHelper.Watermark" Value="Now enter some text..." />
+                                </Trigger>
+                                <Trigger Property="Controls:TextBoxHelper.HasText" Value="True">
+                                    <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="True" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Label Content="位置(L)：" HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <ComboBox x:Name="locationCmb"
+                          Margin="137,0,162,0"
+                          Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True"
+                          Controls:TextBoxHelper.Watermark="请选择工程位置信息..."
+                          DisplayMemberPath="Title"
+                          IsEditable="True"
+                          IsEnabled="True"
+                          ItemsSource="{Binding LocationMaps}"
+                          Text="{Binding Path=Title}"
+                          ToolTip="请选择创建位置...">
+                    <ComboBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name.Name}" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ComboBox.GroupStyle>
+                </ComboBox>
+                <Button Content="浏览(B)..." Click="openFolderClick" Margin="737,0,96,0" />
+            </Grid>
+            <Grid Grid.Row="4">
+                <Label Content="解决方案(S)："  HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <ComboBox x:Name="solutionTypeCmb"
+                          Margin="137,0,162,0"
+                          Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True"
+                          Controls:TextBoxHelper.Watermark="请选择解决方案类型..."
+                          DisplayMemberPath="Title"
+                          IsEditable="True"
+                          IsEnabled="True"
+                          ItemsSource="{Binding SolutionType}"
+                          Text="{Binding Path=Title}"
+                          ToolTip="请选择解决方案类型...">
+                    <ComboBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name.Name}" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ComboBox.GroupStyle>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Label Content="解决方案名称(M)：" HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
+                <TextBox Margin="137,0,162,0"
+                         Controls:TextBoxHelper.ButtonCommand="{Binding TextBoxButtonCmd, Mode=OneWay}"
+                         ContextMenu="{x:Null}"
+                         Text="{Binding ElementName=projectName,Path=Text,Mode=TwoWay}">
+                    <TextBox.Style>
+                        <Style BasedOn="{StaticResource MetroTextBox}" TargetType="{x:Type TextBox}">
+                            <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="True" />
+                            <Style.Triggers>
+                                <Trigger Property="Controls:TextBoxHelper.HasText" Value="False">
+                                    <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="False" />
+                                    <Setter Property="Controls:TextBoxHelper.Watermark" Value="Now enter some text..." />
+                                </Trigger>
+                                <Trigger Property="Controls:TextBoxHelper.HasText" Value="True">
+                                    <Setter Property="Controls:TextBoxHelper.ClearTextButton" Value="True" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <CheckBox Content="为解决方案创建目录" IsChecked="True" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
+            </Grid>
+            <Grid Grid.Row="6">
+                <CheckBox Content="新建Git存储库" IsChecked="False" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Button Width="116"                
+                    HorizontalAlignment="Right" 
+                    Content="确定"
+                    Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,123,4" />
+                <Button Width="114"
+                    HorizontalAlignment="Right"
+                    Content="取消"
+                    Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,5,4" />
+            </Grid>
+        </Grid>
+    </AdornerDecorator>
+</Controls:MetroWindow>

@@ -30,7 +30,7 @@ namespace AutoDog
             }
             trayIcon = new NotifyIcon
             {
-                Icon = new System.Drawing.Icon("../../MainIcon.ico"),
+                Icon = new System.Drawing.Icon("../../Images/AutoDog.ico"),
                 Text = "测试管理平台"
             };
             trayIcon.Visible = true;
@@ -66,8 +66,8 @@ namespace AutoDog
         }
         private void showMainItem_Click(object sender, EventArgs e)
         {
-            if (this.MainWindow == null) MainWindow = new MainWindow();
-            this.MainWindow.Show();
+            //if (this.MainWindow == null) MainWindow = new MainWindow();
+            //this.MainWindow.Show();
         }
     }
 }
