@@ -15,8 +15,8 @@
             <GradientStop Color="#E3E9EF" Offset="1"/>
         </LinearGradientBrush>
         <Style x:Key="ConsoleTextbox" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="1"/>
@@ -24,7 +24,8 @@
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
             <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="CaretBrush" Value="White"/>
+            <Setter Property="CaretBrush" Value="Black"/>
+            <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TextBox}">
@@ -42,12 +43,11 @@
             </Setter>
         </Style>
         <Style x:Key="ConsolePassowrdbox" TargetType="{x:Type PasswordBox}">
-            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
-            <Setter Property="FontFamily" Value="Consolas"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
             <Setter Property="PasswordChar" Value="*"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -78,8 +78,8 @@
         <KeyBinding Command="ApplicationCommands.Stop" Key="C" Modifiers="Control" />
     </UserControl.InputBindings>
     <Grid>
-        <controls:ConsoleControl x:Name="Console" Background="Black">
-            <FlowDocument Foreground="White" Background="Black" FontFamily="Consolas" FontSize="14">
+        <controls:ConsoleControl x:Name="Console" Background="White">
+            <FlowDocument Foreground="Black" Background="White" FontFamily="Consolas" FontSize="14">
                 <FlowDocument.Resources>
                     <Style TargetType="TextBox" BasedOn="{StaticResource ConsoleTextbox}"/>
                     <Style TargetType="PasswordBox" BasedOn="{StaticResource ConsolePassowrdbox}"/>
