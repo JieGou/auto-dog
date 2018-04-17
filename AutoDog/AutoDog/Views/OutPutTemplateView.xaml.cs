@@ -24,24 +24,31 @@ namespace AutoDog.Views
     public partial class OutPutTemplateView : UserControl
     {
         string workSpace = SolutionTemplateView.currentSolutionPath;
+        int cmdOriginal = 0;
         System.Diagnostics.Process cmdP = new System.Diagnostics.Process();
         public OutPutTemplateView()
         {
             InitializeComponent();
             InitCmdWindow();
-            outPutView.Text = cmdP.StandardOutput.ReadLine().ToString();
+            outPutView.AppendText(cmdP.StandardOutput.ReadLine() + "\r");
+            outPutView.AppendText(cmdP.StandardOutput.ReadLine() + "\r");
+            outPutView.AppendText(cmdP.StartInfo.WorkingDirectory + ">");
+            cmdOriginal = outPutView.Text.Length;
+            outPutView.TextChanged += outPutView_TextChanged;
         }
-
         private void outPutView_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+        {            
+            if(outPutView.Text.Length<=cmdOriginal)
+            {
+                e.Changes.Clear();
+            }  
         }
 
         private void outPutView_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
-                cmdP.StandardInput.WriteLine(outPutView.Text + "&exit");
+                cmdP.StandardInput.WriteLine("cmd.exe", "&exit");
             }
         }
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoDog.PowerShellISE;
 
 namespace AutoDog.Views
 {
@@ -23,6 +24,12 @@ namespace AutoDog.Views
         public ErrorListTemplateView()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            psHost.StartPS();
+
         }
     }
 }

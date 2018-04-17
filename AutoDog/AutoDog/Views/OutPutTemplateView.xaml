@@ -10,9 +10,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Grid.RowDefinitions>
-        </Grid.RowDefinitions>
-        <xctk:RichTextBox x:Name="outPutView" TextChanged="outPutView_TextChanged" KeyDown="outPutView_KeyDown" BorderThickness="0" FontSize="6" SnapsToDevicePixels="True" FontFamily="Calibri">
-        </xctk:RichTextBox>
+        <TextBox x:Name="outPutView"                     
+                     KeyDown="outPutView_KeyDown"
+                     BorderThickness="0"
+                     FontFamily="{DynamicResource DefaultFont}" 
+                     TextWrapping="Wrap"
+                     >
+        </TextBox>
     </Grid>
 </UserControl>

@@ -290,6 +290,10 @@
       <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
       <Name>AutoDog.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AutoDog.PowerShellISE\AutoDog.PowerShellISE.csproj">
+      <Project>{07c93056-195a-4578-b50f-df74f43421b2}</Project>
+      <Name>AutoDog.PowerShellISE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AutoDog.UI\AutoDog.UI.csproj">
       <Project>{c3a73d36-a384-4cbd-8962-a0fd4ad749f8}</Project>
       <Name>AutoDog.UI</Name>
