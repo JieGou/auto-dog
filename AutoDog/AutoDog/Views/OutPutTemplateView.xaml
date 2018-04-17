@@ -12,7 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
-        <xctk:RichTextBox x:Name="outPutView" TextChanged="outPutView_TextChanged" KeyDown="outPutView_KeyDown">
+        <xctk:RichTextBox x:Name="outPutView" TextChanged="outPutView_TextChanged" KeyDown="outPutView_KeyDown" BorderThickness="0" FontSize="6" SnapsToDevicePixels="True" FontFamily="Calibri">
         </xctk:RichTextBox>
     </Grid>
 </UserControl>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,17 +24,12 @@ namespace AutoDog.Views
     public partial class OutPutTemplateView : UserControl
     {
         string workSpace = SolutionTemplateView.currentSolutionPath;
-        System.Diagnostics.Process CmdP = new System.Diagnostics.Process();
-        ProcessPiper pp = new ProcessPiper();
+        System.Diagnostics.Process cmdP = new System.Diagnostics.Process();
         public OutPutTemplateView()
         {
             InitializeComponent();
-            this.Loaded += OutPutTemplateView_Loaded;
-        }
-
-        private void OutPutTemplateView_Loaded(object sender, RoutedEventArgs e)
-        {          
-            this.outPutView.Text = pp.StdOut;
+            InitCmdWindow();
+            outPutView.Text = cmdP.StandardOutput.ReadLine().ToString();
         }
 
         private void outPutView_TextChanged(object sender, TextChangedEventArgs e)
@@ -46,27 +41,30 @@ namespace AutoDog.Views
         {
             if(e.Key == Key.Enter)
             {
-                CmdP.StandardInput.WriteLine(outPutView.Text + "&exit");
+                cmdP.StandardInput.WriteLine(outPutView.Text + "&exit");
             }
         }
 
         private void InitCmdWindow()
         {
-            CmdP.StartInfo.FileName = "Cmd.exe";
-            CmdP.StartInfo.UseShellExecute = false;
-            CmdP.StartInfo.RedirectStandardInput = true;
-            CmdP.StartInfo.RedirectStandardOutput = true;
-            CmdP.StartInfo.RedirectStandardError = true;
-            CmdP.StartInfo.CreateNoWindow = false;     
-
-            CmdP.EnableRaisingEvents = true;
-            if (workSpace!=null) CmdP.StartInfo.WorkingDirectory = workSpace;
-            CmdP.Start();
-            CmdP.StandardInput.AutoFlush = true;
-            CmdP.Exited += new EventHandler(RunAction_Exited);     
-            CmdP.OutputDataReceived += new DataReceivedEventHandler(p_OutputDataReceived);
-            CmdP.ErrorDataReceived += new DataReceivedEventHandler(p_ErrorDataReceived);
-            this.outPutView.Text = CmdP.StandardOutput.ToString();
+            cmdP.StartInfo.FileName = "Cmd.exe";
+            cmdP.StartInfo.UseShellExecute = false;
+            cmdP.StartInfo.RedirectStandardInput = true;
+            cmdP.StartInfo.RedirectStandardOutput = true;
+            cmdP.StartInfo.RedirectStandardError = true;
+            cmdP.StartInfo.CreateNoWindow = true;     
+            cmdP.EnableRaisingEvents = true;
+            if (workSpace != null)
+            { cmdP.StartInfo.WorkingDirectory = workSpace; }
+            else
+            {
+                cmdP.StartInfo.WorkingDirectory =System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            }
+            cmdP.Start();
+            cmdP.StandardInput.WriteLine("&exit");
+            cmdP.Exited += new EventHandler(RunAction_Exited);     
+            cmdP.OutputDataReceived += new DataReceivedEventHandler(p_OutputDataReceived);
+            cmdP.ErrorDataReceived += new DataReceivedEventHandler(p_ErrorDataReceived);
         }
         private void RunAction_Exited(object sender, EventArgs e)
         {
@@ -77,7 +75,7 @@ namespace AutoDog.Views
         {
             if (e.Data != null)
             {
-               
+                outPutView.AppendText(e.Data);
             }
         }
 
@@ -85,40 +83,7 @@ namespace AutoDog.Views
         {
             if (e.Data != null)
             {
-                
-            }
-        }
-
-        public class ProcessPiper
-        {
-            public string StdOut { get; private set; }
-            public string StdErr { get; private set; }
-            public string ExMessage { get; set; }
-            public void Start(FileInfo exe, string args, Action<ProcessPiper> onComplete)
-            {
-                ProcessStartInfo psi = new ProcessStartInfo(exe.FullName, args);
-                psi.RedirectStandardError = true;
-                psi.RedirectStandardOutput = true;
-                psi.UseShellExecute = false;
-                psi.WorkingDirectory = System.IO.Path.GetDirectoryName(exe.FullName);
-                Task.Factory.StartNew(() =>
-                {
-                    try
-                    {
-                        ExMessage = string.Empty;
-                        Process process = new Process();
-                        process.StartInfo = psi;
-                        process.Start();
-                        process.WaitForExit();
-                        StdOut = process.StandardOutput.ReadToEnd();
-                        StdErr = process.StandardError.ReadToEnd();
-                        onComplete(this);
-                    }
-                    catch (Exception ex)
-                    {
-                        ExMessage = ex.Message;
-                    }
-                });
+                outPutView.AppendText(e.Data);
             }
         }
     }
