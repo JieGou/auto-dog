@@ -5,9 +5,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoDog.Views"
-        d:DataContext="{d:DesignInstance local:NewProjectViewModel}"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"   ResizeMode="CanMinimize" Icon="../../../MainIcon.ico"
+        WindowStartupLocation="CenterScreen"   ResizeMode="CanMinimize" Icon="../../../AutoDog.ico"
         Title="新建项目" Height="600" Width="900">
     <AdornerDecorator>
         <Grid Height="569" VerticalAlignment="Top">

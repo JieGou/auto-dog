@@ -66,8 +66,8 @@ namespace AutoDog
         }
         private void showMainItem_Click(object sender, EventArgs e)
         {
-            //if (this.MainWindow == null) MainWindow = new MainWindow();
-            //this.MainWindow.Show();
+            if (this.MainWindow == null) MainWindow = new MainWindow();
+            this.MainWindow.Show();
         }
     }
 }

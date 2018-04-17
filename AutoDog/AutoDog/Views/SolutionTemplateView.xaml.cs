@@ -30,6 +30,7 @@ namespace AutoDog.Views
 
         public static TreeViewItem selectedTVI = null;
         public static TextBox selectedTBox = null;
+        public static string currentSolutionPath = null;
 
         public SolutionTemplateView()
         {
@@ -155,7 +156,7 @@ namespace AutoDog.Views
         {
             if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
             {
-                return;
+                currentSolutionPath =tvi.Tag.ToString();
             }
             if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {

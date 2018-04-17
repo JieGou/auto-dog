@@ -18,9 +18,8 @@ namespace AutoDog
     {
 
         #region 变量
-        public static string solutionPath = null;
-        private bool closeMe;
         public static MetroWindow metroWindow;
+        private bool closeMe;       
         #endregion
         public MainWindow()
         {
@@ -187,8 +186,7 @@ namespace AutoDog
             folder.Title = "打开项目";
             if (folder.ShowDialog() == true)
             {
-                solutionPath = folder.FileName;
-                Properties.Settings.Default.solutionPath = solutionPath;
+                Properties.Settings.Default.solutionPath = folder.FileName;
                 Properties.Settings.Default.Save();
             }
         }
