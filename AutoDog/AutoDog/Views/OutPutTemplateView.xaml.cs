@@ -23,75 +23,10 @@ namespace AutoDog.Views
     /// </summary>
     public partial class OutPutTemplateView : UserControl
     {
-        string workSpace = SolutionTemplateView.currentSolutionPath;
-        int cmdOriginal = 0;
-        System.Diagnostics.Process cmdP = new System.Diagnostics.Process();
         public OutPutTemplateView()
         {
             InitializeComponent();
-            InitCmdWindow();
-            outPutView.AppendText(cmdP.StandardOutput.ReadLine() + "\r");
-            outPutView.AppendText(cmdP.StandardOutput.ReadLine() + "\r");
-            outPutView.AppendText(cmdP.StartInfo.WorkingDirectory + ">");
-            cmdOriginal = outPutView.Text.Length;
-            outPutView.TextChanged += outPutView_TextChanged;
-        }
-        private void outPutView_TextChanged(object sender, TextChangedEventArgs e)
-        {            
-            if(outPutView.Text.Length<=cmdOriginal)
-            {
-                e.Changes.Clear();
-            }  
-        }
-
-        private void outPutView_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                cmdP.StandardInput.WriteLine("cmd.exe", "&exit");
-            }
-        }
-
-        private void InitCmdWindow()
-        {
-            cmdP.StartInfo.FileName = "Cmd.exe";
-            cmdP.StartInfo.UseShellExecute = false;
-            cmdP.StartInfo.RedirectStandardInput = true;
-            cmdP.StartInfo.RedirectStandardOutput = true;
-            cmdP.StartInfo.RedirectStandardError = true;
-            cmdP.StartInfo.CreateNoWindow = true;     
-            cmdP.EnableRaisingEvents = true;
-            if (workSpace != null)
-            { cmdP.StartInfo.WorkingDirectory = workSpace; }
-            else
-            {
-                cmdP.StartInfo.WorkingDirectory =System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            }
-            cmdP.Start();
-            cmdP.StandardInput.WriteLine("&exit");
-            cmdP.Exited += new EventHandler(RunAction_Exited);     
-            cmdP.OutputDataReceived += new DataReceivedEventHandler(p_OutputDataReceived);
-            cmdP.ErrorDataReceived += new DataReceivedEventHandler(p_ErrorDataReceived);
-        }
-        private void RunAction_Exited(object sender, EventArgs e)
-        {
             
-        }
-
-        private void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            if (e.Data != null)
-            {
-                outPutView.AppendText(e.Data);
-            }
-        }
-
-        private void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            if (e.Data != null)
-            {
-                outPutView.AppendText(e.Data);
-            }
         }
     }
 }

@@ -10,12 +10,5 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBox x:Name="outPutView"                     
-                     KeyDown="outPutView_KeyDown"
-                     BorderThickness="0"
-                     FontFamily="{DynamicResource DefaultFont}" 
-                     TextWrapping="Wrap"
-                     >
-        </TextBox>
     </Grid>
 </UserControl>
