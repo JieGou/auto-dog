@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Terminal")]
-[assembly: AssemblyDescription("Terminal Assembly")]
+[assembly: AssemblyTitle("AutoDogTerminalAPI")]
+[assembly: AssemblyDescription("AutoDogTerminalAPI Assembly")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -17,4 +17,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9a86951a-3713-466a-a0d8-349b58b9a75d")]
+[assembly: Guid("31a16283-aad9-49d2-a33a-9c251493d61c")]

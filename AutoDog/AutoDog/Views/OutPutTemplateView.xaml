@@ -2,13 +2,69 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"             
+             xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"  
              xmlns:local="clr-namespace:AutoDog.Views"
+             xmlns:autoDogTerminal="clr-namespace:AutoDogTerminal;assembly=AutoDogTerminal"
+             xmlns:apexConverters="clr-namespace:Apex.Converters;assembly=Apex"
+             xmlns:viewModel="clr-namespace:AutoDog.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <viewModel:MainViewModel x:Name="viewModel" />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <apexConverters:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
+    </UserControl.Resources>
     <Grid>
+        <DockPanel>
+
+            <!-- The main toolbar. -->
+            <ToolBarTray 
+                DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button 
+                        Command="{Binding StartCommandPromptCommand}" 
+                        IsEnabled="{Binding IsProcessRunning, ElementName=consoleControl, 
+                        Converter={StaticResource InvertedBooleanConverter}}"
+                        ToolTip="运行终端">
+                        <Image Source="/Resources/Play.png"
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
+                    </Button>
+
+                    <Button Command="{Binding StopProcessCommand}"
+                        IsEnabled="{Binding IsProcessRunning, ElementName=consoleControl}"
+                        ToolTip="停止终端">
+                        <Image Source="/Resources/Stop.png"
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
+                    </Button>
+                    <Button Command="{Binding ClearOutputCommand}"
+                        ToolTip="清除内容">
+                        <Image Source="/Resources/Delete.png" 
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
+                    </Button>
+                    <ToggleButton IsChecked="{Binding ShowDiagnostics, ElementName=consoleControl}"
+                        ToolTip="诊断信息">
+                        <Image Source="/Resources/Information.png"
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
+                    </ToggleButton>
+                    <ToggleButton IsChecked="{Binding IsInputEnabled, ElementName=consoleControl}"
+                        ToolTip="输入状态">
+                        <Image Source="/Resources/Control_TextBox.png" 
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
+                    </ToggleButton>
+                </ToolBar>
+            </ToolBarTray>
+
+            <!-- The Status Bar. -->
+            <StatusBar DockPanel.Dock="Bottom">
+                <TextBlock>
+                    <Run Text="Console State: " />
+                    <Run Text="{Binding ProcessState}" />
+                </TextBlock>
+            </StatusBar>
+            <autoDogTerminal:TerminalControl x:Name="terminalControl" FontSize="14" SnapsToDevicePixels="True" AllowDrop="True"/>
+        </DockPanel>
     </Grid>
 </UserControl>

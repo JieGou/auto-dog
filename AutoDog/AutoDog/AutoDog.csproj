@@ -49,6 +49,10 @@
     <StartupObject>AutoDog.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apex, Version=1.5.0.0, Culture=neutral, PublicKeyToken=98d06957926c086d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apex.1.5.0\lib\net40\Apex.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AvalonDock, Version=1.3.3600.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
       <HintPath>..\packages\AvalonDock-1.x.1.3.3600.2\lib\net40\AvalonDock.dll</HintPath>
       <Private>True</Private>
@@ -165,6 +169,7 @@
     <Compile Include="Converter\BoolToVisiableConverter.cs" />
     <Compile Include="Converter\FlipBoolConverter.cs" />
     <Compile Include="Logic\AutoTestingConfig.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
     <Compile Include="Views\ClassTemplateView.xaml.cs">
@@ -294,6 +299,14 @@
       <Project>{c3a73d36-a384-4cbd-8962-a0fd4ad749f8}</Project>
       <Name>AutoDog.UI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AutoDogTerminalAPI\AutoDogTerminalAPI.csproj">
+      <Project>{a4b8573f-ebfc-4140-b8aa-7c037919ef57}</Project>
+      <Name>AutoDogTerminalAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoDogTerminal\AutoDogTerminal.csproj">
+      <Project>{fd9ff553-d7c6-45a8-8321-5d9058b38e2d}</Project>
+      <Name>AutoDogTerminal</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Photos\BigFourSummerHeat.png" />
@@ -414,6 +427,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AutoDog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ConsoleControl.png" />
+    <Resource Include="Resources\Control_TextBox.png" />
+    <Resource Include="Resources\Delete.png" />
+    <Resource Include="Resources\GotoShortcuts.png" />
+    <Resource Include="Resources\Information.png" />
+    <Resource Include="Resources\Play.png" />
+    <Resource Include="Resources\Stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
