@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using AutoDog.UI.Controls.Dialogs;
 using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
+using AutoDog.Models;
 
 namespace AutoDog.Views
 {
@@ -23,9 +24,21 @@ namespace AutoDog.Views
     /// </summary>
     public partial class NewProject
     {
+        private readonly NewProjectViewModel _viewModel;
         public NewProject()
         {
+            _viewModel = new NewProjectViewModel(DialogCoordinator.Instance);
+            DataContext = _viewModel;
+
             InitializeComponent();
+            this.DataContextChanged += (sender, args) => {
+                var vm = args.NewValue as NewProjectViewModel;
+                if (vm != null)
+                {
+                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Clear();
+                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
+                }
+            };
         }
 
         private void openFolderClick(object sender, RoutedEventArgs e)

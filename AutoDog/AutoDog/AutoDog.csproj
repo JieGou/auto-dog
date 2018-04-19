@@ -150,6 +150,10 @@
       <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="YamlDotNet, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.4.3.1\lib\net45\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -159,10 +163,10 @@
     <Compile Include="Logics\PipelineExecutor.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
-    <Compile Include="Models\SolutionTemplate.cs" />
     <Compile Include="Models\TemplateItem.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Controls\FolderBrowserControl\COMGuids.cs" />
@@ -177,6 +181,7 @@
     <Compile Include="Converters\BoolToVisiableConverter.cs" />
     <Compile Include="Converters\FlipBoolConverter.cs" />
     <Compile Include="Logics\AutoTestingConfig.cs" />
+    <Compile Include="ViewModels\NewProjectViewModel.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />

@@ -22,39 +22,37 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="220"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
-                <ScrollViewer>
-                    <UniformGrid Grid.Column="0">
-                        <TreeView ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}">
-                            <TreeView.ItemTemplate>
-                                <HierarchicalDataTemplate ItemsSource="{Binding Albums}">
-                                    <TextBlock Text="{Binding Name}" />
-                                    <HierarchicalDataTemplate.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Title}" />
-                                        </DataTemplate>
-                                    </HierarchicalDataTemplate.ItemTemplate>
-                                </HierarchicalDataTemplate>
-                            </TreeView.ItemTemplate>
-                        </TreeView>
-                    </UniformGrid>
-                </ScrollViewer>
+                <UniformGrid Grid.Column="0">
+                    <TreeView ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Albums}">
+                                <TextBlock Text="{Binding Name}" />
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" />
+                                    </DataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </UniformGrid>
 
-                <StackPanel Grid.Column="1">
+                <UniformGrid Grid.Column="1">
                     <ListBox Margin="1"
                          DisplayMemberPath="Name"
                          ItemsSource="{Binding Artists}"
                          SelectedIndex="0"
-                         Style="{StaticResource VirtualisedMetroListBox}" />
-                </StackPanel>
-                <StackPanel Grid.Column="2">
+                         Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True" />
+                </UniformGrid>
+                <UniformGrid Grid.Column="2">
                     <RichTextBox IsReadOnly="True" BorderThickness="0">
                         
                     </RichTextBox>
-                </StackPanel>
+                </UniformGrid>
             </Grid>
             <Grid Grid.Row="2">
                 <Label Content="名称(N)："  HorizontalAlignment="Left"  Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
