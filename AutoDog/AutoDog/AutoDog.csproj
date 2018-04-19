@@ -165,7 +165,6 @@
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
-    <Compile Include="Models\Genre.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
     <Compile Include="Models\TemplateItem.cs" />
     <Compile Include="Settings.cs" />
@@ -230,7 +229,6 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\AlbumPriceIsTooMuchConverter.cs" />
     <Compile Include="Converters\Int32IndexToNumberConverter.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -471,6 +469,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Terminal\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\UI.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

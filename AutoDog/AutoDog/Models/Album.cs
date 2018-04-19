@@ -10,11 +10,9 @@ namespace AutoDog.Models
     public class Album : INotifyPropertyChanged
     {
         private int _albumId;
-        private int _genreId;
         private int _artistId;
         private string _title;
-        private decimal _price;
-        private Genre _genre;
+        private string _describe;
         private Artist _artist;
 
         public int AlbumId
@@ -24,18 +22,6 @@ namespace AutoDog.Models
             {
                 if (value == _albumId) return;
                 _albumId = value;
-                OnPropertyChanged();
-            }
-        }
-
-        [DisplayName("Genre")]
-        public int GenreId
-        {
-            get { return _genreId; }
-            set
-            {
-                if (value == _genreId) return;
-                _genreId = value;
                 OnPropertyChanged();
             }
         }
@@ -76,30 +62,23 @@ namespace AutoDog.Models
             }
         }
 
-        public decimal Price
+        public string Describe
         {
-            get { return _price; }
+            get { return _describe; }
             set
             {
-                if (value == _price) return;
-                _price = value;
+                if (value == _describe) return;
+                _describe = value;
                 OnPropertyChanged();
             }
         }
 
-        [DisplayName("Album Art URL")]
-        public string AlbumArtUrl { get; set; }
+        [DisplayName("Album Description Image")]
+        public string DescripImage { get; set; }
 
-        public virtual Genre Genre
-        {
-            get { return _genre; }
-            set
-            {
-                if (Equals(value, _genre)) return;
-                _genre = value;
-                OnPropertyChanged();
-            }
-        }
+        [DisplayName("Album Description Image")]
+        public string ImagePath { get; set; }
+
 
         public virtual Artist Artist
         {

@@ -16,7 +16,6 @@ namespace AutoDog.ViewModels
 
         public NewProjectViewModel(IDialogCoordinator dialogCoordinator)
         {
-            SampleData.Seed();
             Albums = SampleData.Albums;
             Artists = SampleData.Artists;
         }

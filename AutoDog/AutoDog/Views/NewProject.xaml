@@ -5,9 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoDog.Views"
+        xmlns:models ="clr-namespace:AutoDog.Models"              
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"   ResizeMode="CanMinimize" Icon="/Images/AutoDog.ico"
-        Title="新建项目" Height="600" Width="900">
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog.ico"
+        Title="新建项目" Height="600" Width="900"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        >
     <AdornerDecorator>
         <Grid Height="569" VerticalAlignment="Top">
             <Grid.RowDefinitions>
@@ -27,9 +30,9 @@
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <UniformGrid Grid.Column="0">
-                    <TreeView ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                    <TreeView x:Name="myArtists" ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <TreeView.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Albums}">
+                            <HierarchicalDataTemplate ItemsSource="{Binding Artists}">
                                 <TextBlock Text="{Binding Name}" />
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <DataTemplate>
@@ -42,16 +45,23 @@
                 </UniformGrid>
 
                 <UniformGrid Grid.Column="1">
-                    <ListBox Margin="1"
-                         DisplayMemberPath="Name"
-                         ItemsSource="{Binding Artists}"
-                         SelectedIndex="0"
-                         Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True" />
+                    <ListBox x:Name="myAlbums" Margin="1"
+                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.Albums}"
+                         SelectedIndex="0"                        
+                         Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type models:Album}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path=ImagePath}"  Height="20" Width="20"/>
+                                    <TextBlock Text="{Binding Path=Title}">
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </UniformGrid>
                 <UniformGrid Grid.Column="2">
-                    <RichTextBox IsReadOnly="True" BorderThickness="0">
-                        
-                    </RichTextBox>
+                    <TextBlock Text="{Binding ElementName=myAlbums,Path=SelectedItem}"></TextBlock>
                 </UniformGrid>
             </Grid>
             <Grid Grid.Row="2">
