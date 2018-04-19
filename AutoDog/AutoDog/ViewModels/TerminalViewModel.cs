@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace AutoDog.ViewModels
 {
-    public class MainViewModel : ViewModel
+    public class TerminalViewModel : ViewModel
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
+        /// Initializes a new instance of the <see cref="TerminalViewModel"/> class.
         /// </summary>
-        public MainViewModel()
+        public TerminalViewModel()
         {
             StartCommandPromptCommand = new Command(() => { });
             StartNewProcessCommand = new Command(() => { });

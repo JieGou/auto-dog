@@ -21,7 +21,7 @@ namespace AutoDog.Controls.FolderBrowserControl
         //        private IFileDialogCustomize nativeDialogCustomize;
         private NativeDialogEventSink nativeEventSink;
         private bool? canceled;
-        private Window parentWindow;
+        public Window parentWindow;
 
         protected const string IllegalPropertyChangeString = " cannot be changed while dialog is showing";
 

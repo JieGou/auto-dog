@@ -31,6 +31,7 @@ namespace AutoDog.Views
         private void openFolderClick(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folder = new FolderBrowserDialog();
+            folder.parentWindow = this;
             if (folder.ShowDialog() == true)
             {
                 locationCmb.Text = folder.FileName;

@@ -175,7 +175,7 @@
     <Compile Include="Converter\BoolToVisiableConverter.cs" />
     <Compile Include="Converter\FlipBoolConverter.cs" />
     <Compile Include="Logic\AutoTestingConfig.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
     <Compile Include="Views\DockPanel\ClassTemplateView.xaml.cs">
