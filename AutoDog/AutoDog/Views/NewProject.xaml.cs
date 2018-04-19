@@ -37,5 +37,15 @@ namespace AutoDog.Views
                 locationCmb.Text = folder.FileName;
             }
         }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancleButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

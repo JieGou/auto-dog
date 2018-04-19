@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
 using AutoDog.ViewModels;
-using AutoDog.Logic;
+using AutoDog.Logics;
 
 namespace AutoDog.Views
 {

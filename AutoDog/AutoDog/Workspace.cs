@@ -20,6 +20,7 @@ using AutoDog.Models;
 using NHotkey;
 using NHotkey.Wpf;
 using Xceed.Wpf.AvalonDock.Layout;
+using AutoDog.Commands;
 
 namespace AutoDog
 {

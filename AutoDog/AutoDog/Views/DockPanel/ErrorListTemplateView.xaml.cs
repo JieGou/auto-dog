@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
-using AutoDog.Logic;
+using AutoDog.Logics;
 
 
 namespace AutoDog.Views

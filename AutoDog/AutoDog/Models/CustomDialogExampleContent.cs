@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using JetBrains.Annotations;
+using AutoDog.Commands;
 
 namespace AutoDog.Models
 {

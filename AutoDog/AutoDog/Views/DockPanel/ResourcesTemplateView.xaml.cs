@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using AutoDog.ViewModels;
-using AutoDog.Logic;
+using AutoDog.Logics;
 
 namespace AutoDog.Views
 {

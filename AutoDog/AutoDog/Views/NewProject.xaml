@@ -51,11 +51,9 @@
                          Style="{StaticResource VirtualisedMetroListBox}" />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
-                    <ListBox Margin="1"
-                         DisplayMemberPath="Name"
-                         ItemsSource="{Binding Artists}"
-                         SelectedIndex="0"
-                         Style="{StaticResource VirtualisedMetroListBox}" />
+                    <RichTextBox IsReadOnly="True" BorderThickness="0">
+                        
+                    </RichTextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
@@ -155,11 +153,13 @@
                 <CheckBox Content="新建Git存储库" IsChecked="False" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
             </Grid>
             <Grid Grid.Row="7">
-                <Button Width="116"                
+                <Button Width="114"   
+                    Click="SubmitButton_Click"
                     HorizontalAlignment="Right" 
                     Content="确定"
                     Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,123,4" />
                 <Button Width="114"
+                    Click="CancleButton_Click"
                     HorizontalAlignment="Right"
                     Content="取消"
                     Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,5,4" />

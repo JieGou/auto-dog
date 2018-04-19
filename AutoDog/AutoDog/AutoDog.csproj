@@ -156,12 +156,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Logic\PipelineExecutor.cs" />
+    <Compile Include="Logics\PipelineExecutor.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\SimpleCommand.cs" />
+    <Compile Include="Commands\SimpleCommand.cs" />
+    <Compile Include="Models\SolutionTemplate.cs" />
+    <Compile Include="Models\TemplateItem.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Controls\FolderBrowserControl\COMGuids.cs" />
     <Compile Include="Controls\FolderBrowserControl\ErrorHelper.cs" />
@@ -171,10 +173,10 @@
     <Compile Include="Controls\FolderBrowserControl\NativeTaskDialogShowState.cs" />
     <Compile Include="Controls\FolderBrowserControl\ShellComInterfaces.cs" />
     <Compile Include="Controls\FolderBrowserControl\ShellWrapperDefinitions.cs" />
-    <Compile Include="Converter\ActiveDocumentConverter.cs" />
-    <Compile Include="Converter\BoolToVisiableConverter.cs" />
-    <Compile Include="Converter\FlipBoolConverter.cs" />
-    <Compile Include="Logic\AutoTestingConfig.cs" />
+    <Compile Include="Converters\ActiveDocumentConverter.cs" />
+    <Compile Include="Converters\BoolToVisiableConverter.cs" />
+    <Compile Include="Converters\FlipBoolConverter.cs" />
+    <Compile Include="Logics\AutoTestingConfig.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
@@ -198,7 +200,7 @@
     <Compile Include="ViewModels\Base\PanesStyleSelector.cs" />
     <Compile Include="ViewModels\Base\PanesTemplateSelector.cs" />
     <Compile Include="ViewModels\Base\PaneViewModel.cs" />
-    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\DockPanel\OutPutViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\SolutionViewModel.cs" />
     <Compile Include="ViewModels\Base\ToolViewModel.cs" />
@@ -223,8 +225,8 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converter\AlbumPriceIsTooMuchConverter.cs" />
-    <Compile Include="Converter\Int32IndexToNumberConverter.cs" />
+    <Compile Include="Converters\AlbumPriceIsTooMuchConverter.cs" />
+    <Compile Include="Converters\Int32IndexToNumberConverter.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

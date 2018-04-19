@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace AutoDog.Models
+namespace AutoDog.Commands
 {
     public class SimpleCommand : ICommand
     {

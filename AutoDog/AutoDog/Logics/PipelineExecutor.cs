@@ -6,7 +6,7 @@ using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 using System.Threading;
 
-namespace AutoDog.Logic
+namespace AutoDog.Logics
 {
     /// <summary>
     /// 帮助异步执行和检索powershell脚本管道的结果的类。

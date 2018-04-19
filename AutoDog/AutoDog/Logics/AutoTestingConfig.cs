@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoDog.Logic
+namespace AutoDog.Logics
 {
     public static class ATConfig
     {
