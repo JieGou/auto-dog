@@ -10,7 +10,7 @@
         FontFamily="{DynamicResource DefaultFont}"
         Background="White"
         FontSize="12"
-        CaretBrush="Black"
+        CaretBrush="Black" BorderThickness="0"
         >
         <TextBox.Resources>
             <Style TargetType="{x:Type Paragraph}">

@@ -431,13 +431,7 @@
     <Resource Include="Images\FileReName.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Terminal\ConsoleControl.png" />
-    <Resource Include="Images\Terminal\Control_TextBox.png" />
-    <Resource Include="Images\Terminal\Delete.png" />
-    <Resource Include="Images\Terminal\GotoShortcuts.png" />
-    <Resource Include="Images\Terminal\Information.png" />
-    <Resource Include="Images\Terminal\Play.png" />
-    <Resource Include="Images\Terminal\Stop.png" />
+    <Resource Include="Images\Console.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AutoDog.ico" />
@@ -459,6 +453,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\DockPanel\ResourceView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Terminal\Clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Terminal\Play.png" />
+    <Resource Include="Images\Terminal\Console.png" />
+    <Resource Include="Images\Terminal\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Terminal\Information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

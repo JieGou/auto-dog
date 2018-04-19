@@ -53,9 +53,10 @@ namespace AutoDog.Views
 
         private void UpdateProcessState()
         {
-            //  Update the state.
+            //  更新状态信息
             if (terminalControl.IsProcessRunning)
                 viewModel.ProcessState = "Running " + System.IO.Path.GetFileName(terminalControl.ProcessInterface.ProcessFileName);
+                
             else
                 viewModel.ProcessState = "Not Running";
         }
