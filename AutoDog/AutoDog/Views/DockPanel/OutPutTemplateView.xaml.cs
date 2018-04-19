@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using AutoDogTerminalAPI;
+using AutoDog.Windows;
 
 namespace AutoDog.Views
 {
@@ -27,17 +27,17 @@ namespace AutoDog.Views
         void StartNewProcessCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)
         {
             //  Create the new process form.
-            //FormNewProcess formNewProcess = new FormNewProcess();
+            FormNewProcess formNewProcess = new FormNewProcess();
 
-            ////  If the form is shown OK, start the process.
-            //if (formNewProcess.ShowDialog() == DialogResult.OK)
-            //{
-            //    //  Start the proces.
-            //    terminalControl.StartProcess(formNewProcess.FileName, formNewProcess.Arguments);
+            //  If the form is shown OK, start the process.
+            if (formNewProcess.ShowDialog() == DialogResult.OK)
+            {
+                //  Start the proces.
+                terminalControl.StartProcess(formNewProcess.FileName, formNewProcess.Arguments);
 
-            //    //  Update the UI state.
-            //    UpdateProcessState();
-            //}
+                //  Update the UI state.
+                UpdateProcessState();
+            }
         }
 
         void StopProcessCommand_Executed(object sender, Apex.MVVM.CommandEventArgs args)

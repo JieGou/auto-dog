@@ -43,7 +43,8 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AutoDog.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AutoDog.App</StartupObject>
@@ -103,6 +104,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Management.Automation.dll.10.0.10586.0\lib\net40\System.Management.Automation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -151,6 +156,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Logic\PipelineExecutor.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
@@ -170,63 +176,68 @@
     <Compile Include="Converter\FlipBoolConverter.cs" />
     <Compile Include="Logic\AutoTestingConfig.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ResourcesViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
-    <Compile Include="Views\ClassTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\ClassTemplateView.xaml.cs">
       <DependentUpon>ClassTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ErrorListTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\ErrorListTemplateView.xaml.cs">
       <DependentUpon>ErrorListTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FileStatsTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\FileStatsTemplateView.xaml.cs">
       <DependentUpon>FileStatsTemplateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\NewProjectViewModel.cs" />
-    <Compile Include="ViewModels\ClassViewModel.cs" />
-    <Compile Include="ViewModels\ErrorListViewModel.cs" />
-    <Compile Include="ViewModels\FileStatsViewModel.cs" />
-    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\ClassViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\ErrorListViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\FileStatsViewModel.cs" />
+    <Compile Include="ViewModels\Base\FileViewModel.cs" />
     <Compile Include="LayoutInitializer.cs" />
-    <Compile Include="Panes\PanesStyleSelector.cs" />
-    <Compile Include="Panes\PanesTemplateSelector.cs" />
-    <Compile Include="ViewModels\PaneViewModel.cs" />
+    <Compile Include="ViewModels\Base\PanesStyleSelector.cs" />
+    <Compile Include="ViewModels\Base\PanesTemplateSelector.cs" />
+    <Compile Include="ViewModels\Base\PaneViewModel.cs" />
     <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="ViewModels\OutPutViewModel.cs" />
-    <Compile Include="ViewModels\SolutionViewModel.cs" />
-    <Compile Include="ViewModels\ToolViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\OutPutViewModel.cs" />
+    <Compile Include="ViewModels\DockPanel\SolutionViewModel.cs" />
+    <Compile Include="ViewModels\Base\ToolViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\TreeViewModelRef.cs" />
-    <Compile Include="Views\OutPutTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\OutPutTemplateView.xaml.cs">
       <DependentUpon>OutPutTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ResourcesTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\ResourcesTemplateView.xaml.cs">
       <DependentUpon>ResourcesTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SolutionTemplateView.xaml.cs">
+    <Compile Include="Views\DockPanel\SolutionTemplateView.xaml.cs">
       <DependentUpon>SolutionTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FormNewProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FormNewProcess.Designer.cs">
+      <DependentUpon>FormNewProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="Workspace.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ValueConverter\AlbumPriceIsTooMuchConverter.cs" />
-    <Compile Include="ValueConverter\Int32IndexToNumberConverter.cs" />
+    <Compile Include="Converter\AlbumPriceIsTooMuchConverter.cs" />
+    <Compile Include="Converter\Int32IndexToNumberConverter.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClassTemplateView.xaml">
+    <Page Include="Views\DockPanel\ClassTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ErrorListTemplateView.xaml">
+    <Page Include="Views\DockPanel\ErrorListTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FileStatsTemplateView.xaml">
+    <Page Include="Views\DockPanel\FileStatsTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -234,15 +245,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OutPutTemplateView.xaml">
+    <Page Include="Views\DockPanel\OutPutTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ResourcesTemplateView.xaml">
+    <Page Include="Views\DockPanel\ResourcesTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SolutionTemplateView.xaml">
+    <Page Include="Views\DockPanel\SolutionTemplateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -279,6 +290,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\FormNewProcess.resx">
+      <DependentUpon>FormNewProcess.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -330,7 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\DocumentClosed.png" />
-    <Resource Include="Images\PropertyView.png" />
+    <Resource Include="Images\App\PropertyView.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\App\Edit_Copy32.png" />
@@ -381,9 +395,6 @@
     <Resource Include="Images\ProjectFileMark.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\ProjectDefault.png" />
   </ItemGroup>
   <ItemGroup>
@@ -420,22 +431,34 @@
     <Resource Include="Images\FileReName.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AutoDog.png" />
+    <Resource Include="Images\Terminal\ConsoleControl.png" />
+    <Resource Include="Images\Terminal\Control_TextBox.png" />
+    <Resource Include="Images\Terminal\Delete.png" />
+    <Resource Include="Images\Terminal\GotoShortcuts.png" />
+    <Resource Include="Images\Terminal\Information.png" />
+    <Resource Include="Images\Terminal\Play.png" />
+    <Resource Include="Images\Terminal\Stop.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AutoDog.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AutoDog.ico" />
+    <Resource Include="Images\DockPanel\OutPut.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ConsoleControl.png" />
-    <Resource Include="Resources\Control_TextBox.png" />
-    <Resource Include="Resources\Delete.png" />
-    <Resource Include="Resources\GotoShortcuts.png" />
-    <Resource Include="Resources\Information.png" />
-    <Resource Include="Resources\Play.png" />
-    <Resource Include="Resources\Stop.png" />
+    <Resource Include="Images\DockPanel\ErrorList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\PropertyView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\ClassView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\SolutionView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\ResourceView.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

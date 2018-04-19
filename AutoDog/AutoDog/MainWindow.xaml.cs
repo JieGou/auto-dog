@@ -95,14 +95,14 @@ namespace AutoDog
                 args.Content = args.Content;
             };
 
-            if (File.Exists(@".\AutoDog.Editor.config"))
-                serializer.Deserialize(@".\AutoDog.Editor.config");
+            if (File.Exists(@".\AutoDog.config"))
+                serializer.Deserialize(@".\AutoDog.config");
         }
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
             var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.Serialize(@".\AutoDog.Editor.config");
+            serializer.Serialize(@".\AutoDog.config");
         }
 
         #region LoadLayoutCommand
@@ -122,7 +122,7 @@ namespace AutoDog
 
         private bool CanLoadLayout(object parameter)
         {
-            return File.Exists(@".\AvalonDock.Layout.config");
+            return File.Exists(@".\AutoDog.config");
         }
 
         private void OnLoadLayout(object parameter)
@@ -140,7 +140,7 @@ namespace AutoDog
                     File.Exists(e.Model.ContentId))
                     e.Content = Workspace.This.Open(e.Model.ContentId);
             };
-            layoutSerializer.Deserialize(@".\AvalonDock.Layout.config");
+            layoutSerializer.Deserialize(@".\AutoDog.config");
         }
 
         #endregion 
@@ -168,7 +168,7 @@ namespace AutoDog
         private void OnSaveLayout(object parameter)
         {
             var layoutSerializer = new XmlLayoutSerializer(dockManager);
-            layoutSerializer.Serialize(@".\AvalonDock.Layout.config");
+            layoutSerializer.Serialize(@".\AutoDog.config");
         }
 
         #endregion 

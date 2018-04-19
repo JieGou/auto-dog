@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-using System.Windows.Media;
 
 namespace AutoDog.ViewModels
 {
-    class ClassViewModel : ToolViewModel
+    class ErrorListViewModel:ToolViewModel
     {
-        public const string ToolContentId = "ClassTool";
-        public ClassViewModel()
-            : base("类视图")
+        public const string ToolContentId = "ErrorListTool";
+        public ErrorListViewModel()
+            : base("错误列表")
         {
             ContentId = ToolContentId;
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/PropertyView.png");
+            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/ErrorList.png");
             bi.EndInit();
             IconSource = bi;
         }

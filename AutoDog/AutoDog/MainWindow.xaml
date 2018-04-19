@@ -22,7 +22,7 @@
                       Height="800"
                       Dialog:DialogParticipation.Register="{Binding}"
                       d:DataContext="{d:DesignInstance local:Workspace}"
-                      Icon="Images/AutoDog.png"
+                      Icon="Images/AutoDog.ico"
                       WindowStartupLocation="CenterScreen"
                       Closing="MainAutoTesting_WinddowClosing"
                       GlowBrush="{DynamicResource AccentColorBrush}"
@@ -216,9 +216,6 @@
                 <MenuItem Header="定位到(,)...  Ctrl + ,"/>
             </MenuItem>
             <MenuItem Header="视图(V)">
-                <MenuItem Header="边框主题(T)"
-                      ItemContainerStyle="{StaticResource AppThemeMenuItemStyle}"
-                      ItemsSource="{Binding AppThemes, Mode=OneWay}" />
                 <MenuItem Header="边框风格(S)"
                       ItemContainerStyle="{StaticResource AccentColorMenuItemStyle}"
                       ItemsSource="{Binding AccentColors, Mode=OneWay}" />

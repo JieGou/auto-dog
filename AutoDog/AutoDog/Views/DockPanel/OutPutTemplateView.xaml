@@ -19,8 +19,6 @@
     </UserControl.Resources>
     <Grid>
         <DockPanel>
-
-            <!-- The main toolbar. -->
             <ToolBarTray 
                 DockPanel.Dock="Top">
                 <ToolBar>
@@ -29,41 +27,39 @@
                         IsEnabled="{Binding IsProcessRunning, ElementName=consoleControl, 
                         Converter={StaticResource InvertedBooleanConverter}}"
                         ToolTip="运行终端">
-                        <Image Source="/Resources/Play.png"
+                        <Image Source="/Images/Terminal/ConsoleControl.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </Button>
-
+                    <Button Command="{Binding StartNewProcessCommand}"
+                        IsEnabled="{Binding IsProcessRunning, ElementName=consoleControl, 
+                        Converter={StaticResource InvertedBooleanConverter}}"
+                        ToolTip="Start a New Process">
+                        <Image Source="/Images/Terminal/Play.png" 
+                                RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
+                    </Button>
                     <Button Command="{Binding StopProcessCommand}"
                         IsEnabled="{Binding IsProcessRunning, ElementName=consoleControl}"
                         ToolTip="停止终端">
-                        <Image Source="/Resources/Stop.png"
+                        <Image Source="/Images/Terminal/Stop.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
                     </Button>
                     <Button Command="{Binding ClearOutputCommand}"
                         ToolTip="清除内容">
-                        <Image Source="/Resources/Delete.png" 
+                        <Image Source="/Images/Terminal/Delete.png" 
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </Button>
                     <ToggleButton IsChecked="{Binding ShowDiagnostics, ElementName=consoleControl}"
                         ToolTip="诊断信息">
-                        <Image Source="/Resources/Information.png"
+                        <Image Source="/Images/Terminal/Information.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
                     </ToggleButton>
                     <ToggleButton IsChecked="{Binding IsInputEnabled, ElementName=consoleControl}"
                         ToolTip="输入状态">
-                        <Image Source="/Resources/Control_TextBox.png" 
+                        <Image Source="/Images/Terminal/Control_TextBox.png" 
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </ToggleButton>
                 </ToolBar>
             </ToolBarTray>
-
-            <!-- The Status Bar. -->
-            <StatusBar DockPanel.Dock="Bottom">
-                <TextBlock>
-                    <Run Text="Console State: " />
-                    <Run Text="{Binding ProcessState}" />
-                </TextBlock>
-            </StatusBar>
             <autoDogTerminal:TerminalControl x:Name="terminalControl" FontSize="14" SnapsToDevicePixels="True" AllowDrop="True"/>
         </DockPanel>
     </Grid>

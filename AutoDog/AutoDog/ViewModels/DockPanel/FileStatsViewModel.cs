@@ -19,7 +19,7 @@ namespace AutoDog.ViewModels
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/PropertyView.png");
+            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/PropertyView.png");
             bi.EndInit();
             IconSource = bi;
         }

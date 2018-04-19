@@ -5,25 +5,22 @@ using System.Text;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
-using System.Windows.Controls;
-
 
 namespace AutoDog.ViewModels
 {
-    class SolutionViewModel:ToolViewModel
+    class ClassViewModel : ToolViewModel
     {
-        public const string ToolContentId = "SolutionTool";
-
-        public SolutionViewModel()
-            :base("解决方案资源管理器")
+        public const string ToolContentId = "ClassTool";
+        public ClassViewModel()
+            : base("类视图")
         {
             ContentId = ToolContentId;
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/PropertyView.png");
+            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/ClassView.png");
             bi.EndInit();
             IconSource = bi;
-        } 
+        }
     }
 }

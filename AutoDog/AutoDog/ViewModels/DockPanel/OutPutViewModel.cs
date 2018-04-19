@@ -7,18 +7,17 @@ using System.Windows.Media.Imaging;
 
 namespace AutoDog.ViewModels
 {
-    class ResourcesViewModel: ToolViewModel
+    class OutPutViewModel:ToolViewModel
     {
-        public const string ToolContentId = "ResourcesTool";
-
-        public ResourcesViewModel()
-            :base("资源视图")
+        public const string ToolContentId = "OutPutTool";
+        public OutPutViewModel()
+            : base("输出")
         {
             ContentId = ToolContentId;
 
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/PropertyView.png");
+            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/OutPut.png");
             bi.EndInit();
             IconSource = bi;
         }
