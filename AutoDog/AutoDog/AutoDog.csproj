@@ -452,9 +452,6 @@
     <Resource Include="Images\Console.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AutoDog.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\DockPanel\OutPut.png" />
   </ItemGroup>
   <ItemGroup>
@@ -499,7 +496,16 @@
     <Resource Include="Images\Template\API.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\Server.png" />
+    <Resource Include="Images\AutoDog\AutoDogBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AutoDog\AutoDog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AutoDog\AutoDog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AutoDog\AutoDogBlue.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

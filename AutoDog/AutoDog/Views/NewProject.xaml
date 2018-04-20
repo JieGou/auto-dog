@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:AutoDog.Views"
         xmlns:models ="clr-namespace:AutoDog.Models"              
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog.ico"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog/AutoDog.ico"
         Title="新建项目" Height="600" Width="900"
         GlowBrush="{DynamicResource AccentColorBrush}"
         >

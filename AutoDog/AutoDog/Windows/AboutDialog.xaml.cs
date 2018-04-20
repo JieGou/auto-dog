@@ -8,7 +8,7 @@ namespace AutoDog.Windows
   /// <summary>
   /// Interaction logic for AboutDialog.xaml
   /// </summary>
-  public partial class AboutDialog : Window
+  public partial class AboutDialog 
   {
     public AboutDialog()
     {
