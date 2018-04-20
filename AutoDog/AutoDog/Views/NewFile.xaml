@@ -1,0 +1,91 @@
+﻿<Controls:MetroWindow x:Class="AutoDog.Views.NewFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoDog.Views"
+        xmlns:models ="clr-namespace:AutoDog.Models"              
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog.ico"
+        Title="新建文件" Height="600" Width="900"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        >
+    <AdornerDecorator>
+        <Grid Height="569" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <UniformGrid Grid.Column="0">
+                    <TreeView x:Name="myArtists" ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Artists}">
+                                <TextBlock Text="{Binding Name}" />
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" />
+                                    </DataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </UniformGrid>
+
+                <UniformGrid Grid.Column="1">
+                    <ListBox x:Name="myAlbums" Margin="1"
+                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.Albums}"
+                         SelectedIndex="0"
+                         SelectionChanged="myAlbums_SelectionChanged"
+                         Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type models:Album}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding Path=ImageSource}"  Height="30" Width="30"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Path=Title}" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    </TextBlock>
+                                    <TextBlock Grid.Column="2" Text="{Binding Path=TemplateType}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </UniformGrid>
+                <UniformGrid Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="myTemplateType" Grid.Row="0" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="myDescribe" Grid.Row="1" TextWrapping="Wrap" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        </TextBlock>
+                    </Grid>
+                </UniformGrid>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Button Width="114"   
+                    Click="SubmitButton_Click"
+                    HorizontalAlignment="Right" 
+                    Content="确定"
+                    Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,123,4" />
+                <Button Width="114"
+                    Click="CancleButton_Click"
+                    HorizontalAlignment="Right"
+                    Content="取消"
+                    Style="{DynamicResource AccentedSquareButtonStyle}" Height="28" Margin="0,3,5,4" />
+            </Grid>
+        </Grid>
+    </AdornerDecorator>
+</Controls:MetroWindow>

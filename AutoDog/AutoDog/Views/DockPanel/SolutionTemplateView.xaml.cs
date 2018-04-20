@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Text.RegularExpressions;
 using AutoDog.ViewModels;
 using AutoDog.Logics;
+using AutoDog.UI.Controls;
+using AutoDog.UI.Controls.Dialogs;
 
 namespace AutoDog.Views
 {
@@ -41,7 +43,7 @@ namespace AutoDog.Views
 
         private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            mySTVInit();
+            if (e.PropertyName == "solutionPath") { mySTVInit(); }
         }
 
         public void mySTVInit()
@@ -157,14 +159,17 @@ namespace AutoDog.Views
             if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
             {
                 currentSolutionPath =tvi.Tag.ToString();
+                UpdateRootMenuItem();
             }
             if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_FolderSelected);
+                UpdateFolderMenuItem();
             }
             else if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_DocumentSelected);
+                UpdateFileMenuItem();
             }
         }
 
@@ -192,16 +197,11 @@ namespace AutoDog.Views
         private void mySTV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //此处需要判断是否选中节点，防止未选中节点时，鼠标在空白区域点击后引发异常
-            if (selectedTVI != null)
-            {
+            if (selectedTVI != null && TreeViewModelRef.GetItemTypeName(selectedTVI)== ATConfig.TreeNodeType.FileNode.ToString())
+            {               
                 var fileViewModel = Workspace.This.Open(selectedTVI.Tag.ToString());
                 Workspace.This.ActiveDocument = fileViewModel;
             }
-        }
-
-        private void mySTV_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -228,16 +228,19 @@ namespace AutoDog.Views
 
         private void mySTVMenuItem_ReName_Click(object sender, RoutedEventArgs e)
         {
-            
+            renameMethod();
         }
         private void mySTVMenuItem_Delete_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TextBlock_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
+            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == ATConfig.TreeNodeType.FileNode.ToString())
+            {
+                File.Delete(selectedTVI.Tag.ToString());
+                RefreshTreeNode((TreeViewItem)selectedTVI.Parent);
+            }
+            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == ATConfig.TreeNodeType.FolderNode.ToString())
+            {
+                ShowDeleteFolderDialog();
+            }
         }
 
         private void mySTV_KeyDown(object sender, KeyEventArgs e)
@@ -246,12 +249,17 @@ namespace AutoDog.Views
             {
                 if (e.Key == Key.F2)
                 {
-                    TreeViewModelRef.SetIsEditMode(selectedTVI, true);
-                    selectedTBox.Focus();
-                    selectedTBox.SelectAll();
-                    oldText = selectedTBox.Text;
+                    renameMethod();
                 }
             }
+        }
+
+        private void renameMethod()
+        {
+            TreeViewModelRef.SetIsEditMode(selectedTVI, true);
+            selectedTBox.Focus();
+            selectedTBox.SelectAll();
+            oldText = selectedTBox.Text;
         }
 
         string oldText;
@@ -361,6 +369,51 @@ namespace AutoDog.Views
             {
                 throw new Exception("删除目标目录失败：" + ex.Message);
             }
+        }
+
+
+        private void UpdateRootMenuItem()
+        {
+            mySTVMenuAdd.IsEnabled = true;
+            mySTVMenuOpen.IsEnabled = false;
+            mySTVMenuDelete.IsEnabled = false;
+        }
+
+        private void UpdateFolderMenuItem()
+        {
+            mySTVMenuAdd.IsEnabled = true;
+            mySTVMenuOpen.IsEnabled = false;
+            mySTVMenuDelete.IsEnabled = true;
+        }
+        private void UpdateFileMenuItem()
+        {
+            mySTVMenuAdd.IsEnabled = false;
+            mySTVMenuOpen.IsEnabled = true;
+            mySTVMenuDelete.IsEnabled = true;
+        }
+
+        private async void ShowDeleteFolderDialog()
+        {
+            MetroWindow window = MainWindow.metroWindow;
+            var mySettings = new MetroDialogSettings()
+            {
+                AffirmativeButtonText = "确定",
+                NegativeButtonText = "取消",
+                ColorScheme = window.MetroDialogOptions.ColorScheme
+            };
+
+            MessageDialogResult result = await window.ShowMessageAsync("提示信息", "确定要删除当前文件夹吗？",
+                MessageDialogStyle.AffirmativeAndNegative, mySettings);
+
+            if (result == MessageDialogResult.Affirmative) DeleteFodler();
+            if (result == MessageDialogResult.Negative) return;
+        }
+
+        private void DeleteFodler()
+        {
+            DelectDir(selectedTVI.Tag.ToString());
+            Directory.Delete(selectedTVI.Tag.ToString());
+            RefreshTreeNode((TreeViewItem)selectedTVI.Parent);
         }
     }
 }

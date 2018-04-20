@@ -252,7 +252,7 @@ namespace AutoDog
 
         private void LaunchAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-            //System.Diagnostics.Process.Start("https://github.com/");
+            System.Diagnostics.Process.Start("https://github.com/devdiv/AutoDog");
         }
 
         private async void CloseCustomDialog(object sender, RoutedEventArgs e)
@@ -261,6 +261,18 @@ namespace AutoDog
 
             await this.HideMetroDialogAsync(dialog);
             await this.ShowMessageAsync("Dialog gone", "The custom dialog has closed");
+        }
+
+        private void NewFile_Click(object sender, RoutedEventArgs e)
+        {
+            var newFile = new Views.NewFile();
+            newFile.Show();
+        }
+
+        private void AboutAutoDog_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutWindow = new Windows.AboutDialog();
+            aboutWindow.Show();
         }
     }
 }
