@@ -30,9 +30,9 @@
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <UniformGrid Grid.Column="0">
-                    <TreeView x:Name="myArtists" ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                    <TreeView x:Name="myArtists" ItemsSource="{Binding ProjectArtists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <TreeView.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Artists}">
+                            <HierarchicalDataTemplate ItemsSource="{Binding ProjectArtists}">
                                 <TextBlock Text="{Binding Name}" />
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <DataTemplate>
@@ -46,12 +46,12 @@
 
                 <UniformGrid Grid.Column="1">
                     <ListBox x:Name="myAlbums" Margin="1"
-                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.Albums}"
+                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.ProjectAlbums}"
                          SelectedIndex="0"
                          SelectionChanged="myAlbums_SelectionChanged"
                          Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <ListBox.ItemTemplate>
-                            <DataTemplate DataType="{x:Type models:Album}">
+                            <DataTemplate DataType="{x:Type models:ProjectAlbum}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
@@ -74,7 +74,7 @@
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="myTemplateType" Grid.Row="0" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="myTemplateType" Grid.Row="0" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
                         <TextBlock x:Name="myDescribe" Grid.Row="1" TextWrapping="Wrap" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         </TextBlock>
                     </Grid>

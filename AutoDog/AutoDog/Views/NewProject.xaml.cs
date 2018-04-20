@@ -35,8 +35,8 @@ namespace AutoDog.Views
                 var vm = args.NewValue as NewProjectViewModel;
                 if (vm != null)
                 {
-                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Clear();
-                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
+                    CollectionViewSource.GetDefaultView(vm.ProjectAlbums).GroupDescriptions.Clear();
+                    CollectionViewSource.GetDefaultView(vm.ProjectAlbums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
                 }
             };
         }
@@ -63,9 +63,9 @@ namespace AutoDog.Views
 
         private void myAlbums_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(e!=null)
+            if (e.AddedItems.Count != 0)
             {
-                Album albumObj = (Album)e.AddedItems[0];
+                ProjectAlbum albumObj = (ProjectAlbum)e.AddedItems[0];
                 myTemplateType.Text = "类型：" + albumObj.TemplateType;
                 myDescribe.Text = albumObj.Describe;
             }          

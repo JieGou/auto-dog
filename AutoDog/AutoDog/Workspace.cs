@@ -74,8 +74,8 @@ namespace AutoDog
                                            .Select(a => new AppThemeMenuData() { Name = a.Name, BorderColorBrush = a.Resources["BlackColorBrush"] as Brush, ColorBrush = a.Resources["WhiteColorBrush"] as Brush })
                                            .ToList();            
 
-            Albums = SampleData.Albums;
-            Artists = SampleData.Artists;
+            ProjectAlbums = SampleData.ProjectAlbums;
+            ProjectArtists = SampleData.ProjectArtists;
 
             FlipViewImages = new Uri[]
                              {
@@ -100,8 +100,8 @@ namespace AutoDog
 
         public string Title { get; set; }
         public int SelectedIndex { get; set; }
-        public List<Album> Albums { get; set; }
-        public List<Artist> Artists { get; set; }
+        public List<ProjectAlbum> ProjectAlbums { get; set; }
+        public List<ProjectArtist> ProjectArtists { get; set; }
         public List<AccentColorMenuData> AccentColors { get; set; }
         public List<AppThemeMenuData> AppThemes { get; set; }
         public List<CultureInfo> CultureInfos { get; set; }

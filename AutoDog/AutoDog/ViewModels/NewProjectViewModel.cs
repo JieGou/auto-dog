@@ -11,13 +11,13 @@ namespace AutoDog.ViewModels
 {
     class NewProjectViewModel : INotifyPropertyChanged
     {
-        public List<Album> Albums { get; set; }
-        public List<Artist> Artists { get; set; }
+        public List<ProjectAlbum> ProjectAlbums { get; set; }
+        public List<ProjectArtist> ProjectArtists { get; set; }
 
         public NewProjectViewModel(IDialogCoordinator dialogCoordinator)
         {
-            Albums = SampleData.Albums;
-            Artists = SampleData.Artists;
+            ProjectAlbums = SampleData.ProjectAlbums;
+            ProjectArtists = SampleData.ProjectArtists;
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }

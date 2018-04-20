@@ -24,19 +24,19 @@ namespace AutoDog.Views
     /// </summary>
     public partial class NewFile
     {
-        private readonly NewProjectViewModel _viewModel;
+        private readonly NewFileViewModel _viewModel;
         public NewFile()
         {
-            _viewModel = new NewProjectViewModel(DialogCoordinator.Instance);
+            _viewModel = new NewFileViewModel(DialogCoordinator.Instance);
             DataContext = _viewModel;
 
             InitializeComponent();
             this.DataContextChanged += (sender, args) => {
-                var vm = args.NewValue as NewProjectViewModel;
+                var vm = args.NewValue as NewFileViewModel;
                 if (vm != null)
                 {
-                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Clear();
-                    CollectionViewSource.GetDefaultView(vm.Albums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
+                    CollectionViewSource.GetDefaultView(vm.FileAlbums).GroupDescriptions.Clear();
+                    CollectionViewSource.GetDefaultView(vm.FileAlbums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
                 }
             };
         }
@@ -55,7 +55,7 @@ namespace AutoDog.Views
         {
             if(e.AddedItems.Count != 0)
             {
-                Album albumObj = (Album)e.AddedItems[0];
+                FileAlbum albumObj = (FileAlbum)e.AddedItems[0];
                 myTemplateType.Text = "类型：" + albumObj.TemplateType;
                 myDescribe.Text = albumObj.Describe;
             }          

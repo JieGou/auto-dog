@@ -7,33 +7,33 @@ using JetBrains.Annotations;
 
 namespace AutoDog.Models
 {
-    public class Album : INotifyPropertyChanged
+    public class FileAlbum : INotifyPropertyChanged
     {
-        private int _albumId;
-        private int _artistId;
+        private int _fileAlbumId;
+        private int _fileArtistId;
         private string _title;
         private string _describe;
-        private Artist _artist;
+        private FileArtist _fileArtist;
 
-        public int AlbumId
+        public int FileAlbumId
         {
-            get { return _albumId; }
+            get { return _fileAlbumId; }
             set
             {
-                if (value == _albumId) return;
-                _albumId = value;
+                if (value == _fileAlbumId) return;
+                _fileAlbumId = value;
                 OnPropertyChanged();
             }
         }
 
-        [DisplayName("Artist")]
-        public int ArtistId
+        [DisplayName("FileArtistId")]
+        public int FileArtistId
         {
-            get { return _artistId; }
+            get { return _fileArtistId; }
             set
             {
-                if (value == _artistId) return;
-                _artistId = value;
+                if (value == _fileArtistId) return;
+                _fileArtistId = value;
                 OnPropertyChanged();
             }
         }
@@ -82,13 +82,13 @@ namespace AutoDog.Models
         public string TemplateType{ get; set; }
 
 
-        public virtual Artist Artist
+        public virtual FileArtist FileArtist
         {
-            get { return _artist; }
+            get { return _fileArtist; }
             set
             {
-                if (Equals(value, _artist)) return;
-                _artist = value;
+                if (Equals(value, _fileArtist)) return;
+                _fileArtist = value;
                 OnPropertyChanged();
             }
         }

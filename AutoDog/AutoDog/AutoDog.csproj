@@ -161,8 +161,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Logics\PipelineExecutor.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\FileAlbum.cs" />
+    <Compile Include="Models\ProjectAlbum.cs" />
+    <Compile Include="Models\FileArtist.cs" />
+    <Compile Include="Models\ProjectArtist.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
@@ -179,6 +181,7 @@
     <Compile Include="Converters\BoolToVisiableConverter.cs" />
     <Compile Include="Converters\FlipBoolConverter.cs" />
     <Compile Include="Logics\AutoTestingConfig.cs" />
+    <Compile Include="ViewModels\NewFileViewModel.cs" />
     <Compile Include="ViewModels\NewProjectViewModel.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
@@ -481,19 +484,19 @@
     <Resource Include="Images\Terminal\Information.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\UI.png" />
+    <Resource Include="Images\Template\ui.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\Web.png" />
+    <Resource Include="Images\Template\web.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Template\Phone.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\Windows.png" />
+    <Resource Include="Images\Template\windows.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\API.png" />
+    <Resource Include="Images\Template\api.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AutoDog\AutoDogBlue.png" />
@@ -506,6 +509,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AutoDog\AutoDogBlue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\py.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\cs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\cpp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\php.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\ruby.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

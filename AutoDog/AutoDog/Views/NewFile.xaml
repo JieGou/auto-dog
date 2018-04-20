@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:AutoDog.Views"
         xmlns:models ="clr-namespace:AutoDog.Models"              
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog.ico"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog/AutoDog.ico"
         Title="新建文件" Height="600" Width="900"
         GlowBrush="{DynamicResource AccentColorBrush}"
         >
@@ -24,9 +24,9 @@
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <UniformGrid Grid.Column="0">
-                    <TreeView x:Name="myArtists" ItemsSource="{Binding Artists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                    <TreeView x:Name="myArtists" ItemsSource="{Binding FileArtists}" Style="{StaticResource VirtualisedMetroTreeView}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <TreeView.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Artists}">
+                            <HierarchicalDataTemplate ItemsSource="{Binding FileArtists}">
                                 <TextBlock Text="{Binding Name}" />
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <DataTemplate>
@@ -40,19 +40,19 @@
 
                 <UniformGrid Grid.Column="1">
                     <ListBox x:Name="myAlbums" Margin="1"
-                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.Albums}"
+                         ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.FileAlbums}"
                          SelectedIndex="0"
                          SelectionChanged="myAlbums_SelectionChanged"
                          Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <ListBox.ItemTemplate>
-                            <DataTemplate DataType="{x:Type models:Album}">
+                            <DataTemplate DataType="{x:Type models:FileAlbum}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="60"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding Path=ImageSource}"  Height="30" Width="30"/>
+                                    <Image Grid.Column="0" Source="{Binding Path=ImageSource}"  Height="35" Width="35"/>
                                     <TextBlock Grid.Column="1" Text="{Binding Path=Title}" VerticalAlignment="Center" HorizontalAlignment="Left">
                                     </TextBlock>
                                     <TextBlock Grid.Column="2" Text="{Binding Path=TemplateType}" VerticalAlignment="Center" HorizontalAlignment="Center">
