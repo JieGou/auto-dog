@@ -21,12 +21,12 @@ namespace AutoDog.Views
     public partial class SolutionTemplateView : UserControl
     {
 
-        string image_Home = @"../Images/Home.png";
-        string image_FolderClosed = @"../Images/FolderClosed.png";
-        string image_FolderOpened = @"../Images/FolderOpened.png";
-        string image_FolderSelected = @"../Images/FolderSelected.png";
-        string image_DocumentSelected = @"../Images/DocumentSelected.png";
-        string image_DocumentClosed = @"../Images/DocumentClosed.png";
+        string image_Home = @"../../Images/Home.png";
+        string image_FolderClosed = @"../../Images/FolderClosed.png";
+        string image_FolderOpened = @"../../Images/FolderOpened.png";
+        string image_FolderSelected = @"../../Images/FolderSelected.png";
+        string image_DocumentSelected = @"../../Images/DocumentSelected.png";
+        string image_DocumentClosed = @"../../Images/DocumentClosed.png";
 
         public static TreeViewItem selectedTVI = null;
         public static TextBox selectedTBox = null;

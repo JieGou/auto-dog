@@ -166,7 +166,6 @@
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\CustomDialogExampleContent.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
-    <Compile Include="Models\TemplateItem.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Controls\FolderBrowserControl\COMGuids.cs" />
     <Compile Include="Controls\FolderBrowserControl\ErrorHelper.cs" />
@@ -472,6 +471,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Template\UI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\Windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\API.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\Server.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

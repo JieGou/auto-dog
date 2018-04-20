@@ -74,10 +74,12 @@ namespace AutoDog.Models
         }
 
         [DisplayName("Album Description Image")]
-        public string DescripImage { get; set; }
+        public string DescripImageSource { get; set; }
 
         [DisplayName("Album Description Image")]
-        public string ImagePath { get; set; }
+        public string ImageSource { get; set; }
+
+        public string TemplateType{ get; set; }
 
 
         public virtual Artist Artist

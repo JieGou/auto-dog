@@ -48,7 +48,7 @@ namespace AutoDog.Views
 
             tviRoot.Expanded += OnRoot_Expanded;
 
-            TreeViewModelRef.SetItemImageName(tviRoot, @"../Images/Computer.png");
+            TreeViewModelRef.SetItemImageName(tviRoot, @"../../Images/Computer.png");
 
             myResourcesTree.Items.Add(tviRoot);
         }
@@ -206,18 +206,18 @@ namespace AutoDog.Views
         // UI线程
         void AddFolderItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/WinFolder.gif");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../../Images/WinFolder.gif");
         }
 
         void AddFileItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../Images/DocumentClosed.png");
+            IntAddItem(tviParent, System.IO.Path.GetFileName(strPath), strPath, @"../../Images/DocumentClosed.png");
         }
 
         // UI线程
         void AddDriveItem(TreeViewItem tviParent, string strPath)
         {
-            IntAddItem(tviParent, strPath, strPath, @"../Images/DiskDrive.png");
+            IntAddItem(tviParent, strPath, strPath, @"../../Images/DiskDrive.png");
         }
 
         private void IntAddItem(TreeViewItem tviParent, string strName, string strTag, string strImageName)

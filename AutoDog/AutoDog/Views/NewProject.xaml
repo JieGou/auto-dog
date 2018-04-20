@@ -47,21 +47,37 @@
                 <UniformGrid Grid.Column="1">
                     <ListBox x:Name="myAlbums" Margin="1"
                          ItemsSource="{Binding ElementName=myArtists,Path=SelectedItem.Albums}"
-                         SelectedIndex="0"                        
+                         SelectedIndex="0"
+                         SelectionChanged="myAlbums_SelectionChanged"
                          Style="{StaticResource VirtualisedMetroListBox}" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
                         <ListBox.ItemTemplate>
                             <DataTemplate DataType="{x:Type models:Album}">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="{Binding Path=ImagePath}"  Height="20" Width="20"/>
-                                    <TextBlock Text="{Binding Path=Title}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding Path=ImageSource}"  Height="30" Width="30"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Path=Title}" VerticalAlignment="Center" HorizontalAlignment="Left">
                                     </TextBlock>
-                                </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="{Binding Path=TemplateType}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    </TextBlock>
+                                </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </UniformGrid>
                 <UniformGrid Grid.Column="2">
-                    <TextBlock Text="{Binding ElementName=myAlbums,Path=SelectedItem}"></TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="myTemplateType" Grid.Row="0" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="myDescribe" Grid.Row="1" TextWrapping="Wrap" Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+                        </TextBlock>
+                    </Grid>
                 </UniformGrid>
             </Grid>
             <Grid Grid.Row="2">

@@ -60,5 +60,15 @@ namespace AutoDog.Views
         {
             this.Close();
         }
+
+        private void myAlbums_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(e!=null)
+            {
+                Album albumObj = (Album)e.AddedItems[0];
+                myTemplateType.Text = "类型：" + albumObj.TemplateType;
+                myDescribe.Text = albumObj.Describe;
+            }          
+        }
     }
 }
