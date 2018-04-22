@@ -490,9 +490,6 @@
     <Resource Include="Images\Template\web.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\Phone.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Template\windows.png" />
   </ItemGroup>
   <ItemGroup>
@@ -511,9 +508,6 @@
     <Resource Include="Images\AutoDog\AutoDogBlue.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\server.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Template\py.png" />
   </ItemGroup>
   <ItemGroup>
@@ -529,7 +523,22 @@
     <Resource Include="Images\Template\php.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\ruby.png" />
+    <Resource Include="Images\Template\rb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\Phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\java.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\txt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

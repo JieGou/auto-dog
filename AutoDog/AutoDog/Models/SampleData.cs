@@ -34,22 +34,6 @@ namespace AutoDog.Models
             int i = 0;
             ProjectArtists.ForEach(x => x.ProjectArtistId = ++i);
 
-            FileArtists = new List<FileArtist>
-            {
-               new FileArtist {Name="Python" },
-               new FileArtist { Name="C#" },
-               new FileArtist { Name="Java" },
-               new FileArtist { Name="JavaScript" },
-               new FileArtist { Name="Ruby" },
-               new FileArtist { Name="PowerShell" },
-               new FileArtist { Name="Batch" },
-               new FileArtist { Name="API" },
-               new FileArtist { Name="Performance" },
-            };
-
-            int j = 0;
-            FileArtists.ForEach(x => x.fileArtistId = ++j);
-
             ProjectAlbums = new List<ProjectAlbum>
                 {
                     new ProjectAlbum {
@@ -57,29 +41,28 @@ namespace AutoDog.Models
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
                         ImageSource ="/Images/Template/Web.png",
-                        Describe ="Python Web UI测试，集成Selenium等测试框架。",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        Describe ="Python Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Pyhton Windows UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
                         ImageSource ="/Images/Template/Windows.png",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        Describe ="Python Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Python 服务器功能测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
                         ImageSource ="/Images/Template/Server.png",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        Describe ="Python Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Pyhton 移动端功能测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
                         ImageSource ="/Images/Template/Phone.png",
-                        DescripImageSource = "/Images/Template/Phone.png"},
+                        Describe ="Python Web UI测试，集成Selenium等测试框架。"},
                 };
 
             var projectAlbumsGroupedByArtist = ProjectAlbums.GroupBy(a => a.ProjectArtist);
@@ -88,36 +71,74 @@ namespace AutoDog.Models
                 grouping.Key.ProjectAlbums = grouping.ToList();
             }
 
+
+            FileArtists = new List<FileArtist>
+            {
+               new FileArtist {Name="Common" },
+               new FileArtist { Name="Performance" },
+               new FileArtist { Name="Script" },
+            };
+
+            int j = 0;
+            FileArtists.ForEach(x => x.fileArtistId = ++j);
+
             FileAlbums = new List<FileAlbum>
             {
                 new FileAlbum {
-                        Title = "Python Web UI测试",
-                        FileArtist = FileArtists.First(a => a.Name == "Python"),
+                        Title = "Python文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/Web.png",
-                        Describe ="Python Web UI测试，集成Selenium等测试框架。",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        ImageSource ="/Images/Template/py.png",
+                        Describe ="创建空白的Python文件。"},
 
                     new FileAlbum {
-                        Title = "Pyhton Windows UI测试",
-                        FileArtist = FileArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
-                        ImageSource ="/Images/Template/Windows.png",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        Title = "Java文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "Java",
+                        ImageSource ="/Images/Template/java.png",
+                        Describe ="创建空白的Java文件。"},
 
                     new FileAlbum {
-                        Title = "Python 服务器功能测试",
-                        FileArtist = FileArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
-                        ImageSource ="/Images/Template/Server.png",
-                        DescripImageSource = "/Images/Template/UI.png"},
+                        Title = "C Sharp文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "C#",
+                        ImageSource ="/Images/Template/cs.png",
+                        Describe ="创建空白的C Sharp文件。"},
 
                     new FileAlbum {
-                        Title = "Pyhton 移动端功能测试",
-                        FileArtist = FileArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
-                        ImageSource ="/Images/Template/Phone.png",
-                        DescripImageSource = "/Images/Template/Phone.png"},
+                        Title = "文本文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "Txt",
+                        ImageSource ="/Images/Template/txt.png",
+                        Describe ="创建空白的文本文件。"},
+
+                    new FileAlbum {
+                        Title = "XML文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "XML",
+                        ImageSource ="/Images/Template/xml.png",
+                        Describe ="创建空白的XML文件。"},
+
+                    new FileAlbum {
+                        Title = "C++文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "C++",
+                        ImageSource ="/Images/Template/cpp.png",
+                        Describe ="创建空白的C++文件。"},
+
+                    new FileAlbum {
+                        Title = "C文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "C",
+                        ImageSource ="/Images/Template/c.png",
+                        Describe ="创建空白的C文件。"},
+
+                    new FileAlbum {
+                        Title = "Ruby文件",
+                        FileArtist = FileArtists.First(a => a.Name == "Common"),
+                        TemplateType = "Ruby",
+                        ImageSource ="/Images/Template/rb.png",
+                        Describe ="创建空白的C++文件。"},
             };
 
             var fileAlbumsGroupedByArtist = FileAlbums.GroupBy(a => a.FileArtist);
