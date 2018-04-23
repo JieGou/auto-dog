@@ -40,28 +40,28 @@ namespace AutoDog.Models
                         Title = "Python Web UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/Web.png",
+                        ImageSource ="/Images/Template/web_py.png",
                         Describe ="Python Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Pyhton Windows UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/Windows.png",
+                        ImageSource ="/Images/Template/Windows_py.png",
                         Describe ="Python Windows UI测试，集成PywinAuto、PyAutoIt等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Python 服务器功能测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/Server.png",
+                        ImageSource ="/Images/Template/Server_py.png",
                         Describe ="设计中..."},
 
                     new ProjectAlbum {
                         Title = "Pyhton 移动端功能测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/Phone.png",
+                        ImageSource ="/Images/Template/Phone_py.png",
                         Describe ="Python 移动端测试，集成Appuim等测试框架。"},
                 #endregion
 
@@ -70,14 +70,14 @@ namespace AutoDog.Models
                         Title = "C# Web UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "C#"),
                         TemplateType = "C#",
-                        ImageSource ="/Images/Template/Web.png",
+                        ImageSource ="/Images/Template/Web_csharp.png",
                         Describe ="C# Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "C# Windows UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "C#"),
                         TemplateType = "C#",
-                        ImageSource ="/Images/Template/Windows.png",
+                        ImageSource ="/Images/Template/Windows_csharp.png",
                         Describe ="C# Windows UI测试，集成AutoIt,UIAutomation等测试框架。"},
                 #endregion
 
@@ -86,14 +86,14 @@ namespace AutoDog.Models
                         Title = "Java Web UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Java"),
                         TemplateType = "Java",
-                        ImageSource ="/Images/Template/Web.png",
+                        ImageSource ="/Images/Template/Web_java.png",
                         Describe ="Java Web UI测试，集成Selenium等测试框架。"},
 
                     new ProjectAlbum {
                         Title = "Java Windows UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Java"),
                         TemplateType = "Java",
-                        ImageSource ="/Images/Template/Windows.png",
+                        ImageSource ="/Images/Template/Windows_java.png",
                         Describe ="Java Windows UI测试，设计中..."},
                 #endregion
 
@@ -102,7 +102,7 @@ namespace AutoDog.Models
                         Title = "Ruby Web UI测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Ruby"),
                         TemplateType = "Ruby",
-                        ImageSource ="/Images/Template/Web.png",
+                        ImageSource ="/Images/Template/Web_ruby.png",
                         Describe ="Ruby Web UI测试，设计中..."},
                 #endregion
 
@@ -111,11 +111,11 @@ namespace AutoDog.Models
                         Title = "Web API测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "API"),
                         TemplateType = "API",
-                        ImageSource ="/Images/Template/Web.png",
+                        ImageSource ="/Images/Template/Web_api.png",
                         Describe ="Web API 测试，集成基本的API测试解决方案及简单的模板。"},
                 #endregion
 
-                #region 创建API类型模板
+                #region 创建性能测试类型模板
                 new ProjectAlbum {
                         Title = "Web Performance测试",
                         ProjectArtist = ProjectArtists.First(a => a.Name == "Performance"),
@@ -152,56 +152,56 @@ namespace AutoDog.Models
                         Title = "Python文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "Python",
-                        ImageSource ="/Images/Template/py.png",
+                        ImageSource ="/Images/Template/file_py.png",
                         Describe ="创建空白的Python文件。"},
 
                     new FileAlbum {
                         Title = "Java文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "Java",
-                        ImageSource ="/Images/Template/java.png",
+                        ImageSource ="/Images/Template/file_java.png",
                         Describe ="创建空白的Java文件。"},
 
                     new FileAlbum {
                         Title = "C Sharp文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "C#",
-                        ImageSource ="/Images/Template/cs.png",
+                        ImageSource ="/Images/Template/file_csharp.png",
                         Describe ="创建空白的C Sharp文件。"},
 
                     new FileAlbum {
                         Title = "文本文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "Txt",
-                        ImageSource ="/Images/Template/txt.png",
+                        ImageSource ="/Images/Template/file_txt.png",
                         Describe ="创建空白的文本文件。"},
 
                     new FileAlbum {
                         Title = "XML文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "XML",
-                        ImageSource ="/Images/Template/xml.png",
+                        ImageSource ="/Images/Template/file_xml.png",
                         Describe ="创建空白的XML文件。"},
 
                     new FileAlbum {
                         Title = "C++文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "C++",
-                        ImageSource ="/Images/Template/cpp.png",
+                        ImageSource ="/Images/Template/file_cpp.png",
                         Describe ="创建空白的C++文件。"},
 
                     new FileAlbum {
                         Title = "C文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "C",
-                        ImageSource ="/Images/Template/c.png",
+                        ImageSource ="/Images/Template/file_c.png",
                         Describe ="创建空白的C文件。"},
 
                     new FileAlbum {
                         Title = "Ruby文件",
                         FileArtist = FileArtists.First(a => a.Name == "Common"),
                         TemplateType = "Ruby",
-                        ImageSource ="/Images/Template/rb.png",
+                        ImageSource ="/Images/Template/file_rb.png",
                         Describe ="创建空白的C++文件。"},
 
                     new FileAlbum {
@@ -222,14 +222,14 @@ namespace AutoDog.Models
                         Title = "Batch文件",
                         FileArtist = FileArtists.First(a => a.Name == "Script"),
                         TemplateType = "Batch",
-                        ImageSource ="/Images/Template/bat.png",
+                        ImageSource ="/Images/Template/file_bat.png",
                         Describe ="创建一个空的Batch文件。"},
 
                     new FileAlbum {
                         Title = "PowerShell文件",
                         FileArtist = FileArtists.First(a => a.Name == "Script"),
                         TemplateType = "PowerShell",
-                        ImageSource ="/Images/Template/ps1.png",
+                        ImageSource ="/Images/Template/file_ps1.png",
                         Describe ="创建一个空的PowerShell文件。"},
             };
 

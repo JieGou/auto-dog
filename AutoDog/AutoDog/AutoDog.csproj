@@ -510,21 +510,6 @@
     <Resource Include="Images\AutoDog\AutoDogBlue.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\py.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Template\cs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Template\cpp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Template\c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Template\php.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Template\rb.png" />
   </ItemGroup>
   <ItemGroup>
@@ -540,9 +525,6 @@
     <Resource Include="Images\Template\java.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\txt.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Template\api.png" />
   </ItemGroup>
   <ItemGroup>
@@ -555,13 +537,51 @@
     <Resource Include="Images\Template\bat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\ps1.png" />
+    <Resource Include="Images\Template\file_ps1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\DockPanel\SolutionView_32.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\DockPanel\ResourceView_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\file.png" />
+    <Resource Include="Images\Template\file_bat.png" />
+    <Resource Include="Images\Template\file_c.png" />
+    <Resource Include="Images\Template\file_cpp.png" />
+    <Resource Include="Images\Template\file_csharp.png" />
+    <Resource Include="Images\Template\file_java.png" />
+    <Resource Include="Images\Template\file_php.png" />
+    <Resource Include="Images\Template\file_py.png" />
+    <Resource Include="Images\Template\file_rb.png" />
+    <Resource Include="Images\Template\file_txt.png" />
+    <Resource Include="Images\Template\Phone_api.png" />
+    <Resource Include="Images\Template\Phone_csharp.png" />
+    <Resource Include="Images\Template\Phone_java.png" />
+    <Resource Include="Images\Template\Phone_performance.png" />
+    <Resource Include="Images\Template\Phone_py.png" />
+    <Resource Include="Images\Template\server_api.png" />
+    <Resource Include="Images\Template\server_csharp.png" />
+    <Resource Include="Images\Template\server_java.png" />
+    <Resource Include="Images\Template\server_performance.png" />
+    <Resource Include="Images\Template\server_py.png" />
+    <Resource Include="Images\Template\server_ruby.png" />
+    <Resource Include="Images\Template\web_api.png" />
+    <Resource Include="Images\Template\web_csharp.png" />
+    <Resource Include="Images\Template\web_java.png" />
+    <Resource Include="Images\Template\web_performance.png" />
+    <Resource Include="Images\Template\web_py.png" />
+    <Resource Include="Images\Template\web_ruby.png" />
+    <Resource Include="Images\Template\windows_api.png" />
+    <Resource Include="Images\Template\windows_csharp.png" />
+    <Resource Include="Images\Template\windows_java.png" />
+    <Resource Include="Images\Template\windows_performance.png" />
+    <Resource Include="Images\Template\windows_py.png" />
+    <Resource Include="Images\Template\windows_ruby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\file_xml.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
