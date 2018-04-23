@@ -78,14 +78,24 @@ namespace AutoDog.Windows.ProjectManager
                     File.Create(solutionFile);
 
                     //确定选中工程类型
-                    ProjectAlbum albumObj = (ProjectAlbum)myAlbums.SelectedItem;
+                    ProjectAlbum albumObj = (ProjectAlbum)myAlbums.SelectedItem;                    
                     
-                    //创建工程文件夹，并在工程文件夹中添加对应的必要文件
-
+                    //创建工程文件夹，并在工程文件夹中添加工程文件
                     string projectPath = solutionPath + "\\" + projectName.Text;
-                    string projectFile = projectPath + "\\" + projectName.Text;
+                    string projectFile = projectPath + "\\" + projectName.Text + albumObj.ProjectExtension;
                     Directory.CreateDirectory(projectPath);
                     File.Create(projectFile);
+
+                    #region 添加其他必要文件
+                    //添加Config文件，用来进行参数配置
+                    string configFileName = "App";
+                    string configFile = projectPath + "\\" + configFileName + ".config";
+                    File.Create(configFile);
+
+                    //添加基本的应用文件
+                    string commonFileName = "App";
+                    string commonFile = projectPath + "\\" + commonFileName + albumObj.IncludeFileExtension;
+                    #endregion
                 }
                 catch (Exception ex)
                 {

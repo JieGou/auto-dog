@@ -150,10 +150,6 @@
       <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="YamlDotNet, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YamlDotNet.4.3.1\lib\net45\YamlDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -161,6 +157,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Logics\PipelineExecutor.cs" />
+    <Compile Include="Logics\TemplateSchool.cs" />
     <Compile Include="Models\FileAlbum.cs" />
     <Compile Include="Models\ProjectAlbum.cs" />
     <Compile Include="Models\FileArtist.cs" />

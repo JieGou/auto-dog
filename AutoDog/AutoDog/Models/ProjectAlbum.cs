@@ -26,7 +26,7 @@ namespace AutoDog.Models
             }
         }
 
-        [DisplayName("Artist")]
+        [DisplayName("ProjectArtistId")]
         public int ProjectArtistId
         {
             get { return _projectArtistId; }
@@ -83,6 +83,9 @@ namespace AutoDog.Models
 
         public string ProjectExtension { get; set; }
 
+        public string IncludeFileExtension { get; set; }
+
+        public string RunCommands{ get; set; }
 
         public virtual ProjectArtist ProjectArtist
         {
