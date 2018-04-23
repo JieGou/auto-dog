@@ -40,19 +40,19 @@
                 </Style>
             </TreeView.Resources>
             <TreeView.ContextMenu>
-                <ContextMenu x:Name="mySTVContextMenu">
+                <ContextMenu x:Name="mySTVContextMenu" Visibility="Collapsed">
                     <MenuItem x:Name="mySTVMenuAdd" Header="添加(D)" IsEnabled="{Binding Path=IsAddItemShow}">
-                        <MenuItem Header="添加项目(P)...  Ctrl + Shift + N">
+                        <MenuItem Header="添加项目(P)...  Ctrl + Shift + N" Click="AddProject_Click">
                             <MenuItem.Icon>
                                 <Image Source="../../Images/ProjectAdd.png" Height="18"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F">
+                        <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F" Click="AddFolder_Click">
                             <MenuItem.Icon>
                                 <Image Source="../../Images/FolderAdd.png" Height="18"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="添加文件(P)...">
+                        <MenuItem Header="添加文件(P)..." Click="AddFile_Click">
                             <MenuItem.Icon>
                                 <Image Source="../../Images/FileAdd.png" Height="18"/>
                             </MenuItem.Icon>

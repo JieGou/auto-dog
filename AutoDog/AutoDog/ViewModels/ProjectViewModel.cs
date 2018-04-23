@@ -9,12 +9,12 @@ using AutoDog.UI.Controls.Dialogs;
 
 namespace AutoDog.ViewModels
 {
-    class NewProjectViewModel : INotifyPropertyChanged
+    class ProjectViewModel : INotifyPropertyChanged
     {
         public List<ProjectAlbum> ProjectAlbums { get; set; }
         public List<ProjectArtist> ProjectArtists { get; set; }
 
-        public NewProjectViewModel(IDialogCoordinator dialogCoordinator)
+        public ProjectViewModel(IDialogCoordinator dialogCoordinator)
         {
             ProjectAlbums = SampleData.ProjectAlbums;
             ProjectArtists = SampleData.ProjectArtists;

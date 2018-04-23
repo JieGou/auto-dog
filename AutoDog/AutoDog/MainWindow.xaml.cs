@@ -8,6 +8,7 @@ using Xceed.Wpf.AvalonDock.Layout.Serialization;
 using AutoDog.UI.Controls;
 using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
+using AutoDog.Windows.ProjectManager;
 
 namespace AutoDog
 {
@@ -194,7 +195,7 @@ namespace AutoDog
 
         private void NewProject_Click(object sender, RoutedEventArgs e)
         {
-            var newProject = new Views.NewProject();
+            var newProject = new NewSolution();
             newProject.Show();
         }
 
@@ -265,7 +266,7 @@ namespace AutoDog
 
         private void NewFile_Click(object sender, RoutedEventArgs e)
         {
-            var newFile = new Views.NewFile();
+            var newFile = new NewFile();
             newFile.Show();
         }
 
@@ -273,6 +274,26 @@ namespace AutoDog
         {
             var aboutWindow = new Windows.AboutDialog();
             aboutWindow.Show();
+        }
+
+        private void AddProject_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddFolder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddNewFile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

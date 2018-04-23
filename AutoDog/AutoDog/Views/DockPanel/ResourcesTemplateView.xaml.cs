@@ -48,7 +48,7 @@ namespace AutoDog.Views
 
             tviRoot.Expanded += OnRoot_Expanded;
 
-            TreeViewModelRef.SetItemImageName(tviRoot, @"../../Images/Computer.png");
+            TreeViewModelRef.SetItemImageName(tviRoot, @"../../Images/DockPanel/ResourceView_32.png");
 
             myResourcesTree.Items.Add(tviRoot);
         }
@@ -172,7 +172,7 @@ namespace AutoDog.Views
             catch (Exception ex)
             {
                 Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)(() => ResetTreeItem(tviParent, true)));
-                throw ex;
+                //throw ex;
             }
             finally
             {

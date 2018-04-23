@@ -1,13 +1,13 @@
-﻿<Controls:MetroWindow x:Class="AutoDog.Views.NewFile"
+﻿<Controls:MetroWindow x:Class="AutoDog.Windows.ProjectManager.NewFile"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AutoDog.Views"
+        xmlns:local="clr-namespace:AutoDog.Windows.ProjectManager"
         xmlns:models ="clr-namespace:AutoDog.Models"              
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Images/AutoDog/AutoDog.ico"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="../../Images/AutoDog/AutoDog.ico"
         Title="新建文件" Height="600" Width="900"
         GlowBrush="{DynamicResource AccentColorBrush}"
         >
@@ -50,7 +50,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="100"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="{Binding Path=ImageSource}"  Height="35" Width="35"/>
                                     <TextBlock Grid.Column="1" Text="{Binding Path=Title}" VerticalAlignment="Center" HorizontalAlignment="Left">

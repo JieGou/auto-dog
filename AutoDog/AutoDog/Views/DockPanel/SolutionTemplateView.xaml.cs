@@ -23,7 +23,7 @@ namespace AutoDog.Views
     public partial class SolutionTemplateView : UserControl
     {
 
-        string image_Home = @"../../Images/Home.png";
+        string image_Solution = @"../../Images/DockPanel/SolutionView_32.png";
         string image_FolderClosed = @"../../Images/FolderClosed.png";
         string image_FolderOpened = @"../../Images/FolderOpened.png";
         string image_FolderSelected = @"../../Images/FolderSelected.png";
@@ -58,7 +58,7 @@ namespace AutoDog.Views
                     var tviRoot = new TreeViewItem();
                     tviRoot.Header = rootFolder.Name;
                     tviRoot.Tag = rootFolder.FullName;
-                    TreeViewModelRef.SetItemImageName(tviRoot, image_Home);
+                    TreeViewModelRef.SetItemImageName(tviRoot, image_Solution);
                     TreeViewModelRef.SetItemTypeName(tviRoot, ATConfig.TreeNodeType.RootNode.ToString());
                     GetSolutionTree(tviRoot, rootFolder);
                     mySTV.Items.Add(tviRoot);
@@ -140,6 +140,7 @@ namespace AutoDog.Views
         {           
             selectedTVI = (TreeViewItem)e.NewValue;
             SetNewItemStyles(selectedTVI);
+            this.mySTVContextMenu.Visibility = Visibility.Visible;
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
@@ -414,6 +415,21 @@ namespace AutoDog.Views
             DelectDir(selectedTVI.Tag.ToString());
             Directory.Delete(selectedTVI.Tag.ToString());
             RefreshTreeNode((TreeViewItem)selectedTVI.Parent);
+        }
+
+        private void AddProject_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddFolder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddFile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

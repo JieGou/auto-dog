@@ -17,38 +17,28 @@ using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
 using AutoDog.Models;
 
-namespace AutoDog.Views
+namespace AutoDog.Windows.ProjectManager
 {
     /// <summary>
     /// NewSolution.xaml 的交互逻辑
     /// </summary>
-    public partial class NewProject
+    public partial class NewFile
     {
-        private readonly NewProjectViewModel _viewModel;
-        public NewProject()
+        private readonly NewFileViewModel _viewModel;
+        public NewFile()
         {
-            _viewModel = new NewProjectViewModel(DialogCoordinator.Instance);
+            _viewModel = new NewFileViewModel(DialogCoordinator.Instance);
             DataContext = _viewModel;
 
             InitializeComponent();
             this.DataContextChanged += (sender, args) => {
-                var vm = args.NewValue as NewProjectViewModel;
+                var vm = args.NewValue as NewFileViewModel;
                 if (vm != null)
                 {
-                    CollectionViewSource.GetDefaultView(vm.ProjectAlbums).GroupDescriptions.Clear();
-                    CollectionViewSource.GetDefaultView(vm.ProjectAlbums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
+                    CollectionViewSource.GetDefaultView(vm.FileAlbums).GroupDescriptions.Clear();
+                    CollectionViewSource.GetDefaultView(vm.FileAlbums).GroupDescriptions.Add(new PropertyGroupDescription("Artist"));
                 }
             };
-        }
-
-        private void openFolderClick(object sender, RoutedEventArgs e)
-        {
-            FolderBrowserDialog folder = new FolderBrowserDialog();
-            folder.parentWindow = this;
-            if (folder.ShowDialog() == true)
-            {
-                locationCmb.Text = folder.FileName;
-            }
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -63,9 +53,9 @@ namespace AutoDog.Views
 
         private void myAlbums_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems.Count != 0)
+            if(e.AddedItems.Count != 0)
             {
-                ProjectAlbum albumObj = (ProjectAlbum)e.AddedItems[0];
+                FileAlbum albumObj = (FileAlbum)e.AddedItems[0];
                 myTemplateType.Text = "类型：" + albumObj.TemplateType;
                 myDescribe.Text = albumObj.Describe;
             }          

@@ -182,7 +182,7 @@
     <Compile Include="Converters\FlipBoolConverter.cs" />
     <Compile Include="Logics\AutoTestingConfig.cs" />
     <Compile Include="ViewModels\NewFileViewModel.cs" />
-    <Compile Include="ViewModels\NewProjectViewModel.cs" />
+    <Compile Include="ViewModels\ProjectViewModel.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
@@ -195,11 +195,14 @@
     <Compile Include="Views\DockPanel\FileStatsTemplateView.xaml.cs">
       <DependentUpon>FileStatsTemplateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewFile.xaml.cs">
+    <Compile Include="Windows\ProjectManager\NewFile.xaml.cs">
       <DependentUpon>NewFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewProject.xaml.cs">
+    <Compile Include="Windows\ProjectManager\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProjectManager\NewSolution.xaml.cs">
+      <DependentUpon>NewSolution.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DockPanel\ClassViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ErrorListViewModel.cs" />
@@ -254,11 +257,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewFile.xaml">
+    <Page Include="Windows\ProjectManager\NewFile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\NewProject.xaml">
+    <Page Include="Windows\ProjectManager\NewProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ProjectManager\NewSolution.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -400,13 +407,11 @@
     <Resource Include="Images\FolderClosed.png" />
     <Resource Include="Images\FolderOpened.png" />
     <Resource Include="Images\FolderSelected.png" />
-    <Resource Include="Images\Home.png" />
     <Resource Include="Images\Remove.png" />
     <Resource Include="Images\Star.png" />
     <Resource Include="Images\WinFolder.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Computer.png" />
     <Resource Include="Images\DiskDrive.png" />
   </ItemGroup>
   <ItemGroup>
@@ -493,9 +498,6 @@
     <Resource Include="Images\Template\windows.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Template\api.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\AutoDog\AutoDogBlue.png" />
   </ItemGroup>
   <ItemGroup>
@@ -539,6 +541,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Template\txt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\api.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\performance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\script.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Template\ps1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\SolutionView_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DockPanel\ResourceView_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
