@@ -419,7 +419,7 @@ namespace AutoDog.Views
 
         private void AddProject_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("NewProject");
         }
 
         private void AddFolder_Click(object sender, RoutedEventArgs e)

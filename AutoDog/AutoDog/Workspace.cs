@@ -392,6 +392,7 @@ namespace AutoDog
         private void OnOpen(object parameter)
         {
             var dlg = new OpenFileDialog();
+            dlg.Title = "打开文件";
             if (dlg.ShowDialog().GetValueOrDefault())
             {
                 var fileViewModel = Open(dlg.FileName);
