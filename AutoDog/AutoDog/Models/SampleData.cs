@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using AutoDog.Logics;
 
 namespace AutoDog.Models
 {
@@ -22,12 +23,12 @@ namespace AutoDog.Models
             #region 新建工程/项目模板
             ProjectArtists = new List<ProjectArtist>
             {
-               new ProjectArtist { Name="Python" },
-               new ProjectArtist { Name="C#" },
-               new ProjectArtist { Name="Java" },
-               new ProjectArtist { Name="Ruby" },
-               new ProjectArtist { Name="API" },
-               new ProjectArtist { Name="Performance" },
+               new ProjectArtist { Name=Common.ProjectType.Python.ToString() },
+               new ProjectArtist { Name=Common.ProjectType.CSharp.ToString() },
+               new ProjectArtist { Name=Common.ProjectType.Java.ToString() },
+               new ProjectArtist { Name=Common.ProjectType.Ruby.ToString() },
+               new ProjectArtist { Name=Common.ProjectType.API.ToString() },
+               new ProjectArtist { Name=Common.ProjectType.Performance.ToString() },
             };
             int i = 0;
             ProjectArtists.ForEach(x => x.ProjectArtistId = ++i);
@@ -38,90 +39,112 @@ namespace AutoDog.Models
                 #region 创建Python类型模板
                 new ProjectAlbum {
                         Title = "Python Web UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
+                        TemplateType = Common.ProjectType.Python.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Python.ToString()),                        
                         ImageSource ="/Images/Template/web_py.png",
-                        Describe ="Python Web UI测试，集成Selenium等测试框架。"},
+                        Describe ="Python Web UI测试，集成Selenium等测试框架。",
+                        ProjectExtension= ".pypro"
+                },
 
                     new ProjectAlbum {
                         Title = "Pyhton Windows UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
+                        TemplateType = Common.ProjectType.Python.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Python.ToString()),
                         ImageSource ="/Images/Template/Windows_py.png",
-                        Describe ="Python Windows UI测试，集成PywinAuto、PyAutoIt等测试框架。"},
+                        Describe ="Python Windows UI测试，集成PywinAuto、PyAutoIt等测试框架。",
+                        ProjectExtension= ".pypro"
+                    },
 
                     new ProjectAlbum {
                         Title = "Python 服务器功能测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
+                        TemplateType = Common.ProjectType.Python.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Python.ToString()),
                         ImageSource ="/Images/Template/Server_py.png",
-                        Describe ="设计中..."},
+                        Describe ="设计中...",
+                        ProjectExtension= ".pypro"
+                    },
 
                     new ProjectAlbum {
                         Title = "Pyhton 移动端功能测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Python"),
-                        TemplateType = "Python",
+                        TemplateType = Common.ProjectType.Python.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Python.ToString()),
                         ImageSource ="/Images/Template/Phone_py.png",
-                        Describe ="Python 移动端测试，集成Appuim等测试框架。"},
+                        Describe ="Python 移动端测试，集成Appuim等测试框架。",
+                        ProjectExtension= ".pypro"
+                    },
                 #endregion
 
                 #region 创建C#类型模板
                 new ProjectAlbum {
                         Title = "C# Web UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "C#"),
-                        TemplateType = "C#",
+                        TemplateType = Common.ProjectType.CSharp.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.CSharp.ToString()),
                         ImageSource ="/Images/Template/Web_csharp.png",
-                        Describe ="C# Web UI测试，集成Selenium等测试框架。"},
+                        Describe ="C# Web UI测试，集成Selenium等测试框架。",
+                        ProjectExtension= ".cspro"
+                },
 
                     new ProjectAlbum {
                         Title = "C# Windows UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "C#"),
-                        TemplateType = "C#",
+                        TemplateType = Common.ProjectType.CSharp.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.CSharp.ToString()),
                         ImageSource ="/Images/Template/Windows_csharp.png",
-                        Describe ="C# Windows UI测试，集成AutoIt,UIAutomation等测试框架。"},
+                        Describe ="C# Windows UI测试，集成AutoIt,UIAutomation等测试框架。",
+                        ProjectExtension= ".cspro",
+                    },
                 #endregion
 
                 #region 创建Java类型模板
                 new ProjectAlbum {
                         Title = "Java Web UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Java"),
-                        TemplateType = "Java",
+                        TemplateType = Common.ProjectType.Java.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Java.ToString()),
                         ImageSource ="/Images/Template/Web_java.png",
-                        Describe ="Java Web UI测试，集成Selenium等测试框架。"},
+                        Describe ="Java Web UI测试，集成Selenium等测试框架。",
+                        ProjectExtension= ".cspro",
+                },
 
                     new ProjectAlbum {
                         Title = "Java Windows UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Java"),
-                        TemplateType = "Java",
+                        TemplateType = Common.ProjectType.Java.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Java.ToString()),
                         ImageSource ="/Images/Template/Windows_java.png",
-                        Describe ="Java Windows UI测试，设计中..."},
+                        Describe ="Java Windows UI测试，设计中...",
+                        ProjectExtension= ".japro",
+                    },
                 #endregion
 
                 #region 创建Ruby类型模板
                 new ProjectAlbum {
                         Title = "Ruby Web UI测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Ruby"),
-                        TemplateType = "Ruby",
+                        TemplateType = Common.ProjectType.Ruby.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Ruby.ToString()),
                         ImageSource ="/Images/Template/Web_ruby.png",
-                        Describe ="Ruby Web UI测试，设计中..."},
+                        Describe ="Ruby Web UI测试，设计中...",
+                        ProjectExtension= ".rbpro",
+                },
                 #endregion
 
                 #region 创建API类型模板
                 new ProjectAlbum {
                         Title = "Web API测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "API"),
-                        TemplateType = "API",
+                        TemplateType = Common.ProjectType.API.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.API.ToString()),
                         ImageSource ="/Images/Template/Web_api.png",
-                        Describe ="Web API 测试，集成基本的API测试解决方案及简单的模板。"},
+                        Describe ="Web API 测试，集成基本的API测试解决方案及简单的模板。",
+                        ProjectExtension= ".apipro"
+                },
                 #endregion
 
                 #region 创建性能测试类型模板
                 new ProjectAlbum {
                         Title = "Web Performance测试",
-                        ProjectArtist = ProjectArtists.First(a => a.Name == "Performance"),
-                        TemplateType = "Performance",
+                        TemplateType = Common.ProjectType.Performance.ToString(),
+                        ProjectArtist = ProjectArtists.First(a => a.Name == Common.ProjectType.Performance.ToString()),
                         ImageSource ="/Images/Template/Web.png",
-                        Describe ="Web Performance 测试，集成基本性能监测解决方案以及相关数据分析日志。"},
+                        Describe ="Web Performance 测试，集成基本性能监测解决方案以及相关数据分析日志。",
+                        ProjectExtension= ".perpro"
+                },
                 #endregion
                 
                 };

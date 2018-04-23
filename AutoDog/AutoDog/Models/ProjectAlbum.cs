@@ -81,6 +81,8 @@ namespace AutoDog.Models
 
         public string TemplateType{ get; set; }
 
+        public string ProjectExtension { get; set; }
+
 
         public virtual ProjectArtist ProjectArtist
         {

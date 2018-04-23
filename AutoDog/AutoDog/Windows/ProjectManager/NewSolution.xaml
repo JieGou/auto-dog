@@ -152,10 +152,12 @@
                 <CheckBox Content="为解决方案创建目录" IsChecked="True" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
             </Grid>
             <Grid Grid.Row="5">
+                <TextBlock x:Name="myStatus"></TextBlock>
                 <CheckBox Content="新建Git存储库" IsChecked="False" HorizontalAlignment="Right" Margin="0,0,2,0" Width="156"/>
             </Grid>
             <Grid Grid.Row="6">
-                <Button Width="114"   
+                <Button x:Name="btnSubmit"
+                    Width="114"   
                     Click="SubmitButton_Click"
                     HorizontalAlignment="Right" 
                     Content="确定"
