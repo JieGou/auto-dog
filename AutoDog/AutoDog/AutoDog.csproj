@@ -156,6 +156,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Logics\ADTManager.cs" />
     <Compile Include="Logics\PipelineExecutor.cs" />
     <Compile Include="Logics\TemplateSchool.cs" />
     <Compile Include="Models\FileAlbum.cs" />
