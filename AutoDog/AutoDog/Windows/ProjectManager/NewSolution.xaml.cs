@@ -12,10 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using System.IO;
 using AutoDog.UI.Controls.Dialogs;
 using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
 using AutoDog.Models;
+using AutoDog.Logics;
 
 namespace AutoDog.Windows.ProjectManager
 {
@@ -69,6 +71,11 @@ namespace AutoDog.Windows.ProjectManager
                 myTemplateType.Text = "类型：" + albumObj.TemplateType;
                 myDescribe.Text = albumObj.Describe;
             }          
+        }
+
+        private void NewSolution_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.locationCmb.Text = Common.ProjectLocalPath;
         }
     }
 }

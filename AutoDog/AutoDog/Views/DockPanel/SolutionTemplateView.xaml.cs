@@ -59,7 +59,7 @@ namespace AutoDog.Views
                     tviRoot.Header = rootFolder.Name;
                     tviRoot.Tag = rootFolder.FullName;
                     TreeViewModelRef.SetItemImageName(tviRoot, image_Solution);
-                    TreeViewModelRef.SetItemTypeName(tviRoot, ATConfig.TreeNodeType.RootNode.ToString());
+                    TreeViewModelRef.SetItemTypeName(tviRoot, Common.TreeNodeType.RootNode.ToString());
                     GetSolutionTree(tviRoot, rootFolder);
                     mySTV.Items.Add(tviRoot);
                 }
@@ -83,7 +83,7 @@ namespace AutoDog.Views
                     TreeViewItem chldNode = new TreeViewItem();
                     chldNode.Header = chlFile.Name;
                     chldNode.Tag = chlFile.FullName;
-                    AddTreeViewItem(chldNode, image_DocumentClosed, ATConfig.TreeNodeType.FileNode.ToString(), false);
+                    AddTreeViewItem(chldNode, image_DocumentClosed, Common.TreeNodeType.FileNode.ToString(), false);
                     //string ext = chlFile.Name.Substring(chlFile.Name.LastIndexOf(".") + 1, (chlFile.Name.Length - chlFile.Name.LastIndexOf(".") - 1));
                     tviRoot.Items.Add(chldNode);
                 }
@@ -103,7 +103,7 @@ namespace AutoDog.Views
                     chldNode.Tag = chldFolder.FullName;
                     chldNode.Expanded += ChldNode_Expanded;
                     chldNode.Collapsed += ChldNode_Collapsed;
-                    AddTreeViewItem(chldNode, image_FolderClosed, ATConfig.TreeNodeType.FolderNode.ToString(), false);
+                    AddTreeViewItem(chldNode, image_FolderClosed, Common.TreeNodeType.FolderNode.ToString(), false);
 
                     tviRoot.Items.Add(chldNode);
                     GetSolutionTree(chldNode, chldFolder);
@@ -144,7 +144,7 @@ namespace AutoDog.Views
             if (e.OldValue != null)
             {
                 var tviOld = (TreeViewItem)e.OldValue;
-                if (TreeViewModelRef.GetItemTypeName(tviOld) == ATConfig.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
+                if (TreeViewModelRef.GetItemTypeName(tviOld) == Common.TreeNodeType.FolderNode.ToString() && tviOld.IsExpanded == true)
                 {
                     SetItemStyles(tviOld, image_FolderOpened);
                 }             
@@ -157,17 +157,17 @@ namespace AutoDog.Views
 
         void SetNewItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.RootNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.RootNode.ToString())
             {
                 currentSolutionPath =tvi.Tag.ToString();
                 UpdateRootMenuItem();
             }
-            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_FolderSelected);
                 UpdateFolderMenuItem();
             }
-            else if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.FileNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_DocumentSelected);
                 UpdateFileMenuItem();
@@ -177,11 +177,11 @@ namespace AutoDog.Views
 
         void SetOldItemStyles(TreeViewItem tvi)
         {
-            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_FolderClosed);
             }
-            else if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FileNode.ToString())
+            else if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.FileNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, image_DocumentClosed);
             }
@@ -189,7 +189,7 @@ namespace AutoDog.Views
 
         void SetItemStyles(TreeViewItem tvi, string folderImage)
         {
-            if (TreeViewModelRef.GetItemTypeName(tvi) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if (TreeViewModelRef.GetItemTypeName(tvi) == Common.TreeNodeType.FolderNode.ToString())
             {
                 TreeViewModelRef.SetItemImageName(tvi, folderImage);
             }
@@ -198,7 +198,7 @@ namespace AutoDog.Views
         private void mySTV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //此处需要判断是否选中节点，防止未选中节点时，鼠标在空白区域点击后引发异常
-            if (selectedTVI != null && TreeViewModelRef.GetItemTypeName(selectedTVI)== ATConfig.TreeNodeType.FileNode.ToString())
+            if (selectedTVI != null && TreeViewModelRef.GetItemTypeName(selectedTVI)== Common.TreeNodeType.FileNode.ToString())
             {               
                 var fileViewModel = Workspace.This.Open(selectedTVI.Tag.ToString());
                 Workspace.This.ActiveDocument = fileViewModel;
@@ -233,12 +233,12 @@ namespace AutoDog.Views
         }
         private void mySTVMenuItem_Delete_Click(object sender, RoutedEventArgs e)
         {
-            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == ATConfig.TreeNodeType.FileNode.ToString())
+            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == Common.TreeNodeType.FileNode.ToString())
             {
                 File.Delete(selectedTVI.Tag.ToString());
                 RefreshTreeNode((TreeViewItem)selectedTVI.Parent);
             }
-            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == ATConfig.TreeNodeType.FolderNode.ToString())
+            if(TreeViewModelRef.GetItemTypeName(selectedTVI) == Common.TreeNodeType.FolderNode.ToString())
             {
                 ShowDeleteFolderDialog();
             }

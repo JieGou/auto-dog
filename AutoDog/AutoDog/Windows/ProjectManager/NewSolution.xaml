@@ -10,6 +10,7 @@
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="../../Images/AutoDog/AutoDog.ico"
         Title="新建项目" Height="600" Width="900"
         GlowBrush="{DynamicResource AccentColorBrush}"
+        Loaded="NewSolution_Loaded"
         >
     <AdornerDecorator>
         <Grid Height="569" VerticalAlignment="Top">
@@ -128,7 +129,8 @@
             </Grid>
             <Grid Grid.Row="4">
                 <Label Content="解决方案名称(M)：" HorizontalAlignment="Left" Width="110" FontWeight="Bold" Margin="10,0,0,0"/>
-                <TextBox Margin="137,0,162,0"
+                <TextBox x:Name="solutionName"
+                         Margin="137,0,162,0"
                          Controls:TextBoxHelper.ButtonCommand="{Binding TextBoxButtonCmd, Mode=OneWay}"
                          ContextMenu="{x:Null}"
                          Text="{Binding ElementName=projectName,Path=Text,Mode=OneWay}">
