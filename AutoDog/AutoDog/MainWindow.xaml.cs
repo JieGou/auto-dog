@@ -105,8 +105,8 @@ namespace AutoDog
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
-            //var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            //serializer.Serialize(@".\AutoDog.config");
+            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            serializer.Serialize(@".\AutoDog.config");
         }
 
         #region LoadLayoutCommand

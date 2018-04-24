@@ -81,7 +81,7 @@ namespace AutoDog.Models
 
         public string TemplateType{ get; set; }
 
-        public string ProjectExtension { get; set; }
+        public string ProjectIcon { get; set; }
 
         public string IncludeFileExtension { get; set; }
 

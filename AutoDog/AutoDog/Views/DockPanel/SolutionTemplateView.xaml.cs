@@ -14,6 +14,7 @@ using AutoDog.ViewModels;
 using AutoDog.Logics;
 using AutoDog.UI.Controls;
 using AutoDog.UI.Controls.Dialogs;
+using AutoDog.Windows.ProjectManager;
 
 namespace AutoDog.Views
 {
@@ -58,7 +59,8 @@ namespace AutoDog.Views
                     var tviRoot = new TreeViewItem();
                     tviRoot.Header = rootFolder.Name;
                     tviRoot.Tag = rootFolder.FullName;
-                    TreeViewModelRef.SetItemImageName(tviRoot, image_Solution);
+                    TreeViewModelRef.SetItemImageName(tviRoot,image_Solution);
+                    //TreeViewModelRef.SetItemImageName(tviRoot, NewSolution.image_Solution);
                     TreeViewModelRef.SetItemTypeName(tviRoot, Common.TreeNodeType.RootNode.ToString());
                     GetSolutionTree(tviRoot, rootFolder);
                     mySTV.Items.Add(tviRoot);
@@ -66,7 +68,7 @@ namespace AutoDog.Views
             }           
         }
 
-        private void RefreshTreeNode(TreeViewItem tviRoot)
+        public void RefreshTreeNode(TreeViewItem tviRoot)
         {
             tviRoot.Items.Clear();
             GetSolutionTree(tviRoot,new DirectoryInfo(tviRoot.Tag.ToString()));

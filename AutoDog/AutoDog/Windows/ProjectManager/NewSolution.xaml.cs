@@ -18,6 +18,7 @@ using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
 using AutoDog.Models;
 using AutoDog.Logics;
+using AutoDog.Views;
 
 namespace AutoDog.Windows.ProjectManager
 {
@@ -27,6 +28,7 @@ namespace AutoDog.Windows.ProjectManager
     public partial class NewSolution
     {
         private readonly ProjectViewModel _viewModel;
+        public static string image_Solution;
         public NewSolution()
         {
             _viewModel = new ProjectViewModel(DialogCoordinator.Instance);
@@ -72,19 +74,18 @@ namespace AutoDog.Windows.ProjectManager
                 //如果解决方案不存在，则创建解决方案
                 try
                 {
-                    //创建解决方案文件夹，并在文件夹中创建解决方案文件
-                    string solutionFile = solutionPath + "\\" + solutionName.Text + ".adt";
-                    Directory.CreateDirectory(solutionPath);
-                    File.Create(solutionFile);
+                    //创建解决方案文件夹
+                    Directory.CreateDirectory(solutionPath);                    
 
                     //确定选中工程类型
-                    ProjectAlbum albumObj = (ProjectAlbum)myAlbums.SelectedItem;                    
-                    
-                    //创建工程文件夹，并在工程文件夹中添加工程文件
+                    ProjectAlbum albumObj = (ProjectAlbum)myAlbums.SelectedItem;
+
+                    //设置解决方案文件夹图标
+                    image_Solution = albumObj.ProjectIcon;
+
+                    //创建工程文件夹
                     string projectPath = solutionPath + "\\" + projectName.Text;
-                    string projectFile = projectPath + "\\" + projectName.Text + albumObj.ProjectExtension;
                     Directory.CreateDirectory(projectPath);
-                    File.Create(projectFile);
 
                     #region 添加其他必要文件
                     //添加Config文件，用来进行参数配置
@@ -95,8 +96,14 @@ namespace AutoDog.Windows.ProjectManager
                     //添加基本的应用文件
                     string commonFileName = "App";
                     string commonFile = projectPath + "\\" + commonFileName + albumObj.IncludeFileExtension;
+                    File.Create(commonFile);
                     #endregion
 
+                    //添加创建好的模板到当前解决方案面板
+                    Properties.Settings.Default.solutionPath = solutionPath;
+                    Properties.Settings.Default.Save();
+
+                    //关闭当前窗口
                     this.Close();
                 }
                 catch (Exception ex)
