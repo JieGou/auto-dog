@@ -628,7 +628,14 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\project_api.png" />
+    <Resource Include="Resources\project_csharp.png" />
+    <Resource Include="Resources\project_java.png" />
+    <Resource Include="Resources\project_performance.png" />
+    <Resource Include="Resources\project_py.png" />
+    <Resource Include="Resources\project_ruby.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
