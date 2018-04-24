@@ -99,8 +99,8 @@ namespace AutoDog
             if (File.Exists(@".\AutoDog.config"))
             {
                 serializer.Deserialize(@".\AutoDog.config");
-
             }
+            Workspace.This.LoadHomePage();
         }
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)

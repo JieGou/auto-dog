@@ -439,7 +439,17 @@ namespace AutoDog
             ActiveDocument = _files.Last();
         }
 
-        #endregion 
+        #endregion
+
+        #region Load Home Page
+        public void LoadHomePage()
+        {
+            _files.Clear();
+            _files.Add(new FileViewModel() { Document = new TextDocument() });
+            ActiveDocument = _files.Last();
+        }
+        #endregion
+
 
         #region ActiveDocument
 
