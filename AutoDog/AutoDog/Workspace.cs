@@ -297,7 +297,7 @@ namespace AutoDog
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats,SolutionView,Resources,ClassView, ErrorList,OutPut};
+                    _tools = new ToolViewModel[] { FileStats,SolutionView, ResourcesView, ClassView, ErrorListView, OutPutView};
                 return _tools;
             }
         }
@@ -336,36 +336,36 @@ namespace AutoDog
             }
         }
 
-        ErrorListViewModel _errorList = null;
-        public ErrorListViewModel ErrorList
+        ErrorListViewModel _errorListView = null;
+        public ErrorListViewModel ErrorListView
         {
             get
             {
-                if (_errorList == null)
-                    _errorList = new ErrorListViewModel();
-                return _errorList;
+                if (_errorListView == null)
+                    _errorListView = new ErrorListViewModel();
+                return _errorListView;
             }
         }
 
-        OutPutViewModel _outPut = null;
-        public OutPutViewModel OutPut
+        OutPutViewModel _outPutView = null;
+        public OutPutViewModel OutPutView
         {
             get
             {
-                if (_outPut == null)
-                    _outPut = new OutPutViewModel();
-                return _outPut;
+                if (_outPutView == null)
+                    _outPutView = new OutPutViewModel();
+                return _outPutView;
             }
         }
 
-        ResourcesViewModel _resources;
-        public ResourcesViewModel Resources
+        ResourcesViewModel _resourcesView;
+        public ResourcesViewModel ResourcesView
         {
             get
             {
-                if (_resources == null)
-                    _resources = new ResourcesViewModel();
-                return _resources;
+                if (_resourcesView == null)
+                    _resourcesView = new ResourcesViewModel();
+                return _resourcesView;
             }
         }
 

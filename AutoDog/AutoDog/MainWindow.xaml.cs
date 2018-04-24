@@ -97,13 +97,16 @@ namespace AutoDog
             };
 
             if (File.Exists(@".\AutoDog.config"))
+            {
                 serializer.Deserialize(@".\AutoDog.config");
+
+            }
         }
 
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
-            var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.Serialize(@".\AutoDog.config");
+            //var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
+            //serializer.Serialize(@".\AutoDog.config");
         }
 
         #region LoadLayoutCommand
@@ -137,6 +140,12 @@ namespace AutoDog
                     e.Content = Workspace.This.SolutionView;
                 else if (e.Model.ContentId == ClassViewModel.ToolContentId)
                     e.Content = Workspace.This.ClassView;
+                else if (e.Model.ContentId == ResourcesViewModel.ToolContentId)
+                    e.Content = Workspace.This.ResourcesView;
+                else if (e.Model.ContentId == OutPutViewModel.ToolContentId)
+                    e.Content = Workspace.This.OutPutView;
+                else if (e.Model.ContentId == ErrorListViewModel.ToolContentId)
+                    e.Content = Workspace.This.ErrorListView;
                 else if (!string.IsNullOrWhiteSpace(e.Model.ContentId) &&
                     File.Exists(e.Model.ContentId))
                     e.Content = Workspace.This.Open(e.Model.ContentId);

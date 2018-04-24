@@ -43,8 +43,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>AutoDogBlue.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AutoDog.App</StartupObject>
@@ -580,6 +579,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Template\file_xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AutoDogBlue.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

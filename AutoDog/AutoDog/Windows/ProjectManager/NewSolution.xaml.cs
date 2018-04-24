@@ -60,7 +60,7 @@ namespace AutoDog.Windows.ProjectManager
 
         private void RunNewSolutionSteps()
         {           
-            string solutionPath = Common.ProjectLocalPath + "\\" + solutionName.Text;
+            string solutionPath = this.locationCmb.Text + "\\" + solutionName.Text;
 
             //如果解决方案存在，会导致冲突，提示冲突异常信息
             if (Directory.Exists(solutionPath))
@@ -96,6 +96,8 @@ namespace AutoDog.Windows.ProjectManager
                     string commonFileName = "App";
                     string commonFile = projectPath + "\\" + commonFileName + albumObj.IncludeFileExtension;
                     #endregion
+
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
