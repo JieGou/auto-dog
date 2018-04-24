@@ -445,11 +445,13 @@ namespace AutoDog
         public void LoadHomePage()
         {
             _files.Clear();
-            _files.Add(new FileViewModel() { Document = new TextDocument() });
+            FileViewModel fvm = new FileViewModel();            
+            fvm.Title = "欢迎使用";
+            //fvm.Document = new TextDocument();
+            _files.Add(fvm);
             ActiveDocument = _files.Last();
         }
         #endregion
-
 
         #region ActiveDocument
 
