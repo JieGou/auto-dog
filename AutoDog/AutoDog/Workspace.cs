@@ -24,6 +24,8 @@ using AutoDog.Commands;
 
 namespace AutoDog
 {
+
+    #region AccentColorMenuData
     public class AccentColorMenuData
     {
         public string Name { get; set; }
@@ -44,7 +46,9 @@ namespace AutoDog
             ThemeManager.ChangeAppStyle(Application.Current, accent, theme.Item1);
         }
     }
+    #endregion
 
+    #region AppThemeMenuData
     public class AppThemeMenuData : AccentColorMenuData
     {
         protected override void DoChangeTheme(object sender)
@@ -54,10 +58,14 @@ namespace AutoDog
             ThemeManager.ChangeAppStyle(Application.Current, theme.Item2, appTheme);
         }
     }
+    #endregion
+
 
     class Workspace : ViewModelBase
     {
         private readonly IDialogCoordinator _dialogCoordinator;
+
+        #region Workspace
         public Workspace(IDialogCoordinator dialogCoordinator)
         {
             this.Title = "AutoDog";
@@ -72,7 +80,7 @@ namespace AutoDog
             // create metro theme color menu items for the demo
             this.AppThemes = ThemeManager.AppThemes
                                            .Select(a => new AppThemeMenuData() { Name = a.Name, BorderColorBrush = a.Resources["BlackColorBrush"] as Brush, ColorBrush = a.Resources["WhiteColorBrush"] as Brush })
-                                           .ToList();            
+                                           .ToList();
 
             ProjectAlbums = SampleData.ProjectAlbums;
             ProjectArtists = SampleData.ProjectArtists;
@@ -97,7 +105,7 @@ namespace AutoDog
                 System.Diagnostics.Trace.TraceWarning("Uups, the hotkey {0} is already registered!", exception.Name);
             }
         }
-
+        #endregion
         public string Title { get; set; }
         public int SelectedIndex { get; set; }
         public List<ProjectAlbum> ProjectAlbums { get; set; }
@@ -106,6 +114,7 @@ namespace AutoDog
         public List<AppThemeMenuData> AppThemes { get; set; }
         public List<CultureInfo> CultureInfos { get; set; }
 
+        #region IntegerGreaterProperty
         int? _integerGreaterProperty;
         public int? IntegerGreaterProperty
         {
@@ -121,7 +130,9 @@ namespace AutoDog
                 RaisePropertyChanged("IntegerGreater10Property");
             }
         }
+        #endregion
 
+        #region DatePickerDate
         DateTime? _datePickerDate;
 
         [Display(Prompt = "Auto resolved Watermark")]
@@ -139,7 +150,9 @@ namespace AutoDog
                 RaisePropertyChanged("DatePickerDate");
             }
         }
+        #endregion
 
+        #region QuitConfirmationEnabled
         private bool _quitConfirmationEnabled;
         public bool QuitConfirmationEnabled
         {
@@ -151,7 +164,9 @@ namespace AutoDog
                 RaisePropertyChanged("QuitConfirmationEnabled");
             }
         }
+        #endregion
 
+        #region ShowMyTitleBar
         private bool showMyTitleBar = true;
         public bool ShowMyTitleBar
         {
@@ -163,9 +178,10 @@ namespace AutoDog
                 RaisePropertyChanged("ShowMyTitleBar");
             }
         }
+        #endregion
 
+        #region CanCloseFlyout
         private bool canCloseFlyout = true;
-
         public bool CanCloseFlyout
         {
             get { return this.canCloseFlyout; }
@@ -179,15 +195,21 @@ namespace AutoDog
                 this.RaisePropertyChanged("CanCloseFlyout");
             }
         }
+        #endregion
 
+        #region BrushResources
         public IEnumerable<string> BrushResources { get; private set; }
+        #endregion
 
+        #region FlipViewImages
         public Uri[] FlipViewImages
         {
             get;
             set;
         }
+        #endregion
 
+        #region FindBrushResources
         private IEnumerable<string> FindBrushResources()
         {
             var rd = new ResourceDictionary
@@ -203,7 +225,10 @@ namespace AutoDog
 
             return resources;
         }
+        #endregion
 
+
+        #region RandomDataTemplateSelector : DataTemplateSelector
         public class RandomDataTemplateSelector : DataTemplateSelector
         {
             public DataTemplate TemplateOne { get; set; }
@@ -213,7 +238,9 @@ namespace AutoDog
                 return TemplateOne;
             }
         }
+        #endregion
 
+        #region HotKey
         private HotKey _hotKey = new HotKey(Key.Home, ModifierKeys.Control | ModifierKeys.Shift);
 
         public HotKey HotKey
@@ -236,14 +263,18 @@ namespace AutoDog
                 }
             }
         }
+        #endregion
 
+        #region OnHotKey
         private async Task OnHotKey(object sender, HotkeyEventArgs e)
         {
             await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync(
                 "Hotkey pressed",
                 "You pressed the hotkey '" + HotKey + "' registered with the name '" + e.Name + "'");
         }
+        #endregion
 
+        #region ToggleIconScalingCommand
         private ICommand toggleIconScalingCommand;
 
         public ICommand ToggleIconScalingCommand
@@ -257,6 +288,9 @@ namespace AutoDog
             }
         }
 
+        #endregion
+
+        #region ToggleIconScaling
         private void ToggleIconScaling(object obj)
         {
             var multiFrameImageMode = (MultiFrameImageMode)obj;
@@ -264,10 +298,15 @@ namespace AutoDog
             RaisePropertyChanged("IsScaleDownLargerFrame");
             RaisePropertyChanged("IsNoScaleSmallerFrame");
         }
+        #endregion
 
+        #region IsScaleDownLargerFrame
         public bool IsScaleDownLargerFrame { get { return ((MetroWindow)Application.Current.MainWindow).IconScalingMode == MultiFrameImageMode.ScaleDownLargerFrame; } }
+        #endregion
 
+        #region IsNoScaleSmallerFrame
         public bool IsNoScaleSmallerFrame { get { return ((MetroWindow)Application.Current.MainWindow).IconScalingMode == MultiFrameImageMode.NoScaleSmallerFrame; } }
+        #endregion
 
         static Workspace _this = new Workspace(DialogCoordinator.Instance);
 
@@ -279,6 +318,8 @@ namespace AutoDog
 
         ObservableCollection<FileViewModel> _files = new ObservableCollection<FileViewModel>();
         ReadOnlyObservableCollection<FileViewModel> _readonyFiles = null;
+
+        #region Files
         public ReadOnlyObservableCollection<FileViewModel> Files
         {
             get
@@ -289,7 +330,9 @@ namespace AutoDog
                 return _readonyFiles;
             }
         }
+        #endregion
 
+        #region ToolViewModel
         ToolViewModel[] _tools = null;
 
         public IEnumerable<ToolViewModel> Tools
@@ -297,7 +340,7 @@ namespace AutoDog
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats,SolutionView, ResourcesView, ClassView, ErrorListView, OutPutView};
+                    _tools = new ToolViewModel[] { FileStats, SolutionView, ResourcesView, ClassView, ErrorListView, OutPutView };
                 return _tools;
             }
         }
@@ -368,6 +411,7 @@ namespace AutoDog
                 return _resourcesView;
             }
         }
+        #endregion
 
         #region OpenFile
         RelayCommand _openFile = null;
@@ -445,11 +489,9 @@ namespace AutoDog
         public void LoadHomePage()
         {
             _files.Clear();
-            FileViewModel fvm = new FileViewModel();            
-            fvm.Title = "欢迎使用";
-            //fvm.Document = new TextDocument();
-            _files.Add(fvm);
-            ActiveDocument = _files.Last();
+            //设置Home页
+            //var fileViewModel = Open("/Resources/AutoDog.txt");
+            //ActiveDocument = fileViewModel;
         }
         #endregion
 
@@ -475,11 +517,15 @@ namespace AutoDog
 
         #endregion
 
+        #region Close
         internal void Close(FileViewModel fileToClose)
         {
             ShowFileClosingDialog(fileToClose);
         }
 
+        #endregion
+
+        #region Save
         internal void Save(FileViewModel fileToSave, bool saveAsFlag = false)
         {
             if (fileToSave.FilePath == null || saveAsFlag)
@@ -508,7 +554,7 @@ namespace AutoDog
                 dlg.RestoreDirectory = true;
 
                 bool? result = dlg.ShowDialog();
-                if (result==true)
+                if (result == true)
                 {
                     fileToSave.FilePath = dlg.FileName.ToString();
                     SaveFileDirectly(fileToSave);
@@ -516,13 +562,17 @@ namespace AutoDog
             }
             else { SaveFileDirectly(fileToSave); }
         }
+        #endregion
 
+        #region SaveFileDirectly
         void SaveFileDirectly(FileViewModel fileToSave)
         {
             File.WriteAllText(fileToSave.FilePath, fileToSave.Document.Text);
             ActiveDocument.IsDirty = false;
         }
+        #endregion
 
+        #region ShowFileClosingDialog
         public async void ShowFileClosingDialog(FileViewModel fileToClose)
         {
             MetroWindow window = MainWindow.metroWindow;
@@ -544,7 +594,9 @@ namespace AutoDog
                 if (result == MessageDialogResult.Affirmative) Save(fileToClose);
                 if (result == MessageDialogResult.Negative) _files.Remove(fileToClose);
             }
-            else { _files.Remove(fileToClose); } 
+            else { _files.Remove(fileToClose); }
         }
+        #endregion
+
     }
 }

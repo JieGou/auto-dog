@@ -177,7 +177,8 @@ namespace AutoDog.ViewModels
                 return this.mIsReadOnly;
             }
 
-            protected set
+            //protected set
+            set
             {
                 if (this.mIsReadOnly != value)
                 {

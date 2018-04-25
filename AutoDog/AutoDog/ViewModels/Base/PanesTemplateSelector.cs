@@ -22,6 +22,11 @@ namespace AutoDog
             get;
             set;
         }
+        public DataTemplate APIFileViewTemplate
+        {
+            get;
+            set;
+        }
 
         public DataTemplate FileStatsViewTemplate
         {
@@ -80,8 +85,10 @@ namespace AutoDog
 
             if (item is ErrorListViewModel)
                 return ErrorListViewTemplate;
+
             if (item is ResourcesViewModel)
                 return ResourcesViewTemplate;
+
             return base.SelectTemplate(item, container);
         }
     }
