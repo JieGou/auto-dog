@@ -142,7 +142,7 @@ namespace AutoDog.Models
                         ImageSource ="/Images/Template/Web_api.png",
                         Describe ="Web API 测试，集成基本的API测试解决方案及简单的模板。",
                         ProjectIcon= "/Resources/project_api.png",
-                        IncludeFileExtension =".api",
+                        IncludeFileExtension =".xml",
                 },
                 #endregion
 
@@ -154,7 +154,7 @@ namespace AutoDog.Models
                         ImageSource ="/Images/Template/web_performance.png",
                         Describe ="Web Performance 测试，集成基本性能监测解决方案以及相关数据分析日志。",
                         ProjectIcon= "/Resources/project_proformance.png",
-                        IncludeFileExtension =".per",
+                        IncludeFileExtension =".xml",
                        
                 },
                 #endregion
