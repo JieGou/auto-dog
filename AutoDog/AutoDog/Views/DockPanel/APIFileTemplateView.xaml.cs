@@ -24,5 +24,21 @@ namespace AutoDog.Views
         {
             InitializeComponent();
         }
+
+        private void AddParams_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RunAPI_Click(object sender, RoutedEventArgs e)
+        {
+            WebBrowser wb = new WebBrowser();
+            wb.Navigate(myUrl.Text);
+        }
+
+        private void myFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }
