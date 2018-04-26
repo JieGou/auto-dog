@@ -214,6 +214,7 @@
     <Compile Include="Converters\BoolToVisiableConverter.cs" />
     <Compile Include="Converters\FlipBoolConverter.cs" />
     <Compile Include="Logics\Common.cs" />
+    <Compile Include="ViewModels\DockPanel\APIFileViewModel.cs" />
     <Compile Include="ViewModels\NewFileViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewModel.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />

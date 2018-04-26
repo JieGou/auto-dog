@@ -340,10 +340,23 @@ namespace AutoDog
             get
             {
                 if (_tools == null)
-                    _tools = new ToolViewModel[] { FileStats, SolutionView, ResourcesView, ClassView, ErrorListView, OutPutView };
+                    _tools = new ToolViewModel[] { FileStats, SolutionView, ResourcesView, ClassView, ErrorListView, OutPutView, APIFile };
                 return _tools;
             }
         }
+
+        APIFileViewModel _APIfile = null;
+        public APIFileViewModel APIFile
+        {
+            get
+            {
+                if (_APIfile == null)
+                    _APIfile = new APIFileViewModel();
+
+                return _APIfile;
+            }
+        }
+
 
         FileStatsViewModel _fileStats = null;
         public FileStatsViewModel FileStats

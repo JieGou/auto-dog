@@ -71,6 +71,9 @@ namespace AutoDog
             if (item is FileViewModel)
                 return FileViewTemplate;
 
+            if (item is APIFileViewModel)
+                return APIFileViewTemplate;
+
             if (item is FileStatsViewModel)
                 return FileStatsViewTemplate;
 

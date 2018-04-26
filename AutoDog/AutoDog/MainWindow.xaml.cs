@@ -134,7 +134,7 @@ namespace AutoDog
             var layoutSerializer = new XmlLayoutSerializer(dockManager);
             layoutSerializer.LayoutSerializationCallback += (s, e) =>
             {
-                if (e.Model.ContentId == FileStatsViewModel.ToolContentId)
+                if (e.Model.ContentId == APIFileViewModel.ToolContentId)
                     e.Content = Workspace.This.FileStats;
                 else if (e.Model.ContentId == SolutionViewModel.ToolContentId)
                     e.Content = Workspace.This.SolutionView;
