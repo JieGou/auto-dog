@@ -27,30 +27,30 @@
                         IsEnabled="{Binding IsProcessRunning, ElementName=terminalControl, 
                         Converter={StaticResource InvertedBooleanConverter}}"
                         ToolTip="运行终端">
-                        <Image Source="/Images/Terminal/Console.png"
+                        <Image Source="pack://application:,,/Images/Terminal/Console.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </Button>
                     <Button Command="{Binding StartNewProcessCommand}"
                         IsEnabled="{Binding IsProcessRunning, ElementName=terminalControl, 
                         Converter={StaticResource InvertedBooleanConverter}}"
                         ToolTip="启动一个新的进程">
-                        <Image Source="/Images/Terminal/Play.png" 
+                        <Image Source="pack://application:,,/Images/Terminal/Play.png" 
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </Button>
                     <Button Command="{Binding StopProcessCommand}"
                         IsEnabled="{Binding IsProcessRunning, ElementName=terminalControl}"
                         ToolTip="停止终端">
-                        <Image Source="/Images/Terminal/Stop.png"
+                        <Image Source="pack://application:,,/Images/Terminal/Stop.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
                     </Button>
                     <Button Command="{Binding ClearOutputCommand}"
                         ToolTip="清除内容">
-                        <Image Source="/Images/Terminal/Clean.png" 
+                        <Image Source="pack://application:,,/Images/Terminal/Clean.png" 
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16" />
                     </Button>
                     <ToggleButton IsChecked="{Binding ShowDiagnostics, ElementName=terminalControl}"
                         ToolTip="诊断信息">
-                        <Image Source="/Images/Terminal/Information.png"
+                        <Image Source="pack://application:,,/Images/Terminal/Information.png"
                                 RenderOptions.BitmapScalingMode="Linear" Width="16" Height="16"  />
                     </ToggleButton>
                 </ToolBar>

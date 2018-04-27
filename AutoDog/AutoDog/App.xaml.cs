@@ -30,7 +30,7 @@ namespace AutoDog
             }
             trayIcon = new NotifyIcon
             {
-                Icon = new System.Drawing.Icon("../../Images/AutoDog/AutoDog.ico"),
+                Icon = new System.Drawing.Icon("AutoDog.ico"),
                 Text = "测试管理平台"
             };
             trayIcon.Visible = true;

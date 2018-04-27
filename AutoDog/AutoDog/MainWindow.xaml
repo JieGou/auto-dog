@@ -22,7 +22,7 @@
                       Height="800"
                       Dialog:DialogParticipation.Register="{Binding}"
                       d:DataContext="{d:DesignInstance local:Workspace}"
-                      Icon="Images/AutoDog/AutoDog.ico"
+                      Icon="pack://application:,,/Images/AutoDog/AutoDog.ico"
                       WindowStartupLocation="CenterScreen"
                       Closing="MainAutoTesting_WinddowClosing"
                       GlowBrush="{DynamicResource AccentColorBrush}"
@@ -120,36 +120,36 @@
                 <MenuItem Header="新建(N)">
                     <MenuItem Header="项目..." Click="NewProject_Click" >
                         <MenuItem.Icon>
-                            <Image Source="Images/ProjectAdd.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/ProjectAdd.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="文件..." Click="NewFile_Click" >
                         <MenuItem.Icon>
-                            <Image Source="Images/DocumentClosed.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/DocumentClosed.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="打开(O)">
                     <MenuItem Header="项目" Click="OpenProject_Click">
                         <MenuItem.Icon>
-                            <Image Source="Images/ProjectDefault.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/ProjectDefault.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="文件"  Command="{Binding OpenFile}">
                         <MenuItem.Icon>
-                            <Image Source="Images/DocumentClosed.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/DocumentClosed.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="添加(D)">
                     <MenuItem Header="新建项目..." Click="NewProject_Click">
                         <MenuItem.Icon>
-                            <Image Source="Images/ProjectAdd.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/ProjectAdd.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="现有项目..." Click="OpenProject_Click">
                         <MenuItem.Icon>
-                            <Image Source="Images/ProjectDefault.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/ProjectDefault.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
@@ -157,18 +157,18 @@
                 </MenuItem>
                 <MenuItem Header="关闭解决方案(T)">
                     <MenuItem.Icon>
-                        <Image Source="Images/Delete.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Delete.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="保存(S)   Ctrl + S" Command="{Binding ActiveDocument.SaveCommand}">
                     <MenuItem.Icon>
-                        <Image Source="Images/Save.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Save.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="另存为(B)..." Command="{Binding ActiveDocument.SaveAsCommand}"/>
                 <MenuItem Header="全部保存(L)   Ctrl + Shift + S">
                     <MenuItem.Icon>
-                        <Image Source="Images/SaveAll.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/SaveAll.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="账户设置(I)..."/>
@@ -176,39 +176,39 @@
                 <MenuItem Header="最近使用过的项目和解决方案"/>
                 <MenuItem Header="退出(X)   Ctrl + F4" Click="MainWindowExit_Click">
                     <MenuItem.Icon>
-                        <Image Source="Images/WindowClose.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/WindowClose.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="编辑(E)">
                 <MenuItem Header="撤销(U)   Ctrl + Z">
                     <MenuItem.Icon>
-                        <Image Source="Images/Undo.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Undo.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="重做(R)  Ctrl + Y">
                     <MenuItem.Icon>
-                        <Image Source="Images/Redo.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Redo.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="剪贴(T)  Ctrl + X">
                     <MenuItem.Icon>
-                        <Image Source="Images/Cut.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Cut.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="复制(C)  Ctrl + C">
                     <MenuItem.Icon>
-                        <Image Source="Images/Copy.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Copy.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="粘贴(P)  Ctrl + V">
                     <MenuItem.Icon>
-                        <Image Source="Images/Paste.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Paste.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="删除(D)  Del">
                     <MenuItem.Icon>
-                        <Image Source="Images/Delete.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Delete.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="查找和替换...(F)"/>
@@ -229,17 +229,17 @@
             <MenuItem Header="项目(P)">
                 <MenuItem Header="添加项目(P)...  Ctrl + Shift + N" Click="AddProject_Click">
                     <MenuItem.Icon>
-                        <Image Source="Images/ProjectAdd.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/ProjectAdd.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F" Click="AddFolder_Click">
                     <MenuItem.Icon>
-                        <Image Source="Images/FolderAdd.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/FolderAdd.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="添加文件(P)..." Click="AddFile_Click">
                     <MenuItem.Icon>
-                        <Image Source="Images/FileAdd.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/FileAdd.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -259,12 +259,12 @@
             <MenuItem Header="帮助(H)">
                 <MenuItem Header="查看帮助(V)...  Ctrl + F1">
                     <MenuItem.Icon>
-                        <Image Source="Images/Help.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/Help.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="关于AutoDog(A)" Click="AboutAutoDog_Click" >
                     <MenuItem.Icon>
-                        <Image Source="Images/About.png" Height="18"/>
+                        <Image Source="pack://application:,,/Images/About.png" Height="18"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -281,33 +281,33 @@
                 </Style>
             </ToolBar.Resources>
             <Button Command="{Binding NewFile}">
-                <Image Source="Images/DocumentClosed.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/DocumentClosed.png" Height="16"/>
             </Button>
             <Button  Command="{Binding OpenFile}">
-                <Image Source="Images/Open.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Open.png" Height="16"/>
             </Button>
             <Button Command="{Binding ActiveDocument.SaveCommand}">
-                <Image Source="Images/Save.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Save.png" Height="16"/>
             </Button>
             <Separator/>
             <Button Command="Cut">
-                <Image Source="Images/Cut.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Cut.png" Height="16"/>
             </Button>
             <Button Command="Copy">
-                <Image Source="Images/Copy.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Copy.png" Height="16"/>
             </Button>
             <Button Command="Paste">
-                <Image Source="Images/Paste.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Paste.png" Height="16"/>
             </Button>
             <Button Command="Delete">
-                <Image Source="Images/Delete.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Delete.png" Height="16"/>
             </Button>
             <Separator/>
             <Button Command="Undo">
-                <Image Source="Images/Undo.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Undo.png" Height="16"/>
             </Button>
             <Button Command="Redo">
-                <Image Source="Images/Redo.png" Height="16"/>
+                <Image Source="pack://application:,,/Images/Redo.png" Height="16"/>
             </Button>
             <Separator/>
             <CheckBox IsChecked="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type avalonEdit:TextEditor}},Path=ShowLineNumbers}">
@@ -333,7 +333,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
                         <!-- Show IsReadOnly Icon in document tab if that properties' present and true -->
-                        <Image Source="Images/App/DocTab/Lock-icon.png" Margin="3,0,0,0" VerticalAlignment="Center">
+                        <Image Source="pack://application:,,/Images/App/DocTab/Lock-icon.png" Margin="3,0,0,0" VerticalAlignment="Center">
                             <Image.Visibility>
                                 <PriorityBinding FallbackValue="Collapsed" >
                                     <Binding Path="Content.IsReadOnly" Mode="OneWay" Converter="{StaticResource BoolToVisibilityConverter}" />

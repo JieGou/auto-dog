@@ -44,43 +44,43 @@
                     <MenuItem x:Name="mySTVMenuAdd" Header="添加(D)" IsEnabled="{Binding Path=IsAddItemShow}">
                         <MenuItem Header="添加项目(P)...  Ctrl + Shift + N" Click="AddProject_Click">
                             <MenuItem.Icon>
-                                <Image Source="../../Images/ProjectAdd.png" Height="18"/>
+                                <Image Source="pack://application:,,/Images/ProjectAdd.png" Height="18"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="添加文件夹(F)...  Ctrl + Shift + F" Click="AddFolder_Click">
                             <MenuItem.Icon>
-                                <Image Source="../../Images/FolderAdd.png" Height="18"/>
+                                <Image Source="pack://application:,,/Images/FolderAdd.png" Height="18"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="添加文件(P)..." Click="AddFile_Click">
                             <MenuItem.Icon>
-                                <Image Source="../../Images/FileAdd.png" Height="18"/>
+                                <Image Source="pack://application:,,/Images/FileAdd.png" Height="18"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuOpen" Header="打开(O)">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/FileEdit.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/FileEdit.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuCut" Header="剪贴(T) Ctrl + X">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/Cut.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/Cut.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuCopy" Header="复制(Y) Ctrl + C">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/Copy.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/Copy.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuPaste" Header="粘贴(P) Ctrl + V">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/Paste.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/Paste.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuDelete" Header="删除(D) Del" Click="mySTVMenuItem_Delete_Click">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/Delete.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/Delete.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuRename" Header="重命名(M)" Click="mySTVMenuItem_ReName_Click">
@@ -90,12 +90,12 @@
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuFolderSerach" Header="在文件资源管理器中打开文件夹(X)" Click="mySTVMenuItem_OpenFolder_Click">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/FolderSearch.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/FolderSearch.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem x:Name="mySTVMenuProperty" Header="属性" Click="mySTVMenuItem_ShowProperty_Click">
                         <MenuItem.Icon>
-                            <Image Source="../../Images/PropertyItem.png" Height="18"/>
+                            <Image Source="pack://application:,,/Images/PropertyItem.png" Height="18"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </ContextMenu>

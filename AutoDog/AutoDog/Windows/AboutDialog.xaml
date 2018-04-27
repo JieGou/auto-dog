@@ -5,7 +5,7 @@
         Title="About"
         Height="305"
         Width="455"
-        Icon="../Images/AutoDog/AutoDogBlue.png"
+        Icon="pack://application:,,/Images/AutoDog/MainAutoDog.png"
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -26,7 +26,7 @@
               Grid.Row="0"/>
         <StackPanel Grid.Row="0"
                   Orientation="Horizontal">
-            <Image Source="../Images/AutoDog/AutoDogBlue.png"
+            <Image Source="pack://application:,,/Images/AutoDog/MainAutoDog.png"
                Width="30"
                Height="30"
                Margin="20,0,0,0" />
