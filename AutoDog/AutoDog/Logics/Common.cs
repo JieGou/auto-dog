@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace AutoDog.Logics
 {
@@ -15,6 +16,16 @@ namespace AutoDog.Logics
         public static string SettingLocalPath = myDocumentsPaths  + @"\" + autoDogName + "\\Settings"; //设置文件路径
         public static string BackUpLocalPath = myDocumentsPaths + @"\" + autoDogName + "\\Backup Files"; //备份文件路径
         public static string TemplatesLocalPath = myDocumentsPaths + @"\" + autoDogName + "\\Templates"; //模板文件路径
+
+
+        public static BitmapImage ConvertImageToBitMap(string image)
+        {
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri(image);
+            bi.EndInit();
+            return bi;
+        }
 
         public enum TreeNodeType
         {

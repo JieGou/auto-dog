@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows.Controls;
+using AutoDog.Logics;
 
 
 namespace AutoDog.ViewModels
@@ -18,12 +19,7 @@ namespace AutoDog.ViewModels
             :base("解决方案资源管理器")
         {
             ContentId = ToolContentId;
-
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/SolutionView.png");
-            bi.EndInit();
-            IconSource = bi;
+            IconSource = Common.ConvertImageToBitMap("pack://application:,,/Images/DockPanel/SolutionView.png");
         } 
     }
 }

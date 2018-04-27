@@ -7,6 +7,7 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
              xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
+             xmlns:avalonEdit="https://github.com/devdiv/TestExecutePro.Eidtor"
              xmlns:local="clr-namespace:AutoDog.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
@@ -19,17 +20,18 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <!--<Expander Grid.Row="0" Header="请求方式">
-            <ComboBox  Grid.Column="1" Margin="3,5,0,5" RenderTransformOrigin="0.5,0.5" 
+            <Expander Grid.Row="0" Header="请求方式">
+            <ComboBox  x:Name="myMethod" Grid.Column="1" Margin="3,5,0,5" RenderTransformOrigin="0.5,0.5" 
                        Controls:TextBoxHelper.ClearTextButton="True"
                        Controls:TextBoxHelper.Watermark="Please select an item..."
                        Style="{DynamicResource VirtualisedMetroComboBox}"
                        >
-                <ComboBoxItem Content="Get"/>
-                <ComboBoxItem Content="Put"/>
+                <ComboBoxItem Content="GET"/>
+                <ComboBoxItem Content="POST"/>
             </ComboBox>
-        </Expander>-->
+            </Expander>
             <Expander IsExpanded="True" Grid.Row="1" Header="请求URL">
                 <TextBox x:Name="myUrl" Grid.Column="1" Margin="3,5,0,5"/>
             </Expander>
@@ -47,12 +49,36 @@
                 </Grid>
             </Expander>
             <Expander IsExpanded="True" Grid.Row="3" Header="执行结果">
-                <xctk:RichTextBox Height="300"></xctk:RichTextBox>
+                <TabControl>
+                    <TabItem Header="Body" Controls:ControlsHelper.HeaderFontSize="18">
+                        <avalonEdit:TextEditor Grid.Row="1" x:Name="myResponseEditor" Height="300"/>
+                    </TabItem>
+                    <TabItem Header="Cookies" Controls:ControlsHelper.HeaderFontSize="18">
+                        <avalonEdit:TextEditor x:Name="myCookiesEditor" Height="{Binding ElementName=myResponseEditor,Path=Height}"/>
+                    </TabItem>
+                    <TabItem Header="Headers" Controls:ControlsHelper.HeaderFontSize="18">
+                        <avalonEdit:TextEditor x:Name="myHeadersEditor" Height="{Binding ElementName=myResponseEditor,Path=Height}"/>
+                    </TabItem>
+                </TabControl>
             </Expander>
             <Expander IsExpanded="True" Grid.Row="4" Header="匹配数据">
-                <xctk:RichTextBox Height="100"></xctk:RichTextBox>
+                <avalonEdit:TextEditor x:Name="myExcepted" TextChanged="myExcepted_TextChanged" Height="100"/>
             </Expander>
-            <Expander IsExpanded="True" Grid.Row="5" Header="匹配结果"/>
+            <Expander IsExpanded="True" Grid.Row="5" Header="匹配结果">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Height="30" x:Name="myResultImage"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="myResultMsg"/>
+                </Grid>
+                   
+            </Expander>
+            <Expander IsExpanded="True" Grid.Row="6" Header="匹配异常">
+                <avalonEdit:TextEditor x:Name="myResultErrorInfo" Height="100"/>
+            </Expander>
+            
         </Grid>
     </ScrollViewer>
 </UserControl>

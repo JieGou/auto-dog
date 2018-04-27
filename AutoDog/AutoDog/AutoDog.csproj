@@ -642,6 +642,8 @@
   <ItemGroup>
     <Resource Include="Images\Template\file_html.png" />
     <Resource Include="MainAutoDog.ico" />
+    <Resource Include="Images\Results\Pass.png" />
+    <Resource Include="Images\Results\Failed.png" />
     <Content Include="Resources\project_api.png" />
     <Content Include="Resources\project_csharp.png" />
     <Content Include="Resources\project_java.png" />

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
+using AutoDog.Logics;
 
 namespace AutoDog.ViewModels
 {
@@ -15,12 +11,7 @@ namespace AutoDog.ViewModels
             :base("资源视图")
         {
             ContentId = ToolContentId;
-
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.UriSource = new Uri("pack://application:,,/Images/DockPanel/ResourceView.png");
-            bi.EndInit();
-            IconSource = bi;
+            IconSource = Common.ConvertImageToBitMap("pack://application:,,/Images/DockPanel/ResourceView.png");
         }
     }
 }
