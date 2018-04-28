@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,7 +18,7 @@ using AutoDog.Controls.FolderBrowserControl;
 using AutoDog.ViewModels;
 using AutoDog.Models;
 using AutoDog.Logics;
-using AutoDog.Views;
+using AutoDog.ViewModels.Serialization;
 
 namespace AutoDog.Windows.ProjectManager
 {
@@ -97,6 +97,12 @@ namespace AutoDog.Windows.ProjectManager
                     string commonFileName = "App";
                     string commonFile = projectPath + "\\" + commonFileName + albumObj.IncludeFileExtension;
                     File.Create(commonFile);
+
+                    //在基本应用文件中添加响应的内容
+                    //FileStream fs = new FileStream(commonFile,FileMode.OpenOrCreate,FileAccess.ReadWrite);
+                    StreamWriter sw = new StreamWriter(commonFile,true, Encoding.UTF8);
+                    sw.WriteLine(SetFileTemplate(albumObj));
+                    sw.Close();
                     #endregion
 
                     //添加创建好的模板到当前解决方案面板
@@ -113,9 +119,16 @@ namespace AutoDog.Windows.ProjectManager
             }
         }
 
-        private void SetFileTemplate(ProjectAlbum albumObj)
+        private string SetFileTemplate(ProjectAlbum albumObj)
         {
-
+            string template = "";
+            if (albumObj.TemplateType == Common.ProjectType.API.ToString())
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                APIEntity ae = APIXmlSerialize.Deserialize(typeof(APIEntity), xmlDoc.OuterXml) as APIEntity;
+                template = APIXmlSerialize.Serializer(typeof(APIEntity), ae);
+            }
+            return template;
         }
 
 
