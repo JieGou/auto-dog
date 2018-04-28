@@ -195,6 +195,7 @@
     <Compile Include="Logics\ADTManager.cs" />
     <Compile Include="Logics\PipelineExecutor.cs" />
     <Compile Include="Logics\TemplateSchool.cs" />
+    <Compile Include="ViewModels\Serialization\APIElementViewModel.cs" />
     <Compile Include="Models\FileAlbum.cs" />
     <Compile Include="Models\ProjectAlbum.cs" />
     <Compile Include="Models\FileArtist.cs" />
@@ -650,7 +651,6 @@
     <Content Include="AutoDog.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Logics\Template\APIFileTemplate.xml" />
     <Content Include="Resources\project_api.png" />
     <Content Include="Resources\project_csharp.png" />
     <Content Include="Resources\project_java.png" />
