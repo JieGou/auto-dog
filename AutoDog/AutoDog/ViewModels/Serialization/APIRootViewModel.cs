@@ -12,11 +12,11 @@ using System.Xml.Schema;
 
 namespace AutoDog.ViewModels.Serialization
 {
-    [ContentProperty("APITestCase")]
+    [ContentProperty("APIRoot")]
     [Serializable]
-    public class APIElements :ViewModelBase , IXmlSerializable
+    public class APIRoot :ViewModelBase , IXmlSerializable
     {
-        public APIElements()
+        public APIRoot()
         {
 
         }
@@ -40,7 +40,7 @@ namespace AutoDog.ViewModels.Serialization
 
         public void WriteXml(XmlWriter writer)
         {
-            writer.WriteStartElement("APITestCase");
+            writer.WriteStartElement("APIRoot");
             if (APITestCase != null)
             {
                 //APITestCase.WriteXml(writer);

@@ -195,7 +195,11 @@
     <Compile Include="Logics\ADTManager.cs" />
     <Compile Include="Logics\PipelineExecutor.cs" />
     <Compile Include="Logics\TemplateSchool.cs" />
-    <Compile Include="ViewModels\Serialization\APIElementViewModel.cs" />
+    <Compile Include="ViewModels\Serialization\APIExcepted.cs" />
+    <Compile Include="ViewModels\Serialization\APIParams.cs" />
+    <Compile Include="ViewModels\Serialization\APIRequest.cs" />
+    <Compile Include="ViewModels\Serialization\APIResponse.cs" />
+    <Compile Include="ViewModels\Serialization\APIRootViewModel.cs" />
     <Compile Include="Models\FileAlbum.cs" />
     <Compile Include="Models\ProjectAlbum.cs" />
     <Compile Include="Models\FileArtist.cs" />
@@ -219,6 +223,8 @@
     <Compile Include="ViewModels\DockPanel\APIFileViewModel.cs" />
     <Compile Include="ViewModels\NewFileViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\Serialization\APIEntity.cs" />
+    <Compile Include="ViewModels\Serialization\APIXmlSerialize.cs" />
     <Compile Include="ViewModels\TerminalViewModel.cs" />
     <Compile Include="ViewModels\DockPanel\ResourcesViewModel.cs" />
     <Compile Include="Views\DockPanel\APIFileTemplateView.xaml.cs">

@@ -113,6 +113,12 @@ namespace AutoDog.Windows.ProjectManager
             }
         }
 
+        private void SetFileTemplate(ProjectAlbum albumObj)
+        {
+
+        }
+
+
         private void CancleButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
