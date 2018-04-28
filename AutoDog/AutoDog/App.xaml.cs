@@ -38,6 +38,7 @@ namespace AutoDog
             ContextMenu menu = new ContextMenu();
 
             MenuItem aboutItem = new MenuItem() { Text = "关于" };
+            aboutItem.Click += showAboutItem_Click;
             MenuItem closeItem = new MenuItem() { Text = "退出" };
             closeItem.Click += new EventHandler(delegate { this.Shutdown(); });
             MenuItem loginItem = new MenuItem() { Text = "登录" };
@@ -68,6 +69,12 @@ namespace AutoDog
         {
             if (this.MainWindow == null) MainWindow = new MainWindow();
             this.MainWindow.Show();
+        }
+
+        private void showAboutItem_Click(object sender,EventArgs e)
+        {
+            var aboutDialog = new AutoDog.Windows.AboutDialog();
+            aboutDialog.Show();
         }
     }
 }

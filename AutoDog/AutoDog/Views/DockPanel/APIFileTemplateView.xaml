@@ -48,7 +48,7 @@
                      Style="{DynamicResource AccentedSquareButtonStyle}" Content="运行测试" Click="RunAPI_Click"/>
                 </Grid>
             </Expander>
-            <Expander IsExpanded="True" Grid.Row="3" Header="执行结果">
+            <Expander IsExpanded="True" Grid.Row="3" Header="响应数据">
                 <TabControl>
                     <TabItem Header="Body" Controls:ControlsHelper.HeaderFontSize="18">
                         <avalonEdit:TextEditor Grid.Row="1" x:Name="myResponseEditor" Height="300"/>

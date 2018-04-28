@@ -20,7 +20,7 @@ namespace AutoDog.ViewModels
             IconSource = Common.ConvertImageToBitMap("pack://application:,,/Images/DockPanel/PropertyView.png");
         }
 
-        public const string ToolContentId = "FileStatsTool";
+        public const string ToolContentId = "APIFileTool";
 
         void OnActiveDocumentChanged(object sender, EventArgs e)
         {

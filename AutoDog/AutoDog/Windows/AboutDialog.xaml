@@ -5,8 +5,8 @@
         Title="About"
         Height="305"
         Width="455"
-        Icon="pack://application:,,/Images/AutoDog/MainAutoDog.png"
-        WindowStartupLocation="CenterOwner"
+        Icon="pack://application:,,/Images/AutoDog/AutoDog.png"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
         ShowInTaskbar="False">

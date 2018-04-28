@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+             xmlns:Controls="clr-namespace:AutoDog.UI.Controls;assembly=AutoDog.UI"
              xmlns:local="clr-namespace:AutoDog.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-       
+        <xctk:PropertyGrid x:Name="_propertyGrid" SelectedObject="{Binding}"  Width="450" Margin="10,30,0,0" />
     </Grid>
 </UserControl>

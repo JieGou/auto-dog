@@ -222,9 +222,10 @@
                 <MenuItem Header="类视图(A)  Ctrl + Shift + C" IsChecked="{Binding ClassView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
                 <MenuItem Header="解决方案资源管理器(P)  Ctrl + Alt + L" IsChecked="{Binding SolutionView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
                 <MenuItem Header="属性窗口(W)  F4" IsChecked="{Binding FileStats.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
-                <MenuItem Header="资源视图(R)  Ctrl + \. R" IsChecked="{Binding Resources.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
-                <MenuItem Header="错误列表(I)  Ctrl + \. E" IsChecked="{Binding ErrorList.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
-                <MenuItem Header="输出(O)  Ctrl + Alt + O" IsChecked="{Binding ErrorList.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="资源视图(R)  Ctrl + \. R" IsChecked="{Binding ResourcesView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="错误列表(I)  Ctrl + \. E" IsChecked="{Binding ErrorListView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="输出(O)  Ctrl + Alt + O" IsChecked="{Binding OutPutView.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
+                <MenuItem Header="API测试(T)  Ctrl + Alt + T" IsChecked="{Binding APIFile.IsVisible, Mode=TwoWay}" IsCheckable="True"/>
             </MenuItem>
             <MenuItem Header="项目(P)">
                 <MenuItem Header="添加项目(P)...  Ctrl + Shift + N" Click="AddProject_Click">

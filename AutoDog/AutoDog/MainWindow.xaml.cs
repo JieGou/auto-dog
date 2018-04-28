@@ -20,7 +20,8 @@ namespace AutoDog
 
         #region 变量
         public static MetroWindow metroWindow;
-        private bool closeMe;       
+        private bool closeMe;
+        private string layOutXml = @".\AutoDog.config"; 
         #endregion
         public MainWindow()
         {
@@ -96,9 +97,9 @@ namespace AutoDog
                 args.Content = args.Content;
             };
 
-            if (File.Exists(@".\AutoDog.config"))
+            if (File.Exists(layOutXml))
             {
-                serializer.Deserialize(@".\AutoDog.config");
+                serializer.Deserialize(layOutXml);
             }
             Workspace.This.LoadHomePage();
         }
@@ -106,7 +107,7 @@ namespace AutoDog
         void MainWindow_Unloaded(object sender, RoutedEventArgs e)
         {
             var serializer = new Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer(dockManager);
-            serializer.Serialize(@".\AutoDog.config");
+            serializer.Serialize(layOutXml);
         }
 
         #region LoadLayoutCommand
