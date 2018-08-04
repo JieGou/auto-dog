@@ -263,7 +263,7 @@ namespace AutoDog
 
         private void LaunchAppsOnGitHub(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/devdiv/AutoDog");
+            System.Diagnostics.Process.Start("https://gitee.com/devdiv/AutoDog");
         }
 
         private async void CloseCustomDialog(object sender, RoutedEventArgs e)
