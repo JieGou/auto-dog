@@ -2,5 +2,4 @@
 
 ![](https://github.com/devdiv/AutoDog/blob/master/AutoDog/Images/AutoDog.png)
 
-> 备注：该工具尚未编写完成，待后续改进。
-如果你有好的建议和想法，请发送邮件到837811650@qq.com联系并沟通，谢谢！
+AutoDog 是一个模仿Visual Studio开发工具的WPF应用，主要使用AvalonEdit、Metro、Annotations、ControlzEx、WPF、WindowsFroms等技术。
